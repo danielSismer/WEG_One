@@ -17,12 +17,14 @@
 <br><hr>
 
 <h3><b>Objetivos do projeto</b></h3>
-<p>O projeto tem como principal objetivo desenvolver um sistema para o cadastro e consulta de regras de condutas WEG. 
+<p>
+O projeto tem como principal objetivo desenvolver um sistema para o cadastro e consulta de regras de condutas WEG. 
 <br><br>
 Este
 sistema, denominado "WegOne", visa permitir que os colaboradores da empresa possam
 acessar orientações relacionadas a diversos equipamentos e procedimentos operacionais
-da Weg de forma simples e eficiente.</p>
+da Weg de forma simples e eficiente.
+</p>
 
 <hr>
 

@@ -8,5 +8,6 @@ public class ProjectJava {
 
         System.out.println("Hello World");
         
+        input.close();
     }
 }

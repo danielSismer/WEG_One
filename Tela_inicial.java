@@ -111,7 +111,7 @@ public class Tela_inicial {
 
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
 
-        // Controle de visibilidade do menu
+
         final boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {
             menuVisivel[0] = !menuVisivel[0];
@@ -119,7 +119,7 @@ public class Tela_inicial {
             frame.revalidate();
         });
 
-        // Evento do botão de pesquisa
+
         botaoPesquisa.addActionListener(e -> {
             JOptionPane.showMessageDialog(frame, "Funcionalidade de pesquisa aqui.");
         });

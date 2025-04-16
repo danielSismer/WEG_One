@@ -4,22 +4,13 @@ import java.util.Scanner;
 
 public class ProjectJava {
     
-    public static void main(String[] args) throws InterruptedException{
-
-        // Vamos manter as variáveis aqui no topo do código
+    public static void main(String[] args){
 
         Scanner input = new Scanner (System.in);
 
         // Vamos manter as variáveis aqui no topo
 
         int escolha;
-
-        System.out.println("____    __    ____  _______   _______      ______   .__   __.  _______       ");
-        System.out.println("\\   \\  /  \\  /   / |   ____| /  _____|    /  __  \\  |  \\ |  | |   ____|      ");
-        System.out.println(" \\   \\/    \\/   /  |  |__   |  |  __     |  |  |  | |   \\|  | |  |__         ");
-        System.out.println("  \\            /   |   __|  |  | |_ |    |  |  |  | |  . `  | |   __|        ");
-        System.out.println("   \\    /\\    /    |  |____ |  |__| |    |  `--'  | |  |\\   | |  |____       ");
-        System.out.println("    \\__/  \\__/     |_______| \\______|     \\______/  |__| \\__| |_______|      ");
 
         System.out.println("\nEscolha o idioma que você deseja: \n");
         System.out.println("EN-US\t\tPT-BR\t\tDE-DE");

@@ -38,7 +38,7 @@ public class ProjectJava {
                     System.out.println("\nSua escolha: ");
                     menuEscolha = input.nextInt();
 
-                    //...
+                    //..
 
                 }while(menuEscolha != 5);
 
@@ -54,7 +54,7 @@ public class ProjectJava {
                     System.out.println("\nSua escolha: ");
                     menuEscolha = input.nextInt();
 
-                    //...
+                    //..
 
                 }while(menuEscolha != 5);
                 break;
@@ -69,7 +69,7 @@ public class ProjectJava {
                     System.out.println("\nSua escolha: ");
                     menuEscolha = input.nextInt();
 
-                    //...
+                    //..
 
                 }while(menuEscolha != 5);
 

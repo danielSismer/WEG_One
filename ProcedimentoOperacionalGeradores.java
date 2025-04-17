@@ -39,7 +39,6 @@ public class ProcedimentoOperacionalGeradores {
                 "Garantir que o local de operação do gerador esteja limpo e seguro para o próximo uso.\n");
 
 
-
         System.out.println(" Ferramentas Utilizadas\n" +
                 "Calibradores e Micrômetros WEG para medições de precisão\n" +
                 "Paquímetros WEG e medidores de espessura WEG\n" +

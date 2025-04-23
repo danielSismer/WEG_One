@@ -3,29 +3,53 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 
+
 public class Tela_inicial {
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Sistema com Menu Lateral");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(900, 600);
-        frame.setLayout(new BorderLayout());
+
+        JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
+        TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        TelaMenus.setSize(900, 600);
+        TelaMenus.setLayout(new BorderLayout());
+
+
+
 
 
 
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(45, 62, 80));
         menuLateral.setLayout(new BoxLayout(menuLateral, BoxLayout.Y_AXIS));
-        menuLateral.setPreferredSize(new Dimension(200, frame.getHeight()));
+        menuLateral.setPreferredSize(new Dimension(200, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
+
 
         String[] opcoes = {
                 "Cadastrar Orientação",
-                "Pesquisar Orientação",
                 "Editar Orientação",
                 "Excluir Orientação",
                 "Sair"
         };
+
+
+        String[] opcoesCadastro = {
+                "Manual de Operação",
+                "Manutenção de Transformadores",
+                "Procedimento de Segurança para Instalação de Equipamentos Elétricos",
+                "Procedimento de Segurança para Operações com Risco de Choque Elétrico",
+                "Procedimento de Segurança para Testes de Funcionamento de Motores",
+                "Procedimento de Segurança para Diagnóstico de Falhas em Motores",
+                " Procedimento de Segurança para Diagnóstico e Manutenção de Sistemas de Automação",
+                " Procedimento Operacional no Setor de Manutenção",
+                ""
+
+
+
+
+        };
+
+
 
 
         for (String opcao : opcoes) {
@@ -40,25 +64,116 @@ public class Tela_inicial {
 
 
 
+
+
+
             botao.addActionListener(e -> {
                 if (opcao.equals("Sair")) {
                     System.exit(0);
                 } else {
-                    JOptionPane.showMessageDialog(frame, "Você clicou em: " + opcao);
+
+
                 }
             });
+            botao.addActionListener(e -> {
+                if (opcao.equals("Cadastrar Orientação")) {
+
+
+                    TelaMenus.setVisible(false);
+
+
+
+
+                    JFrame telaDeCadastro = new JFrame("Cadastro");
+                    telaDeCadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    telaDeCadastro.setSize(900, 600);
+                    telaDeCadastro.setLayout(new BorderLayout());
+                    telaDeCadastro.setVisible(true);
+
+
+                } else {
+
+
+                }
+
+
+            });
+
+
+
+
+            botao.addActionListener(e -> {
+                if (opcao.equals("Editar Orientação")) {
+
+
+                    TelaMenus.setVisible(false);
+
+
+
+
+                    JFrame telaDeEditar = new JFrame("Editar Orientação");
+                    telaDeEditar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    telaDeEditar.setSize(900, 600);
+                    telaDeEditar.setLayout(new BorderLayout());
+                    telaDeEditar.setVisible(true);
+
+
+                } else {
+
+
+                }
+
+
+            });
+
+
+
+
+            botao.addActionListener(e -> {
+                if (opcao.equals("Excluir Orientação")) {
+
+
+                    TelaMenus.setVisible(false);
+
+
+
+
+                    JFrame telaDeExcluir = new JFrame("Excluir Orientação");
+                    telaDeExcluir.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    telaDeExcluir.setSize(900, 600);
+                    telaDeExcluir.setLayout(new BorderLayout());
+                    telaDeExcluir.setVisible(true);
+
+
+                } else {
+
+
+                }
+
+
+            });
+
+
+
+
+
 
             menuLateral.add(Box.createRigidArea(new Dimension(0, 15)));
             menuLateral.add(botao);
         }
 
 
+
+
         JPanel painelConteudo = new JPanel(new BorderLayout());
         painelConteudo.setBackground(Color.WHITE);
+
 
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(Color.WHITE);
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+
 
 
         JButton botao3Linhas = new JButton("☰");
@@ -66,6 +181,7 @@ public class Tela_inicial {
         botao3Linhas.setFocusPainted(false);
         botao3Linhas.setBackground(Color.WHITE);
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+
 
         // Botão Pesquisa (com ícone de lupa)
         JButton botaoPesquisa = new JButton("🔍");
@@ -75,10 +191,15 @@ public class Tela_inicial {
         botaoPesquisa.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
 
+
+
         headerPanel.add(botao3Linhas, BorderLayout.WEST);
         headerPanel.add(botaoPesquisa, BorderLayout.EAST);
 
+
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
+
+
 
 
         JPanel painelCentral = new JPanel();
@@ -88,17 +209,22 @@ public class Tela_inicial {
 
 
 
+
+
+
         try {
             ImageIcon icon = new ImageIcon("WegOne-imagen.jpg");
             Image imagem = icon.getImage().getScaledInstance(400, 250, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+
             JLabel mensagem = new JLabel("Bem-vindo ao WegOne");
             mensagem.setFont(new Font("Arial", Font.BOLD, 22));
             mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
             mensagem.setBackground(Color.WHITE);
+
 
             painelCentral.add(Box.createVerticalGlue());
             painelCentral.add(labelImagem);
@@ -109,25 +235,32 @@ public class Tela_inicial {
             painelCentral.add(new JLabel("Erro ao carregar imagem."));
         }
 
+
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
+
+
 
 
         final boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {
             menuVisivel[0] = !menuVisivel[0];
             menuLateral.setVisible(menuVisivel[0]);
-            frame.revalidate();
+            TelaMenus.revalidate();
         });
+
+
 
 
         botaoPesquisa.addActionListener(e -> {
-            JOptionPane.showMessageDialog(frame, "Funcionalidade de pesquisa aqui.");
+            JOptionPane.showMessageDialog(TelaMenus, "Funcionalidade de pesquisa aqui.");
         });
 
-        frame.add(menuLateral, BorderLayout.WEST);
-        frame.add(painelConteudo, BorderLayout.CENTER);
 
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        TelaMenus.add(menuLateral, BorderLayout.WEST);
+        TelaMenus.add(painelConteudo, BorderLayout.CENTER);
+
+
+        TelaMenus.setLocationRelativeTo(null);
+        TelaMenus.setVisible(true);
     }
 }

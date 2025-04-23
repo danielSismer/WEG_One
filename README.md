@@ -1,4 +1,7 @@
-<h1 align="center"><b>Projeto em JAVA</b></h1>
+<div align="center">
+    <img src="https://i.postimg.cc/d1PNHWRc/Weg-One-20250422-213835-0000.png" width="250px">
+</div>
+<h1 align="center"><b>Projeto em JAVA - Weg One</b></h1>
 <h3 align="center">Sistema de Cadastro e Consulta de Orientações WEG</h3>
 <br>
 <h3><b>O que é?</b></h3>

@@ -13,6 +13,7 @@ public class Tela_inicial {
 
 
 
+
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(45, 62, 80));
         menuLateral.setLayout(new BoxLayout(menuLateral, BoxLayout.Y_AXIS));

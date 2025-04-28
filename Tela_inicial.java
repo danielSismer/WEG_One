@@ -12,7 +12,9 @@ public class Tela_inicial {
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaMenus.setSize(900, 600);
+        TelaMenus.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaMenus.setLayout(new BorderLayout());
+
 
 
         JPanel menuLateral = new JPanel();
@@ -20,6 +22,7 @@ public class Tela_inicial {
         menuLateral.setLayout(new BoxLayout(menuLateral, BoxLayout.Y_AXIS));
         menuLateral.setPreferredSize(new Dimension(200, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
+
 
 
 
@@ -43,12 +46,7 @@ public class Tela_inicial {
         };
 
 
-        JButton botaoVoltar = new JButton("\uD83D\uDD19");
-        botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoVoltar.setBackground(new Color(0, 87, 156));
-        botaoVoltar.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoVoltar.setFocusPainted(false);
-        botaoVoltar.setForeground(new Color(255, 255, 255));
+
 
 
 
@@ -181,14 +179,35 @@ public class Tela_inicial {
         botao3Linhas.setBackground(new Color(0, 87, 156));
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botao3Linhas.setForeground(Color.WHITE);
+        botao3Linhas.setBounds(10, 10, 50, 30);
 
 
-        JButton botaoPesquisa = new JButton("\uD83C\uDF10");
-        botaoPesquisa.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoPesquisa.setFocusPainted(false);
-        botaoPesquisa.setBackground(new Color(0, 87, 156));
-        botaoPesquisa.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoPesquisa.setForeground(Color.WHITE);
+        JButton fecharMenu = new JButton("X");
+        fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
+        fecharMenu.setFocusPainted(false);
+        fecharMenu.setBackground(new Color(0, 87, 156));
+        fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        fecharMenu.setForeground(Color.WHITE);
+        fecharMenu.setBounds(10, 10, 50, 30);
+        fecharMenu.setVisible(false);
+
+
+        boolean[] menuVisivel1 = {false};
+        botao3Linhas.addActionListener(e -> {
+            menuLateral.setVisible(true);
+            botao3Linhas.setVisible(false);
+            fecharMenu.setVisible(true);
+            headerPanel.revalidate();
+            headerPanel.repaint();
+        });
+
+
+        JButton botaoIdioma = new JButton("\uD83C\uDF10");
+        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoIdioma.setFocusPainted(false);
+        botaoIdioma.setBackground(new Color(0, 87, 156));
+        botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botaoIdioma.setForeground(Color.WHITE);
 
 
 
@@ -196,7 +215,7 @@ public class Tela_inicial {
 
 
         headerPanel.add(botao3Linhas, BorderLayout.WEST);
-        headerPanel.add(botaoPesquisa, BorderLayout.EAST);
+        headerPanel.add(botaoIdioma, BorderLayout.EAST);
 
 
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
@@ -243,7 +262,7 @@ public class Tela_inicial {
 
 
 
-        final boolean[] menuVisivel = {false};
+        boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {
             menuVisivel[0] = !menuVisivel[0];
             menuLateral.setVisible(menuVisivel[0]);
@@ -253,7 +272,7 @@ public class Tela_inicial {
 
 
 
-        botaoPesquisa.addActionListener(e -> {
+        botaoIdioma.addActionListener(e -> {
             JOptionPane.showMessageDialog(TelaMenus, "Funcionalidade de pesquisa aqui.");
         });
 

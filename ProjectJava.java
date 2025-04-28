@@ -6,55 +6,51 @@ public class ProjectJava {
 
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+
+        // objetos para a classe manual de operação
         ManualDeOperacao manualMotor = new ManualDeOperacao();
         ManualDeOperacao manualGerador = new ManualDeOperacao();
 
-       ProcedimentodeSeguranca ProcedimentoEletrico = new ProcedimentodeSeguranca();
-       ProcedimentodeSeguranca ProcedimentoChoque = new ProcedimentodeSeguranca();
+        // objetos para a classe procedimentos de segurança
+        ProcedimentodeSeguranca ProcedimentoEletrico = new ProcedimentodeSeguranca();
+        ProcedimentodeSeguranca ProcedimentoChoque = new ProcedimentodeSeguranca();
 
+        String[] itensManualDeOperacao = new String[20];
 
+        itensManualDeOperacao[0] = manualMotor.nomeProduto;
+        itensManualDeOperacao[1] = manualGerador.nomeProduto;
 
+        String[] itensProcedimentodeSeguranca = new String[20];
 
+        itensProcedimentodeSeguranca[0] = ProcedimentoChoque.nomeProduto;
+        itensProcedimentodeSeguranca[1] = ProcedimentoEletrico.nomeProduto;
 
-        String[] manualDeOperacao = new String[20];
-
-        manualDeOperacao[0] = manualGerador.getNomeProduto();
-        manualDeOperacao[1] = manualMotor.getNomeProduto();
-
-
-
-
-        String[] ProcedimentodeSeguranca = new String[20];
-
-        ProcedimentodeSeguranca[0] = manualGerador.getNomeProduto();
-        ProcedimentodeSeguranca[1] = manualMotor.getNomeProduto();
-
-
-
-
-
-
-
-
-
+        // setar valores para manualMotor
         manualMotor.setNomeProduto("Motores Elétricos WEG");
-
         manualMotor.setComoUsar("Antes de iniciar a operação do motor, verifique a integridade dos cabos de alimentação " +
                 "e a conexão correta à rede elétrica. Aumente gradualmente a carga no motor para evitar picos de corrente no início da " +
                 "operação. Monitore a temperatura do motor durante as primeiras horas de operação, especialmente em motores de alta potência.");
-
         manualMotor.setExemploPratico("Em motores WEG de indução, sempre verifique a configuração de partida (estrela-triângulo ou partida direta) conforme a especificação " +
                 "do fabricante para evitar sobrecarga no momento da partida.\n");
 
-
+        //setar valores para manualGerador
         manualGerador.setNomeProduto("Operação de Geradores WEG");
         manualGerador.setComoUsar("Descrição: Certifique-se de que o gerador está corretamente instalado e com os níveis de óleo e combustível adequados. Durante a " +
                 "operação, monitore constantemente os parâmetros de tensão e corrente. Evite sobrecarga, pois pode danificar o gerador e" +
-                " reduzir a vida útil dos componentes.\n");
+                " reduzir a vida útil dos componentes.");
         manualGerador.setExemploPratico("Exemplo Prático: Para geradores WEG de maior capacidade, é recomendado o uso de sistemas de monitoramento remoto para verificar" +
                 " a performance e o status dos componentes, como nível de combustível e temperatura.");
 
-        Scanner input = new Scanner(System.in);
+        // setar valores para Procedimentoeletrico
+        ProcedimentoEletrico.setNomeProduto("");
+        ProcedimentoEletrico.setComoUsar("");
+        ProcedimentoEletrico.setExemploPratico("");
+
+        // setar valores para procedimentosChoque
+        ProcedimentoChoque.setNomeProduto("");
+        ProcedimentoEletrico.setComoUsar("");
+        ProcedimentoChoque.setExemploPratico("");
 
         String orientacaoPT[] = {
 
@@ -116,9 +112,9 @@ public class ProjectJava {
 
                             if (categoria == 1) {
 
-                                for ( int cont = 0; cont < manualDeOperacao.length; cont++) {
+                                for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
 
-                                    System.out.println("Nome do Produto: " + manualDeOperacao[0]);
+                                    System.out.println("Nome do Produto: " + itensManualDeOperacao[0]);
 
                                 }
 
@@ -129,17 +125,17 @@ public class ProjectJava {
 
                                 if (escolha == 1) {
 
-                                    System.out.println("Nome do Produto: " + manualMotor.getNomeProduto());
-                                    System.out.println("Como Usar: " + manualMotor.getComoUsar());
-                                    System.out.println("Exemplo Pratico: " + manualMotor.getExemploPratico());
+                                    System.out.println("Nome do Produto: " + manualMotor.nomeProduto);
+                                    System.out.println("Como Usar: " + manualMotor.comoUsar);
+                                    System.out.println("Exemplo Pratico: " + manualMotor.exemploPratico);
 
                                 }
 
                                 else if ( escolha == 2) {
 
-                                    System.out.println("Nome do Produto: " + manualGerador.getNomeProduto());
-                                    System.out.println("Como Usar: " + manualGerador.getComoUsar());
-                                    System.out.println("Exemplo Pratico: " + manualGerador.getExemploPratico());
+                                    System.out.println("Nome do Produto: " + manualGerador.nomeProduto);
+                                    System.out.println("Como Usar: " + manualGerador.comoUsar);
+                                    System.out.println("Exemplo Pratico: " + manualGerador.exemploPratico);
 
                                 }
 
@@ -152,15 +148,15 @@ public class ProjectJava {
                         case 4:
                             System.out.println("\n\nDigite qual orientação você deseja excluir: ");
 
-                            while(manualDeOperacao != null){
-                                for (int i = 0; i <= manualDeOperacao.length; i++) {
+                            while(itensManualDeOperacao != null){
+                                for (int i = 0; i <= itensManualDeOperacao.length; i++) {
                                     System.out.println(i);
                                 }
                             }
 
                             int escolhaExclusao = input.nextInt();
 
-                            manualDeOperacao[escolhaExclusao] = null;
+                            itensManualDeOperacao[escolhaExclusao] = null;
 
                             System.out.println("\nManual de Operação excluído com êxito!");
 

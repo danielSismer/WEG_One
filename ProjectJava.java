@@ -148,9 +148,10 @@ public class ProjectJava {
                         case 4:
                             System.out.println("\n\nDigite qual orientação você deseja excluir: ");
 
-                            while(itensManualDeOperacao != null){
-                                for (int i = 0; i <= itensManualDeOperacao.length; i++) {
-                                    System.out.println(i);
+
+                            for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                if(itensManualDeOperacao[i] != null){
+                                    System.out.println(i + ": " + itensManualDeOperacao[i]);
                                 }
                             }
 

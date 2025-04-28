@@ -7,6 +7,7 @@ import java.net.URL;
 public class Tela_inicial {
     public static void main(String[] args) {
 
+        OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
 
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,24 +15,15 @@ public class Tela_inicial {
         TelaMenus.setLayout(new BorderLayout());
 
 
-
-
-
-
-
         JPanel menuLateral = new JPanel();
-        menuLateral.setBackground(new Color(45, 62, 80));
+        menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(new BoxLayout(menuLateral, BoxLayout.Y_AXIS));
         menuLateral.setPreferredSize(new Dimension(200, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
 
 
-        String[] opcoes = {
-                "Cadastrar Orientação",
-                "Editar Orientação",
-                "Excluir Orientação",
-                "Sair"
-        };
+
+
 
 
         String[] opcoesCadastro = {
@@ -51,145 +43,154 @@ public class Tela_inicial {
         };
 
 
-
-
-        for (String opcao : opcoes) {
-            JButton botao = new JButton(opcao);
-            botao.setAlignmentX(Component.CENTER_ALIGNMENT);
-            botao.setMaximumSize(new Dimension(180, 50));
-            botao.setFont(new Font("Arial", Font.BOLD, 14));
-            botao.setFocusPainted(false);
-            botao.setBackground(new Color(52, 152, 219));
-            botao.setForeground(Color.WHITE);
-            botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        JButton botaoVoltar = new JButton("\uD83D\uDD19");
+        botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoVoltar.setBackground(new Color(0, 87, 156));
+        botaoVoltar.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botaoVoltar.setFocusPainted(false);
+        botaoVoltar.setForeground(new Color(255, 255, 255));
 
 
 
+        menuLateral.add(Box.createVerticalStrut(69));
+        JButton botaoCadastrar = new JButton("Cadastrar");
+        botaoCadastrar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoCadastrar.setMaximumSize(new Dimension(180, 50));
+        botaoCadastrar.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoCadastrar.setFocusPainted(false);
+        botaoCadastrar.setBackground(new Color(52, 152, 219));
+        botaoCadastrar.setForeground(Color.WHITE);
+        botaoCadastrar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        menuLateral.add(botaoCadastrar);
+        menuLateral.add(Box.createVerticalStrut(15));
+        botaoCadastrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ClickMenu.ClickCadastrar();
+
+            }
+        });
 
 
+        JButton botaoPesquisar = new JButton("Pesquisar");
+        botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoPesquisar.setMaximumSize(new Dimension(180, 50));
+        botaoPesquisar.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoPesquisar.setFocusPainted(false);
+        botaoPesquisar.setBackground(new Color(52, 152, 219));
+        botaoPesquisar.setForeground(Color.WHITE);
+        botaoPesquisar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        menuLateral.add(botaoPesquisar);
+        menuLateral.add(Box.createVerticalStrut(15));
 
-            botao.addActionListener(e -> {
-                if (opcao.equals("Sair")) {
-                    System.exit(0);
-                } else {
+        botaoPesquisar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+                ClickMenu.ClickPesquisar();
 
-                }
-            });
-            botao.addActionListener(e -> {
-                if (opcao.equals("Cadastrar Orientação")) {
-
-
-                    TelaMenus.setVisible(false);
-
-
-
-
-                    JFrame telaDeCadastro = new JFrame("Cadastro");
-                    telaDeCadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    telaDeCadastro.setSize(900, 600);
-                    telaDeCadastro.setLayout(new BorderLayout());
-                    telaDeCadastro.setVisible(true);
+            }
+        });
 
 
-                } else {
+        JButton botaoEditar = new JButton("Editar");
+        botaoEditar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoEditar.setMaximumSize(new Dimension(180, 50));
+        botaoEditar.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoEditar.setFocusPainted(false);
+        botaoEditar.setBackground(new Color(52, 152, 219));
+        botaoEditar.setForeground(Color.WHITE);
+        botaoEditar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        menuLateral.add(botaoEditar);
+        menuLateral.add(Box.createVerticalStrut(15));
 
 
-                }
+        botaoEditar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+                ClickMenu.ClickEditar();
 
-            });
-
-
-
-
-            botao.addActionListener(e -> {
-                if (opcao.equals("Editar Orientação")) {
-
-
-                    TelaMenus.setVisible(false);
-
-
-
-
-                    JFrame telaDeEditar = new JFrame("Editar Orientação");
-                    telaDeEditar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    telaDeEditar.setSize(900, 600);
-                    telaDeEditar.setLayout(new BorderLayout());
-                    telaDeEditar.setVisible(true);
-
-
-                } else {
-
-
-                }
-
-
-            });
+            }
+        });
 
 
 
 
-            botao.addActionListener(e -> {
-                if (opcao.equals("Excluir Orientação")) {
+        JButton botaoExcluir = new JButton("Excluir");
+        botaoExcluir.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoExcluir.setMaximumSize(new Dimension(180, 50));
+        botaoExcluir.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoExcluir.setFocusPainted(false);
+        botaoExcluir.setBackground(new Color(52, 152, 219));
+        botaoExcluir.setForeground(Color.WHITE);
+        botaoExcluir.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        menuLateral.add(botaoExcluir);
+        menuLateral.add(Box.createVerticalStrut(15));
 
 
-                    TelaMenus.setVisible(false);
+        botaoExcluir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+                ClickMenu.ClickExcluir();
 
-
-
-                    JFrame telaDeExcluir = new JFrame("Excluir Orientação");
-                    telaDeExcluir.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    telaDeExcluir.setSize(900, 600);
-                    telaDeExcluir.setLayout(new BorderLayout());
-                    telaDeExcluir.setVisible(true);
-
-
-                } else {
-
-
-                }
-
-
-            });
+            }
+        });
 
 
 
+        JButton botaoSair = new JButton("Sair");
+        botaoSair.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoSair.setMaximumSize(new Dimension(180, 50));
+        botaoSair.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoSair.setFocusPainted(false);
+        botaoSair.setBackground(new Color(52, 152, 219));
+        botaoSair.setForeground(Color.WHITE);
+        botaoSair.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        menuLateral.add(botaoSair);
+        menuLateral.add(Box.createVerticalStrut(15));
 
+        botaoSair.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+                ClickMenu.ClickSair();
 
-            menuLateral.add(Box.createRigidArea(new Dimension(0, 15)));
-            menuLateral.add(botao);
-        }
+            }
+        });
 
 
 
 
         JPanel painelConteudo = new JPanel(new BorderLayout());
-        painelConteudo.setBackground(Color.WHITE);
+        painelConteudo.setBackground(new Color(255, 255, 255));
 
 
         JPanel headerPanel = new JPanel(new BorderLayout());
-        headerPanel.setBackground(Color.WHITE);
+        headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
 
 
 
         JButton botao3Linhas = new JButton("☰");
-        botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 20));
+        botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
         botao3Linhas.setFocusPainted(false);
-        botao3Linhas.setBackground(Color.WHITE);
+        botao3Linhas.setBackground(new Color(0, 87, 156));
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botao3Linhas.setForeground(Color.WHITE);
 
 
-        // Botão Pesquisa (com ícone de lupa)
-        JButton botaoPesquisa = new JButton("🔍");
-        botaoPesquisa.setFont(new Font("SansSerif", Font.PLAIN, 20));
+        JButton botaoPesquisa = new JButton("\uD83C\uDF10");
+        botaoPesquisa.setFont(new Font("SansSerif", Font.PLAIN, 30));
         botaoPesquisa.setFocusPainted(false);
-        botaoPesquisa.setBackground(Color.WHITE);
+        botaoPesquisa.setBackground(new Color(0, 87, 156));
         botaoPesquisa.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botaoPesquisa.setForeground(Color.WHITE);
+
+
 
 
 
@@ -204,7 +205,7 @@ public class Tela_inicial {
 
 
         JPanel painelCentral = new JPanel();
-        painelCentral.setBackground(new Color(25, 25, 30));
+        painelCentral.setBackground(new Color(255, 255, 255));
         painelCentral.setLayout(new BoxLayout(painelCentral, BoxLayout.Y_AXIS));
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -214,7 +215,7 @@ public class Tela_inicial {
 
 
         try {
-            ImageIcon icon = new ImageIcon("WegOne-imagen.jpg");
+            ImageIcon icon = new ImageIcon("WegOne.jpg");
             Image imagem = icon.getImage().getScaledInstance(400, 250, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);

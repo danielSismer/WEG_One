@@ -12,19 +12,43 @@ public class ProjectJava {
         ManualDeOperacao manualMotor = new ManualDeOperacao();
         ManualDeOperacao manualGerador = new ManualDeOperacao();
 
-        // objetos para a classe procedimentos de segurança
-        ProcedimentodeSeguranca ProcedimentoEletrico = new ProcedimentodeSeguranca();
-        ProcedimentodeSeguranca ProcedimentoChoque = new ProcedimentodeSeguranca();
-
         String[] itensManualDeOperacao = new String[20];
 
         itensManualDeOperacao[0] = manualMotor.nomeProduto;
         itensManualDeOperacao[1] = manualGerador.nomeProduto;
 
+        // objetos para a classe procedimentos de segurança
+        ProcedimentodeSeguranca procedimentoEletrico = new ProcedimentodeSeguranca();
+        ProcedimentodeSeguranca procedimentoChoque = new ProcedimentodeSeguranca();
+
         String[] itensProcedimentodeSeguranca = new String[20];
 
-        itensProcedimentodeSeguranca[0] = ProcedimentoChoque.nomeProduto;
-        itensProcedimentodeSeguranca[1] = ProcedimentoEletrico.nomeProduto;
+        itensProcedimentodeSeguranca[0] = procedimentoChoque.nomeProduto;
+        itensProcedimentodeSeguranca[1] = procedimentoEletrico.nomeProduto;
+
+        ManutencaoReparo manutencaoReparo01 = new ManutencaoReparo();
+        ManutencaoReparo manutencaoReparo02 = new ManutencaoReparo();
+
+        String [] itensManutencaoReparo = new String[20];
+
+        itensManutencaoReparo [0] = manutencaoReparo01.nomeProduto;
+        itensManutencaoReparo [1] = manutencaoReparo02.nomeProduto;
+
+        TesteDiagnostico testeDiagnostico1 = new TesteDiagnostico();
+        TesteDiagnostico testeDiagnostico2 = new TesteDiagnostico();
+
+        String [] itensTesteDiagnostico = new String[20];
+
+        itensTesteDiagnostico [0] = testeDiagnostico1.nomeProduto;
+        itensTesteDiagnostico [1] = testeDiagnostico2.nomeProduto;
+
+        ManualCondutaSetorial manualCondutaSetorial01 = new ManualCondutaSetorial();
+        ManualCondutaSetorial manualCondutaSetorial2 = new ManualCondutaSetorial();
+
+        String [] itensManualCondutaSetorial = new String[20];
+
+        itensManualCondutaSetorial [0] = manualCondutaSetorial01.nomeSetor;
+        itensManualCondutaSetorial [1] = manualCondutaSetorial2.nomeSetor;
 
         // setar valores para manualMotor
         manualMotor.setNomeProduto("Motores Elétricos WEG");
@@ -43,14 +67,14 @@ public class ProjectJava {
                 " a performance e o status dos componentes, como nível de combustível e temperatura.");
 
         // setar valores para Procedimentoeletrico
-        ProcedimentoEletrico.setNomeProduto("");
-        ProcedimentoEletrico.setComoUsar("");
-        ProcedimentoEletrico.setExemploPratico("");
+        procedimentoEletrico.setNomeProduto("");
+        procedimentoEletrico.setComoUsar("");
+        procedimentoEletrico.setExemploPratico("");
 
         // setar valores para procedimentosChoque
-        ProcedimentoChoque.setNomeProduto("");
-        ProcedimentoEletrico.setComoUsar("");
-        ProcedimentoChoque.setExemploPratico("");
+        procedimentoChoque.setNomeProduto("");
+        procedimentoEletrico.setComoUsar("");
+        procedimentoChoque.setExemploPratico("");
 
         String orientacaoPT[] = {
 

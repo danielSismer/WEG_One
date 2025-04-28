@@ -111,32 +111,6 @@ public class ProjectJava {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        String orientacaoPT[] = {
-
-
-        };
-        String orientacaoUS[] = {
-
-
-        };
-        String orientacaoDE[] = {
-
-
-        };
-
-
         int escolha, menuEscolha = 0;
 
 
@@ -189,15 +163,18 @@ public class ProjectJava {
                             " 4- Excluir Orientação: ", " 5- Sair: "};
 
 
+
                     switch (menuEscolha) {
                         case 1:
+                            System.out.println(" Em qual orientação você deseja fazer um novo cadastro?  " + messages_pt.getString("Orientacoes"));
+                            int resposta = input.nextInt();
 
 
                             break;
 
 
                         case 2:
-                            System.out.println("1-Manual de operação\n 2-Procedimento de Segurança \n 3-Manutenção e Reparos " +
+                            System.out.println("1-Manual de operação \n 2-Procedimento de Segurança \n 3-Manutenção e Reparos " +
                                     "\n 4-Testes e Diagnóstico \n 5-Manual de Conduta e Operações Setoriais  ");
                             int categoria = input.nextInt();
 

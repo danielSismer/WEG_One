@@ -1,7 +1,7 @@
 public class TesteDiagnostico {
 
     String nomeProduto;
-    String observacaoTeste;
+    String exemploPratico;
     String descricaoDiagnostico;
 
     public void setNomeProduto(String nomeProduto) {
@@ -10,9 +10,9 @@ public class TesteDiagnostico {
 
     }
 
-    public void setObservacaoTeste (String observacaoTeste){
+    public void setexemploPratico (String exemploPratico){
 
-        this.observacaoTeste = observacaoTeste;
+        this.exemploPratico = exemploPratico;
 
     }
 

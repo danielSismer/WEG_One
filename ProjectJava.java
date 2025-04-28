@@ -14,8 +14,11 @@ public class ProjectJava {
 
         String[] itensManualDeOperacao = new String[20];
 
-        itensManualDeOperacao[0] = manualMotor.nomeProduto;
-        itensManualDeOperacao[1] = manualGerador.nomeProduto;
+        manualMotor.setNomeProduto("Motores Elétricos WEG");
+        manualGerador.setNomeProduto("Operação de Geradores WEG");
+
+        itensManualDeOperacao[0] = manualMotor.getNomeProduto();
+        itensManualDeOperacao[1] = manualGerador.getNomeProduto();
 
         // objetos para a classe procedimentos de segurança
         ProcedimentodeSeguranca procedimentoEletrico = new ProcedimentodeSeguranca();
@@ -51,7 +54,6 @@ public class ProjectJava {
         itensManualCondutaSetorial [1] = manualCondutaSetorial2.nomeSetor;
 
         // setar valores para manualMotor
-        manualMotor.setNomeProduto("Motores Elétricos WEG");
         manualMotor.setComoUsar("Antes de iniciar a operação do motor, verifique a integridade dos cabos de alimentação " +
                 "e a conexão correta à rede elétrica. Aumente gradualmente a carga no motor para evitar picos de corrente no início da " +
                 "operação. Monitore a temperatura do motor durante as primeiras horas de operação, especialmente em motores de alta potência.");
@@ -121,7 +123,7 @@ public class ProjectJava {
                     menuEscolha = input.nextInt();
 
 
-                    String[] menuOpcoes = {" 1- Cadastrar Orientação: ", " 2- Pesquisar Orientação: ", " 3- Editar Orientação: ",
+                    String[] menuOpcoes = {"\n\n1- Cadastrar Orientação: ", " 2- Pesquisar Orientação: ", " 3- Editar Orientação: ",
                             " 4- Excluir Orientação: ", " 5- Sair: "};
 
                     switch (menuEscolha) {
@@ -137,15 +139,18 @@ public class ProjectJava {
                             if (categoria == 1) {
 
                                 for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                    if (itensManualDeOperacao[cont] != null) {
 
-                                    System.out.println("Nome do Produto: " + itensManualDeOperacao[0]);
+
+                                        System.out.println((cont + 1) + " " + itensManualDeOperacao[cont]);
+
+                                    }
 
                                 }
 
-                                System.out.print("Digite aqui:");
+                                System.out.print("Digite aqui: ");
                                 escolha = input.nextInt();
-
-
+                                System.out.println("\n");
 
                                 if (escolha == 1) {
 

@@ -14,7 +14,17 @@ public class ManutencaoReparo {
         this.descricaoManutencao = descricaoManutencao;
 
     }
+
     public void setExemploPratico (String exemploPratico) {
+
         this.exemploPratico = exemploPratico;
     }
+    public String toString(){
+
+        return "Nome Produto: " + this.nomeProduto
+                + "\nDescrição Manutencao: " + this.descricaoManutencao
+                + "\nExemplo Pratico: " + this.exemploPratico;
+
+    }
 }
+

@@ -22,6 +22,13 @@ public class ManualDeOperacao {
 
     }
 
+    public String toString() {
+
+        return "Nome Produto: " + this.nomeProduto
+                + "\nComo Usar: " + this.comoUsar
+                + "\nExemplo Pratico: " + this.exemploPratico;
+    }
+
 
 
 

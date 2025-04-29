@@ -21,4 +21,11 @@ public class TesteDiagnostico {
         this.descricaoDiagnostico = descricaoDiagnostico;
 
     }
+
+    public String toString() {
+
+        return "Nome Produto: " + this.nomeProduto
+                + "\nExemplo Pratico: " + this.exemploPratico
+                +"\nDescrição diagnostico: " + this.descricaoDiagnostico;
+    }
 }

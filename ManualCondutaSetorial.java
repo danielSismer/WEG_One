@@ -21,4 +21,12 @@ public class ManualCondutaSetorial {
         this.observacoes = observacoes;
 
     }
+
+    public String toString() {
+
+        return "Nome Setor: " + this.nomeSetor
+                + "\nConduta Esperada: " + this.condutaEsperada
+                + "\nObservacoes: " + this.observacoes;
+
+    }
 }

@@ -1,13 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.net.URL;
 
 
-public class Tela_inicial {
+public class Index2 {
     public static void main(String[] args) {
 
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
+        LoginAdm LoginADM = new LoginAdm();
+
 
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,11 +20,20 @@ public class Tela_inicial {
 
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(0, 87, 156));
-        menuLateral.setLayout(new BoxLayout(menuLateral, BoxLayout.Y_AXIS));
-        menuLateral.setPreferredSize(new Dimension(200, TelaMenus.getHeight()));
+        menuLateral.setLayout(null);
+        menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
 
 
+        JButton fecharMenu = new JButton("☰");
+        fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
+        fecharMenu.setFocusPainted(false);
+        fecharMenu.setBackground(new Color(0, 87, 156));
+        fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        fecharMenu.setForeground(Color.WHITE);
+        fecharMenu.setBounds(9, 19, 50, 30);
+        fecharMenu.setVisible(false);
+        menuLateral.add(fecharMenu);
 
 
 
@@ -47,31 +57,7 @@ public class Tela_inicial {
 
 
 
-
-
-
-        menuLateral.add(Box.createVerticalStrut(69));
-        JButton botaoCadastrar = new JButton("Cadastrar");
-        botaoCadastrar.setAlignmentX(Component.CENTER_ALIGNMENT);
-        botaoCadastrar.setMaximumSize(new Dimension(180, 50));
-        botaoCadastrar.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoCadastrar.setFocusPainted(false);
-        botaoCadastrar.setBackground(new Color(52, 152, 219));
-        botaoCadastrar.setForeground(Color.WHITE);
-        botaoCadastrar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        menuLateral.add(botaoCadastrar);
-        menuLateral.add(Box.createVerticalStrut(15));
-        botaoCadastrar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                ClickMenu.ClickCadastrar();
-
-            }
-        });
-
-
-        JButton botaoPesquisar = new JButton("Pesquisar");
+        JButton botaoPesquisar = new JButton("Pesquisar Orientações");
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoPesquisar.setMaximumSize(new Dimension(180, 50));
         botaoPesquisar.setFont(new Font("Arial", Font.BOLD, 14));
@@ -79,8 +65,9 @@ public class Tela_inicial {
         botaoPesquisar.setBackground(new Color(52, 152, 219));
         botaoPesquisar.setForeground(Color.WHITE);
         botaoPesquisar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoPesquisar.setBounds(9, 69, 210, 50);
         menuLateral.add(botaoPesquisar);
-        menuLateral.add(Box.createVerticalStrut(15));
+
 
         botaoPesquisar.addActionListener(new ActionListener() {
             @Override
@@ -92,47 +79,22 @@ public class Tela_inicial {
         });
 
 
-        JButton botaoEditar = new JButton("Editar");
-        botaoEditar.setAlignmentX(Component.CENTER_ALIGNMENT);
-        botaoEditar.setMaximumSize(new Dimension(180, 50));
-        botaoEditar.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoEditar.setFocusPainted(false);
-        botaoEditar.setBackground(new Color(52, 152, 219));
-        botaoEditar.setForeground(Color.WHITE);
-        botaoEditar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        menuLateral.add(botaoEditar);
-        menuLateral.add(Box.createVerticalStrut(15));
+        JButton loginADM = new JButton("Login do ADM");
+        loginADM.setAlignmentX(Component.CENTER_ALIGNMENT);
+        loginADM.setMaximumSize(new Dimension(180, 50));
+        loginADM.setFont(new Font("Arial", Font.BOLD, 14));
+        loginADM.setFocusPainted(false);
+        loginADM.setBackground(new Color(52, 152, 219));
+        loginADM.setForeground(Color.WHITE);
+        loginADM.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        loginADM.setBounds(9, 134, 210, 50);
+        menuLateral.add(loginADM);
 
-
-        botaoEditar.addActionListener(new ActionListener() {
+        loginADM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ClickMenu.ClickEditar();
-
-            }
-        });
-
-
-
-
-        JButton botaoExcluir = new JButton("Excluir");
-        botaoExcluir.setAlignmentX(Component.CENTER_ALIGNMENT);
-        botaoExcluir.setMaximumSize(new Dimension(180, 50));
-        botaoExcluir.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoExcluir.setFocusPainted(false);
-        botaoExcluir.setBackground(new Color(52, 152, 219));
-        botaoExcluir.setForeground(Color.WHITE);
-        botaoExcluir.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        menuLateral.add(botaoExcluir);
-        menuLateral.add(Box.createVerticalStrut(15));
-
-
-        botaoExcluir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                ClickMenu.ClickExcluir();
+                LoginADM.clickLoginAdm();
 
             }
         });
@@ -147,8 +109,9 @@ public class Tela_inicial {
         botaoSair.setBackground(new Color(52, 152, 219));
         botaoSair.setForeground(Color.WHITE);
         botaoSair.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoSair.setBounds(9, 199, 210, 50);
         menuLateral.add(botaoSair);
-        menuLateral.add(Box.createVerticalStrut(15));
+
 
         botaoSair.addActionListener(new ActionListener() {
             @Override
@@ -162,13 +125,17 @@ public class Tela_inicial {
 
 
 
+
+
         JPanel painelConteudo = new JPanel(new BorderLayout());
         painelConteudo.setBackground(new Color(255, 255, 255));
 
 
-        JPanel headerPanel = new JPanel(new BorderLayout());
+        JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
+
 
 
 
@@ -179,24 +146,22 @@ public class Tela_inicial {
         botao3Linhas.setBackground(new Color(0, 87, 156));
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botao3Linhas.setForeground(Color.WHITE);
-        botao3Linhas.setBounds(10, 10, 50, 30);
+        botao3Linhas.setBounds(-3, 0, 50, 30);
 
 
-        JButton fecharMenu = new JButton("X");
-        fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
-        fecharMenu.setFocusPainted(false);
-        fecharMenu.setBackground(new Color(0, 87, 156));
-        fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        fecharMenu.setForeground(Color.WHITE);
-        fecharMenu.setBounds(10, 10, 50, 30);
-        fecharMenu.setVisible(false);
-
-
-        boolean[] menuVisivel1 = {false};
         botao3Linhas.addActionListener(e -> {
             menuLateral.setVisible(true);
             botao3Linhas.setVisible(false);
             fecharMenu.setVisible(true);
+            headerPanel.revalidate();
+            headerPanel.repaint();
+        });
+
+
+        fecharMenu.addActionListener(e -> {
+            menuLateral.setVisible(false);
+            botao3Linhas.setVisible(true);
+            fecharMenu.setVisible(false);
             headerPanel.revalidate();
             headerPanel.repaint();
         });
@@ -214,9 +179,12 @@ public class Tela_inicial {
 
 
 
-        headerPanel.add(botao3Linhas, BorderLayout.WEST);
-        headerPanel.add(botaoIdioma, BorderLayout.EAST);
 
+
+
+        headerPanel.add(botao3Linhas);
+        headerPanel.add(Box.createHorizontalGlue());
+        headerPanel.add(botaoIdioma);
 
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
 
@@ -235,7 +203,7 @@ public class Tela_inicial {
 
         try {
             ImageIcon icon = new ImageIcon("WegOne.jpg");
-            Image imagem = icon.getImage().getScaledInstance(400, 250, Image.SCALE_SMOOTH);
+            Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
 

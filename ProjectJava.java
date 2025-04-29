@@ -17,37 +17,44 @@ public class ProjectJava {
 
         ManualDeOperacao manualMotor = new ManualDeOperacao();
         ManualDeOperacao manualGerador = new ManualDeOperacao();
-
+        ManualDeOperacao  manualCadastro = new ManualDeOperacao();
         itensManualDeOperacao[0] = manualMotor;
         itensManualDeOperacao[1] = manualGerador;
+        itensManualDeOperacao[2] = manualCadastro;
 
 
         ProcedimentodeSeguranca procedimentoEletrico = new ProcedimentodeSeguranca();
         ProcedimentodeSeguranca procedimentoChoque = new ProcedimentodeSeguranca();
-
+        ProcedimentodeSeguranca   procedimentoCadastro = new ProcedimentodeSeguranca();
         itensProcedimentodeSeguranca[0] = procedimentoChoque;
         itensProcedimentodeSeguranca[1] = procedimentoEletrico;
+        itensProcedimentodeSeguranca[2] = procedimentoCadastro;
 
 
         ManutencaoReparo manutencaoReparoMotorEletrico = new ManutencaoReparo();
         ManutencaoReparo manutencaoReparoTransformadores = new ManutencaoReparo();
+        ManutencaoReparo manutencaoReparoCadastro = new ManutencaoReparo();
 
         itensManutencaoReparo [0] = manutencaoReparoMotorEletrico;
         itensManutencaoReparo [1] = manutencaoReparoTransformadores;
-
+        itensManutencaoReparo [2] = manutencaoReparoCadastro;
 
         TesteDiagnostico testeDiagnosticoMotores = new TesteDiagnostico();
         TesteDiagnostico testeDiagnosticoFalhas = new TesteDiagnostico();
+        TesteDiagnostico testeDiagnosticoCadastro = new TesteDiagnostico();
 
         itensTesteDiagnostico [0] = testeDiagnosticoMotores;
         itensTesteDiagnostico [1] = testeDiagnosticoFalhas;
+        itensTesteDiagnostico [2] = testeDiagnosticoCadastro;
 
 
         ManualCondutaSetorial manualCondutaSetorialMontagem = new ManualCondutaSetorial();
         ManualCondutaSetorial manualCondutaSetorialManutencao = new ManualCondutaSetorial();
+        ManualCondutaSetorial manualCondutaSetorialCadastro = new ManualCondutaSetorial();
 
         itensManualCondutaSetorial [0] = manualCondutaSetorialMontagem;
         itensManualCondutaSetorial [1] = manualCondutaSetorialManutencao;
+        itensManualCondutaSetorial [2] = manualCondutaSetorialCadastro;
 
         manualMotor.setNomeProduto("Motores Elétricos WEG");
         manualMotor.setComoUsar("Antes de iniciar a operação do motor, verifique a integridade dos cabos de alimentação e a conexão correta à rede elétrica. Aumente gradualmente a carga no motor para evitar picos de corrente no início da operação. Monitore a temperatura do motor durante as primeiras horas de operação, especialmente em motores de alta potência.");
@@ -140,9 +147,70 @@ public class ProjectJava {
 
                     switch (menuEscolha) {
                         case 1:
-                            System.out.println(" Em qual orientação você deseja fazer um novo cadastro?  " + messages_pt.getString("Orientacoes"));
-                            int resposta = input.nextInt();
+                            boolean continuarCadastro = true;
 
+                            while (continuarCadastro) {
+                                System.out.println("Em qual orientação você deseja fazer um novo cadastro? " + messages_pt.getString("Orientacoes"));
+                                int resposta = input.nextInt();
+
+
+                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                    if (itensManualDeOperacao[cont] != null) {
+
+                                    }
+                                }
+
+                                switch (resposta) {
+                                    case 1:
+                                        for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                            if (itensManualDeOperacao[i] != null) {
+                                                manualCadastro.cadastrarProdutoOperacao();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    case 2:
+                                        for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                            if (itensManualDeOperacao[i] != null) {
+                                                procedimentoCadastro.cadastrarProdutoSegurança();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    case 3:
+                                        for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                            if (itensManualDeOperacao[i] != null) {
+                                                manutencaoReparoCadastro.cadastrarProdutoReparo();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    case 4:
+                                        for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                            if (itensManualDeOperacao[i] != null) {
+                                                testeDiagnosticoCadastro.cadastrarProdutoDiagnostico();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    case 5:
+                                        for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                            if (itensManualDeOperacao[i] != null) {
+                                                manualCondutaSetorialCadastro.cadastrarProdutoSetor();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        System.out.println("Por favor, digite um número válido para fazer um novo cadastro.");
+                                }
+
+                                System.out.println("Deseja cadastrar outro item? (1 - Sim / 0 - Não)");
+                                int continuar = input.nextInt();
+                                if (continuar == 0) {
+                                    continuarCadastro = false;
+                                }
+                            }
 
                             break;
 

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class TesteDiagnostico {
 
     String nomeProduto;
@@ -28,4 +30,30 @@ public class TesteDiagnostico {
                 + "\nExemplo Pratico: " + this.exemploPratico
                 +"\nDescrição diagnostico: " + this.descricaoDiagnostico;
     }
+    public String cadastrarProdutoDiagnostico( ) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o nome do produto: ");
+        this.nomeProduto = scanner.nextLine();
+
+        System.out.print("Digite a descrição do produto: ");
+        this.descricaoDiagnostico = scanner.nextLine();
+
+        System.out.print("Digite um exemplo prático: ");
+        this.exemploPratico = scanner.nextLine();
+
+        System.out.println("Produto cadastrado com sucesso!");
+        System.out.println("Nome: " + this.nomeProduto);
+        System.out.println("Como Usar: " + this.descricaoDiagnostico );
+        System.out.println("Exemplo Prático: " + this.exemploPratico);
+
+        return "Produto cadastrado: " + this.nomeProduto + " - " + this.descricaoDiagnostico + "-" + this.exemploPratico;
+
+
+    }
+
+
+
+
 }
+

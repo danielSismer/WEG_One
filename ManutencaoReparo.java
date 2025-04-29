@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ManutencaoReparo {
 
     String nomeProduto;
@@ -26,5 +28,25 @@ public class ManutencaoReparo {
                 + "\nExemplo Pratico: " + this.exemploPratico;
 
     }
-}
+    public String cadastrarProdutoReparo() {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Digite o nome do produto: ");
+        this.nomeProduto = scanner.nextLine();
+
+        System.out.print("Digite a descrição do produto: ");
+        this.descricaoManutencao  = scanner.nextLine();
+
+        System.out.print("Digite um exemplo prático: ");
+        this.exemploPratico = scanner.nextLine();
+
+        System.out.println("Produto cadastrado com sucesso!");
+        System.out.println("Nome: " + this.nomeProduto);
+        System.out.println("Como Usar: " + this.descricaoManutencao );
+        System.out.println("Exemplo Prático: " + this.exemploPratico);
+
+        return "Produto cadastrado: " + this.nomeProduto + " - " + this.descricaoManutencao  + "-" + this.exemploPratico;
+
+
+    }
+}

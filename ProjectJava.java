@@ -187,9 +187,6 @@ public class ProjectJava {
                             boolean continuarCadastro = true;
 
                             while (continuarCadastro) {
-                                System.out.println("Em qual orientação você deseja fazer um novo cadastro? " + messages_pt.getString("Orientacoes"));
-                                int resposta = input.nextInt();
-
 
                                 for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                     if (itensManualDeOperacao[cont] != null) {

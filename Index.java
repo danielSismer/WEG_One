@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 
 public class Index {
+
     public static void main(String[] args) {
 
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
@@ -219,7 +220,7 @@ public class Index {
         });
 
 
-        JButton botaoIdioma = new JButton("\uD83C\uDF10");
+        JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
         botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));

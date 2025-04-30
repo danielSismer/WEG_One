@@ -1,3 +1,5 @@
+import com.sun.tools.javac.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -5,96 +7,106 @@ import java.awt.event.ActionListener;
 
 public class LoginAdm {
 
-
     public void clickLoginAdm () {
+
+       Index.main(new String[]{});
 
         JFrame LoginADM = new JFrame("Login do Adm");
         LoginADM.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         LoginADM.setExtendedState(JFrame.MAXIMIZED_BOTH);
         LoginADM.setSize(900, 600);
-        LoginADM.setLayout(new BorderLayout());
+        LoginADM.setLayout(null);
 
 
-        JPanel painelFundo = new JPanel(new GridBagLayout());
-        painelFundo.setBackground(new Color(255, 255, 255));
-        LoginADM.add(painelFundo, BorderLayout.CENTER);
+        JPanel painelFundo = new JPanel();
+        painelFundo.setLayout(null);
+        painelFundo.setBackground(Color.WHITE);
+        painelFundo.setBounds(0, 0, 1920, 1080);
+        LoginADM.add(painelFundo);
 
 
         JPanel painelLogin = new JPanel();
-        painelLogin.setLayout(new BoxLayout(painelLogin, BoxLayout.Y_AXIS));
-        painelLogin.setBorder(BorderFactory.createEmptyBorder(440, 165, 30, 165));
+        painelLogin.setLayout(null);
         painelLogin.setBackground(new Color(0, 87, 156));
-
-
-        JLabel labelUsuario = new JLabel("Usuário:");
-        labelUsuario.setForeground(new Color(255, 255, 255));
-        labelUsuario.setFont(new Font("Arial", Font.BOLD, 25));
-
-        JTextField campoUsuario = new JTextField(10);
-        campoUsuario.setMaximumSize(new Dimension(Integer.MAX_VALUE, 110));
-
-
-        JLabel labelSenha = new JLabel("Senha:");
-        labelSenha.setForeground(new Color(255, 255, 255));
-        labelSenha.setFont(new Font("Arial", Font.BOLD, 25));
-
-
-        JPasswordField campoSenha = new JPasswordField(15);
-        campoSenha.setMaximumSize(new Dimension(Integer.MAX_VALUE, 110));
-
-        JButton botaoLogar = new JButton("Logar");
-        botaoLogar.setBorder(BorderFactory.createEmptyBorder(15, 100, 15, 100));
-        botaoLogar.setFont(new Font("Arial", Font.BOLD, 20));
-
-
-        painelLogin.add(labelUsuario);
-        painelLogin.add(Box.createVerticalStrut(15));
-        painelLogin.add(campoUsuario);
-        painelLogin.add(Box.createVerticalStrut(15));
-        painelLogin.add(labelSenha);
-        painelLogin.add(Box.createVerticalStrut(15));
-        painelLogin.add(campoSenha);
-        painelLogin.add(Box.createVerticalStrut(15));
-        painelLogin.add(botaoLogar);
-
-
+        painelLogin.setBounds(700, 300, 500, 400);
         painelFundo.add(painelLogin);
 
-        LoginADM.setLocationRelativeTo(null);
-        LoginADM.setVisible(true);
+        JLabel labelUsuario = new JLabel("Usuário:");
+        labelUsuario.setForeground(Color.WHITE);
+        labelUsuario.setFont(new Font("Arial", Font.BOLD, 25));
+        labelUsuario.setBounds(30, 30, 200, 30);
+        painelLogin.add(labelUsuario);
+
+        JTextField campoUsuario = new JTextField();
+        campoUsuario.setBounds(30, 70, 440, 50);
+        campoUsuario.setFont(new Font("Arial", Font.BOLD, 25));
+        painelLogin.add(campoUsuario);
+
+        JLabel labelSenha = new JLabel("Senha:");
+        labelSenha.setForeground(Color.WHITE);
+        labelSenha.setFont(new Font("Arial", Font.BOLD, 25));
+        labelSenha.setBounds(30, 140, 500, 30);
+        painelLogin.add(labelSenha);
+
+        JPasswordField campoSenha = new JPasswordField();
+        campoSenha.setBounds(30, 180, 440, 50);
+        campoSenha.setFont(new Font("Arial", Font.BOLD, 25));
+        painelLogin.add(campoSenha);
 
 
-        JPanel headerPanel = new JPanel(new BorderLayout());
-        headerPanel.setBackground(new Color(0, 87, 156));
-        headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        LoginADM.add(headerPanel, BorderLayout.NORTH);
 
-        JButton botaoIdioma = new JButton("\uD83C\uDF10");
-        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoIdioma.setFocusPainted(false);
-        botaoIdioma.setBackground(new Color(0, 87, 156));
-        botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoIdioma.setForeground(Color.WHITE);
-        headerPanel.add(botaoIdioma, BorderLayout.EAST);
+        painelLogin.add(Box.createVerticalStrut(30));
 
 
-        JButton botaoVoltar = new JButton("◀\uFE0F");
-        botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoVoltar.setBackground(new Color(0, 87, 156));
-        botaoVoltar.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoVoltar.setFocusPainted(false);
-        botaoVoltar.setForeground(new Color(255, 255, 255));
-        headerPanel.add(botaoVoltar, BorderLayout.WEST);
-        botaoVoltar.addActionListener(new ActionListener() {
+
+        JButton botaoLogar = new JButton("Logar");
+        botaoLogar.setFont(new Font("Arial", Font.BOLD, 20));
+        botaoLogar.setBounds(150, 260, 200, 50);
+        painelLogin.add(botaoLogar);
+
+        botaoLogar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                LoginADM.setVisible(false);
+                Index.main(new String[]{});
 
             }
         });
+
+
+        JPanel headerPanel = new JPanel();
+        headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
+        headerPanel.setBackground(new Color(0, 87, 156));
+        headerPanel.setBounds(0, 0, 1920, 80);
+        painelFundo.add(headerPanel);
+
+        JButton botaoIdioma = new JButton("\uD83C\uDF10");
+        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoIdioma.setBounds(1800, 20, 60, 40);
+        botaoIdioma.setFocusPainted(false);
+        botaoIdioma.setBackground(new Color(0, 87, 156));
+        botaoIdioma.setForeground(Color.WHITE);
+
+
+        JButton botaoVoltar = new JButton("◀️");
+        botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoVoltar.setBounds(20, 20, 60, 40);
+        botaoVoltar.setFocusPainted(false);
+        botaoVoltar.setBackground(new Color(0, 87, 156));
+        botaoVoltar.setForeground(Color.WHITE);
+
+
+        headerPanel.add(botaoVoltar);
+        headerPanel.add(Box.createHorizontalGlue());
+        headerPanel.add(botaoIdioma);
+
+        botaoVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LoginADM.setVisible(false);
+            }
+        });
+
+        LoginADM.setVisible(true);
     }
-
-
-
 }

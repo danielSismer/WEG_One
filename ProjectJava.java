@@ -2005,32 +2005,83 @@ public class ProjectJava {
 
 
                         case 4:
-                            System.out.println("\n\nDigite qual orientação você deseja excluir: ");
+                            System.out.println("\n\nDigite qual categoria de orientação você deseja excluir: ");
+                            System.out.println(messages_pt.getString("categoriaOrientacoes"));
+                            categoria = input.nextInt();
 
+                            if(categoria == 1) {
 
-
-
-                            for (int i = 0; i < itensManualDeOperacao.length; i++) {
-                                if(itensManualDeOperacao[i] != null){
-                                    System.out.println(i + ": " + itensManualDeOperacao[i]);
+                                for (int i = 0; i < itensManualDeOperacao.length; i++) {
+                                    if (itensManualDeOperacao[i] != null) {
+                                        System.out.println(i + ": " + itensManualDeOperacao[i].nomeProduto);
+                                    }
                                 }
+
+                                int escolhaExclusao = input.nextInt();
+
+                                itensManualDeOperacao[escolhaExclusao] = null;
+
+                                System.out.println("\nManual de Operação excluído com êxito!");
+
+                            }else if(categoria == 2){
+
+                                for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
+                                    if (itensProcedimentodeSeguranca[i] != null) {
+                                        System.out.println(i + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
+                                    }
+                                }
+
+                                int escolhaExclusao = input.nextInt();
+
+                                itensProcedimentodeSeguranca[escolhaExclusao] = null;
+
+                                System.out.println("\nProcedimento de segurança excluído com êxito!");
+
+                            }else if(categoria == 3){
+
+                                for (int i = 0; i < itensManutencaoReparo.length; i++) {
+                                    if (itensManutencaoReparo[i] != null) {
+                                        System.out.println(i + ": " + itensManutencaoReparo[i].nomeProduto);
+                                    }
+                                }
+
+                                int escolhaExclusao = input.nextInt();
+
+                                itensManutencaoReparo[escolhaExclusao] = null;
+
+                                System.out.println("\nManual de manutenção e reparo excluído com êxito!");
+
+                            }else if(categoria == 4){
+
+                                for (int i = 0; i < itensTesteDiagnostico.length; i++) {
+                                    if (itensTesteDiagnostico[i] != null) {
+                                        System.out.println(i + ": " + itensTesteDiagnostico[i].nomeProduto);
+                                    }
+                                }
+
+                                int escolhaExclusao = input.nextInt();
+
+                                itensTesteDiagnostico[escolhaExclusao] = null;
+
+                                System.out.println("\nTeste e diagnóstico excluído com êxito!");
+
+                            }else if(categoria == 5){
+
+                                for (int i = 0; i < itensManualCondutaSetorial.length; i++) {
+                                    if (itensManualCondutaSetorial[i] != null) {
+                                        System.out.println(i + ": " + itensManualCondutaSetorial[i].nomeSetor);
+                                    }
+                                }
+
+                                int escolhaExclusao = input.nextInt();
+
+                                itensManualCondutaSetorial[escolhaExclusao] = null;
+
+                                System.out.println("\nManual de conduta setorial excluído com êxito!");
+
                             }
 
-
-                            int escolhaExclusao = input.nextInt();
-
-
-                            itensManualDeOperacao[escolhaExclusao] = null;
-
-
-                            System.out.println("\nManual de Operação excluído com êxito!");
-
-
-
-
                     }
-
-
 
 
                 } while (menuEscolha != 5);
@@ -2073,7 +2124,7 @@ public class ProjectJava {
                 testeDiagnosticoFalhas.setDescricaoDiagnostico(messages_de.getString("testeFalhasDesc"));
                 testeDiagnosticoFalhas.setexemploPratico(messages_de.getString("testeFalhasEx"));
 
-            manualCondutaSetorialMontagem.setNomeSetor(messages_de.getString("manualMontagemTitulo"));
+                manualCondutaSetorialMontagem.setNomeSetor(messages_de.getString("manualMontagemTitulo"));
                 manualCondutaSetorialMontagem.setCondutaEsperada(messages_de.getString("manualMontagemDesc"));
                 manualCondutaSetorialMontagem.setObservacoes(messages_de.getString("manualMontagemEx"));
 

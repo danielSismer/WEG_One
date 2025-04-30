@@ -9,7 +9,7 @@ public class LoginAdm {
 
     public void clickLoginAdm () {
 
-       Index.main(new String[]{});
+
 
         JFrame LoginADM = new JFrame("Login do Adm");
         LoginADM.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,12 +61,13 @@ public class LoginAdm {
 
         JButton botaoLogar = new JButton("Logar");
         botaoLogar.setFont(new Font("Arial", Font.BOLD, 20));
-        botaoLogar.setBounds(150, 260, 200, 50);
+        botaoLogar.setBounds(150, 290, 200, 50);
         painelLogin.add(botaoLogar);
 
         botaoLogar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
 
                 Index.main(new String[]{});
 
@@ -89,9 +90,8 @@ public class LoginAdm {
 
 
         JButton botaoVoltar = new JButton("◀️");
-        botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 25));
         botaoVoltar.setBounds(20, 20, 60, 40);
-        botaoVoltar.setFocusPainted(false);
         botaoVoltar.setBackground(new Color(0, 87, 156));
         botaoVoltar.setForeground(Color.WHITE);
 
@@ -103,7 +103,8 @@ public class LoginAdm {
         botaoVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LoginADM.setVisible(false);
+
+             LoginADM.setVisible(false);
             }
         });
 

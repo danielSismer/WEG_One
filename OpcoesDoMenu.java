@@ -86,6 +86,20 @@ public class OpcoesDoMenu {
         botaoIdioma.setForeground(Color.WHITE);
         headerPanel.add(botaoIdioma, BorderLayout.EAST);
 
+
+        JLabel labelSenha = new JLabel("Senha:");
+        labelSenha.setForeground(Color.WHITE);
+        labelSenha.setFont(new Font("Arial", Font.BOLD, 25));
+            labelSenha.setBounds(30, 140, 100, 30);
+        headerPanel.add(labelSenha);
+
+        JTextField campoSenha = new JTextField();
+        campoSenha.setBounds(30, 180, 440, 50);
+        campoSenha.setFont(new Font("Arial", Font.BOLD, 25));
+        headerPanel.add(campoSenha);
+
+
+
         JButton botaoVoltar = new JButton("◀\uFE0F");
         botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 30));
         botaoVoltar.setBackground(new Color(0, 87, 156));
@@ -100,6 +114,12 @@ public class OpcoesDoMenu {
                 telaDePesquisar.setVisible(false);
 
             }
+
+
+
+
+
+
         });
     };
 

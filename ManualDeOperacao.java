@@ -1,8 +1,10 @@
+import java.util.Scanner;
 public class ManualDeOperacao {
 
-   String nomeProduto;
-   String comoUsar;
-   String exemploPratico;
+    Scanner input = new Scanner(System.in);
+    String nomeProduto;
+    String comoUsar;
+    String exemploPratico;
 
     public void setNomeProduto(String nomeProduto) {
 
@@ -29,12 +31,25 @@ public class ManualDeOperacao {
                 + "\nExemplo Pratico: " + this.exemploPratico;
     }
 
+    public String cadastrarProdutoOperacao() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o nome do produto: ");
+        this.nomeProduto = scanner.nextLine();
+
+        System.out.print("Digite como usar o produto: ");
+        this.comoUsar = scanner.nextLine();
+
+        System.out.print("Digite um exemplo prático: ");
+        this.exemploPratico = scanner.nextLine();
+
+        System.out.println("Produto cadastrado com sucesso!");
+        System.out.println("Nome: " + this.nomeProduto);
+        System.out.println("Como Usar: " + this.comoUsar);
+        System.out.println("Exemplo Prático: " + this.exemploPratico);
+
+        return "Produto cadastrado: " + this.nomeProduto + " - " + this.comoUsar + "-" + this.exemploPratico;
 
 
-
-
-
-
-
-
+    }
 }

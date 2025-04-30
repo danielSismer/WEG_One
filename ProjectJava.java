@@ -73,19 +73,53 @@ public class ProjectJava {
                 Locale localeEN = new Locale("en", "US");
                 ResourceBundle messages_en = ResourceBundle.getBundle("messages", localeEN);
 
+                manualMotor.setNomeProduto(messages_en.getString("manualMotorTitle"));
+                manualMotor.setComoUsar(messages_en.getString("manualMotorDesc"));
+                manualMotor.setExemploPratico(messages_en.getString("manualMotorEx"));
+
+                manualGerador.setNomeProduto(messages_en.getString("manualGeneratorTitle"));
+                manualGerador.setComoUsar(messages_en.getString("manualGeneratorDesc"));
+                manualGerador.setExemploPratico(messages_en.getString("manualGeneratorEx"));
+
+                procedimentoEletrico.setNomeProduto(messages_en.getString("eletricProceedTitle"));
+                procedimentoEletrico.setComoUsar(messages_en.getString("eletricProceedDesc"));
+                procedimentoEletrico.setExemploPratico(messages_en.getString("eletricProceedEx"));
+
+                procedimentoChoque.setNomeProduto(messages_en.getString("shockProceedTitle"));
+                procedimentoEletrico.setComoUsar(messages_en.getString("shockProceedDesc"));
+                procedimentoChoque.setExemploPratico(messages_en.getString("shockProceedEx"));
+
+                manutencaoReparoMotorEletrico.setNomeProduto(messages_en.getString("motorRepairTitle"));
+                manutencaoReparoMotorEletrico.setDescricaoManutencao(messages_en.getString("motorRepairDesc"));
+                manutencaoReparoMotorEletrico.setExemploPratico(messages_en.getString("motorRepairEx"));
+
+                manutencaoReparoTransformadores.setNomeProduto(messages_en.getString("transfRepairTitle"));
+                manutencaoReparoTransformadores.setDescricaoManutencao(messages_en.getString("transfRepairDesc"));
+                manutencaoReparoTransformadores.setExemploPratico(messages_en.getString("transfRepairEx"));
+
+                testeDiagnosticoMotores.setNomeProduto(messages_en.getString("motorTestTitle"));
+                testeDiagnosticoMotores.setDescricaoDiagnostico(messages_en.getString("motorTestDesc"));
+                testeDiagnosticoMotores.setexemploPratico(messages_en.getString("motorTestEx"));
+
+                testeDiagnosticoFalhas.setNomeProduto(messages_en.getString("failTestTitle"));
+                testeDiagnosticoFalhas.setDescricaoDiagnostico(messages_en.getString("failTestDesc"));
+                testeDiagnosticoFalhas.setexemploPratico(messages_en.getString("failTestEx"));
+
+                manualCondutaSetorialMontagem.setNomeSetor(messages_en.getString("assemblyManualTitle"));
+                manualCondutaSetorialMontagem.setCondutaEsperada(messages_en.getString("assemblyManualDesc"));
+                manualCondutaSetorialMontagem.setObservacoes(messages_en.getString("assemblyManualEx"));
+
+                manualCondutaSetorialManutencao.setNomeSetor(messages_en.getString("maintenanceManualTitle"));
+                manualCondutaSetorialManutencao.setCondutaEsperada(messages_en.getString("maintenanceManualDesc"));
+                manualCondutaSetorialManutencao.setObservacoes(messages_en.getString("maintenanceManualEx"));
 
                 do {
 
-
                     System.out.println(messages_en.getString("menu"));
-                    System.out.println("\nSua escolha: ");
+                    System.out.println("\nYour choice: ");
                     menuEscolha = input.nextInt();
 
-
-
-
                 } while (menuEscolha != 5);
-
 
                 break;
 
@@ -94,9 +128,47 @@ public class ProjectJava {
                 Locale localePT = new Locale("pt", "BR");
                 ResourceBundle messages_pt = ResourceBundle.getBundle("messages", localePT);
 
+                manualMotor.setNomeProduto(messages_pt.getString("manualMotorTitulo"));
+                manualMotor.setComoUsar(messages_pt.getString("manualMotorDesc"));
+                manualMotor.setExemploPratico(messages_pt.getString("manualMotorEx"));
+
+                manualGerador.setNomeProduto(messages_pt.getString("manualGeradorTitulo"));
+                manualGerador.setComoUsar(messages_pt.getString("manualGeradorDesc"));
+                manualGerador.setExemploPratico(messages_pt.getString("manualGeradorEx"));
+
+                procedimentoEletrico.setNomeProduto(messages_pt.getString("procedEletricoTitulo"));
+                procedimentoEletrico.setComoUsar(messages_pt.getString("procedEletricoDesc"));
+                procedimentoEletrico.setExemploPratico(messages_pt.getString("procedEletricoEx"));
+
+                procedimentoChoque.setNomeProduto(messages_pt.getString("procedChoqueTitulo"));
+                procedimentoEletrico.setComoUsar(messages_pt.getString("procedChoqueDesc"));
+                procedimentoChoque.setExemploPratico(messages_pt.getString("procedChoqueEx"));
+
+                manutencaoReparoMotorEletrico.setNomeProduto(messages_pt.getString("reparoMotorTitulo"));
+                manutencaoReparoMotorEletrico.setDescricaoManutencao(messages_pt.getString("reparoMotorDesc"));
+                manutencaoReparoMotorEletrico.setExemploPratico(messages_pt.getString("reparoMotorEx"));
+
+                manutencaoReparoTransformadores.setNomeProduto(messages_pt.getString("reparoTransfTitulo"));
+                manutencaoReparoTransformadores.setDescricaoManutencao(messages_pt.getString("reparoTransfDesc"));
+                manutencaoReparoTransformadores.setExemploPratico(messages_pt.getString("reparoTransfEx"));
+
+                testeDiagnosticoMotores.setNomeProduto(messages_pt.getString("testeMotorTitulo"));
+                testeDiagnosticoMotores.setDescricaoDiagnostico(messages_pt.getString("testeMotorDesc"));
+                testeDiagnosticoMotores.setexemploPratico(messages_pt.getString("testeMotorEx"));
+
+                testeDiagnosticoFalhas.setNomeProduto(messages_pt.getString("testeFalhasTitulo"));
+                testeDiagnosticoFalhas.setDescricaoDiagnostico(messages_pt.getString("testeFalhasDesc"));
+                testeDiagnosticoFalhas.setexemploPratico(messages_pt.getString("testeFalhasEx"));
+
+                manualCondutaSetorialMontagem.setNomeSetor(messages_pt.getString("manualMontagemTitulo"));
+                manualCondutaSetorialMontagem.setCondutaEsperada(messages_pt.getString("manualMontagemDesc"));
+                manualCondutaSetorialMontagem.setObservacoes(messages_pt.getString("manualMontagemEx"));
+
+                manualCondutaSetorialManutencao.setNomeSetor(messages_pt.getString("manualManutencaoTitulo"));
+                manualCondutaSetorialManutencao.setCondutaEsperada(messages_pt.getString("manualManutencaoDesc"));
+                manualCondutaSetorialManutencao.setObservacoes(messages_pt.getString("manualManutencaoEx"));
 
                 do {
-
 
                     System.out.println(messages_pt.getString("menu"));
                     System.out.println("\nSua escolha: ");
@@ -107,6 +179,11 @@ public class ProjectJava {
 
                     switch (menuEscolha) {
                         case 1:
+
+                            System.out.println(" Em qual orientação você deseja fazer um novo cadastro?  " + messages_pt.getString("cadastroOrientacoes"));
+                            System.out.println("\nSua escolha: ");
+                            int resposta = input.nextInt();
+
                             boolean continuarCadastro = true;
 
                             while (continuarCadastro) {
@@ -116,6 +193,7 @@ public class ProjectJava {
 
                                 for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                     if (itensManualDeOperacao[cont] != null) {
+
 
                                     }
                                 }
@@ -176,8 +254,7 @@ public class ProjectJava {
 
 
                         case 2:
-                            System.out.println("1-Manual de operação \n 2-Procedimento de Segurança \n 3-Manutenção e Reparos " +
-                                    "\n 4-Testes e Diagnóstico \n 5-Manual de Conduta e Operações Setoriais  ");
+                            System.out.println(messages_pt.getString("categoriaOrientacoes"));
                             int categoria = input.nextInt();
 
 
@@ -193,8 +270,9 @@ public class ProjectJava {
 
                                 }
 
-                                System.out.print("Digite aqui:");
+                                System.out.print("Digite aqui: ");
                                 escolha = input.nextInt();
+                                System.out.println("\n");
 
 
                                       if (escolha == 1) {

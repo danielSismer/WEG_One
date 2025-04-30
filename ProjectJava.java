@@ -56,46 +56,6 @@ public class ProjectJava {
         itensManualCondutaSetorial [1] = manualCondutaSetorialManutencao;
         itensManualCondutaSetorial [2] = manualCondutaSetorialCadastro;
 
-        manualMotor.setNomeProduto("Motores Elétricos WEG");
-        manualMotor.setComoUsar("Antes de iniciar a operação do motor, verifique a integridade dos cabos de alimentação e a conexão correta à rede elétrica. Aumente gradualmente a carga no motor para evitar picos de corrente no início da operação. Monitore a temperatura do motor durante as primeiras horas de operação, especialmente em motores de alta potência.");
-        manualMotor.setExemploPratico("Em motores WEG de indução, sempre verifique a configuração de partida (estrela-triângulo ou partida direta) conforme a especificação do fabricante para evitar sobrecarga no momento da partida.\n");
-
-
-        manualGerador.setNomeProduto("Operação de Geradores WEG");
-        manualGerador.setComoUsar("Descrição: Certifique-se de que o gerador está corretamente instalado e com os níveis de óleo e combustível adequados. Durante a operação, monitore constantemente os parâmetros de tensão e corrente. Evite sobrecarga, pois pode danificar o gerador e reduzir a vida útil dos componentes.");
-        manualGerador.setExemploPratico("Exemplo Prático: Para geradores WEG de maior capacidade, é recomendado o uso de sistemas de monitoramento remoto para verificar a performance e o status dos componentes, como nível de combustível e temperatura.");
-
-        procedimentoEletrico.setNomeProduto("Procedimento de Segurança para Instalação de Equipamentos Elétricos");
-        procedimentoEletrico.setComoUsar("Descrição: Antes de iniciar a instalação de qualquer equipamento elétrico, como motores e transformadores WEG, desconecte toda a alimentação elétrica e realize o aterramento adequado. Utilize ferramentas isoladas e verifique o ambiente quanto à presença de materiais inflamáveis ou risco de curto-circuito.");
-        procedimentoEletrico.setExemploPratico("Exemplo Prático: Durante a instalação de um transformador WEG, garanta que o painel de controle esteja devidamente identificado e sinalizado para evitar conexões erradas que possam causar falhas no sistema.");
-
-        procedimentoChoque.setNomeProduto("Operações com Risco de Choque Elétrico");
-        procedimentoEletrico.setComoUsar("Descrição: Sempre use equipamentos de proteção individual (EPIs) adequados, como luvas isolantes e botas de segurança, antes de realizar qualquer manutenção ou inspeção em equipamentos energizados. Durante a operação de equipamentos de alta tensão, siga os procedimentos de bloqueio e etiquetagem (LOTO) para garantir que o sistema esteja desligado.");
-        procedimentoChoque.setExemploPratico("Exemplo Prático: No caso de manutenção de transformadores WEG de alta tensão, desconecte a alimentação elétrica, utilize chaves de bloqueio e verifique com um multímetro a ausência de tensão nos terminais.");
-
-        manutencaoReparoMotorEletrico.setNomeProduto("Manutenção de Motores Elétricos");
-        manutencaoReparoMotorEletrico.setDescricaoManutencao("Descrição: Realize inspeções regulares nos rolamentos, verificando ruídos anormais ou aquecimento excessivo. Lubrifique os rolamentos conforme as instruções do fabricante e substitua-os se necessário. Verifique a conexão dos terminais elétricos e a presença de sinais de desgaste ou corrosão.");
-        manutencaoReparoMotorEletrico.setExemploPratico("Exemplo Prático: Para motores WEG, recomenda-se a realização de manutenção preventiva a cada 1.000 horas de operação, incluindo a verificação do alinhamento do motor e o teste de resistência do isolamento.");
-
-        manutencaoReparoTransformadores.setNomeProduto("Reparo de Transformadores");
-        manutencaoReparoTransformadores.setDescricaoManutencao("Descrição: Quando realizar reparos em transformadores WEG, sempre faça uma análise cuidadosa da situação de cada componente, como bobinas e buchas. Caso haja falha nas buchas ou nos isoladores, substitua-os imediatamente. Em caso de curto-circuito no interior do transformador, realize testes de resistência de isolamento e verifique o nível de óleo.");
-        manutencaoReparoTransformadores.setExemploPratico("Exemplo Prático: Se um transformador WEG apresentar aquecimento excessivo, além de verificar o nível de óleo, examine o radiador e limpe as ventoinhas para garantir uma boa dissipação de calor.");
-
-        testeDiagnosticoMotores.setNomeProduto("Testes de Funcionamento de Motores");
-        testeDiagnosticoMotores.setDescricaoDiagnostico("Descrição: Para garantir que o motor WEG está operando corretamente, execute testes de partida em vazio, monitorando a corrente elétrica e a rotação. Após a operação, verifique a temperatura do motor e as vibrações para identificar possíveis falhas mecânicas.");
-        testeDiagnosticoMotores.setexemploPratico("Exemplo Prático: Durante os testes de carga, monitore a eficiência do motor e se a corrente está dentro dos parâmetros especificados pelo fabricante para evitar danos ao equipamento");
-
-        testeDiagnosticoFalhas.setNomeProduto("Diagnóstico de Falhas em Sistemas de Automação");
-        testeDiagnosticoFalhas.setDescricaoDiagnostico("Descrição: No diagnóstico de falhas em sistemas de automação da WEG, como controladores e inversores de frequência, utilize ferramentas de diagnóstico de comunicação como modbus ou ethernet para verificar possíveis falhas de comunicação. Revise os logs de erros e teste os sensores e atuadores para garantir que todos os sistemas estão funcionando corretamente.");
-        testeDiagnosticoFalhas.setexemploPratico("Exemplo Prático: Para sistemas de automação WEG com inversores de frequência, execute um teste de carga variável para identificar falhas em processos de controle de velocidade e torque.");
-
-        manualCondutaSetorialMontagem.setNomeSetor("Conduta no Setor de Montagem");
-        manualCondutaSetorialMontagem.setCondutaEsperada("No setor de montagem, os colaboradores devem seguir rigorosamente os procedimentos de segurança e as normas de qualidade da WEG. Devem garantir que as ferramentas e equipamentos estejam sempre em boas condições, realizando inspeções periódicas e manutenções preventivas.");
-        manualCondutaSetorialMontagem.setObservacoes("Ao montar motores elétricos WEG, é fundamental verificar se as peças estão corretamente alinhadas e se todas as conexões elétricas estão firmemente apertadas, prevenindo falhas e retrabalho.");
-
-        manualCondutaSetorialManutencao.setNomeSetor("Procedimentos Operacionais no Setor de Manutenção");
-        manualCondutaSetorialManutencao.setCondutaEsperada("Conduta Esperada: No setor de manutenção, os técnicos devem seguir processos específicos de diagnóstico e reparo, sempre utilizando os EPIs adequados e ferramentas apropriadas. É obrigatório registrar todas as manutenções e trocas de componentes no sistema de gestão da empresa de forma precisa e atualizada.");
-        manualCondutaSetorialManutencao.setObservacoes(" Durante a manutenção de um inversor de frequência WEG, o técnico deve inspecionar cuidadosamente os componentes eletrônicos internos (como resistores e capacitores) e realizar testes de isolamento, assegurando a integridade e segurança do equipamento. ");
 
         int escolha, menuEscolha = 0;
 
@@ -2006,10 +1966,51 @@ public class ProjectJava {
                 Locale localeDE = new Locale("de", "DE");
                 ResourceBundle messages_de = ResourceBundle.getBundle("messages", localeDE);
 
+                manualMotor.setNomeProduto(messages_de.getString("manualMotorTitulo"));
+                manualMotor.setComoUsar(messages_de.getString("manualMotorDesc"));
+                manualMotor.setExemploPratico(messages_de.getString("manualMotorEx"));
+
+                manualGerador.setNomeProduto(messages_de.getString("manualGeradorTitulo"));
+                manualGerador.setComoUsar(messages_de.getString("manualGeradorDesc"));
+                manualGerador.setExemploPratico(messages_de.getString("manualGeradorEx"));
+
+                procedimentoEletrico.setNomeProduto(messages_de.getString("procedEletricoTitulo"));
+                procedimentoEletrico.setComoUsar(messages_de.getString("procedEletricoDesc"));
+                procedimentoEletrico.setExemploPratico(messages_de.getString("procedEletricoEx"));
+
+                procedimentoChoque.setNomeProduto(messages_de.getString("procedChoqueTitulo"));
+                procedimentoEletrico.setComoUsar(messages_de.getString("procedChoqueDesc"));
+                procedimentoChoque.setExemploPratico(messages_de.getString("procedChoqueEx"));
+
+                manutencaoReparoMotorEletrico.setNomeProduto(messages_de.getString("reparoMotorTitulo"));
+                manutencaoReparoMotorEletrico.setDescricaoManutencao(messages_de.getString("reparoMotorDesc"));
+                manutencaoReparoMotorEletrico.setExemploPratico(messages_de.getString("reparoMotorEx"));
+
+                manutencaoReparoTransformadores.setNomeProduto(messages_de.getString("reparoTransfTitulo"));
+                manutencaoReparoTransformadores.setDescricaoManutencao(messages_de.getString("reparoTransfDesc"));
+                manutencaoReparoTransformadores.setExemploPratico(messages_de.getString("reparoTransfEx"));
+
+                testeDiagnosticoMotores.setNomeProduto(messages_de.getString("testeMotorTitulo"));
+                testeDiagnosticoMotores.setDescricaoDiagnostico(messages_de.getString("testeMotorDesc"));
+                testeDiagnosticoMotores.setexemploPratico(messages_de.getString("testeMotorEx"));
+
+                testeDiagnosticoFalhas.setNomeProduto(messages_de.getString("testeFalhasTitulo"));
+                testeDiagnosticoFalhas.setDescricaoDiagnostico(messages_de.getString("testeFalhasDesc"));
+                testeDiagnosticoFalhas.setexemploPratico(messages_de.getString("testeFalhasEx"));
+
+            manualCondutaSetorialMontagem.setNomeSetor(messages_de.getString("manualMontagemTitulo"));
+                manualCondutaSetorialMontagem.setCondutaEsperada(messages_de.getString("manualMontagemDesc"));
+                manualCondutaSetorialMontagem.setObservacoes(messages_de.getString("manualMontagemEx"));
+
+                manualCondutaSetorialManutencao.setNomeSetor(messages_de.getString("manualManutencaoTitulo"));
+                manualCondutaSetorialManutencao.setCondutaEsperada(messages_de.getString("manualManutencaoDesc"));
+                manualCondutaSetorialManutencao.setObservacoes(messages_de.getString("manualManutencaoEx"));
+
+
 
                 do {
                     System.out.println(messages_de.getString("menu"));
-                    System.out.println("\nSua escolha: ");
+                    System.out.println("\nSua escolha: "); // fazer chave para isso
                     menuEscolha = input.nextInt();
                 } while (menuEscolha != 5);
 

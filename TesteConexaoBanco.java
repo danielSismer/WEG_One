@@ -18,7 +18,8 @@ public class TesteConexaoBanco {
                 ResultSet rs = stmt.executeQuery(sql);
 
                 while (rs.next()) {
-                    System.out.println("Nome: " + rs.getString("nome"));
+                    System.out.println("Email: " + rs.getString("email"));
+
                 }
 
                 rs.close();

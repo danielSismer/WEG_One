@@ -9,21 +9,17 @@ public class TelaDeslogada {
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
         LoginAdm LoginADM = new LoginAdm();
 
-
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaMenus.setSize(900, 600);
         TelaMenus.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaMenus.setLayout(new BorderLayout());
 
-
-
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
-
 
         JButton fecharMenu = new JButton("☰");
         fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
@@ -34,10 +30,6 @@ public class TelaDeslogada {
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(false);
         menuLateral.add(fecharMenu);
-
-
-
-
 
         String[] opcoesCadastro = {
                 "Manual de Operação",
@@ -50,12 +42,7 @@ public class TelaDeslogada {
                 " Procedimento Operacional no Setor de Manutenção",
                 ""
 
-
-
-
         };
-
-
 
         JButton botaoPesquisar = new JButton("Pesquisar Orientações");
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -68,7 +55,6 @@ public class TelaDeslogada {
         botaoPesquisar.setBounds(9, 69, 210, 50);
         menuLateral.add(botaoPesquisar);
 
-
         botaoPesquisar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -77,7 +63,6 @@ public class TelaDeslogada {
 
             }
         });
-
 
         JButton loginADM = new JButton("Login do ADM");
         loginADM.setAlignmentX(Component.CENTER_ALIGNMENT);

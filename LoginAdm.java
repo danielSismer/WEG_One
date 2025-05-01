@@ -1,5 +1,3 @@
-import com.sun.tools.javac.Main;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -69,7 +67,7 @@ public class LoginAdm {
             public void actionPerformed(ActionEvent e) {
 
 
-                Index.main(new String[]{});
+                TelaLogada.main(new String[]{});
 
             }
         });

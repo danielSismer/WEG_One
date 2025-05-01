@@ -3,11 +3,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 
-public class Index2 {
+public class TelaLogada {
+
     public static void main(String[] args) {
 
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
-        LoginAdm LoginADM = new LoginAdm();
+        LoginAdm GestaoDeUsuarios = new LoginAdm();
 
 
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
@@ -57,6 +58,31 @@ public class Index2 {
 
 
 
+
+
+
+
+        JButton botaoCadastrar = new JButton("Cadastrar Orientações");
+        botaoCadastrar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoCadastrar.setMaximumSize(new Dimension(180, 50));
+        botaoCadastrar.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoCadastrar.setFocusPainted(false);
+        botaoCadastrar.setBackground(new Color(52, 152, 219));
+        botaoCadastrar.setForeground(Color.WHITE);
+        botaoCadastrar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoCadastrar.setBounds(9, 134, 210, 50);
+        menuLateral.add(botaoCadastrar);
+
+        botaoCadastrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ClickMenu.ClickCadastrar();
+
+            }
+        });
+
+
         JButton botaoPesquisar = new JButton("Pesquisar Orientações");
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoPesquisar.setMaximumSize(new Dimension(180, 50));
@@ -79,22 +105,47 @@ public class Index2 {
         });
 
 
-        JButton loginADM = new JButton("Login do ADM");
-        loginADM.setAlignmentX(Component.CENTER_ALIGNMENT);
-        loginADM.setMaximumSize(new Dimension(180, 50));
-        loginADM.setFont(new Font("Arial", Font.BOLD, 14));
-        loginADM.setFocusPainted(false);
-        loginADM.setBackground(new Color(52, 152, 219));
-        loginADM.setForeground(Color.WHITE);
-        loginADM.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        loginADM.setBounds(9, 134, 210, 50);
-        menuLateral.add(loginADM);
+        JButton botaoEditar = new JButton("Editar Orientações");
+        botaoEditar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoEditar.setMaximumSize(new Dimension(180, 50));
+        botaoEditar.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoEditar.setFocusPainted(false);
+        botaoEditar.setBackground(new Color(52, 152, 219));
+        botaoEditar.setForeground(Color.WHITE);
+        botaoEditar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoEditar.setBounds(9, 199, 210, 50);
+        menuLateral.add(botaoEditar);
 
-        loginADM.addActionListener(new ActionListener() {
+
+
+        botaoEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                LoginADM.clickLoginAdm();
+                ClickMenu.ClickEditar();
+
+            }
+        });
+
+
+        JButton botaoExcluir = new JButton("Excluir Orientações");
+        botaoExcluir.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoExcluir.setMaximumSize(new Dimension(180, 50));
+        botaoExcluir.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoExcluir.setFocusPainted(false);
+        botaoExcluir.setBackground(new Color(52, 152, 219));
+        botaoExcluir.setForeground(Color.WHITE);
+        botaoExcluir.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoExcluir.setBounds(9, 264, 210, 50);
+        menuLateral.add(botaoExcluir);
+
+
+
+        botaoExcluir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ClickMenu.ClickExcluir();
 
             }
         });
@@ -109,7 +160,7 @@ public class Index2 {
         botaoSair.setBackground(new Color(52, 152, 219));
         botaoSair.setForeground(Color.WHITE);
         botaoSair.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        botaoSair.setBounds(9, 199, 210, 50);
+        botaoSair.setBounds(9, 329, 210, 50);
         menuLateral.add(botaoSair);
 
 
@@ -139,7 +190,6 @@ public class Index2 {
 
 
 
-
         JButton botao3Linhas = new JButton("☰");
         botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
         botao3Linhas.setFocusPainted(false);
@@ -147,6 +197,9 @@ public class Index2 {
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botao3Linhas.setForeground(Color.WHITE);
         botao3Linhas.setBounds(-3, 0, 50, 30);
+
+
+
 
 
         botao3Linhas.addActionListener(e -> {
@@ -167,7 +220,7 @@ public class Index2 {
         });
 
 
-        JButton botaoIdioma = new JButton("\uD83C\uDF10");
+        JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
         botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));
@@ -175,16 +228,32 @@ public class Index2 {
         botaoIdioma.setForeground(Color.WHITE);
 
 
+        JButton botaoUsuario = new JButton("\uD83D\uDC64");
+        botaoUsuario.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoUsuario.setFocusPainted(false);
+        botaoUsuario.setBackground(new Color(0, 87, 156));
+        botaoUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botaoUsuario.setForeground(Color.WHITE);
+        botaoUsuario.setLayout(null);
+        botao3Linhas.setBounds(30, 40, 50, 30);
+
+
+        botaoUsuario.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                GestaoDeUsuarios.clickLoginAdm();
+
+            }
+        });
 
 
 
 
-
-
-
-        headerPanel.add(botao3Linhas);
+        headerPanel.add(botao3Linhas, BorderLayout.WEST);
         headerPanel.add(Box.createHorizontalGlue());
-        headerPanel.add(botaoIdioma);
+        headerPanel.add(botaoUsuario, BorderLayout.EAST);
+        headerPanel.add(botaoIdioma, BorderLayout.LINE_END);
 
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
 
@@ -208,7 +277,7 @@ public class Index2 {
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
-            JLabel mensagem = new JLabel("Bem-vindo ao WegOne");
+            JLabel mensagem = new JLabel("");
             mensagem.setFont(new Font("Arial", Font.BOLD, 22));
             mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));

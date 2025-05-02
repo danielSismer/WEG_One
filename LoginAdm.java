@@ -2,26 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class LoginAdm {
 
-    public void clickLoginAdm () {
-
-
-
+    public void clickLoginAdm() {
         JFrame LoginADM = new JFrame("Login do Adm");
         LoginADM.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         LoginADM.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        LoginADM.setSize(900, 600);
         LoginADM.setLayout(null);
-
 
         JPanel painelFundo = new JPanel();
         painelFundo.setLayout(null);
         painelFundo.setBackground(Color.WHITE);
         painelFundo.setBounds(0, 0, 1920, 1080);
         LoginADM.add(painelFundo);
-
 
         JPanel painelLogin = new JPanel();
         painelLogin.setLayout(null);
@@ -51,12 +46,6 @@ public class LoginAdm {
         campoSenha.setFont(new Font("Arial", Font.BOLD, 25));
         painelLogin.add(campoSenha);
 
-
-
-        painelLogin.add(Box.createVerticalStrut(30));
-
-
-
         JButton botaoLogar = new JButton("Logar");
         botaoLogar.setFont(new Font("Arial", Font.BOLD, 20));
         botaoLogar.setBounds(150, 290, 200, 50);
@@ -65,13 +54,17 @@ public class LoginAdm {
         botaoLogar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String email = campoUsuario.getText();
+                String senha = new String(campoSenha.getPassword());
 
-
-                TelaLogada.main(new String[]{});
-
+                if (authenticateUser(email, senha)) {
+                    TelaLogada.main(new String[]{});
+                    LoginADM.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(LoginADM, "Usuário ou senha incorretos.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
-
 
         JPanel headerPanel = new JPanel();
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
@@ -81,18 +74,14 @@ public class LoginAdm {
 
         JButton botaoIdioma = new JButton("\uD83C\uDF10");
         botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoIdioma.setBounds(1800, 20, 60, 40);
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));
         botaoIdioma.setForeground(Color.WHITE);
 
-
         JButton botaoVoltar = new JButton("◀️");
         botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 25));
-        botaoVoltar.setBounds(20, 20, 60, 40);
         botaoVoltar.setBackground(new Color(0, 87, 156));
         botaoVoltar.setForeground(Color.WHITE);
-
 
         headerPanel.add(botaoVoltar);
         headerPanel.add(Box.createHorizontalGlue());
@@ -101,11 +90,39 @@ public class LoginAdm {
         botaoVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-             LoginADM.setVisible(false);
+                LoginADM.dispose();
             }
         });
 
         LoginADM.setVisible(true);
+    }
+
+    private boolean authenticateUser(String email, String senha) {
+        boolean authenticated = false;
+        // Replace this with your actual DB connection method
+        try (Connection conn = getConnection()) {
+            String sql = "SELECT 1 FROM usuarios WHERE email = ? AND senha = ?";
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setString(1, email);
+                ps.setString(2, senha);
+                // For security, use hashed passwords instead of plain text.
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        authenticated = true;
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao autenticar: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        return authenticated;
+    }
+
+    private Connection getConnection() throws SQLException {
+
+        String url = "jdbc:mysql://localhost:3306/weg_one";
+        String user = "DanielAdmin";
+        String password = "246801@Weg";
+        return DriverManager.getConnection(url, user, password);
     }
 }

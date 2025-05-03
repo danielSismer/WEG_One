@@ -209,11 +209,7 @@ public class TelaDeslogada {
             painelCentral.add(new JLabel("Erro ao carregar imagem."));
         }
 
-
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
-
-
 
         boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {

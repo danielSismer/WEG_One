@@ -78,28 +78,38 @@ public class OpcoesDoMenu {
         fecharMenu.setVisible(true);
         menuLateral.add(fecharMenu);
 
-
         JPanel painelCentral = new JPanel();
         painelCentral.setBackground(new Color(255, 255, 255));
-        painelCentral.setLayout(new BoxLayout(painelCentral, BoxLayout.Y_AXIS));
+        painelCentral.setLayout(null);
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        JPanel painelSuperior = new JPanel();
+        painelCentral.setBackground(new Color(255, 255, 255));
+        painelCentral.setLayout(null);
+        fecharMenu.setBounds(9, 19, 50, 30);
+        painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
+        painelCentral.add(painelSuperior);
 
+        JPanel painelEsquerdo = new JPanel();
+        painelCentral.setBackground(new Color(255, 255, 255));
+        painelCentral.setLayout(null);
+        painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
+        painelCentral.add(painelEsquerdo);
 
+        JPanel painelDireito = new JPanel();
+        painelCentral.setBackground(new Color(255, 255, 255));
+        painelCentral.setLayout(null);
+        painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
+        painelCentral.add(painelDireito);
 
-            ImageIcon icon = new ImageIcon("WegOne.jpg");
+        ImageIcon icon = new ImageIcon("WegOne.jpg");
             Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
+            labelImagem.setBounds(100, 20, 750, 450);
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
-
 
             painelCentral.add(Box.createVerticalGlue());
             painelCentral.add(labelImagem);
-
-
-
-
-
 
         JButton pasta1 = new JButton("Manual de operação");
         pasta1.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -112,7 +122,6 @@ public class OpcoesDoMenu {
         pasta1.setBounds(14, 69, 240, 50);
         menuLateral.add(pasta1);
 
-
         pasta1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,7 +131,6 @@ public class OpcoesDoMenu {
                 menuLateral1.setBackground(new Color(0, 87, 156));
                 menuLateral1.setLayout(new BoxLayout(menuLateral1, BoxLayout.Y_AXIS));
                 menuLateral1.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
-
 
                 TelaPesquisar.add(menuLateral1, BorderLayout.WEST);
                 menuLateral.setVisible(false);
@@ -137,10 +145,8 @@ public class OpcoesDoMenu {
                     ResultSet rs = stmt.executeQuery();
 
                     while (rs.next()) {
-                        opcoesPasta1.add(rs.getString("titulo"));// Corrigido para "titulo"
+                        opcoesPasta1.add(rs.getString("titulo"));
                     }
-
-
 
                     rs.close();
                     stmt.close();
@@ -148,10 +154,7 @@ public class OpcoesDoMenu {
                     f.printStackTrace();
                 }
 
-
-                for (String opcao : opcoesPasta1) {
-                    System.out.println(opcao);
-                }
+                JLabel mensagem = new JLabel("");
                 for (String opcao : opcoesPasta1) {
                     JButton botao = new JButton(opcao);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -168,7 +171,7 @@ public class OpcoesDoMenu {
                         @Override
                         public void actionPerformed(ActionEvent e) {
 
-                            JLabel mensagem = new JLabel("Orientação");
+                            mensagem.setText("descricao");
                             mensagem.setFont(new Font("Arial", Font.BOLD, 22));
                             mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
@@ -181,7 +184,6 @@ public class OpcoesDoMenu {
                         }
                     });
                 }
-
 
                 menuLateral1.add(Box.createVerticalStrut(535));
                 JButton botaoRetornar = new JButton("Retornar");
@@ -199,10 +201,13 @@ public class OpcoesDoMenu {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-                        menuLateral.setVisible(true);
+
                         menuLateral1.setVisible(false);
                         menuLateral.setVisible(true);
-                        menuLateral1.setVisible(true);
+                        mensagem.setVisible(false);
+                        labelImagem.setVisible(true);
+                        labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
+
 
                     }
 
@@ -221,11 +226,7 @@ public class OpcoesDoMenu {
                 pasta2.setBounds(14, 134, 240, 50);
                 menuLateral.add(pasta2);
 
-                String[] opcoesPasta2 = {
-                "Botao 1",
-                "Botao 2"
-
-                };
+                ArrayList<String> opcoesPasta2 = new ArrayList<>();
 
                 pasta2.addActionListener(new ActionListener() {
                     @Override
@@ -237,11 +238,27 @@ public class OpcoesDoMenu {
                         menuLateral2.setLayout(new BoxLayout(menuLateral2, BoxLayout.Y_AXIS));
                         menuLateral2.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-
                         TelaPesquisar.add(menuLateral2, BorderLayout.WEST);
                         menuLateral.setVisible(false);
 
                         menuLateral2.add(Box.createVerticalStrut(69));
+
+                        ArrayList<String> opcoesPasta2 = new ArrayList<>();
+
+                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                            String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 2";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            ResultSet rs = stmt.executeQuery();
+
+                            while (rs.next()) {
+                                opcoesPasta2.add(rs.getString("titulo"));
+                            }
+
+                            rs.close();
+                            stmt.close();
+                        } catch (SQLException f) {
+                            f.printStackTrace();
+                        }
 
                         for (String opcao : opcoesPasta2) {
                             JButton botao = new JButton(opcao);
@@ -259,14 +276,13 @@ public class OpcoesDoMenu {
                         menuLateral2.add(Box.createVerticalStrut(535));
                         JButton botaoRetornar = new JButton("Retornar");
                         botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        botaoRetornar.setMaximumSize(new Dimension(180, 50));
+                        botaoRetornar.setMaximumSize(new Dimension(245, 50));
                         botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
                         botaoRetornar.setFocusPainted(false);
                         botaoRetornar.setBackground(new Color(52, 152, 219));
                         botaoRetornar.setForeground(Color.WHITE);
                         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                         menuLateral2.add(botaoRetornar);
-
 
                         botaoRetornar.addActionListener(new ActionListener() {
                             @Override
@@ -275,15 +291,11 @@ public class OpcoesDoMenu {
                                 menuLateral.setVisible(true);
                                 menuLateral2.setVisible(false);
 
-
                             }
                         });
 
-
                     }
                 });
-
-
 
         String[] opcoesPasta3 = {
                 "Botao 1",
@@ -306,18 +318,33 @@ public class OpcoesDoMenu {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-
                         JPanel menuLateral3 = new JPanel();
                         menuLateral3.setBackground(new Color(45, 62, 80));
                         menuLateral3.setBackground(new Color(0, 87, 156));
                         menuLateral3.setLayout(new BoxLayout(menuLateral3, BoxLayout.Y_AXIS));
                         menuLateral3.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-
                         TelaPesquisar.add(menuLateral3, BorderLayout.WEST);
                         menuLateral.setVisible(false);
 
                         menuLateral3.add(Box.createVerticalStrut(69));
+
+                        ArrayList<String> opcoesPasta3 = new ArrayList<>();
+
+                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                            String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 3";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            ResultSet rs = stmt.executeQuery();
+
+                            while (rs.next()) {
+                                opcoesPasta3.add(rs.getString("titulo"));
+                            }
+
+                            rs.close();
+                            stmt.close();
+                        } catch (SQLException f) {
+                            f.printStackTrace();
+                        }
 
                         for (String opcao : opcoesPasta3) {
                             JButton botao = new JButton(opcao);
@@ -335,14 +362,13 @@ public class OpcoesDoMenu {
                         menuLateral3.add(Box.createVerticalStrut(535));
                         JButton botaoRetornar = new JButton("Retornar");
                         botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        botaoRetornar.setMaximumSize(new Dimension(180, 50));
+                        botaoRetornar.setMaximumSize(new Dimension(245, 50));
                         botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
                         botaoRetornar.setFocusPainted(false);
                         botaoRetornar.setBackground(new Color(52, 152, 219));
                         botaoRetornar.setForeground(Color.WHITE);
                         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                         menuLateral3.add(botaoRetornar);
-
 
                         botaoRetornar.addActionListener(new ActionListener() {
                             @Override
@@ -351,24 +377,17 @@ public class OpcoesDoMenu {
                                 menuLateral.setVisible(true);
                                 menuLateral3.setVisible(false);
 
-
                             }
                         });
 
-
-
-
                     }
                 });
-
-
 
         String[] opcoesPasta4 = {
                 "Botao 1",
                 "Botao 2"
 
         };
-
 
                 JButton pasta4 = new JButton("Testes e Diagnóstico");
                 pasta4.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -385,19 +404,33 @@ public class OpcoesDoMenu {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-
-
                         JPanel menuLateral4 = new JPanel();
                         menuLateral4.setBackground(new Color(45, 62, 80));
                         menuLateral4.setBackground(new Color(0, 87, 156));
                         menuLateral4.setLayout(new BoxLayout(menuLateral4, BoxLayout.Y_AXIS));
                         menuLateral4.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-
                         TelaPesquisar.add(menuLateral4, BorderLayout.WEST);
                         menuLateral.setVisible(false);
 
                         menuLateral4.add(Box.createVerticalStrut(69));
+
+                        ArrayList<String> opcoesPasta4 = new ArrayList<>();
+
+                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                            String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 4";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            ResultSet rs = stmt.executeQuery();
+
+                            while (rs.next()) {
+                                opcoesPasta4.add(rs.getString("titulo"));
+                            }
+
+                            rs.close();
+                            stmt.close();
+                        } catch (SQLException f) {
+                            f.printStackTrace();
+                        }
 
                         for (String opcao : opcoesPasta4) {
                             JButton botao = new JButton(opcao);
@@ -415,14 +448,13 @@ public class OpcoesDoMenu {
                         menuLateral4.add(Box.createVerticalStrut(535));
                         JButton botaoRetornar = new JButton("Retornar");
                         botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        botaoRetornar.setMaximumSize(new Dimension(180, 50));
+                        botaoRetornar.setMaximumSize(new Dimension(245, 50));
                         botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
                         botaoRetornar.setFocusPainted(false);
                         botaoRetornar.setBackground(new Color(52, 152, 219));
                         botaoRetornar.setForeground(Color.WHITE);
                         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                         menuLateral4.add(botaoRetornar);
-
 
                         botaoRetornar.addActionListener(new ActionListener() {
                             @Override
@@ -431,12 +463,9 @@ public class OpcoesDoMenu {
                                 menuLateral.setVisible(true);
                                 menuLateral4.setVisible(false);
 
-
                             }
                         });
 
-                        
-                        
                     }
                 });
 
@@ -455,7 +484,93 @@ public class OpcoesDoMenu {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
+                        pasta5.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
 
+                                JPanel menuLateral5 = new JPanel();
+                                menuLateral5.setBackground(new Color(45, 62, 80));
+                                menuLateral5.setBackground(new Color(0, 87, 156));
+                                menuLateral5.setLayout(new BoxLayout(menuLateral5, BoxLayout.Y_AXIS));
+                                menuLateral5.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
+
+                                TelaPesquisar.add(menuLateral5, BorderLayout.WEST);
+                                menuLateral.setVisible(false);
+
+                                menuLateral5.add(Box.createVerticalStrut(69));
+
+                                ArrayList<String> opcoesPasta5 = new ArrayList<>();
+
+                                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                                    String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 5";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    ResultSet rs = stmt.executeQuery();
+
+                                    while (rs.next()) {
+                                        opcoesPasta5.add(rs.getString("titulo"));
+                                    }
+
+                                    rs.close();
+                                    stmt.close();
+                                } catch (SQLException f) {
+                                    f.printStackTrace();
+                                }
+
+                                for (String opcao : opcoesPasta5) {
+                                    JButton botao = new JButton(opcao);
+                                    botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                    botao.setMaximumSize(new Dimension(245, 50));
+                                    botao.setFont(new Font("Arial", Font.BOLD, 14));
+                                    botao.setFocusPainted(false);
+                                    botao.setBackground(new Color(52, 152, 219));
+                                    botao.setForeground(Color.WHITE);
+                                    botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                                    menuLateral5.add(botao);
+                                    menuLateral5.add(Box.createVerticalStrut(15));
+
+                                    botao.addActionListener(new ActionListener() {
+                                        @Override
+                                        public void actionPerformed(ActionEvent e) {
+
+                                            JLabel mensagem = new JLabel("Orientação");
+                                            mensagem.setFont(new Font("Arial", Font.BOLD, 22));
+                                            mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                            mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                                            mensagem.setBackground(Color.WHITE);
+
+                                            painelCentral.add(mensagem);
+                                            labelImagem.setVisible(false);
+                                            mensagem.setVisible(true);
+                                            painelCentral.add(Box.createVerticalGlue());
+                                        }
+                                    });
+                                }
+
+                                menuLateral5.add(Box.createVerticalStrut(535));
+                                JButton botaoRetornar = new JButton("Retornar");
+                                botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                botaoRetornar.setMaximumSize(new Dimension(245, 50));
+                                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+                                botaoRetornar.setFocusPainted(false);
+                                botaoRetornar.setBackground(new Color(52, 152, 219));
+                                botaoRetornar.setForeground(Color.WHITE);
+                                botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                                menuLateral5.add(botaoRetornar);
+
+                                botaoRetornar.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+
+                                        menuLateral.setVisible(true);
+                                        menuLateral5.setVisible(false);
+                                        menuLateral.setVisible(true);
+                                        menuLateral5.setVisible(true);
+
+                                    }
+
+                                });
+                            }
+                        });
                     }
                 });
 
@@ -512,10 +627,8 @@ public class OpcoesDoMenu {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-
                     }
                 });
-
 
                 headerPanel.add(botao3Linhas, BorderLayout.WEST);
                 headerPanel.add(Box.createHorizontalGlue());
@@ -542,12 +655,7 @@ public class OpcoesDoMenu {
                     }
                 });
 
-
-
-
-
                 painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
 
                 boolean[] menuVisivel = {false};
                 botao3Linhas.addActionListener(g -> {
@@ -556,22 +664,17 @@ public class OpcoesDoMenu {
                     TelaPesquisar.revalidate();
                 });
 
-
                 botaoIdioma.addActionListener(h -> {
                     JOptionPane.showMessageDialog(TelaPesquisar, "Funcionalidade de pesquisa aqui.");
                 });
 
-
                 TelaPesquisar.add(menuLateral, BorderLayout.WEST);
                 TelaPesquisar.add(painelConteudo, BorderLayout.CENTER);
-
 
                 TelaPesquisar.setLocationRelativeTo(null);
                 TelaPesquisar.setVisible(true);
 
-
             }
-
 
             public void ClickEditar() {
 
@@ -617,7 +720,6 @@ public class OpcoesDoMenu {
                     }
                 });
             }
-
 
             public void ClickExcluir() {
 
@@ -667,8 +769,6 @@ public class OpcoesDoMenu {
             public void ClickSair() {
                 System.exit(0);
             }
-
-
 
 }
 

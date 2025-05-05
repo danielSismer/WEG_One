@@ -62,7 +62,6 @@ public class TelaLogada {
         botaoPesquisar.setBounds(9, 69, 210, 50);
         menuLateral.add(botaoPesquisar);
 
-
         botaoPesquisar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -244,7 +243,6 @@ public class TelaLogada {
             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
             mensagem.setBackground(Color.WHITE);
 
-
             painelCentral.add(Box.createVerticalGlue());
             painelCentral.add(labelImagem);
             painelCentral.add(mensagem);
@@ -254,11 +252,7 @@ public class TelaLogada {
             painelCentral.add(new JLabel("Erro ao carregar imagem."));
         }
 
-
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
-
-
 
         boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {

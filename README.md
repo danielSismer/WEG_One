@@ -57,12 +57,6 @@ da Weg de forma simples e eficiente.
        </a>
    </td>
    <td>
-       <a href="https://github.com/danielSismer">
-           <img src="https://avatars.githubusercontent.com/u/188383351?v=4" width="115"/><br />
-           <sub><b>@danielSismer</b></sub>
-       </a>
-   </td>
-   <td>
        <a href="https://github.com/BooLeandro1911">
            <img src="https://avatars.githubusercontent.com/u/198644365?v=4" width="115"/><br />
            <sub><b>@BooLeandro1911</b></sub>

@@ -34,11 +34,50 @@ da Weg de forma simples e eficiente.
 
 <h3><b>Colaboradores do Projeto</b></h3>
 
-@KaelLuih
-@Jose7764
-@danielSismer
-@BooLeandro1911
-@gabrielEFagundes
+<br>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/KaelLuih">
+        <img src="https://avatars.githubusercontent.com/u/189893504?v=4" width="115"/><br />
+        <sub><b>@KaelLuih</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/KaelLuih">
+        <img src="https://avatars.githubusercontent.com/u/197796453?v=4" width="115"/><br />
+        <sub><b>@Jose7764</b></sub>
+      </a>
+    </td>
+   <td>
+       <a href="https://github.com/danielSismer">
+           <img src="https://avatars.githubusercontent.com/u/188383351?v=4" width="115"/><br />
+           <sub><b>@danielSismer</b></sub>
+       </a>
+   </td>
+   <td>
+       <a href="https://github.com/danielSismer">
+           <img src="https://avatars.githubusercontent.com/u/188383351?v=4" width="115"/><br />
+           <sub><b>@danielSismer</b></sub>
+       </a>
+   </td>
+   <td>
+       <a href="https://github.com/BooLeandro1911">
+           <img src="https://avatars.githubusercontent.com/u/198644365?v=4" width="115"/><br />
+           <sub><b>@BooLeandro1911</b></sub>
+       </a>
+   </td>
+   <td>
+       <a href="https://github.com/gabrielEFagundes">
+           <img src="https://avatars.githubusercontent.com/u/185841300?v=4" width="115"/><br />
+           <sub><b>@gabrielEFagundes</b></sub>
+       </a>
+   </td>
+  </tr>
+</table>
+
+<br>
 
 <hr><br>
 

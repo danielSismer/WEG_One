@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-
 public class TelaLogada {
 
     public static void main(String[] args) {
@@ -10,21 +9,17 @@ public class TelaLogada {
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
         LoginAdm GestaoDeUsuarios = new LoginAdm();
 
-
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaMenus.setSize(900, 600);
         TelaMenus.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaMenus.setLayout(new BorderLayout());
 
-
-
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
-
 
         JButton fecharMenu = new JButton("☰");
         fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
@@ -35,32 +30,6 @@ public class TelaLogada {
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(false);
         menuLateral.add(fecharMenu);
-
-
-
-
-
-        String[] opcoesCadastro = {
-                "Manual de Operação",
-                "Manutenção de Transformadores",
-                "Procedimento de Segurança para Instalação de Equipamentos Elétricos",
-                "Procedimento de Segurança para Operações com Risco de Choque Elétrico",
-                "Procedimento de Segurança para Testes de Funcionamento de Motores",
-                "Procedimento de Segurança para Diagnóstico de Falhas em Motores",
-                " Procedimento de Segurança para Diagnóstico e Manutenção de Sistemas de Automação",
-                " Procedimento Operacional no Setor de Manutenção",
-                ""
-
-
-
-
-        };
-
-
-
-
-
-
 
         JButton botaoCadastrar = new JButton("Cadastrar Orientações");
         botaoCadastrar.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -82,7 +51,6 @@ public class TelaLogada {
             }
         });
 
-
         JButton botaoPesquisar = new JButton("Pesquisar Orientações");
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoPesquisar.setMaximumSize(new Dimension(180, 50));
@@ -94,7 +62,6 @@ public class TelaLogada {
         botaoPesquisar.setBounds(9, 69, 210, 50);
         menuLateral.add(botaoPesquisar);
 
-
         botaoPesquisar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -103,7 +70,6 @@ public class TelaLogada {
 
             }
         });
-
 
         JButton botaoEditar = new JButton("Editar Orientações");
         botaoEditar.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -116,8 +82,6 @@ public class TelaLogada {
         botaoEditar.setBounds(9, 199, 210, 50);
         menuLateral.add(botaoEditar);
 
-
-
         botaoEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -126,7 +90,6 @@ public class TelaLogada {
 
             }
         });
-
 
         JButton botaoExcluir = new JButton("Excluir Orientações");
         botaoExcluir.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -139,8 +102,6 @@ public class TelaLogada {
         botaoExcluir.setBounds(9, 264, 210, 50);
         menuLateral.add(botaoExcluir);
 
-
-
         botaoExcluir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -149,8 +110,6 @@ public class TelaLogada {
 
             }
         });
-
-
 
         JButton botaoSair = new JButton("Sair");
         botaoSair.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -163,7 +122,6 @@ public class TelaLogada {
         botaoSair.setBounds(9, 329, 210, 50);
         menuLateral.add(botaoSair);
 
-
         botaoSair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -173,22 +131,13 @@ public class TelaLogada {
             }
         });
 
-
-
-
-
-
         JPanel painelConteudo = new JPanel(new BorderLayout());
         painelConteudo.setBackground(new Color(255, 255, 255));
-
 
         JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
-
-
-
 
         JButton botao3Linhas = new JButton("☰");
         botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
@@ -198,10 +147,6 @@ public class TelaLogada {
         botao3Linhas.setForeground(Color.WHITE);
         botao3Linhas.setBounds(-3, 0, 50, 30);
 
-
-
-
-
         botao3Linhas.addActionListener(e -> {
             menuLateral.setVisible(true);
             botao3Linhas.setVisible(false);
@@ -209,7 +154,6 @@ public class TelaLogada {
             headerPanel.revalidate();
             headerPanel.repaint();
         });
-
 
         fecharMenu.addActionListener(e -> {
             menuLateral.setVisible(false);
@@ -219,14 +163,12 @@ public class TelaLogada {
             headerPanel.repaint();
         });
 
-
         JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
         botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));
         botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botaoIdioma.setForeground(Color.WHITE);
-
 
         JButton botaoUsuario = new JButton("\uD83D\uDC64");
         botaoUsuario.setFont(new Font("SansSerif", Font.PLAIN, 30));
@@ -237,7 +179,6 @@ public class TelaLogada {
         botaoUsuario.setLayout(null);
         botao3Linhas.setBounds(30, 40, 50, 30);
 
-
         botaoUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -247,7 +188,26 @@ public class TelaLogada {
             }
         });
 
+        JButton botaoLogout = new JButton("Sair da Conta");
+        botaoLogout.setAlignmentX(Component.CENTER_ALIGNMENT);
+        botaoLogout.setMaximumSize(new Dimension(180, 50));
+        botaoLogout.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoLogout.setFocusPainted(false);
+        botaoLogout.setBackground(new Color(52, 152, 219));
+        botaoLogout.setForeground(Color.WHITE);
+        botaoLogout.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoLogout.setLayout(null);
+        botaoLogout.setBounds(9, 734, 210, 50);
+        menuLateral.add(botaoLogout);
 
+        botaoLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                TelaDeslogada.main(new String [] {});
+
+            }
+        });
 
 
         headerPanel.add(botao3Linhas, BorderLayout.WEST);
@@ -283,7 +243,6 @@ public class TelaLogada {
             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
             mensagem.setBackground(Color.WHITE);
 
-
             painelCentral.add(Box.createVerticalGlue());
             painelCentral.add(labelImagem);
             painelCentral.add(mensagem);
@@ -293,11 +252,7 @@ public class TelaLogada {
             painelCentral.add(new JLabel("Erro ao carregar imagem."));
         }
 
-
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
-
-
 
         boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {
@@ -306,17 +261,12 @@ public class TelaLogada {
             TelaMenus.revalidate();
         });
 
-
-
-
         botaoIdioma.addActionListener(e -> {
             JOptionPane.showMessageDialog(TelaMenus, "Funcionalidade de pesquisa aqui.");
         });
 
-
         TelaMenus.add(menuLateral, BorderLayout.WEST);
         TelaMenus.add(painelConteudo, BorderLayout.CENTER);
-
 
         TelaMenus.setLocationRelativeTo(null);
         TelaMenus.setVisible(true);

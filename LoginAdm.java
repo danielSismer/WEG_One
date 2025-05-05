@@ -21,7 +21,7 @@ public class LoginAdm {
         JPanel painelLogin = new JPanel();
         painelLogin.setLayout(null);
         painelLogin.setBackground(new Color(0, 87, 156));
-        painelLogin.setBounds(700, 300, 500, 400);
+        painelLogin.setBounds(520, 200, 500, 400);
         painelFundo.add(painelLogin);
 
         JLabel labelUsuario = new JLabel("Usuário:");
@@ -99,13 +99,13 @@ public class LoginAdm {
 
     private boolean authenticateUser(String email, String senha) {
         boolean authenticated = false;
-        // Replace this with your actual DB connection method
+
         try (Connection conn = getConnection()) {
             String sql = "SELECT 1 FROM usuarios WHERE email = ? AND senha = ?";
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, email);
                 ps.setString(2, senha);
-                // For security, use hashed passwords instead of plain text.
+
                 try (ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
                         authenticated = true;

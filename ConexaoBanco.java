@@ -17,9 +17,9 @@ public class ConexaoBanco {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
            conexao = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/weg_one",
-                    "DanielAdmin",
-                    "246801@Weg"
+                    "jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway",
+                    "root",
+                    "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb"
             );
 
 

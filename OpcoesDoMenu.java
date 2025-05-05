@@ -84,20 +84,20 @@ public class OpcoesDoMenu {
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         JPanel painelSuperior = new JPanel();
-        painelCentral.setBackground(new Color(255, 255, 255));
-        painelCentral.setLayout(null);
-        fecharMenu.setBounds(9, 19, 50, 30);
-        painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
+        painelSuperior.setBackground(new Color(255, 255, 255));
+        painelSuperior.setLayout(null);
+        painelSuperior.setBounds(9, 19, 50, 30);
+        painelSuperior.setAlignmentX(Component.CENTER_ALIGNMENT);
         painelCentral.add(painelSuperior);
 
         JPanel painelEsquerdo = new JPanel();
-        painelCentral.setBackground(new Color(255, 255, 255));
-        painelCentral.setLayout(null);
-        painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
+        painelEsquerdo.setBackground(new Color(255, 255, 255));
+        painelEsquerdo.setLayout(null);
+        painelEsquerdo.setAlignmentX(Component.CENTER_ALIGNMENT);
         painelCentral.add(painelEsquerdo);
 
         JPanel painelDireito = new JPanel();
-        painelCentral.setBackground(new Color(255, 255, 255));
+        painelDireito.setBackground(new Color(255, 255, 255));
         painelCentral.setLayout(null);
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
         painelCentral.add(painelDireito);
@@ -139,7 +139,7 @@ public class OpcoesDoMenu {
 
                 ArrayList<String> opcoesPasta1 = new ArrayList<>();
 
-                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
                     String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 1";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();

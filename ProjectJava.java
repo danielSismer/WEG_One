@@ -2,21 +2,22 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+
 public class ProjectJava {
 
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        ManualDeOperacao[] itensManualDeOperacao = new ManualDeOperacao[20];
-        ManualCondutaSetorial[] itensManualCondutaSetorial = new ManualCondutaSetorial[20];
-        ProcedimentodeSeguranca[] itensProcedimentodeSeguranca = new ProcedimentodeSeguranca[20];
-        TesteDiagnostico[] itensTesteDiagnostico = new TesteDiagnostico[20];
-        ManutencaoReparo[] itensManutencaoReparo = new ManutencaoReparo[20];
+        ManualDeOperacao [] itensManualDeOperacao = new ManualDeOperacao[20];
+        ManualCondutaSetorial [] itensManualCondutaSetorial = new ManualCondutaSetorial[20];
+        ProcedimentodeSeguranca [] itensProcedimentodeSeguranca = new ProcedimentodeSeguranca[20];
+        TesteDiagnostico [] itensTesteDiagnostico = new TesteDiagnostico[20];
+        ManutencaoReparo [] itensManutencaoReparo = new ManutencaoReparo[20];
 
         ManualDeOperacao manualMotor = new ManualDeOperacao();
         ManualDeOperacao manualGerador = new ManualDeOperacao();
-        ManualDeOperacao manualCadastro = new ManualDeOperacao();
+        ManualDeOperacao  manualCadastro = new ManualDeOperacao();
         itensManualDeOperacao[0] = manualMotor;
         itensManualDeOperacao[1] = manualGerador;
         itensManualDeOperacao[2] = manualCadastro;
@@ -24,7 +25,7 @@ public class ProjectJava {
 
         ProcedimentodeSeguranca procedimentoEletrico = new ProcedimentodeSeguranca();
         ProcedimentodeSeguranca procedimentoChoque = new ProcedimentodeSeguranca();
-        ProcedimentodeSeguranca procedimentoCadastro = new ProcedimentodeSeguranca();
+        ProcedimentodeSeguranca   procedimentoCadastro = new ProcedimentodeSeguranca();
         itensProcedimentodeSeguranca[0] = procedimentoChoque;
         itensProcedimentodeSeguranca[1] = procedimentoEletrico;
         itensProcedimentodeSeguranca[2] = procedimentoCadastro;
@@ -34,35 +35,39 @@ public class ProjectJava {
         ManutencaoReparo manutencaoReparoTransformadores = new ManutencaoReparo();
         ManutencaoReparo manutencaoReparoCadastro = new ManutencaoReparo();
 
-        itensManutencaoReparo[0] = manutencaoReparoMotorEletrico;
-        itensManutencaoReparo[1] = manutencaoReparoTransformadores;
-        itensManutencaoReparo[2] = manutencaoReparoCadastro;
+        itensManutencaoReparo [0] = manutencaoReparoMotorEletrico;
+        itensManutencaoReparo [1] = manutencaoReparoTransformadores;
+        itensManutencaoReparo [2] = manutencaoReparoCadastro;
 
         TesteDiagnostico testeDiagnosticoMotores = new TesteDiagnostico();
         TesteDiagnostico testeDiagnosticoFalhas = new TesteDiagnostico();
         TesteDiagnostico testeDiagnosticoCadastro = new TesteDiagnostico();
 
-        itensTesteDiagnostico[0] = testeDiagnosticoMotores;
-        itensTesteDiagnostico[1] = testeDiagnosticoFalhas;
-        itensTesteDiagnostico[2] = testeDiagnosticoCadastro;
+        itensTesteDiagnostico [0] = testeDiagnosticoMotores;
+        itensTesteDiagnostico [1] = testeDiagnosticoFalhas;
+        itensTesteDiagnostico [2] = testeDiagnosticoCadastro;
 
 
         ManualCondutaSetorial manualCondutaSetorialMontagem = new ManualCondutaSetorial();
         ManualCondutaSetorial manualCondutaSetorialManutencao = new ManualCondutaSetorial();
         ManualCondutaSetorial manualCondutaSetorialCadastro = new ManualCondutaSetorial();
 
-        itensManualCondutaSetorial[0] = manualCondutaSetorialMontagem;
-        itensManualCondutaSetorial[1] = manualCondutaSetorialManutencao;
-        itensManualCondutaSetorial[2] = manualCondutaSetorialCadastro;
+        itensManualCondutaSetorial [0] = manualCondutaSetorialMontagem;
+        itensManualCondutaSetorial [1] = manualCondutaSetorialManutencao;
+        itensManualCondutaSetorial [2] = manualCondutaSetorialCadastro;
+
 
         int escolha, menuEscolha = 0;
+
 
         System.out.println("\nEscolha o idioma que você deseja: \n");
         System.out.println("EN-US\t\tPT-BR\t\tDE-DE");
         System.out.println("  1\t\t  2\t\t  3");
         escolha = input.nextInt();
 
+
         switch (escolha) {
+
 
             case 1:
                 Locale localeEN = new Locale("en", "US");
@@ -128,6 +133,7 @@ public class ProjectJava {
                                 for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                     if (itensManualDeOperacao[cont] != null) {
 
+
                                     }
                                 }
 
@@ -182,21 +188,25 @@ public class ProjectJava {
                                     continuarCadastro = false;
                                 }
                             }
+
                             break;
+
 
                         case 2:
                             System.out.println(messages_en.getString("categoryOrientations"));
                             int categoria = input.nextInt();
 
+
                             if (categoria == 1) {
 
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
 
-                                    if (itensManualDeOperacao[cont] != null) {
+                                    if ( itensManualDeOperacao[cont] != null){
 
-                                        System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
+                                        System.out.println((cont+1) +  " - " +itensManualDeOperacao[cont].nomeProduto);
 
                                     }
+
                                 }
 
                                 System.out.print("Type here: ");
@@ -246,9 +256,11 @@ public class ProjectJava {
 
                                 }
 
+
+
                             } else if (categoria == 2) {
 
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
+                                for ( int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
 
                                     if (itensProcedimentodeSeguranca[cont] != null) {
 
@@ -293,7 +305,7 @@ public class ProjectJava {
 
                             } else if (categoria == 3) {
 
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                                for ( int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                     if (itensManutencaoReparo[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -332,7 +344,9 @@ public class ProjectJava {
 
                                 }
 
-                            } else if (categoria == 4) {
+                            }
+
+                            else if (categoria == 4) {
                                 for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                     if (itensTesteDiagnostico[cont] != null) {
                                         System.out.println(itensTesteDiagnostico[cont].nomeProduto);
@@ -372,7 +386,8 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[9]);
 
                                 }
-                            } else if (categoria == 5) {
+                            }
+                            else if (categoria == 5) {
                                 for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                     if (itensManualCondutaSetorial[cont] != null) {
                                         System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
@@ -422,7 +437,7 @@ public class ProjectJava {
                             categoria = input.nextInt();
 
                             if (categoria == 1) {
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                for ( int cont =0; cont < itensManualDeOperacao.length; cont++) {
                                     if (itensManualDeOperacao[cont] != null) {
                                         System.out.println(itensManualDeOperacao[cont].nomeProduto);
                                     }
@@ -442,12 +457,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[0].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[0].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -456,7 +475,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (escolha == 2) {
+                                }
+                                else if (escolha == 2) {
                                     System.out.println(itensManualDeOperacao[1]);
 
                                     System.out.print("What would you like to edit? \n1 - Name \n2 - Description \n3 - Example");
@@ -467,12 +487,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[1].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[1].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -481,7 +505,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (escolha == 3) {
+                                }
+
+                                else if (escolha == 3) {
                                     System.out.println(itensManualDeOperacao[2]);
 
                                     System.out.print("What would you like to edit? \n1 - Name \n2 - Description \n3 - Example");
@@ -492,12 +518,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[2].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -506,7 +536,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (escolha == 4) {
+                                }
+                                else if (escolha == 4) {
                                     System.out.println(itensManualDeOperacao[3]);
 
                                     System.out.print("What would you like to edit? \n1 - Name \n2 - Description \n3 - Example");
@@ -517,12 +548,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[3].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -530,7 +565,8 @@ public class ProjectJava {
                                         itensManualDeOperacao[3].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 5) {
+                                }
+                                else if (escolha == 5) {
                                     System.out.println(itensManualDeOperacao[4]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -541,12 +577,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[4].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -554,7 +594,8 @@ public class ProjectJava {
                                         itensManualDeOperacao[4].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 6) {
+                                }
+                                else if (escolha == 6) {
                                     System.out.println(itensManualDeOperacao[5]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -565,12 +606,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[5].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -590,12 +635,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[6].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -615,12 +664,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[7].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -640,12 +693,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[8].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -665,12 +722,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManualDeOperacao[9].comoUsar = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -681,8 +742,10 @@ public class ProjectJava {
 
                                 }
 
-                            } else if (categoria == 2) {
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
+                            }
+
+                            else if ( categoria == 2 ){
+                                for ( int cont =0; cont < itensProcedimentodeSeguranca.length; cont++) {
                                     if (itensProcedimentodeSeguranca[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -703,12 +766,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[0].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[0].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -716,7 +783,10 @@ public class ProjectJava {
                                         itensProcedimentodeSeguranca[0].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 2) {
+
+                                }
+
+                                else if (escolha == 2) {
                                     System.out.println(itensProcedimentodeSeguranca[1]);
 
 
@@ -728,12 +798,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[1].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[1].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -741,7 +815,11 @@ public class ProjectJava {
                                         itensProcedimentodeSeguranca[1].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (categoria == 3) {
+
+
+                                }
+
+                                else if ( categoria == 3 ){
                                     System.out.println(itensProcedimentodeSeguranca[2]);
 
 
@@ -753,12 +831,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[2].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[2].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -766,7 +848,10 @@ public class ProjectJava {
                                         itensProcedimentodeSeguranca[2].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (categoria == 4) {
+
+                                }
+
+                                else if ( categoria == 4 ){
                                     System.out.println(itensProcedimentodeSeguranca[3]);
 
 
@@ -778,12 +863,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[3].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[3].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -792,7 +881,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 5) {
+                                }
+
+                                else if (categoria == 5 ) {
 
                                     System.out.println(itensProcedimentodeSeguranca[4]);
 
@@ -819,7 +910,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 6) {
+                                }
+                                else if (categoria == 6 ) {
                                     System.out.println(itensProcedimentodeSeguranca[5]);
 
 
@@ -831,12 +923,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[5].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[5].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -845,7 +941,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 7) {
+                                }
+
+                                else if (categoria == 7 ) {
 
                                     System.out.println(itensProcedimentodeSeguranca[6]);
 
@@ -858,12 +956,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[6].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[6].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -872,7 +974,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 8) {
+                                }
+                                else if ( categoria == 8 ) {
 
                                     System.out.println(itensProcedimentodeSeguranca[7]);
 
@@ -885,12 +988,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[7].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[7].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -899,7 +1006,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 9) {
+                                }
+                                else if ( categoria == 9 ) {
                                     System.out.println(itensProcedimentodeSeguranca[8]);
 
 
@@ -911,12 +1019,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[8].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[8].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -925,7 +1037,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 10) {
+                                }
+
+                                else if ( categoria == 10 ) {
                                     System.out.println(itensProcedimentodeSeguranca[9]);
 
 
@@ -937,12 +1051,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[9].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[9].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -953,8 +1071,10 @@ public class ProjectJava {
 
                                 }
 
-                            } else if (categoria == 3) {
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                            }
+
+                            else if ( categoria == 3 ) {
+                                for ( int cont =0; cont < itensManutencaoReparo.length; cont++) {
                                     if (itensManutencaoReparo[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -963,7 +1083,7 @@ public class ProjectJava {
                                 System.out.print("What item would you like to edit? \nType here: ");
                                 escolha = input.nextInt();
 
-                                if (escolha == 1) {
+                                if ( escolha == 1 ) {
                                     System.out.println(itensManutencaoReparo[0]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -974,12 +1094,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[0].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[0].descricaoManutencao= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -989,7 +1113,10 @@ public class ProjectJava {
                                     }
 
 
-                                } else if (escolha == 2) {
+
+                                }
+
+                                else if (escolha == 2 ){
                                     System.out.println(itensManutencaoReparo[1]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1000,12 +1127,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[1].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[1].descricaoManutencao= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1013,7 +1144,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[1].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 3) {
+                                }
+
+                                else if ( escolha == 3 ) {
                                     System.out.println(itensManutencaoReparo[2]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1024,12 +1157,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManutencaoReparo[2].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1037,7 +1174,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[2].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 4) {
+                                }
+
+                                else if ( escolha == 4 ) {
 
                                     System.out.println(itensManutencaoReparo[3]);
 
@@ -1049,12 +1188,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManutencaoReparo[3].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1062,7 +1205,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[3].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 5) {
+                                }
+
+                                else if ( escolha == 5 ) {
                                     System.out.println(itensManutencaoReparo[4]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1073,12 +1218,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[4].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[4].descricaoManutencao= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1086,7 +1235,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[4].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 6) {
+                                }
+
+                                else if ( escolha == 6 ) {
                                     System.out.println(itensManutencaoReparo[5]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1097,12 +1248,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[5].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[5].descricaoManutencao= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1110,7 +1265,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[5].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 7) {
+                                }
+
+                                else if ( escolha == 7 ) {
                                     System.out.println(itensManutencaoReparo[6]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1121,12 +1278,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManutencaoReparo[6].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1134,7 +1295,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[6].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 8) {
+                                }
+
+                                else if ( escolha == 8 ){
                                     System.out.println(itensManutencaoReparo[7]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1145,12 +1308,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManutencaoReparo[7].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1158,7 +1325,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[7].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 9) {
+                                }
+
+                                else if ( escolha == 9 ) {
 
                                     System.out.println(itensManutencaoReparo[8]);
 
@@ -1170,20 +1339,26 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManutencaoReparo[8].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo[8].exemploPratico = exemploEditado;
+                                        itensManutencaoReparo [8].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 10) {
+                                }
+
+                                else if ( escolha == 10 ) {
                                     System.out.println(itensManutencaoReparo[9]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1194,12 +1369,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
                                         itensManutencaoReparo[9].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1209,7 +1388,8 @@ public class ProjectJava {
                                     }
                                 }
 
-                            } else if (categoria == 4) {
+                            }
+                            else if (categoria == 4 ) {
                                 for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                     if (itensTesteDiagnostico[cont] != null) {
                                         System.out.println(itensTesteDiagnostico[cont].nomeProduto);
@@ -1292,7 +1472,11 @@ public class ProjectJava {
 
                                     itensTesteDiagnostico[2].exemploPratico = exemploEditado;
 
-                                } else if (escolha == 4) {
+                                }
+
+
+
+                                else if (escolha == 4) {
                                     System.out.println(itensTesteDiagnostico[3]);
 
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
@@ -1461,8 +1645,10 @@ public class ProjectJava {
 
                                     }
                                 }
-                            } else if (categoria == 5) {
-                                for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
+                            }
+
+                            else if ( categoria == 5 ){
+                                for ( int cont =0; cont < itensManualCondutaSetorial.length; cont++) {
                                     if (itensManualCondutaSetorial[cont] != null) {
                                         System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
                                     }
@@ -1480,12 +1666,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[0].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[0].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1493,7 +1683,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[0].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 2) {
+                                }
+
+                                else if (escolha == 2 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1502,12 +1694,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[1].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[1].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1515,7 +1711,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[1].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 3) {
+                                }
+
+                                else if ( escolha == 3 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1524,12 +1722,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[2].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[2].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1537,7 +1739,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[2].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 4) {
+                                }
+
+                                else if ( escolha == 4 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1546,12 +1750,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[3].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[3].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1559,7 +1767,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[3].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 5) {
+                                }
+
+                                else if ( escolha == 5 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1568,12 +1778,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[4].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[4].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1581,7 +1795,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[4].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 6) {
+                                }
+
+                                else if ( escolha == 6 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1590,12 +1806,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[5].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[5].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1603,7 +1823,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[5].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 7) {
+                                }
+
+                                else if ( escolha == 7 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1612,12 +1834,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[6].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[6].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1625,7 +1851,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[6].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 8) {
+                                }
+
+                                else if ( escolha == 8 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1634,12 +1862,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[7].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[7].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1647,7 +1879,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[7].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 9) {
+                                }
+
+                                else if ( escolha == 9 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1656,12 +1890,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[8].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[8].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1669,7 +1907,9 @@ public class ProjectJava {
                                         itensManualCondutaSetorial[8].observacoes = exemploEditado;
 
                                     }
-                                } else if (escolha == 10) {
+                                }
+
+                                else if (escolha == 10 ){
                                     System.out.print("What would you like to edit?" + "\n1 - Name \n2 - Description \n3 - Example");
                                     int escolhaEditar = input.nextInt();
 
@@ -1678,12 +1918,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualCondutaSetorial[9].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("What description would you like to inform? \nType here: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[9].condutaEsperada= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("What example would you like to inform? \nType here: ");
                                         String exemploEditado = input.nextLine();
@@ -1702,7 +1946,7 @@ public class ProjectJava {
                             System.out.println(messages_en.getString("categoryOrientations"));
                             categoria = input.nextInt();
 
-                            if (categoria == 1) {
+                            if(categoria == 1) {
 
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
@@ -1716,7 +1960,7 @@ public class ProjectJava {
 
                                 System.out.println("\nOperation manual successfully deleted!");
 
-                            } else if (categoria == 2) {
+                            }else if(categoria == 2){
 
                                 for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                     if (itensProcedimentodeSeguranca[i] != null) {
@@ -1730,7 +1974,7 @@ public class ProjectJava {
 
                                 System.out.println("\nSecurity procedure successfully deleted!");
 
-                            } else if (categoria == 3) {
+                            }else if(categoria == 3){
 
                                 for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                     if (itensManutencaoReparo[i] != null) {
@@ -1744,7 +1988,7 @@ public class ProjectJava {
 
                                 System.out.println("\nMaintenance and repair manual successfully deleted!");
 
-                            } else if (categoria == 4) {
+                            }else if(categoria == 4){
 
                                 for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                     if (itensTesteDiagnostico[i] != null) {
@@ -1758,7 +2002,7 @@ public class ProjectJava {
 
                                 System.out.println("\nDiagnostic and testing successfully deleted!");
 
-                            } else if (categoria == 5) {
+                            }else if(categoria == 5){
 
                                 for (int i = 0; i < itensManualCondutaSetorial.length; i++) {
                                     if (itensManualCondutaSetorial[i] != null) {
@@ -1910,11 +2154,11 @@ public class ProjectJava {
 
                             if (categoria == 1) {
 
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
 
-                                    if (itensManualDeOperacao[cont] != null) {
+                                    if ( itensManualDeOperacao[cont] != null){
 
-                                        System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
+                                        System.out.println((cont+1) +  " - " +itensManualDeOperacao[cont].nomeProduto);
 
                                     }
 
@@ -1925,52 +2169,53 @@ public class ProjectJava {
                                 System.out.println("\n");
 
 
-                                if (escolha == 1) {
+                                      if (escolha == 1) {
 
-                                    System.out.println(itensManualDeOperacao[0]);
+                                        System.out.println(itensManualDeOperacao[0]);
 
-                                } else if (escolha == 2) {
+                                      } else if (escolha == 2) {
 
-                                    System.out.println(itensManualDeOperacao[1]);
+                                        System.out.println(itensManualDeOperacao[1]);
 
-                                } else if (escolha == 3) {
+                                      } else if (escolha == 3) {
 
-                                    System.out.println(itensManualDeOperacao[2]);
+                                          System.out.println(itensManualDeOperacao[2]);
 
-                                } else if (escolha == 4) {
+                                      } else if (escolha == 4) {
 
-                                    System.out.println(itensManualDeOperacao[3]);
+                                          System.out.println(itensManualDeOperacao[3]);
 
-                                } else if (escolha == 5) {
+                                      } else if (escolha == 5) {
 
-                                    System.out.println(itensManualDeOperacao[4]);
+                                          System.out.println(itensManualDeOperacao[4]);
 
-                                } else if (escolha == 6) {
+                                      } else if (escolha == 6) {
 
-                                    System.out.println(itensManualDeOperacao[5]);
+                                          System.out.println(itensManualDeOperacao[5]);
 
-                                } else if (escolha == 7) {
+                                      } else if (escolha == 7) {
 
-                                    System.out.println(itensManualDeOperacao[6]);
+                                          System.out.println(itensManualDeOperacao[6]);
 
-                                } else if (escolha == 8) {
+                                      } else if (escolha == 8) {
 
-                                    System.out.println(itensManualDeOperacao[7]);
+                                          System.out.println(itensManualDeOperacao[7]);
 
-                                } else if (escolha == 9) {
+                                      } else if (escolha == 9) {
 
-                                    System.out.println(itensManualDeOperacao[8]);
+                                          System.out.println(itensManualDeOperacao[8]);
 
-                                } else if (escolha == 10) {
+                                      } else if (escolha == 10) {
 
-                                    System.out.println(itensManualDeOperacao[9]);
+                                          System.out.println(itensManualDeOperacao[9]);
 
-                                }
+                                      }
+
 
 
                             } else if (categoria == 2) {
 
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
+                                for ( int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
 
                                     if (itensProcedimentodeSeguranca[cont] != null) {
 
@@ -1978,44 +2223,44 @@ public class ProjectJava {
 
                                     }
                                 }
-                                System.out.print("Digite aqui:");
-                                escolha = input.nextInt();
+                                    System.out.print("Digite aqui:");
+                                    escolha = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensProcedimentodeSeguranca[0]);
+                                    if (escolha == 1) {
+                                        System.out.println(itensProcedimentodeSeguranca[0]);
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensProcedimentodeSeguranca[1]);
+                                    } else if (escolha == 2) {
+                                        System.out.println(itensProcedimentodeSeguranca[1]);
 
-                                } else if (escolha == 3) {
-                                    System.out.println(itensProcedimentodeSeguranca[2]);
+                                    } else if (escolha == 3) {
+                                        System.out.println(itensProcedimentodeSeguranca[2]);
 
-                                } else if (escolha == 4) {
-                                    System.out.println(itensProcedimentodeSeguranca[3]);
+                                    } else if (escolha == 4) {
+                                        System.out.println(itensProcedimentodeSeguranca[3]);
 
-                                } else if (escolha == 5) {
-                                    System.out.println(itensProcedimentodeSeguranca[4]);
+                                    } else if (escolha == 5) {
+                                        System.out.println(itensProcedimentodeSeguranca[4]);
 
-                                } else if (escolha == 6) {
-                                    System.out.println(itensProcedimentodeSeguranca[5]);
+                                    } else if (escolha == 6) {
+                                        System.out.println(itensProcedimentodeSeguranca[5]);
 
-                                } else if (escolha == 7) {
-                                    System.out.println(itensProcedimentodeSeguranca[6]);
+                                    } else if (escolha == 7) {
+                                        System.out.println(itensProcedimentodeSeguranca[6]);
 
-                                } else if (escolha == 8) {
-                                    System.out.println(itensProcedimentodeSeguranca[7]);
+                                    } else if (escolha == 8) {
+                                        System.out.println(itensProcedimentodeSeguranca[7]);
 
-                                } else if (escolha == 9) {
-                                    System.out.println(itensProcedimentodeSeguranca[8]);
+                                    } else if (escolha == 9) {
+                                        System.out.println(itensProcedimentodeSeguranca[8]);
 
-                                } else if (escolha == 10) {
-                                    System.out.println(itensProcedimentodeSeguranca[9]);
+                                    } else if (escolha == 10) {
+                                        System.out.println(itensProcedimentodeSeguranca[9]);
 
-                                }
+                                    }
 
                             } else if (categoria == 3) {
 
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                                for ( int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                     if (itensManutencaoReparo[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -2054,7 +2299,9 @@ public class ProjectJava {
 
                                 }
 
-                            } else if (categoria == 4) {
+                            }
+
+                            else if (categoria == 4) {
                                 for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                     if (itensTesteDiagnostico[cont] != null) {
                                         System.out.println(itensTesteDiagnostico[cont].nomeProduto);
@@ -2094,7 +2341,8 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[9]);
 
                                 }
-                            } else if (categoria == 5) {
+                            }
+                            else if (categoria == 5) {
                                 for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                     if (itensManualCondutaSetorial[cont] != null) {
                                         System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
@@ -2141,1286 +2389,1514 @@ public class ProjectJava {
 
                         case 3:
                             System.out.print("1-Manual de operação \n 2-Procedimento de Segurança \n 3-Manutenção e Reparos \n 4-Testes e Diagnóstico \n 5-Manual de Conduta e Operações Setoriais  \nDigite aqui:");
-                            categoria = input.nextInt();
+                          categoria = input.nextInt();
 
-                            if (categoria == 1) {
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
-                                    if (itensManualDeOperacao[cont] != null) {
-                                        System.out.println(itensManualDeOperacao[cont].nomeProduto);
-                                    }
-                                }
+                          if (categoria == 1) {
+                              for ( int cont =0; cont < itensManualDeOperacao.length; cont++) {
+                                  if (itensManualDeOperacao[cont] != null) {
+                                      System.out.println(itensManualDeOperacao[cont].nomeProduto);
+                                  }
+                              }
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
-                                escolha = input.nextInt();
+                              System.out.print("Qual item deseja editar? \nDigite aqui:");
+                              escolha = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensManualDeOperacao[0]);
+                              if (escolha == 1) {
+                                  System.out.println(itensManualDeOperacao[0]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualDeOperacao[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManualDeOperacao[0].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManualDeOperacao[0].comoUsar = descricaoEditado;
-                                    } else {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[0].comoUsar= descricaoEditado;
+                                  }
 
-                                        itensManualDeOperacao[0].exemploPratico = exemploEditado;
+                                  else {
 
-                                    }
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensManualDeOperacao[1]);
+                                      itensManualDeOperacao[0].exemploPratico = exemploEditado;
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                              }
+                              else if (escolha == 2) {
+                                  System.out.println(itensManualDeOperacao[1]);
 
-                                        itensManualDeOperacao[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManualDeOperacao[1].comoUsar = descricaoEditado;
-                                    } else {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[1].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManualDeOperacao[1].exemploPratico = exemploEditado;
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    }
+                                      itensManualDeOperacao[1].comoUsar= descricaoEditado;
+                                  }
 
-                                } else if (escolha == 3) {
-                                    System.out.println(itensManualDeOperacao[2]);
+                                  else {
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManualDeOperacao[1].exemploPratico = exemploEditado;
 
-                                        itensManualDeOperacao[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
 
-                                        itensManualDeOperacao[2].comoUsar = descricaoEditado;
-                                    } else {
+                              }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                              else if (escolha == 3) {
+                                  System.out.println(itensManualDeOperacao[2]);
 
-                                        itensManualDeOperacao[2].exemploPratico = exemploEditado;
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    }
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                } else if (escolha == 4) {
-                                    System.out.println(itensManualDeOperacao[3]);
+                                      itensManualDeOperacao[2].nomeProduto = nomeEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManualDeOperacao[2].comoUsar = descricaoEditado;
+                                  }
 
-                                        itensManualDeOperacao[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else {
 
-                                        itensManualDeOperacao[3].comoUsar = descricaoEditado;
-                                    } else {
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[2].exemploPratico = exemploEditado;
 
-                                        itensManualDeOperacao[3].exemploPratico = exemploEditado;
+                                  }
 
-                                    }
-                                } else if (escolha == 5) {
-                                    System.out.println(itensManualDeOperacao[4]);
+                              }
+                              else if (escolha == 4) {
+                                  System.out.println(itensManualDeOperacao[3]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualDeOperacao[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManualDeOperacao[3].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManualDeOperacao[4].comoUsar = descricaoEditado;
-                                    } else {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[3].comoUsar = descricaoEditado;
+                                  }
 
-                                        itensManualDeOperacao[4].exemploPratico = exemploEditado;
+                                  else {
 
-                                    }
-                                } else if (escolha == 6) {
-                                    System.out.println(itensManualDeOperacao[5]);
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensManualDeOperacao[3].exemploPratico = exemploEditado;
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  }
+                              }
+                              else if (escolha == 5) {
+                                  System.out.println(itensManualDeOperacao[4]);
 
-                                        itensManualDeOperacao[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManualDeOperacao[5].comoUsar = descricaoEditado;
-                                    } else {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[4].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManualDeOperacao[5].exemploPratico = exemploEditado;
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    }
+                                      itensManualDeOperacao[4].comoUsar = descricaoEditado;
+                                  }
 
-                                } else if (escolha == 7) {
-                                    System.out.println(itensManualDeOperacao[6]);
+                                  else {
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManualDeOperacao[4].exemploPratico = exemploEditado;
 
-                                        itensManualDeOperacao[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
+                              }
+                              else if (escolha == 6) {
+                                  System.out.println(itensManualDeOperacao[5]);
 
-                                        itensManualDeOperacao[6].comoUsar = descricaoEditado;
-                                    } else {
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualDeOperacao[6].exemploPratico = exemploEditado;
+                                      itensManualDeOperacao[5].nomeProduto = nomeEditado;
+                                  }
 
-                                    }
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                } else if (escolha == 8) {
-                                    System.out.println(itensManualDeOperacao[7]);
+                                      itensManualDeOperacao[5].comoUsar = descricaoEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else {
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManualDeOperacao[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManualDeOperacao[5].exemploPratico = exemploEditado;
 
-                                        itensManualDeOperacao[7].comoUsar = descricaoEditado;
-                                    } else {
+                                  }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                              } else if (escolha == 7) {
+                                  System.out.println(itensManualDeOperacao[6]);
 
-                                        itensManualDeOperacao[7].exemploPratico = exemploEditado;
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    }
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                } else if (escolha == 9) {
-                                    System.out.println(itensManualDeOperacao[8]);
+                                      itensManualDeOperacao[6].nomeProduto = nomeEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManualDeOperacao[6].comoUsar = descricaoEditado;
+                                  }
 
-                                        itensManualDeOperacao[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else {
 
-                                        itensManualDeOperacao[8].comoUsar = descricaoEditado;
-                                    } else {
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[6].exemploPratico = exemploEditado;
 
-                                        itensManualDeOperacao[8].exemploPratico = exemploEditado;
+                                  }
 
-                                    }
+                              } else if (escolha == 8) {
+                                  System.out.println(itensManualDeOperacao[7]);
 
-                                } else if (escolha == 10) {
-                                    System.out.println(itensManualDeOperacao[9]);
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManualDeOperacao[7].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManualDeOperacao[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[9].comoUsar = descricaoEditado;
-                                    } else {
+                                      itensManualDeOperacao[7].comoUsar = descricaoEditado;
+                                  }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  else {
 
-                                        itensManualDeOperacao[9].exemploPratico = exemploEditado;
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    }
+                                      itensManualDeOperacao[7].exemploPratico = exemploEditado;
 
-                                }
+                                  }
 
-                            } else if (categoria == 2) {
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
-                                    if (itensProcedimentodeSeguranca[cont] != null) {
-                                        System.out.println(itensManutencaoReparo[cont].nomeProduto);
-                                    }
-                                }
+                              } else if (escolha == 9) {
+                                  System.out.println(itensManualDeOperacao[8]);
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
-                                escolha = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensProcedimentodeSeguranca[0]);
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
+                                      itensManualDeOperacao[8].nomeProduto = nomeEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManualDeOperacao[8].comoUsar = descricaoEditado;
+                                  }
 
-                                        itensProcedimentodeSeguranca[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else {
 
-                                        itensProcedimentodeSeguranca[0].comoUsar = descricaoEditado;
-                                    } else {
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManualDeOperacao[8].exemploPratico = exemploEditado;
 
-                                        itensProcedimentodeSeguranca[0].exemploPratico = exemploEditado;
+                                  }
 
-                                    }
+                              } else if (escolha == 10) {
+                                  System.out.println(itensManualDeOperacao[9]);
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensProcedimentodeSeguranca[1]);
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensManualDeOperacao[9].nomeProduto = nomeEditado;
+                                  }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManualDeOperacao[9].comoUsar = descricaoEditado;
+                                  }
 
-                                        itensProcedimentodeSeguranca[1].comoUsar = descricaoEditado;
-                                    } else {
+                                  else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[1].exemploPratico = exemploEditado;
+                                      itensManualDeOperacao[9].exemploPratico = exemploEditado;
 
-                                    }
+                                  }
 
+                              }
 
-                                } else if (categoria == 3) {
-                                    System.out.println(itensProcedimentodeSeguranca[2]);
+                          }
 
+                          else if ( categoria == 2 ){
+                              for ( int cont =0; cont < itensProcedimentodeSeguranca.length; cont++) {
+                                  if (itensProcedimentodeSeguranca[cont] != null) {
+                                      System.out.println(itensManutencaoReparo[cont].nomeProduto);
+                                  }
+                              }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                              System.out.print("Qual item deseja editar? \nDigite aqui:");
+                              escolha = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                              if (escolha == 1) {
+                                  System.out.println(itensProcedimentodeSeguranca[0]);
 
-                                        itensProcedimentodeSeguranca[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[2].comoUsar = descricaoEditado;
-                                    } else {
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[2].exemploPratico = exemploEditado;
+                                      itensProcedimentodeSeguranca[0].nomeProduto = nomeEditado;
+                                  }
 
-                                    }
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                } else if (categoria == 4) {
-                                    System.out.println(itensProcedimentodeSeguranca[3]);
+                                      itensProcedimentodeSeguranca[0].comoUsar= descricaoEditado;
+                                  }
 
+                                  else {
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[0].exemploPratico = exemploEditado;
 
-                                        itensProcedimentodeSeguranca[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
 
-                                        itensProcedimentodeSeguranca[3].comoUsar = descricaoEditado;
-                                    } else {
+                             }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                              else if (escolha == 2) {
+                                  System.out.println(itensProcedimentodeSeguranca[1]);
 
-                                        itensProcedimentodeSeguranca[3].exemploPratico = exemploEditado;
 
-                                    }
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                } else if (categoria == 5) {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    System.out.println(itensProcedimentodeSeguranca[4]);
+                                      itensProcedimentodeSeguranca[1].nomeProduto = nomeEditado;
+                                  }
 
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensProcedimentodeSeguranca[1].comoUsar= descricaoEditado;
+                                  }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  else {
 
-                                        itensProcedimentodeSeguranca[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[4].comoUsar = descricaoEditado;
-                                    } else {
+                                      itensProcedimentodeSeguranca[1].exemploPratico = exemploEditado;
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  }
 
-                                        itensProcedimentodeSeguranca[4].exemploPratico = exemploEditado;
 
-                                    }
+                              }
 
-                                } else if (categoria == 6) {
-                                    System.out.println(itensProcedimentodeSeguranca[5]);
+                              else if ( categoria == 3 ){
+                                  System.out.println(itensProcedimentodeSeguranca[2]);
 
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[2].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensProcedimentodeSeguranca[5].comoUsar = descricaoEditado;
-                                    } else {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[2].comoUsar= descricaoEditado;
+                                  }
 
-                                        itensProcedimentodeSeguranca[5].exemploPratico = exemploEditado;
+                                  else {
 
-                                    }
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                } else if (categoria == 7) {
+                                      itensProcedimentodeSeguranca[2].exemploPratico = exemploEditado;
 
-                                    System.out.println(itensProcedimentodeSeguranca[6]);
+                                  }
 
+                              }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                              else if ( categoria == 4 ){
+                                  System.out.println(itensProcedimentodeSeguranca[3]);
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensProcedimentodeSeguranca[6].comoUsar = descricaoEditado;
-                                    } else {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[3].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensProcedimentodeSeguranca[6].exemploPratico = exemploEditado;
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    }
+                                      itensProcedimentodeSeguranca[3].comoUsar= descricaoEditado;
+                                  }
 
-                                } else if (categoria == 8) {
+                                  else {
 
-                                    System.out.println(itensProcedimentodeSeguranca[7]);
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
+                                      itensProcedimentodeSeguranca[3].exemploPratico = exemploEditado;
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                              }
 
-                                        itensProcedimentodeSeguranca[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              else if (categoria == 5 ) {
 
-                                        itensProcedimentodeSeguranca[7].comoUsar = descricaoEditado;
-                                    } else {
+                                  System.out.println(itensProcedimentodeSeguranca[4]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[7].exemploPratico = exemploEditado;
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    }
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                } else if (categoria == 9) {
-                                    System.out.println(itensProcedimentodeSeguranca[8]);
+                                      itensProcedimentodeSeguranca[4].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
+                                      itensProcedimentodeSeguranca[4].comoUsar = descricaoEditado;
+                                  } else {
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[4].exemploPratico = exemploEditado;
 
-                                        itensProcedimentodeSeguranca[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
 
-                                        itensProcedimentodeSeguranca[8].comoUsar = descricaoEditado;
-                                    } else {
+                              }
+                              else if (categoria == 6 ) {
+                                  System.out.println(itensProcedimentodeSeguranca[5]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[8].exemploPratico = exemploEditado;
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    }
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                } else if (categoria == 10) {
-                                    System.out.println(itensProcedimentodeSeguranca[9]);
+                                      itensProcedimentodeSeguranca[5].nomeProduto = nomeEditado;
+                                  }
 
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensProcedimentodeSeguranca[5].comoUsar= descricaoEditado;
+                                  }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  else {
 
-                                        itensProcedimentodeSeguranca[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[9].comoUsar = descricaoEditado;
-                                    } else {
+                                      itensProcedimentodeSeguranca[5].exemploPratico = exemploEditado;
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  }
 
-                                        itensProcedimentodeSeguranca[9].exemploPratico = exemploEditado;
+                              }
 
-                                    }
+                              else if (categoria == 7 ) {
 
-                                }
+                                  System.out.println(itensProcedimentodeSeguranca[6]);
 
-                            } else if (categoria == 3) {
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
-                                    if (itensManutencaoReparo[cont] != null) {
-                                        System.out.println(itensManutencaoReparo[cont].nomeProduto);
-                                    }
-                                }
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
-                                escolha = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensManutencaoReparo[0]);
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensProcedimentodeSeguranca[6].nomeProduto = nomeEditado;
+                                  }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[6].comoUsar= descricaoEditado;
+                                  }
 
-                                        itensManutencaoReparo[0].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo[0].exemploPratico = exemploEditado;
+                                      itensProcedimentodeSeguranca[6].exemploPratico = exemploEditado;
 
-                                    }
+                                  }
 
+                              }
+                              else if ( categoria == 8 ) {
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensManutencaoReparo[1]);
+                                  System.out.println(itensProcedimentodeSeguranca[7]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManutencaoReparo[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManutencaoReparo[1].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                      itensProcedimentodeSeguranca[7].nomeProduto = nomeEditado;
+                                  }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[1].exemploPratico = exemploEditado;
+                                      itensProcedimentodeSeguranca[7].comoUsar= descricaoEditado;
+                                  }
 
-                                    }
-                                } else if (escolha == 3) {
-                                    System.out.println(itensManutencaoReparo[2]);
+                                  else {
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[7].exemploPratico = exemploEditado;
 
-                                        itensManutencaoReparo[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
 
-                                        itensManutencaoReparo[2].descricaoManutencao = descricaoEditado;
-                                    } else {
+                              }
+                              else if ( categoria == 9 ) {
+                                  System.out.println(itensProcedimentodeSeguranca[8]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo[2].exemploPratico = exemploEditado;
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    }
-                                } else if (escolha == 4) {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    System.out.println(itensManutencaoReparo[3]);
+                                      itensProcedimentodeSeguranca[8].nomeProduto = nomeEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[8].comoUsar= descricaoEditado;
+                                  }
 
-                                        itensManutencaoReparo[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else {
 
-                                        itensManutencaoReparo[3].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[8].exemploPratico = exemploEditado;
 
-                                        itensManutencaoReparo[3].exemploPratico = exemploEditado;
+                                  }
 
-                                    }
-                                } else if (escolha == 5) {
-                                    System.out.println(itensManutencaoReparo[4]);
+                              }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                              else if ( categoria == 10 ) {
+                                  System.out.println(itensProcedimentodeSeguranca[9]);
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
 
-                                        itensManutencaoReparo[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManutencaoReparo[4].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[9].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManutencaoReparo[4].exemploPratico = exemploEditado;
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 6) {
-                                    System.out.println(itensManutencaoReparo[5]);
+                                      itensProcedimentodeSeguranca[9].comoUsar= descricaoEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else {
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensProcedimentodeSeguranca[9].exemploPratico = exemploEditado;
 
-                                        itensManutencaoReparo[5].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                              }
 
-                                        itensManutencaoReparo[5].exemploPratico = exemploEditado;
+                          }
 
-                                    }
-                                } else if (escolha == 7) {
-                                    System.out.println(itensManutencaoReparo[6]);
+                          else if ( categoria == 3 ) {
+                              for ( int cont =0; cont < itensManutencaoReparo.length; cont++) {
+                                  if (itensManutencaoReparo[cont] != null) {
+                                      System.out.println(itensManutencaoReparo[cont].nomeProduto);
+                                  }
+                              }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                              System.out.print("Qual item deseja editar? \nDigite aqui:");
+                              escolha = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                              if ( escolha == 1 ) {
+                                  System.out.println(itensManutencaoReparo[0]);
 
-                                        itensManutencaoReparo[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManutencaoReparo[6].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManutencaoReparo[0].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManutencaoReparo[6].exemploPratico = exemploEditado;
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 8) {
-                                    System.out.println(itensManutencaoReparo[7]);
+                                      itensManutencaoReparo[0].descricaoManutencao= descricaoEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else {
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManutencaoReparo[0].exemploPratico = exemploEditado;
 
-                                        itensManutencaoReparo[7].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo[7].exemploPratico = exemploEditado;
 
-                                    }
-                                } else if (escolha == 9) {
+                              }
 
-                                    System.out.println(itensManutencaoReparo[8]);
+                              else if (escolha == 2 ){
+                                  System.out.println(itensManutencaoReparo[1]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManutencaoReparo[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManutencaoReparo[1].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensManutencaoReparo[8].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManutencaoReparo[1].descricaoManutencao= descricaoEditado;
+                                  }
 
-                                        itensManutencaoReparo[8].exemploPratico = exemploEditado;
+                                  else {
 
-                                    }
-                                } else if (escolha == 10) {
-                                    System.out.println(itensManutencaoReparo[9]);
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensManutencaoReparo[1].exemploPratico = exemploEditado;
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  }
+                              }
 
-                                        itensManutencaoReparo[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              else if ( escolha == 3 ) {
+                                  System.out.println(itensManutencaoReparo[2]);
 
-                                        itensManutencaoReparo[9].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManutencaoReparo[9].exemploPratico = exemploEditado;
+                                      itensManutencaoReparo[2].nomeProduto = nomeEditado;
+                                  }
 
-                                    }
-                                }
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                            } else if (categoria == 4) {
-                                for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
-                                    if (itensTesteDiagnostico[cont] != null) {
-                                        System.out.println(itensTesteDiagnostico[cont].nomeProduto);
-                                    }
-                                }
+                                      itensManutencaoReparo[2].descricaoManutencao = descricaoEditado;
+                                  }
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
-                                escolha = input.nextInt();
+                                  else {
 
-                                if (escolha == 1) {
-                                    System.out.println(itensTesteDiagnostico[0]);
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensManutencaoReparo[2].exemploPratico = exemploEditado;
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  }
+                              }
 
-                                        itensTesteDiagnostico[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              else if ( escolha == 4 ) {
 
-                                        itensTesteDiagnostico[0].exemploPratico = descricaoEditado;
-                                    } else {
+                                  System.out.println(itensManutencaoReparo[3]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensTesteDiagnostico[0].exemploPratico = exemploEditado;
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    }
+                                      itensManutencaoReparo[3].nomeProduto = nomeEditado;
+                                  }
 
-                                } else if (escolha == 2) {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    System.out.println(itensTesteDiagnostico[1]);
+                                      itensManutencaoReparo[3].descricaoManutencao = descricaoEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  else {
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManutencaoReparo[3].exemploPratico = exemploEditado;
 
-                                        itensTesteDiagnostico[1].exemploPratico = descricaoEditado;
-                                    } else {
+                                  }
+                              }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                              else if ( escolha == 5 ) {
+                                  System.out.println(itensManutencaoReparo[4]);
 
-                                        itensTesteDiagnostico[1].exemploPratico = exemploEditado;
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    }
-                                } else if (escolha == 3)
-                                    System.out.println(itensTesteDiagnostico[2]);
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                int escolhaEditar = input.nextInt();
+                                      itensManutencaoReparo[4].nomeProduto = nomeEditado;
+                                  }
 
-                                if (escolhaEditar == 1) {
-                                    System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                    String nomeEditado = input.nextLine();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    itensTesteDiagnostico[2].nomeProduto = nomeEditado;
-                                } else if (escolhaEditar == 2) {
-                                    System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                    String descricaoEditado = input.nextLine();
+                                      itensManutencaoReparo[4].descricaoManutencao= descricaoEditado;
+                                  }
 
-                                    itensTesteDiagnostico[2].exemploPratico = descricaoEditado;
-                                } else if (escolhaEditar == 3) {
+                                  else {
 
-                                    System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                    String exemploEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    itensTesteDiagnostico[2].exemploPratico = exemploEditado;
+                                      itensManutencaoReparo[4].exemploPratico = exemploEditado;
 
-                                } else if (escolha == 4) {
-                                    System.out.println(itensTesteDiagnostico[3]);
+                                  }
+                              }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                              else if ( escolha == 6 ) {
+                                  System.out.println(itensManutencaoReparo[5]);
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensTesteDiagnostico[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[3].exemploPratico = descricaoEditado;
-                                    } else {
+                                      itensManutencaoReparo[5].nomeProduto = nomeEditado;
+                                  }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[3].exemploPratico = exemploEditado;
+                                      itensManutencaoReparo[5].descricaoManutencao= descricaoEditado;
+                                  }
 
-                                    }
-                                } else if (escolha == 5) {
-                                    System.out.println(itensTesteDiagnostico[4]);
+                                  else {
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManutencaoReparo[5].exemploPratico = exemploEditado;
 
-                                        itensTesteDiagnostico[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
+                              }
 
-                                        itensTesteDiagnostico[4].exemploPratico = descricaoEditado;
-                                    } else {
+                              else if ( escolha == 7 ) {
+                                  System.out.println(itensManutencaoReparo[6]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensTesteDiagnostico[4].exemploPratico = exemploEditado;
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 6) {
-                                    System.out.println(itensTesteDiagnostico[5]);
+                                      itensManutencaoReparo[6].nomeProduto = nomeEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManutencaoReparo[6].descricaoManutencao = descricaoEditado;
+                                  }
 
-                                        itensTesteDiagnostico[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else {
 
-                                        itensTesteDiagnostico[5].exemploPratico = descricaoEditado;
-                                    } else {
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManutencaoReparo[6].exemploPratico = exemploEditado;
 
-                                        itensTesteDiagnostico[5].exemploPratico = exemploEditado;
+                                  }
+                              }
 
-                                    }
-                                } else if (escolha == 7) {
-                                    System.out.println(itensTesteDiagnostico[6]);
+                              else if ( escolha == 8 ){
+                                  System.out.println(itensManutencaoReparo[7]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManutencaoReparo[7].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensTesteDiagnostico[6].exemploPratico = descricaoEditado;
-                                    } else {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManutencaoReparo[7].descricaoManutencao = descricaoEditado;
+                                  }
 
-                                        itensTesteDiagnostico[6].exemploPratico = exemploEditado;
+                                  else {
 
-                                    }
-                                } else if (escolha == 8) {
-                                    System.out.println(itensTesteDiagnostico[7]);
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                      itensManutencaoReparo[7].exemploPratico = exemploEditado;
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  }
+                              }
 
-                                        itensTesteDiagnostico[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              else if ( escolha == 9 ) {
 
-                                        itensTesteDiagnostico[7].exemploPratico = descricaoEditado;
-                                    } else {
+                                  System.out.println(itensManutencaoReparo[8]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensTesteDiagnostico[7].exemploPratico = exemploEditado;
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 9) {
-                                    System.out.println(itensTesteDiagnostico[8]);
+                                      itensManutencaoReparo[8].nomeProduto = nomeEditado;
+                                  }
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensManutencaoReparo[8].descricaoManutencao = descricaoEditado;
+                                  }
 
-                                        itensTesteDiagnostico[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  else {
 
-                                        itensTesteDiagnostico[8].exemploPratico = descricaoEditado;
-                                    } else {
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManutencaoReparo [8].exemploPratico = exemploEditado;
 
-                                        itensTesteDiagnostico[8].exemploPratico = exemploEditado;
+                                  }
+                              }
 
-                                    }
-                                } else if (escolha == 10) {
-                                    System.out.println(itensTesteDiagnostico[9]);
+                              else if ( escolha == 10 ) {
+                                  System.out.println(itensManutencaoReparo[9]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensManutencaoReparo[9].nomeProduto = nomeEditado;
+                                  }
 
-                                        itensTesteDiagnostico[9].exemploPratico = descricaoEditado;
-                                    } else {
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensManutencaoReparo[9].descricaoManutencao = descricaoEditado;
+                                  }
 
-                                        itensTesteDiagnostico[9].exemploPratico = exemploEditado;
+                                  else {
 
-                                    }
-                                }
-                            } else if (categoria == 5) {
-                                for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
-                                    if (itensManualCondutaSetorial[cont] != null) {
-                                        System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
-                                    }
-                                }
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
-                                escolha = input.nextInt();
+                                      itensManutencaoReparo[9].exemploPratico = exemploEditado;
 
-                                if (escolha == 1) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  }
+                              }
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                          }
+                          else if (categoria == 4 ) {
+                              for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
+                                  if (itensTesteDiagnostico[cont] != null) {
+                                      System.out.println(itensTesteDiagnostico[cont].nomeProduto);
+                                  }
+                              }
 
-                                        itensManualCondutaSetorial[0].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              System.out.print("Qual item deseja editar? \nDigite aqui:");
+                              escolha = input.nextInt();
 
-                                        itensManualCondutaSetorial[0].condutaEsperada = descricaoEditado;
-                                    } else {
+                              if (escolha == 1) {
+                                  System.out.println(itensTesteDiagnostico[0]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManualCondutaSetorial[0].observacoes = exemploEditado;
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 2) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensTesteDiagnostico[0].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensTesteDiagnostico[0].exemploPratico = descricaoEditado;
+                                  } else {
 
-                                        itensManualCondutaSetorial[1].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].condutaEsperada = descricaoEditado;
-                                    } else {
+                                      itensTesteDiagnostico[0].exemploPratico = exemploEditado;
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  }
 
-                                        itensManualCondutaSetorial[1].observacoes = exemploEditado;
+                              } else if (escolha == 2) {
 
-                                    }
-                                } else if (escolha == 3) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.println(itensTesteDiagnostico[1]);
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
 
-                                        itensManualCondutaSetorial[2].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].condutaEsperada = descricaoEditado;
-                                    } else {
+                                      itensTesteDiagnostico[1].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensTesteDiagnostico[1].exemploPratico = descricaoEditado;
+                                  } else {
 
-                                        itensManualCondutaSetorial[2].observacoes = exemploEditado;
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 4) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensTesteDiagnostico[1].exemploPratico = exemploEditado;
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  }
+                              } else if (escolha == 3)
+                                  System.out.println(itensTesteDiagnostico[2]);
 
-                                        itensManualCondutaSetorial[3].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                              int escolhaEditar = input.nextInt();
 
-                                        itensManualCondutaSetorial[3].condutaEsperada = descricaoEditado;
-                                    } else {
+                              if (escolhaEditar == 1) {
+                                  System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                  String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  itensTesteDiagnostico[2].nomeProduto = nomeEditado;
+                              } else if (escolhaEditar == 2) {
+                                  System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                  String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].observacoes = exemploEditado;
+                                  itensTesteDiagnostico[2].exemploPratico = descricaoEditado;
+                              } else if (escolhaEditar == 3) {
 
-                                    }
-                                } else if (escolha == 5) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                  String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  itensTesteDiagnostico[2].exemploPratico = exemploEditado;
 
-                                        itensManualCondutaSetorial[4].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                              }
 
-                                        itensManualCondutaSetorial[4].condutaEsperada = descricaoEditado;
-                                    } else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].observacoes = exemploEditado;
+                          else if (escolha == 4) {
+                                  System.out.println(itensTesteDiagnostico[3]);
 
-                                    }
-                                } else if (escolha == 6) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  escolhaEditar = input.nextInt();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensTesteDiagnostico[3].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].condutaEsperada = descricaoEditado;
-                                    } else {
+                                      itensTesteDiagnostico[3].exemploPratico = descricaoEditado;
+                                  } else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].observacoes = exemploEditado;
+                                      itensTesteDiagnostico[3].exemploPratico = exemploEditado;
 
-                                    }
-                                } else if (escolha == 7) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                  }
+                              } else if (escolha == 5) {
+                                  System.out.println(itensTesteDiagnostico[4]);
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  escolhaEditar = input.nextInt();
 
-                                        itensManualCondutaSetorial[6].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].condutaEsperada = descricaoEditado;
-                                    } else {
+                                      itensTesteDiagnostico[4].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensTesteDiagnostico[4].exemploPratico = descricaoEditado;
+                                  } else {
 
-                                        itensManualCondutaSetorial[6].observacoes = exemploEditado;
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 8) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensTesteDiagnostico[4].exemploPratico = exemploEditado;
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                  }
+                              } else if (escolha == 6) {
+                                  System.out.println(itensTesteDiagnostico[5]);
 
-                                        itensManualCondutaSetorial[7].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                   escolhaEditar = input.nextInt();
 
-                                        itensManualCondutaSetorial[7].condutaEsperada = descricaoEditado;
-                                    } else {
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                      itensTesteDiagnostico[5].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].observacoes = exemploEditado;
+                                      itensTesteDiagnostico[5].exemploPratico = descricaoEditado;
+                                  } else {
 
-                                    }
-                                } else if (escolha == 9) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      itensTesteDiagnostico[5].exemploPratico = exemploEditado;
 
-                                        itensManualCondutaSetorial[8].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                  }
+                              } else if (escolha == 7) {
+                                  System.out.println(itensTesteDiagnostico[6]);
 
-                                        itensManualCondutaSetorial[8].condutaEsperada = descricaoEditado;
-                                    } else {
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  escolhaEditar = input.nextInt();
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].observacoes = exemploEditado;
+                                      itensTesteDiagnostico[6].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
-                                    }
-                                } else if (escolha == 10) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    int escolhaEditar = input.nextInt();
+                                      itensTesteDiagnostico[6].exemploPratico = descricaoEditado;
+                                  } else {
 
-                                    if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                        String nomeEditado = input.nextLine();
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                        String descricaoEditado = input.nextLine();
+                                      itensTesteDiagnostico[6].exemploPratico = exemploEditado;
 
-                                        itensManualCondutaSetorial[9].condutaEsperada = descricaoEditado;
-                                    } else {
+                                  }
+                              } else if (escolha == 8) {
+                                  System.out.println(itensTesteDiagnostico[7]);
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                        String exemploEditado = input.nextLine();
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  escolhaEditar = input.nextInt();
 
-                                        itensManualCondutaSetorial[9].observacoes = exemploEditado;
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
 
-                                    }
-                                }
+                                      itensTesteDiagnostico[7].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
 
+                                      itensTesteDiagnostico[7].exemploPratico = descricaoEditado;
+                                  } else {
 
-                            }
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[7].exemploPratico = exemploEditado;
+
+                                  }
+                              } else if (escolha == 9) {
+                                  System.out.println(itensTesteDiagnostico[8]);
+
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[8].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[8].exemploPratico = descricaoEditado;
+                                  } else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[8].exemploPratico = exemploEditado;
+
+                                  }
+                              } else if (escolha == 10) {
+                                  System.out.println(itensTesteDiagnostico[9]);
+
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[9].nomeProduto = nomeEditado;
+                                  } else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[9].exemploPratico = descricaoEditado;
+                                  } else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensTesteDiagnostico[9].exemploPratico = exemploEditado;
+
+                                  }
+                              }
+                          }
+
+                          else if ( categoria == 5 ){
+                              for ( int cont =0; cont < itensManualCondutaSetorial.length; cont++) {
+                                  if (itensManualCondutaSetorial[cont] != null) {
+                                      System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
+                                  }
+                              }
+
+                              System.out.print("Qual item deseja editar? \nDigite aqui:");
+                              escolha = input.nextInt();
+
+                              if (escolha == 1) {
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[0].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[0].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[0].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if (escolha == 2 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[1].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[1].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[1].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 3 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[2].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[2].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[2].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 4 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[3].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[3].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[3].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 5 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[4].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[4].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[4].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 6 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[5].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[5].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[5].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 7 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[6].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[6].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[6].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 8 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[7].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[7].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[7].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if ( escolha == 9 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[8].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[8].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[8].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+                              else if (escolha == 10 ){
+                                  System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                  int escolhaEditar = input.nextInt();
+
+                                  if (escolhaEditar == 1) {
+                                      System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                      String nomeEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[9].nomeSetor = nomeEditado;
+                                  }
+
+                                  else if (escolhaEditar == 2) {
+                                      System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                      String descricaoEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[9].condutaEsperada= descricaoEditado;
+                                  }
+
+                                  else {
+
+                                      System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                      String exemploEditado = input.nextLine();
+
+                                      itensManualCondutaSetorial[9].observacoes = exemploEditado;
+
+                                  }
+                              }
+
+
+
+
+
+                          }
 
                             break;
 
@@ -3430,7 +3906,7 @@ public class ProjectJava {
                             System.out.println(messages_pt.getString("categoriaOrientacoes"));
                             categoria = input.nextInt();
 
-                            if (categoria == 1) {
+                            if(categoria == 1) {
 
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
@@ -3444,7 +3920,7 @@ public class ProjectJava {
 
                                 System.out.println("\nManual de Operação excluído com êxito!");
 
-                            } else if (categoria == 2) {
+                            }else if(categoria == 2){
 
                                 for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                     if (itensProcedimentodeSeguranca[i] != null) {
@@ -3458,7 +3934,7 @@ public class ProjectJava {
 
                                 System.out.println("\nProcedimento de segurança excluído com êxito!");
 
-                            } else if (categoria == 3) {
+                            }else if(categoria == 3){
 
                                 for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                     if (itensManutencaoReparo[i] != null) {
@@ -3472,7 +3948,7 @@ public class ProjectJava {
 
                                 System.out.println("\nManual de manutenção e reparo excluído com êxito!");
 
-                            } else if (categoria == 4) {
+                            }else if(categoria == 4){
 
                                 for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                     if (itensTesteDiagnostico[i] != null) {
@@ -3486,7 +3962,7 @@ public class ProjectJava {
 
                                 System.out.println("\nTeste e diagnóstico excluído com êxito!");
 
-                            } else if (categoria == 5) {
+                            }else if(categoria == 5){
 
                                 for (int i = 0; i < itensManualCondutaSetorial.length; i++) {
                                     if (itensManualCondutaSetorial[i] != null) {
@@ -3552,6 +4028,7 @@ public class ProjectJava {
                 manualCondutaSetorialManutencao.setNomeSetor(messages_de.getString("manualManutencaoTitulo"));
                 manualCondutaSetorialManutencao.setCondutaEsperada(messages_de.getString("manualManutencaoDesc"));
                 manualCondutaSetorialManutencao.setObservacoes(messages_de.getString("manualManutencaoEx"));
+
 
 
                 do {
@@ -3638,11 +4115,11 @@ public class ProjectJava {
 
                             if (categoria == 1) {
 
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
 
-                                    if (itensManualDeOperacao[cont] != null) {
+                                    if ( itensManualDeOperacao[cont] != null){
 
-                                        System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
+                                        System.out.println((cont+1) +  " - " +itensManualDeOperacao[cont].nomeProduto);
 
                                     }
 
@@ -3696,9 +4173,10 @@ public class ProjectJava {
                                 }
 
 
+
                             } else if (categoria == 2) {
 
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
+                                for ( int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
 
                                     if (itensProcedimentodeSeguranca[cont] != null) {
 
@@ -3743,7 +4221,7 @@ public class ProjectJava {
 
                             } else if (categoria == 3) {
 
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                                for ( int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                     if (itensManutencaoReparo[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -3782,7 +4260,9 @@ public class ProjectJava {
 
                                 }
 
-                            } else if (categoria == 4) {
+                            }
+
+                            else if (categoria == 4) {
                                 for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                     if (itensTesteDiagnostico[cont] != null) {
                                         System.out.println(itensTesteDiagnostico[cont].nomeProduto);
@@ -3822,7 +4302,8 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[9]);
 
                                 }
-                            } else if (categoria == 5) {
+                            }
+                            else if (categoria == 5) {
                                 for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                     if (itensManualCondutaSetorial[cont] != null) {
                                         System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
@@ -3872,7 +4353,7 @@ public class ProjectJava {
                             categoria = input.nextInt();
 
                             if (categoria == 1) {
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
+                                for ( int cont =0; cont < itensManualDeOperacao.length; cont++) {
                                     if (itensManualDeOperacao[cont] != null) {
                                         System.out.println(itensManualDeOperacao[cont].nomeProduto);
                                     }
@@ -3893,12 +4374,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[0].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[0].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -3907,7 +4392,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (escolha == 2) {
+                                }
+                                else if (escolha == 2) {
                                     System.out.println(itensManualDeOperacao[1]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -3918,12 +4404,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[1].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[1].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -3931,7 +4421,9 @@ public class ProjectJava {
                                         itensManualDeOperacao[1].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 3) {
+                                }
+
+                                else if (escolha == 3) {
                                     System.out.println(itensManualDeOperacao[2]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -3942,12 +4434,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[2].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[2].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -3956,7 +4452,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (escolha == 4) {
+                                }
+                                else if (escolha == 4) {
                                     System.out.println(itensManualDeOperacao[3]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -3967,12 +4464,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[3].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[3].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -3980,7 +4481,8 @@ public class ProjectJava {
                                         itensManualDeOperacao[3].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 5) {
+                                }
+                                else if (escolha == 5) {
                                     System.out.println(itensManualDeOperacao[4]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -3991,12 +4493,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[4].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[4].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4004,7 +4510,8 @@ public class ProjectJava {
                                         itensManualDeOperacao[4].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 6) {
+                                }
+                                else if (escolha == 6) {
                                     System.out.println(itensManualDeOperacao[5]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4015,12 +4522,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[5].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[5].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4040,12 +4551,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[6].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[6].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4065,12 +4580,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[7].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[7].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4090,12 +4609,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[8].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[8].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4115,12 +4638,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManualDeOperacao[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualDeOperacao[9].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensManualDeOperacao[9].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4131,8 +4658,10 @@ public class ProjectJava {
 
                                 }
 
-                            } else if (categoria == 2) {
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
+                            }
+
+                            else if ( categoria == 2 ){
+                                for ( int cont =0; cont < itensProcedimentodeSeguranca.length; cont++) {
                                     if (itensProcedimentodeSeguranca[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -4152,12 +4681,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[0].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[0].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4166,7 +4699,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (escolha == 2) {
+                                }
+
+                                else if (escolha == 2) {
                                     System.out.println(itensProcedimentodeSeguranca[1]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4177,12 +4712,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[1].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[1].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4192,7 +4731,9 @@ public class ProjectJava {
                                     }
 
 
-                                } else if (categoria == 3) {
+                                }
+
+                                else if ( categoria == 3 ){
                                     System.out.println(itensProcedimentodeSeguranca[2]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4203,12 +4744,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[2].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[2].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4217,7 +4762,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 4) {
+                                }
+
+                                else if ( categoria == 4 ){
                                     System.out.println(itensProcedimentodeSeguranca[3]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4228,12 +4775,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[3].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[3].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4242,7 +4793,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 5) {
+                                }
+
+                                else if (categoria == 5 ) {
 
                                     System.out.println(itensProcedimentodeSeguranca[4]);
 
@@ -4254,12 +4807,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[4].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[4].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4267,7 +4824,8 @@ public class ProjectJava {
                                         itensProcedimentodeSeguranca[4].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (categoria == 6) {
+                                }
+                                else if (categoria == 6 ) {
                                     System.out.println(itensProcedimentodeSeguranca[5]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4278,12 +4836,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[5].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[5].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4292,7 +4854,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 7) {
+                                }
+
+                                else if (categoria == 7 ) {
 
                                     System.out.println(itensProcedimentodeSeguranca[6]);
 
@@ -4304,12 +4868,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[6].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[6].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4318,7 +4886,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 8) {
+                                }
+                                else if ( categoria == 8 ) {
 
                                     System.out.println(itensProcedimentodeSeguranca[7]);
 
@@ -4330,12 +4899,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[7].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[7].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4344,7 +4917,8 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 9) {
+                                }
+                                else if ( categoria == 9 ) {
                                     System.out.println(itensProcedimentodeSeguranca[8]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4355,12 +4929,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[8].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[8].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4369,7 +4947,9 @@ public class ProjectJava {
 
                                     }
 
-                                } else if (categoria == 10) {
+                                }
+
+                                else if ( categoria == 10 ) {
                                     System.out.println(itensProcedimentodeSeguranca[9]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4380,12 +4960,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensProcedimentodeSeguranca[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensProcedimentodeSeguranca[9].comoUsar = descricaoEditado;
-                                    } else {
+                                        itensProcedimentodeSeguranca[9].comoUsar= descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4396,8 +4980,10 @@ public class ProjectJava {
                                     // PAREI NESSA AQUI
                                 }
 
-                            } else if (categoria == 3) {
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                            }
+
+                            else if ( categoria == 3 ) {
+                                for ( int cont =0; cont < itensManutencaoReparo.length; cont++) {
                                     if (itensManutencaoReparo[cont] != null) {
                                         System.out.println(itensManutencaoReparo[cont].nomeProduto);
                                     }
@@ -4406,7 +4992,7 @@ public class ProjectJava {
                                 System.out.print("Welches Element möchten Sie bearbeiten? \nGeben Sie hier ein: ");
                                 escolha = input.nextInt();
 
-                                if (escolha == 1) {
+                                if ( escolha == 1 ) {
                                     System.out.println(itensManutencaoReparo[0]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4417,12 +5003,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[0].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[0].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4432,7 +5022,10 @@ public class ProjectJava {
                                     }
 
 
-                                } else if (escolha == 2) {
+
+                                }
+
+                                else if (escolha == 2 ){
                                     System.out.println(itensManutencaoReparo[1]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4443,12 +5036,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[1].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[1].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4456,7 +5053,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[1].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 3) {
+                                }
+
+                                else if ( escolha == 3 ) {
                                     System.out.println(itensManutencaoReparo[2]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4467,12 +5066,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[2].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[2].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[2].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4480,7 +5083,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[2].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 4) {
+                                }
+
+                                else if ( escolha == 4 ) {
                                     System.out.println(itensManutencaoReparo[3]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4491,12 +5096,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[3].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[3].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4504,7 +5113,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[3].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 5) {
+                                }
+
+                                else if ( escolha == 5 ) {
                                     System.out.println(itensManutencaoReparo[4]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4515,12 +5126,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[4].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[4].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4528,7 +5143,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[4].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 6) {
+                                }
+
+                                else if ( escolha == 6 ) {
                                     System.out.println(itensManutencaoReparo[5]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4539,12 +5156,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[5].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[5].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4552,7 +5173,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[5].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 7) {
+                                }
+
+                                else if ( escolha == 7 ) {
                                     System.out.println(itensManutencaoReparo[6]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4563,12 +5186,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[6].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[6].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4576,7 +5203,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[6].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 8) {
+                                }
+
+                                else if ( escolha == 8 ){
                                     System.out.println(itensManutencaoReparo[7]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4587,12 +5216,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[7].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[7].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4600,7 +5233,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[7].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 9) {
+                                }
+
+                                else if ( escolha == 9 ) {
                                     System.out.println(itensManutencaoReparo[8]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4611,12 +5246,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[8].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[8].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4624,7 +5263,9 @@ public class ProjectJava {
                                         itensManutencaoReparo[8].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 10) {
+                                }
+
+                                else if ( escolha == 10 ) {
                                     System.out.println(itensManutencaoReparo[9]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4635,12 +5276,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[9].descricaoManutencao = descricaoEditado;
-                                    } else {
+                                        itensManutencaoReparo[9].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4650,7 +5295,8 @@ public class ProjectJava {
                                     }
                                 }
 
-                            } else if (categoria == 4) {
+                            }
+                            else if (categoria == 4 ) {
                                 for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                     if (itensTesteDiagnostico[cont] != null) {
                                         System.out.println(itensTesteDiagnostico[cont].nomeProduto);
@@ -4671,12 +5317,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[0].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[0].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4696,12 +5346,16 @@ public class ProjectJava {
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[1].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[1].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4713,45 +5367,55 @@ public class ProjectJava {
                                 } else if (escolha == 3)
                                     System.out.println(itensTesteDiagnostico[2]);
 
-                                System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                int escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
-                                if (escolhaEditar == 1) {
-                                    System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
-                                    String nomeEditado = input.nextLine();
+                                    if (escolhaEditar == 1) {
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
+                                        String nomeEditado = input.nextLine();
 
-                                    itensTesteDiagnostico[2].nomeProduto = nomeEditado;
-                                } else if (escolhaEditar == 2) {
-                                    System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
-                                    String descricaoEditado = input.nextLine();
+                                        itensTesteDiagnostico[2].nomeProduto = nomeEditado;
+                                    }
 
-                                    itensTesteDiagnostico[2].descricaoDiagnostico = descricaoEditado;
-                                } else {
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
+                                        String descricaoEditado = input.nextLine();
 
-                                    System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
-                                    String exemploEditado = input.nextLine();
+                                        itensTesteDiagnostico[2].comoUsar = descricaoEditado;
+                                    }
 
-                                    itensTesteDiagnostico[2].exemploPratico = exemploEditado;
+                                    else {
 
-                                }
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
+                                        String exemploEditado = input.nextLine();
 
-                                if (escolha == 4) {
+                                        itensTesteDiagnostico[2].exemploPratico = exemploEditado;
+
+                                    }
+
+
+
+                                else if (escolha == 4) {
                                     System.out.println(itensTesteDiagnostico[3]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[3].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[3].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4764,19 +5428,23 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[4]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[4].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[4].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4789,19 +5457,23 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[5]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[5].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[5].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4814,19 +5486,23 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[6]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[6].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[6].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4839,19 +5515,23 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[7]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[7].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[7].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4864,19 +5544,23 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[8]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[8].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[8].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4889,19 +5573,23 @@ public class ProjectJava {
                                     System.out.println(itensTesteDiagnostico[9]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
-                                    escolhaEditar = input.nextInt();
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[9].descricaoDiagnostico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[9].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
@@ -4910,8 +5598,10 @@ public class ProjectJava {
 
                                     }
                                 }
-                            } else if (categoria == 5) {
-                                for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
+                            }
+
+                            else if ( categoria == 5 ){
+                                for ( int cont =0; cont < itensManualCondutaSetorial.length; cont++) {
                                     if (itensManualCondutaSetorial[cont] != null) {
                                         System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
                                     }
@@ -4930,21 +5620,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[0].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[0].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[0].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 2) {
+                                }
+
+                                else if (escolha == 2 ){
                                     System.out.println(itensManualCondutaSetorial[1]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4954,21 +5650,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[1].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[1].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[1].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 3) {
+                                }
+
+                                else if ( escolha == 3 ){
                                     System.out.println(itensManualCondutaSetorial[2]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -4978,21 +5680,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[2].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[2].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[2].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 4) {
+                                }
+
+                                else if ( escolha == 4 ){
                                     System.out.println(itensManualCondutaSetorial[3]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5002,21 +5710,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[3].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[3].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[3].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 5) {
+                                }
+
+                                else if ( escolha == 5 ){
                                     System.out.println(itensManualCondutaSetorial[4]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5026,21 +5740,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[4].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[4].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[4].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 6) {
+                                }
+
+                                else if ( escolha == 6 ){
                                     System.out.println(itensManualCondutaSetorial[5]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5050,21 +5770,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[5].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[5].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[5].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 7) {
+                                }
+
+                                else if ( escolha == 7 ){
                                     System.out.println(itensManualCondutaSetorial[6]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5074,21 +5800,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[6].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[6].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[6].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 8) {
+                                }
+
+                                else if ( escolha == 8 ){
                                     System.out.println(itensManualCondutaSetorial[7]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5098,21 +5830,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[7].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[7].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[7].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 9) {
+                                }
+
+                                else if ( escolha == 9 ){
                                     System.out.println(itensManualCondutaSetorial[8]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5122,21 +5860,27 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[8].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[8].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[8].exemploPratico = exemploEditado;
 
                                     }
-                                } else if (escolha == 10) {
+                                }
+
+                                else if (escolha == 10 ){
                                     System.out.println(itensManualCondutaSetorial[9]);
 
                                     System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
@@ -5146,31 +5890,41 @@ public class ProjectJava {
                                         System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].nomeSetor = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
+                                        itensManualCondutaSetorial[9].nomeProduto = nomeEditado;
+                                    }
+
+                                    else if (escolhaEditar == 2) {
                                         System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].condutaEsperada = descricaoEditado;
-                                    } else {
+                                        itensManualCondutaSetorial[9].comoUsar = descricaoEditado;
+                                    }
+
+                                    else {
 
                                         System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[9].exemploPratico = exemploEditado;
 
                                     }
                                 }
+
+
+
+
+
                             }
 
                             break;
+
 
                         case 4:
                             System.out.println("\n\nGeben Sie an, welche Art von Beratung Sie ausschließen möchten: ");
                             System.out.println(messages_de.getString("categoriaOrientacoes"));
                             categoria = input.nextInt();
 
-                            if (categoria == 1) {
+                            if(categoria == 1) {
 
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
@@ -5184,7 +5938,7 @@ public class ProjectJava {
 
                                 System.out.println("\nBetriebsanleitung erfolgreich gelöscht!");
 
-                            } else if (categoria == 2) {
+                            }else if(categoria == 2){
 
                                 for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                     if (itensProcedimentodeSeguranca[i] != null) {
@@ -5198,7 +5952,7 @@ public class ProjectJava {
 
                                 System.out.println("\nSicherheitsverfahren erfolgreich gelöscht!");
 
-                            } else if (categoria == 3) {
+                            }else if(categoria == 3){
 
                                 for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                     if (itensManutencaoReparo[i] != null) {
@@ -5212,7 +5966,7 @@ public class ProjectJava {
 
                                 System.out.println("\nWartungs- und Reparaturhandbuch erfolgreich gelöscht!");
 
-                            } else if (categoria == 4) {
+                            }else if(categoria == 4){
 
                                 for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                     if (itensTesteDiagnostico[i] != null) {
@@ -5226,7 +5980,7 @@ public class ProjectJava {
 
                                 System.out.println("\nTest und Diagnose erfolgreich ausgeschlossen!");
 
-                            } else if (categoria == 5) {
+                            }else if(categoria == 5){
 
                                 for (int i = 0; i < itensManualCondutaSetorial.length; i++) {
                                     if (itensManualCondutaSetorial[i] != null) {
@@ -5248,8 +6002,15 @@ public class ProjectJava {
 
                 break;
 
+
             default:
                 System.out.println("\n\nEscolha uma linguagem disponível, por favor.");
+
+
         }
+
+
+
+
     }
 }

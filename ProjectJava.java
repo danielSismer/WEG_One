@@ -4989,32 +4989,32 @@ public class ProjectJava {
                                     }
                                 }
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
+                                System.out.print("Welches Element möchten Sie bearbeiten? \nGeben Sie hier ein: ");
                                 escolha = input.nextInt();
 
                                 if ( escolha == 1 ) {
                                     System.out.println(itensManutencaoReparo[0]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[0].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[0].descricaoManutencao= descricaoEditado;
+                                        itensManutencaoReparo[0].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[0].exemploPratico = exemploEditado;
@@ -5028,26 +5028,26 @@ public class ProjectJava {
                                 else if (escolha == 2 ){
                                     System.out.println(itensManutencaoReparo[1]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[1].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[1].descricaoManutencao= descricaoEditado;
+                                        itensManutencaoReparo[1].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[1].exemploPratico = exemploEditado;
@@ -5058,26 +5058,26 @@ public class ProjectJava {
                                 else if ( escolha == 3 ) {
                                     System.out.println(itensManutencaoReparo[2]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[2].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[2].descricaoManutencao = descricaoEditado;
+                                        itensManutencaoReparo[2].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[2].exemploPratico = exemploEditado;
@@ -5086,29 +5086,28 @@ public class ProjectJava {
                                 }
 
                                 else if ( escolha == 4 ) {
-
                                     System.out.println(itensManutencaoReparo[3]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[3].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[3].descricaoManutencao = descricaoEditado;
+                                        itensManutencaoReparo[3].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[3].exemploPratico = exemploEditado;
@@ -5119,26 +5118,26 @@ public class ProjectJava {
                                 else if ( escolha == 5 ) {
                                     System.out.println(itensManutencaoReparo[4]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[4].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[4].descricaoManutencao= descricaoEditado;
+                                        itensManutencaoReparo[4].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[4].exemploPratico = exemploEditado;
@@ -5149,26 +5148,26 @@ public class ProjectJava {
                                 else if ( escolha == 6 ) {
                                     System.out.println(itensManutencaoReparo[5]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[5].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[5].descricaoManutencao= descricaoEditado;
+                                        itensManutencaoReparo[5].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[5].exemploPratico = exemploEditado;
@@ -5179,26 +5178,26 @@ public class ProjectJava {
                                 else if ( escolha == 7 ) {
                                     System.out.println(itensManutencaoReparo[6]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[6].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[6].descricaoManutencao = descricaoEditado;
+                                        itensManutencaoReparo[6].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[6].exemploPratico = exemploEditado;
@@ -5209,26 +5208,26 @@ public class ProjectJava {
                                 else if ( escolha == 8 ){
                                     System.out.println(itensManutencaoReparo[7]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[7].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[7].descricaoManutencao = descricaoEditado;
+                                        itensManutencaoReparo[7].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[7].exemploPratico = exemploEditado;
@@ -5237,32 +5236,31 @@ public class ProjectJava {
                                 }
 
                                 else if ( escolha == 9 ) {
-
                                     System.out.println(itensManutencaoReparo[8]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[8].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[8].descricaoManutencao = descricaoEditado;
+                                        itensManutencaoReparo[8].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManutencaoReparo [8].exemploPratico = exemploEditado;
+                                        itensManutencaoReparo[8].exemploPratico = exemploEditado;
 
                                     }
                                 }
@@ -5270,26 +5268,26 @@ public class ProjectJava {
                                 else if ( escolha == 10 ) {
                                     System.out.println(itensManutencaoReparo[9]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensManutencaoReparo[9].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManutencaoReparo[9].descricaoManutencao = descricaoEditado;
+                                        itensManutencaoReparo[9].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensManutencaoReparo[9].exemploPratico = exemploEditado;
@@ -5305,28 +5303,32 @@ public class ProjectJava {
                                     }
                                 }
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
+                                System.out.print("Welches Element möchten Sie bearbeiten? \nGeben Sie hier ein: ");
                                 escolha = input.nextInt();
 
                                 if (escolha == 1) {
                                     System.out.println(itensTesteDiagnostico[0]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[0].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[0].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[0].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[0].exemploPratico = exemploEditado;
@@ -5334,220 +5336,262 @@ public class ProjectJava {
                                     }
 
                                 } else if (escolha == 2) {
-
                                     System.out.println(itensTesteDiagnostico[1]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[1].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[1].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[1].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[1].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 3)
                                     System.out.println(itensTesteDiagnostico[2]);
 
-                                System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                int escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
-                                if (escolhaEditar == 1) {
-                                    System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
-                                    String nomeEditado = input.nextLine();
+                                    if (escolhaEditar == 1) {
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
+                                        String nomeEditado = input.nextLine();
 
-                                    itensTesteDiagnostico[2].nomeProduto = nomeEditado;
-                                } else if (escolhaEditar == 2) {
-                                    System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
-                                    String descricaoEditado = input.nextLine();
+                                        itensTesteDiagnostico[2].nomeProduto = nomeEditado;
+                                    }
 
-                                    itensTesteDiagnostico[2].exemploPratico = descricaoEditado;
-                                } else if (escolhaEditar == 3) {
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
+                                        String descricaoEditado = input.nextLine();
 
-                                    System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
-                                    String exemploEditado = input.nextLine();
+                                        itensTesteDiagnostico[2].comoUsar = descricaoEditado;
+                                    }
 
-                                    itensTesteDiagnostico[2].exemploPratico = exemploEditado;
+                                    else {
 
-                                }
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
+                                        String exemploEditado = input.nextLine();
+
+                                        itensTesteDiagnostico[2].exemploPratico = exemploEditado;
+
+                                    }
 
 
 
                                 else if (escolha == 4) {
                                     System.out.println(itensTesteDiagnostico[3]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[3].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[3].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[3].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[3].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 5) {
                                     System.out.println(itensTesteDiagnostico[4]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[4].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[4].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[4].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[4].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 6) {
                                     System.out.println(itensTesteDiagnostico[5]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[5].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[5].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[5].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[5].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 7) {
                                     System.out.println(itensTesteDiagnostico[6]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[6].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[6].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[6].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[6].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 8) {
                                     System.out.println(itensTesteDiagnostico[7]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[7].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[7].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[7].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[7].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 9) {
                                     System.out.println(itensTesteDiagnostico[8]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[8].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[8].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[8].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[8].exemploPratico = exemploEditado;
 
                                     }
+
                                 } else if (escolha == 10) {
                                     System.out.println(itensTesteDiagnostico[9]);
 
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
-                                    escolhaEditar = input.nextInt();
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
+                                    int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
                                         itensTesteDiagnostico[9].nomeProduto = nomeEditado;
-                                    } else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                    }
+
+                                    else if (escolhaEditar == 2) {
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensTesteDiagnostico[9].exemploPratico = descricaoEditado;
-                                    } else {
+                                        itensTesteDiagnostico[9].comoUsar = descricaoEditado;
+                                    }
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                    else {
+
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
                                         itensTesteDiagnostico[9].exemploPratico = exemploEditado;
@@ -5563,285 +5607,305 @@ public class ProjectJava {
                                     }
                                 }
 
-                                System.out.print("Qual item deseja editar? \nDigite aqui:");
+                                System.out.print("Welches Element möchten Sie bearbeiten? \nGeben Sie hier ein: ");
                                 escolha = input.nextInt();
 
                                 if (escolha == 1) {
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[0]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[0].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[0].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[0].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[0].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if (escolha == 2 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[1]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[1].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[1].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[1].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[1].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 3 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[2]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[2].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[2].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[2].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[2].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 4 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[3]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[3].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[3].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[3].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[3].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 5 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[4]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[4].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[4].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[4].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[4].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 6 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[5]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[5].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[5].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[5].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[5].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 7 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[6]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[6].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[6].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[6].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[6].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 8 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[7]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[7].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[7].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[7].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[7].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if ( escolha == 9 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[8]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[8].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[8].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[8].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[8].exemploPratico = exemploEditado;
 
                                     }
                                 }
 
                                 else if (escolha == 10 ){
-                                    System.out.print("O que deseja editar? \n1 - Nome \n2 - Descrição \n3 - Exemplo");
+                                    System.out.println(itensManualCondutaSetorial[9]);
+
+                                    System.out.print("Was möchten Sie bearbeiten? \n1 - Name \n2 - Beschreibung \n3 - Beispiel\n");
                                     int escolhaEditar = input.nextInt();
 
                                     if (escolhaEditar == 1) {
-                                        System.out.print("Qual o Nome que Deseja Informar? \nDigite aqui:");
+                                        System.out.print("Welchen Namen möchten Sie eingeben? \nGeben Sie hier ein: ");
                                         String nomeEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].nomeSetor = nomeEditado;
+                                        itensManualCondutaSetorial[9].nomeProduto = nomeEditado;
                                     }
 
                                     else if (escolhaEditar == 2) {
-                                        System.out.print("Qual a Descrição que Deseja Informar ? \nDigite aqui:");
+                                        System.out.print("Welche Beschreibung möchten Sie angeben? \nGeben Sie hier ein: ");
                                         String descricaoEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].condutaEsperada= descricaoEditado;
+                                        itensManualCondutaSetorial[9].comoUsar = descricaoEditado;
                                     }
 
                                     else {
 
-                                        System.out.print("Qual o Exemplo que Deseja Informar? \nDigite aqui: ");
+                                        System.out.print("Welches Beispiel möchten Sie berichten? \nGeben Sie hier ein: ");
                                         String exemploEditado = input.nextLine();
 
-                                        itensManualCondutaSetorial[9].observacoes = exemploEditado;
+                                        itensManualCondutaSetorial[9].exemploPratico = exemploEditado;
 
                                     }
                                 }
@@ -5856,8 +5920,8 @@ public class ProjectJava {
 
 
                         case 4:
-                            System.out.println("\n\nDigite qual categoria de orientação você deseja excluir: ");
-                            System.out.println(messages_pt.getString("categoriaOrientacoes"));
+                            System.out.println("\n\nGeben Sie an, welche Art von Beratung Sie ausschließen möchten: ");
+                            System.out.println(messages_de.getString("categoriaOrientacoes"));
                             categoria = input.nextInt();
 
                             if(categoria == 1) {
@@ -5872,7 +5936,7 @@ public class ProjectJava {
 
                                 itensManualDeOperacao[escolhaExclusao] = null;
 
-                                System.out.println("\nManual de Operação excluído com êxito!");
+                                System.out.println("\nBetriebsanleitung erfolgreich gelöscht!");
 
                             }else if(categoria == 2){
 
@@ -5886,7 +5950,7 @@ public class ProjectJava {
 
                                 itensProcedimentodeSeguranca[escolhaExclusao] = null;
 
-                                System.out.println("\nProcedimento de segurança excluído com êxito!");
+                                System.out.println("\nSicherheitsverfahren erfolgreich gelöscht!");
 
                             }else if(categoria == 3){
 
@@ -5900,7 +5964,7 @@ public class ProjectJava {
 
                                 itensManutencaoReparo[escolhaExclusao] = null;
 
-                                System.out.println("\nManual de manutenção e reparo excluído com êxito!");
+                                System.out.println("\nWartungs- und Reparaturhandbuch erfolgreich gelöscht!");
 
                             }else if(categoria == 4){
 
@@ -5914,7 +5978,7 @@ public class ProjectJava {
 
                                 itensTesteDiagnostico[escolhaExclusao] = null;
 
-                                System.out.println("\nTeste e diagnóstico excluído com êxito!");
+                                System.out.println("\nTest und Diagnose erfolgreich ausgeschlossen!");
 
                             }else if(categoria == 5){
 
@@ -5928,7 +5992,7 @@ public class ProjectJava {
 
                                 itensManualCondutaSetorial[escolhaExclusao] = null;
 
-                                System.out.println("\nManual de conduta setorial excluído com êxito!");
+                                System.out.println("\nVerhaltenshandbuch der Industrie erfolgreich gelöscht!");
 
                             }
 

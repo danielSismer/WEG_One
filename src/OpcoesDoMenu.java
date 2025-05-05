@@ -11,7 +11,7 @@ public class OpcoesDoMenu {
 
     public void ClickCadastrar() {
 
-        JFrame telaDeCadastro = new JFrame("Cadastro");
+        final JFrame telaDeCadastro = new JFrame("Cadastro");
         telaDeCadastro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         telaDeCadastro.setSize(900, 600);
         telaDeCadastro.setExtendedState(JFrame.MAXIMIZED_BOTH);

@@ -120,9 +120,9 @@ public class LoginAdm {
 
     private Connection getConnection() throws SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/weg_one";
-        String user = "DanielAdmin";
-        String password = "246801@Weg";
+        String url = "jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway";
+        String user = "root";
+        String password = "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb";
         return DriverManager.getConnection(url, user, password);
     }
 }

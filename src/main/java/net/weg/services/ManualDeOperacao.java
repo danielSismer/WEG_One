@@ -1,9 +1,10 @@
-package org.example;
+package net.weg.services;
 
 import java.util.Scanner;
 
-public class ProcedimentodeSeguranca {
+public class ManualDeOperacao {
 
+    Scanner input = new Scanner(System.in);
     String nomeProduto;
     String comoUsar;
     String exemploPratico;
@@ -28,22 +29,24 @@ public class ProcedimentodeSeguranca {
 
     public String toString() {
 
-        return  "================================================================================================================================="
-                + "Nome Orientação: " + this.nomeProduto
+        return "================================================================================================================================="
+                + "\nNome Orientação: " + this.nomeProduto
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nComo Usar: " + this.comoUsar
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nExemplo Pratico: " + this.exemploPratico
                 + "\n=================================================================================================================================";
+
+
     }
 
-    public String cadastrarProdutoSegurança() {
+    public String cadastrarProdutoOperacao() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("\nDigite o nome do produto: ");
         this.nomeProduto = scanner.nextLine();
 
-        System.out.print("Digite a descrição do produto: ");
+        System.out.print("Digite como usar o produto: ");
         this.comoUsar = scanner.nextLine();
 
         System.out.print("Digite um exemplo prático: ");
@@ -55,6 +58,4 @@ public class ProcedimentodeSeguranca {
 
 
     }
-
-
 }

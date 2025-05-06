@@ -1,4 +1,4 @@
-package org.example;
+package net.weg.apresentation;
 
 import javax.swing.*;
 import java.awt.*;

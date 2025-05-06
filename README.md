@@ -50,7 +50,7 @@ da Weg de forma simples e eficiente.
         <sub><b>@Jose7764</b></sub>
       </a>
     </td>
-   <td>
+   <td align="center">
        <a href="https://github.com/danielSismer">
            <img src="https://avatars.githubusercontent.com/u/188383351?v=4" width="115"/><br />
            <sub><b>@danielSismer</b></sub>
@@ -62,7 +62,7 @@ da Weg de forma simples e eficiente.
            <sub><b>@BooLeandro1911</b></sub>
        </a>
    </td>
-   <td>
+   <td align="center">
        <a href="https://github.com/gabrielEFagundes">
            <img src="https://avatars.githubusercontent.com/u/185841300?v=4" width="115"/><br />
            <sub><b>@gabrielEFagundes</b></sub>

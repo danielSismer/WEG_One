@@ -1,4 +1,4 @@
-package org.example;
+package net.weg.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,9 +17,9 @@ public class ConexaoBanco {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
            conexao = DriverManager.getConnection(
-                    "jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway",
+                   "jdbc:mysql://yamanote.proxy.rlwy.net:3306/wegone",
                     "root",
-                    "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb"
+                   "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb"
             );
 
 

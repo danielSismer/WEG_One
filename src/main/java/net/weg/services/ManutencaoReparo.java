@@ -1,4 +1,4 @@
-package org.example;
+package net.weg.services;
 
 import java.util.Scanner;
 

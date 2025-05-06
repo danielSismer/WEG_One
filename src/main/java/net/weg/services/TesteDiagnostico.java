@@ -1,13 +1,12 @@
-package org.example;
+package net.weg.services;
 
 import java.util.Scanner;
 
-public class ManualDeOperacao {
+public class TesteDiagnostico {
 
-    Scanner input = new Scanner(System.in);
     String nomeProduto;
-    String comoUsar;
     String exemploPratico;
+    String descricaoDiagnostico;
 
     public void setNomeProduto(String nomeProduto) {
 
@@ -15,47 +14,49 @@ public class ManualDeOperacao {
 
     }
 
-    public void setComoUsar(String comoUsar) {
-
-        this.comoUsar = comoUsar;
-
-    }
-
-    public void setExemploPratico(String exemploPratico) {
+    public void setexemploPratico(String exemploPratico) {
 
         this.exemploPratico = exemploPratico;
 
     }
 
-    public String toString() {
+    public void setDescricaoDiagnostico(String descricaoDiagnostico) {
 
-        return "================================================================================================================================="
-                + "\nNome Orientação: " + this.nomeProduto
-                + "\n----------------------------------------------------------------------------------------------------------------------------------"
-                + "\nComo Usar: " + this.comoUsar
-                + "\n----------------------------------------------------------------------------------------------------------------------------------"
-                + "\nExemplo Pratico: " + this.exemploPratico
-                + "\n=================================================================================================================================";
-
+        this.descricaoDiagnostico = descricaoDiagnostico;
 
     }
 
-    public String cadastrarProdutoOperacao() {
+    public String toString() {
+
+        return "\n==================================================================================================================================="
+                + "\nNome Orientação: " + this.nomeProduto
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
+                + "\nExemplo Pratico: " + this.exemploPratico
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
+                + "\nDescrição diagnostico: " + this.descricaoDiagnostico
+                + "\n=================================================================================================================================";
+    }
+
+    public String cadastrarProdutoDiagnostico() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("\nDigite o nome do produto: ");
         this.nomeProduto = scanner.nextLine();
 
-        System.out.print("Digite como usar o produto: ");
-        this.comoUsar = scanner.nextLine();
+        System.out.print("Digite a descrição do produto: ");
+        this.descricaoDiagnostico = scanner.nextLine();
 
         System.out.print("Digite um exemplo prático: ");
         this.exemploPratico = scanner.nextLine();
 
         System.out.println("\nOrientação cadastrada com sucesso!");
 
-        return "Produto cadastrado: " + this.nomeProduto + " - " + this.comoUsar + "-" + this.exemploPratico;
+
+        return "Produto cadastrado: " + this.nomeProduto + " - " + this.descricaoDiagnostico + "-" + this.exemploPratico;
 
 
     }
+
+
 }
+

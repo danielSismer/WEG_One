@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas" />
+    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ConexaoBanco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/repository/ConexaoBanco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LoginAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/LoginAdm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManualCondutaSetorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualCondutaSetorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManualDeOperacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ManutencaoReparo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManutencaoReparo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/OpcoesDoMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProcedimentodeSeguranca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ProjectJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TelaDeslogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaDeslogada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TelaLogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TesteConexaoBanco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/repository/TesteConexaoBanco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TesteDiagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WegOne.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/WegOne.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WegOneDatabase.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/WegOneDatabase.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,17 +48,19 @@
   "keyToString": {
     "Application.ProjectJava.executor": "Run",
     "Application.TelaLogada.executor": "Run",
+    "Application.TesteConexaoBanco.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE\src\main\resources" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE\src\main\java\org\example" />
     </key>

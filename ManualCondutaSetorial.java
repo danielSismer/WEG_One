@@ -26,27 +26,29 @@ public class ManualCondutaSetorial {
 
     public String toString() {
 
-        return "Nome Setor: " + this.nomeSetor
+        return  "================================================================================================================================="
+                + "\nNome Orientação: " + this.nomeSetor
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nConduta Esperada: " + this.condutaEsperada
-                + "\nObservacoes: " + this.observacoes;
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
+                + "\nObservacoes: " + this.observacoes
+                + "\n=================================================================================================================================";
 
     }
+
     public String cadastrarProdutoSetor() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o nome do produto: ");
+        System.out.print("\nDigite o nome do produto: ");
         this.nomeSetor = scanner.nextLine();
 
         System.out.print("Digite como usar o produto: ");
-        this.condutaEsperada= scanner.nextLine();
+        this.condutaEsperada = scanner.nextLine();
 
         System.out.print("Digite um exemplo prático: ");
         this.observacoes = scanner.nextLine();
 
-        System.out.println("Produto cadastrado com sucesso!");
-        System.out.println("Nome: " + this.nomeSetor);
-        System.out.println("Como Usar: " + this.condutaEsperada );
-        System.out.println("Exemplo Prático: " + this.observacoes);
+        System.out.println("\nOrientação cadastrada com sucesso!");
 
         return "Produto cadastrado: " + this.nomeSetor + " - " + this.condutaEsperada + "-" + this.observacoes;
 

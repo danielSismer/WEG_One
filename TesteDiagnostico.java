@@ -12,7 +12,7 @@ public class TesteDiagnostico {
 
     }
 
-    public void setexemploPratico (String exemploPratico){
+    public void setexemploPratico(String exemploPratico) {
 
         this.exemploPratico = exemploPratico;
 
@@ -26,14 +26,19 @@ public class TesteDiagnostico {
 
     public String toString() {
 
-        return "Nome Produto: " + this.nomeProduto
+        return "\n==================================================================================================================================="
+                + "\nNome Orientação: " + this.nomeProduto
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nExemplo Pratico: " + this.exemploPratico
-                +"\nDescrição diagnostico: " + this.descricaoDiagnostico;
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
+                + "\nDescrição diagnostico: " + this.descricaoDiagnostico
+                + "\n=================================================================================================================================";
     }
-    public String cadastrarProdutoDiagnostico( ) {
+
+    public String cadastrarProdutoDiagnostico() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o nome do produto: ");
+        System.out.print("\nDigite o nome do produto: ");
         this.nomeProduto = scanner.nextLine();
 
         System.out.print("Digite a descrição do produto: ");
@@ -42,17 +47,13 @@ public class TesteDiagnostico {
         System.out.print("Digite um exemplo prático: ");
         this.exemploPratico = scanner.nextLine();
 
-        System.out.println("Produto cadastrado com sucesso!");
-        System.out.println("Nome: " + this.nomeProduto);
-        System.out.println("Como Usar: " + this.descricaoDiagnostico );
-        System.out.println("Exemplo Prático: " + this.exemploPratico);
+        System.out.println("\nOrientação cadastrada com sucesso!");
+
 
         return "Produto cadastrado: " + this.nomeProduto + " - " + this.descricaoDiagnostico + "-" + this.exemploPratico;
 
 
     }
-
-
 
 
 }

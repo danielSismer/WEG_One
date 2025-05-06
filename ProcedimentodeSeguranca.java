@@ -26,45 +26,33 @@ public class ProcedimentodeSeguranca {
 
     public String toString() {
 
-        return "Nome Produto: " + this.nomeProduto
+        return  "================================================================================================================================="
+                + "Nome Orientação: " + this.nomeProduto
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nComo Usar: " + this.comoUsar
-                + "\nExemplo Pratico: " + this.exemploPratico;
-
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
+                + "\nExemplo Pratico: " + this.exemploPratico
+                + "\n=================================================================================================================================";
     }
+
     public String cadastrarProdutoSegurança() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o nome do produto: ");
+        System.out.print("\nDigite o nome do produto: ");
         this.nomeProduto = scanner.nextLine();
 
         System.out.print("Digite a descrição do produto: ");
-        this.comoUsar= scanner.nextLine();
+        this.comoUsar = scanner.nextLine();
 
         System.out.print("Digite um exemplo prático: ");
         this.exemploPratico = scanner.nextLine();
 
-        System.out.println("Produto cadastrado com sucesso!");
-        System.out.println("Nome: " + this.nomeProduto);
-        System.out.println("Como Usar: " + this.comoUsar );
-        System.out.println("Exemplo Prático: " + this.exemploPratico);
+        System.out.println("\nOrientação cadastrada com sucesso!");
 
         return "Produto cadastrado: " + this.nomeProduto + " - " + this.comoUsar + "-" + this.exemploPratico;
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

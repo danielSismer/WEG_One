@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ManualDeOperacao {
 
     Scanner input = new Scanner(System.in);
@@ -26,15 +27,21 @@ public class ManualDeOperacao {
 
     public String toString() {
 
-        return "Nome Produto: " + this.nomeProduto
+        return "================================================================================================================================="
+                + "\nNome Orientação: " + this.nomeProduto
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nComo Usar: " + this.comoUsar
-                + "\nExemplo Pratico: " + this.exemploPratico;
+                + "\n----------------------------------------------------------------------------------------------------------------------------------"
+                + "\nExemplo Pratico: " + this.exemploPratico
+                + "\n=================================================================================================================================";
+
+
     }
 
     public String cadastrarProdutoOperacao() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o nome do produto: ");
+        System.out.print("\nDigite o nome do produto: ");
         this.nomeProduto = scanner.nextLine();
 
         System.out.print("Digite como usar o produto: ");
@@ -43,10 +50,7 @@ public class ManualDeOperacao {
         System.out.print("Digite um exemplo prático: ");
         this.exemploPratico = scanner.nextLine();
 
-        System.out.println("Produto cadastrado com sucesso!");
-        System.out.println("Nome: " + this.nomeProduto);
-        System.out.println("Como Usar: " + this.comoUsar);
-        System.out.println("Exemplo Prático: " + this.exemploPratico);
+        System.out.println("\nOrientação cadastrada com sucesso!");
 
         return "Produto cadastrado: " + this.nomeProduto + " - " + this.comoUsar + "-" + this.exemploPratico;
 

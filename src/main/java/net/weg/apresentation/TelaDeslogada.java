@@ -1,15 +1,20 @@
 package net.weg.apresentation;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 
+
+
 public class TelaDeslogada {
     public static void main(String[] args) {
 
+
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
         LoginAdm LoginADM = new LoginAdm();
+
 
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,11 +22,13 @@ public class TelaDeslogada {
         TelaMenus.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaMenus.setLayout(new BorderLayout());
 
+
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
+
 
         JButton fecharMenu = new JButton("☰");
         fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
@@ -32,6 +39,7 @@ public class TelaDeslogada {
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(false);
         menuLateral.add(fecharMenu);
+
 
         String[] opcoesCadastro = {
                 "Manual de Operação",
@@ -44,7 +52,9 @@ public class TelaDeslogada {
                 " Procedimento Operacional no Setor de Manutenção",
                 ""
 
+
         };
+
 
         JButton botaoPesquisar = new JButton("Pesquisar Orientações");
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -57,14 +67,18 @@ public class TelaDeslogada {
         botaoPesquisar.setBounds(9, 69, 210, 50);
         menuLateral.add(botaoPesquisar);
 
+
         botaoPesquisar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 ClickMenu.ClickPesquisar();
+
 
             }
         });
+
 
         JButton loginADM = new JButton("Login do ADM");
         loginADM.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -77,14 +91,20 @@ public class TelaDeslogada {
         loginADM.setBounds(9, 134, 210, 50);
         menuLateral.add(loginADM);
 
+
         loginADM.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 LoginADM.clickLoginAdm();
+
 
             }
         });
+
+
+
 
 
 
@@ -100,14 +120,24 @@ public class TelaDeslogada {
         menuLateral.add(botaoSair);
 
 
+
+
         botaoSair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 ClickMenu.ClickSair();
+
 
             }
         });
+
+
+
+
+
+
 
 
 
@@ -118,10 +148,17 @@ public class TelaDeslogada {
         painelConteudo.setBackground(new Color(255, 255, 255));
 
 
+
+
         JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
+
+
+
+
+
 
 
 
@@ -136,6 +173,8 @@ public class TelaDeslogada {
         botao3Linhas.setBounds(-3, 0, 50, 30);
 
 
+
+
         botao3Linhas.addActionListener(e -> {
             menuLateral.setVisible(true);
             botao3Linhas.setVisible(false);
@@ -145,6 +184,8 @@ public class TelaDeslogada {
         });
 
 
+
+
         fecharMenu.addActionListener(e -> {
             menuLateral.setVisible(false);
             botao3Linhas.setVisible(true);
@@ -152,6 +193,8 @@ public class TelaDeslogada {
             headerPanel.revalidate();
             headerPanel.repaint();
         });
+
+
 
 
         JButton botaoIdioma = new JButton("\uD83C\uDF10");
@@ -169,11 +212,25 @@ public class TelaDeslogada {
 
 
 
+
+
+
+
+
+
+
+
+
         headerPanel.add(botao3Linhas);
         headerPanel.add(Box.createHorizontalGlue());
         headerPanel.add(botaoIdioma);
 
+
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
+
+
+
+
 
 
 
@@ -188,6 +245,12 @@ public class TelaDeslogada {
 
 
 
+
+
+
+
+
+
         try {
             ImageIcon icon = new ImageIcon("WegOne.jpg");
             Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
@@ -195,11 +258,15 @@ public class TelaDeslogada {
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
+
+
             JLabel mensagem = new JLabel("Bem-vindo ao WegOne");
             mensagem.setFont(new Font("Arial", Font.BOLD, 22));
             mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
             mensagem.setBackground(Color.WHITE);
+
+
 
 
             painelCentral.add(Box.createVerticalGlue());
@@ -211,7 +278,9 @@ public class TelaDeslogada {
             painelCentral.add(new JLabel("Erro ao carregar imagem."));
         }
 
+
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
+
 
         boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(e -> {
@@ -223,16 +292,25 @@ public class TelaDeslogada {
 
 
 
+
+
+
+
         botaoIdioma.addActionListener(e -> {
             JOptionPane.showMessageDialog(TelaMenus, "Funcionalidade de pesquisa aqui.");
         });
+
+
 
 
         TelaMenus.add(menuLateral, BorderLayout.WEST);
         TelaMenus.add(painelConteudo, BorderLayout.CENTER);
 
 
+
+
         TelaMenus.setLocationRelativeTo(null);
         TelaMenus.setVisible(true);
     }
 }
+

@@ -247,7 +247,7 @@ public class OpcoesDoMenu {
 
                         ArrayList<String> opcoesPasta2 = new ArrayList<>();
 
-                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/weg_one", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
                             String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 2";
                             PreparedStatement stmt = conexao.prepareStatement(sql);
                             ResultSet rs = stmt.executeQuery();
@@ -333,7 +333,7 @@ public class OpcoesDoMenu {
 
                         ArrayList<String> opcoesPasta3 = new ArrayList<>();
 
-                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/weg_one", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
                             String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 3";
                             PreparedStatement stmt = conexao.prepareStatement(sql);
                             ResultSet rs = stmt.executeQuery();
@@ -419,7 +419,7 @@ public class OpcoesDoMenu {
 
                         ArrayList<String> opcoesPasta4 = new ArrayList<>();
 
-                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/weg_one", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
                             String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 4";
                             PreparedStatement stmt = conexao.prepareStatement(sql);
                             ResultSet rs = stmt.executeQuery();
@@ -503,7 +503,7 @@ public class OpcoesDoMenu {
 
                                 ArrayList<String> opcoesPasta5 = new ArrayList<>();
 
-                                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/weg_one", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
                                     String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 5";
                                     PreparedStatement stmt = conexao.prepareStatement(sql);
                                     ResultSet rs = stmt.executeQuery();

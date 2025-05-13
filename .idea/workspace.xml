@@ -195,10 +195,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" afterDir="false" />
     </list>
-    <list id="2d90bb40-6c16-4ce8-89c1-74a91fd8763b" name="Changes by kael_araujo" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java" afterDir="false" />
-    </list>
+    <list id="2d90bb40-6c16-4ce8-89c1-74a91fd8763b" name="Changes by kael_araujo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -224,21 +221,6 @@
     &quot;accountId&quot;: &quot;2996cd49-2126-4825-a20a-c49bfb0298b8&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="60" end1="60" start2="61" end2="141" changelist="2d90bb40-6c16-4ce8-89c1-74a91fd8763b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="5" end1="5" start2="6" end2="8" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="57" end1="57" start2="60" end2="138" changelist="2d90bb40-6c16-4ce8-89c1-74a91fd8763b" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>

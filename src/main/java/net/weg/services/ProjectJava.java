@@ -198,236 +198,83 @@ public class ProjectJava {
                             System.out.println(messages_en.getString("categoryOrientations"));
                             int categoria = input.nextInt();
 
+                            if ( categoria == 1){
 
-                            if (categoria == 1) {
-
-                                for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
-
+                                for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                     if (itensManualDeOperacao[cont] != null) {
-
                                         System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
-
                                     }
                                 }
 
-                                System.out.print("Type here: ");
-                                escolha = input.nextInt();
-                                System.out.println("\n");
+                                System.out.print("\nWhich item would you like to search for? ");
+                                int escolhaPesquisa = input.nextInt();
 
+                                itensManualDeOperacao[escolhaPesquisa - 1].pesquisar(3);
 
-                                if (escolha == 1) {
+                            }
 
-                                    System.out.println(itensManualDeOperacao[0]);
+                            else if (categoria == 2) {
 
-                                } else if (escolha == 2) {
-
-                                    System.out.println(itensManualDeOperacao[1]);
-
-                                } else if (escolha == 3) {
-
-                                    System.out.println(itensManualDeOperacao[2]);
-
-                                } else if (escolha == 4) {
-
-                                    System.out.println(itensManualDeOperacao[3]);
-
-                                } else if (escolha == 5) {
-
-                                    System.out.println(itensManualDeOperacao[4]);
-
-                                } else if (escolha == 6) {
-
-                                    System.out.println(itensManualDeOperacao[5]);
-
-                                } else if (escolha == 7) {
-
-                                    System.out.println(itensManualDeOperacao[6]);
-
-                                } else if (escolha == 8) {
-
-                                    System.out.println(itensManualDeOperacao[7]);
-
-                                } else if (escolha == 9) {
-
-                                    System.out.println(itensManualDeOperacao[8]);
-
-                                } else if (escolha == 10) {
-
-                                    System.out.println(itensManualDeOperacao[9]);
-
-                                }
-
-
-                            } else if (categoria == 2) {
-
-                                for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
-
+                                for ( int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
                                     if (itensProcedimentodeSeguranca[cont] != null) {
-
                                         System.out.println((cont + 1) + " - " + itensProcedimentodeSeguranca[cont].nomeProduto);
-
                                     }
                                 }
-                                System.out.print("Type here: ");
-                                escolha = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensProcedimentodeSeguranca[0]);
+                                System.out.print("\nWhich item would you like to search for? ");
+                                int escolhaPesquisa = input.nextInt();
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensProcedimentodeSeguranca[1]);
+                                itensProcedimentodeSeguranca[escolhaPesquisa - 1].pesquisar(3);
 
-                                } else if (escolha == 3) {
-                                    System.out.println(itensProcedimentodeSeguranca[2]);
+                            }
 
-                                } else if (escolha == 4) {
-                                    System.out.println(itensProcedimentodeSeguranca[3]);
+                            else if (categoria == 3) {
 
-                                } else if (escolha == 5) {
-                                    System.out.println(itensProcedimentodeSeguranca[4]);
-
-                                } else if (escolha == 6) {
-                                    System.out.println(itensProcedimentodeSeguranca[5]);
-
-                                } else if (escolha == 7) {
-                                    System.out.println(itensProcedimentodeSeguranca[6]);
-
-                                } else if (escolha == 8) {
-                                    System.out.println(itensProcedimentodeSeguranca[7]);
-
-                                } else if (escolha == 9) {
-                                    System.out.println(itensProcedimentodeSeguranca[8]);
-
-                                } else if (escolha == 10) {
-                                    System.out.println(itensProcedimentodeSeguranca[9]);
-
-                                }
-
-                            } else if (categoria == 3) {
-
-                                for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                                for(int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                     if (itensManutencaoReparo[cont] != null) {
-                                        System.out.println(itensManutencaoReparo[cont].nomeProduto);
+                                        System.out.println((cont + 1) + " - " + itensManutencaoReparo[cont].nomeProduto);
                                     }
                                 }
-                                System.out.print("Type here: ");
-                                escolha = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensManutencaoReparo[0]);
+                                System.out.print("\nWhich item would you like to search for? ");
+                                int escolhaPesquisa = input.nextInt();
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensManutencaoReparo[1]);
+                                itensManutencaoReparo[escolhaPesquisa - 1].pesquisar(3);
 
-                                } else if (escolha == 3) {
-                                    System.out.println(itensManutencaoReparo[2]);
+                            }
 
-                                } else if (escolha == 4) {
-                                    System.out.println(itensManutencaoReparo[3]);
+                            else if (categoria == 4) {
 
-                                } else if (escolha == 5) {
-                                    System.out.println(itensManutencaoReparo[4]);
-
-                                } else if (escolha == 6) {
-                                    System.out.println(itensManutencaoReparo[5]);
-
-                                } else if (escolha == 7) {
-                                    System.out.println(itensManutencaoReparo[6]);
-
-                                } else if (escolha == 8) {
-                                    System.out.println(itensManutencaoReparo[7]);
-
-                                } else if (escolha == 9) {
-                                    System.out.println(itensManutencaoReparo[8]);
-                                } else if (escolha == 10) {
-                                    System.out.println(itensManutencaoReparo[9]);
-
-                                }
-
-                            } else if (categoria == 4) {
-                                for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
+                                for(int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                     if (itensTesteDiagnostico[cont] != null) {
-                                        System.out.println(itensTesteDiagnostico[cont].nomeProduto);
+                                        System.out.println((cont + 1) + " - " + itensTesteDiagnostico[cont].nomeProduto);
                                     }
                                 }
-                                System.out.print("Type here: ");
-                                escolha = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensTesteDiagnostico[0]);
+                                System.out.print("\nWhich item would you like to search for? ");
+                                int escolhaPesquisa = input.nextInt();
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensTesteDiagnostico[1]);
+                                itensTesteDiagnostico[escolhaPesquisa - 1].pesquisar(3);
 
-                                } else if (escolha == 3) {
-                                    System.out.println(itensTesteDiagnostico[2]);
+                            }
 
-                                } else if (escolha == 4) {
-                                    System.out.println(itensTesteDiagnostico[3]);
+                            else if (categoria == 5) {
 
-                                } else if (escolha == 5) {
-                                    System.out.println(itensTesteDiagnostico[4]);
-
-                                } else if (escolha == 6) {
-                                    System.out.println(itensTesteDiagnostico[5]);
-
-                                } else if (escolha == 7) {
-                                    System.out.println(itensTesteDiagnostico[6]);
-
-                                } else if (escolha == 8) {
-                                    System.out.println(itensTesteDiagnostico[7]);
-
-                                } else if (escolha == 9) {
-                                    System.out.println(itensTesteDiagnostico[8]);
-
-                                } else if (escolha == 10) {
-                                    System.out.println(itensTesteDiagnostico[9]);
-
-                                }
-                            } else if (categoria == 5) {
-                                for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
+                                for(int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                     if (itensManualCondutaSetorial[cont] != null) {
-                                        System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
+                                        System.out.println((cont + 1) + " - " + itensManualCondutaSetorial[cont].nomeSetor);
                                     }
                                 }
 
-                                System.out.print("Type here: ");
-                                escolha = input.nextInt();
+                                System.out.print("\nWhich item would you like to search for? ");
+                                int escolhaPesquisa = input.nextInt();
 
-                                if (escolha == 1) {
-                                    System.out.println(itensManualCondutaSetorial[0]);
+                                itensManualCondutaSetorial[escolhaPesquisa - 1].pesquisar(3);
 
-                                } else if (escolha == 2) {
-                                    System.out.println(itensManualCondutaSetorial[1]);
-
-                                } else if (escolha == 3) {
-                                    System.out.println(itensManualCondutaSetorial[2]);
-
-                                } else if (escolha == 4) {
-                                    System.out.println(itensManualCondutaSetorial[3]);
-
-                                } else if (escolha == 5) {
-                                    System.out.println(itensManualCondutaSetorial[4]);
-
-                                } else if (escolha == 6) {
-                                    System.out.println(itensManualCondutaSetorial[5]);
-
-                                } else if (escolha == 7) {
-                                    System.out.println(itensManualCondutaSetorial[6]);
-
-                                } else if (escolha == 8) {
-                                    System.out.println(itensManualCondutaSetorial[7]);
-
-                                } else if (escolha == 9) {
-                                    System.out.println(itensManualCondutaSetorial[8]);
-
-                                } else if (escolha == 10) {
-                                    System.out.println(itensManualCondutaSetorial[9]);
-
-                                }
                             }
 
                             break;
+
 
                         case 3:
 
@@ -450,7 +297,7 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualDeOperacao[escolhaEdicao - 1 ].editar(1);
+                                itensManualDeOperacao[escolhaEdicao - 1 ].editar(3);
 
                             } else if (categoria == 2) {
 
@@ -462,7 +309,7 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensProcedimentodeSeguranca[escolhaEdicao - 1].editar(1);
+                                itensProcedimentodeSeguranca[escolhaEdicao - 1].editar(3);
 
                             } else if (categoria == 3) {
 
@@ -476,7 +323,7 @@ public class ProjectJava {
 
                                 input.nextLine();
 
-                                itensManutencaoReparo[escolhaEdicao - 1].editar(1);
+                                itensManutencaoReparo[escolhaEdicao - 1].editar(3);
 
                             } else if (categoria == 4) {
 
@@ -490,7 +337,7 @@ public class ProjectJava {
 
 
 
-                                itensTesteDiagnostico[escolhaEdicao - 1].editar(1);
+                                itensTesteDiagnostico[escolhaEdicao - 1].editar(3);
 
                             } else if (categoria == 5) {
 
@@ -502,7 +349,7 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(1);
+                                itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(3);
                             } else {
                                 System.out.println(messages_en.getString("invalidOption"));
                             }
@@ -1072,240 +919,95 @@ break;
                     int categoria = input.nextInt();
 
 
-                    if (categoria == 1) {
+                    if ( categoria == 1){
 
-                        for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
-
+                        for ( int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                             if (itensManualDeOperacao[cont] != null) {
-
                                 System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
-
                             }
-
                         }
 
-                        System.out.print("Geben Sie hier ein: ");
-                        escolha = input.nextInt();
-                        System.out.println("\n");
+                        System.out.print("\nWhich item would you like to search for? ");
+                        int escolhaPesquisa = input.nextInt();
 
+                        itensManualDeOperacao[escolhaPesquisa - 1].pesquisar(1);
 
-                        if (escolha == 1) {
+                    }
 
-                            System.out.println(itensManualDeOperacao[0]);
+                    else if (categoria == 2) {
 
-                        } else if (escolha == 2) {
-
-                            System.out.println(itensManualDeOperacao[1]);
-
-                        } else if (escolha == 3) {
-
-                            System.out.println(itensManualDeOperacao[2]);
-
-                        } else if (escolha == 4) {
-
-                            System.out.println(itensManualDeOperacao[3]);
-
-                        } else if (escolha == 5) {
-
-                            System.out.println(itensManualDeOperacao[4]);
-
-                        } else if (escolha == 6) {
-
-                            System.out.println(itensManualDeOperacao[5]);
-
-                        } else if (escolha == 7) {
-
-                            System.out.println(itensManualDeOperacao[6]);
-
-                        } else if (escolha == 8) {
-
-                            System.out.println(itensManualDeOperacao[7]);
-
-                        } else if (escolha == 9) {
-
-                            System.out.println(itensManualDeOperacao[8]);
-
-                        } else if (escolha == 10) {
-
-                            System.out.println(itensManualDeOperacao[9]);
-
-                        }
-
-
-                    } else if (categoria == 2) {
-
-                        for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
-
+                        for ( int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
                             if (itensProcedimentodeSeguranca[cont] != null) {
-
                                 System.out.println((cont + 1) + " - " + itensProcedimentodeSeguranca[cont].nomeProduto);
-
                             }
                         }
-                        System.out.print("Geben Sie hier ein: ");
-                        escolha = input.nextInt();
 
-                        if (escolha == 1) {
-                            System.out.println(itensProcedimentodeSeguranca[0]);
+                        System.out.print("\nWhich item would you like to search for? ");
+                        int escolhaPesquisa = input.nextInt();
 
-                        } else if (escolha == 2) {
-                            System.out.println(itensProcedimentodeSeguranca[1]);
+                        itensProcedimentodeSeguranca[escolhaPesquisa - 1].pesquisar(1);
 
-                        } else if (escolha == 3) {
-                            System.out.println(itensProcedimentodeSeguranca[2]);
+                    }
 
-                        } else if (escolha == 4) {
-                            System.out.println(itensProcedimentodeSeguranca[3]);
+                    else if (categoria == 3) {
 
-                        } else if (escolha == 5) {
-                            System.out.println(itensProcedimentodeSeguranca[4]);
-
-                        } else if (escolha == 6) {
-                            System.out.println(itensProcedimentodeSeguranca[5]);
-
-                        } else if (escolha == 7) {
-                            System.out.println(itensProcedimentodeSeguranca[6]);
-
-                        } else if (escolha == 8) {
-                            System.out.println(itensProcedimentodeSeguranca[7]);
-
-                        } else if (escolha == 9) {
-                            System.out.println(itensProcedimentodeSeguranca[8]);
-
-                        } else if (escolha == 10) {
-                            System.out.println(itensProcedimentodeSeguranca[9]);
-
-                        }
-
-                    } else if (categoria == 3) {
-
-                        for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
+                        for(int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                             if (itensManutencaoReparo[cont] != null) {
-                                System.out.println(itensManutencaoReparo[cont].nomeProduto);
+                                System.out.println((cont + 1) + " - " + itensManutencaoReparo[cont].nomeProduto);
                             }
                         }
-                        System.out.print("Geben Sie hier ein: ");
-                        escolha = input.nextInt();
 
-                        if (escolha == 1) {
-                            System.out.println(itensManutencaoReparo[0]);
+                        System.out.print("\nWhich item would you like to search for? ");
+                        int escolhaPesquisa = input.nextInt();
 
-                        } else if (escolha == 2) {
-                            System.out.println(itensManutencaoReparo[1]);
+                        itensManutencaoReparo[escolhaPesquisa - 1].pesquisar(1);
 
-                        } else if (escolha == 3) {
-                            System.out.println(itensManutencaoReparo[2]);
+                    }
 
-                        } else if (escolha == 4) {
-                            System.out.println(itensManutencaoReparo[3]);
+                    else if (categoria == 4) {
 
-                        } else if (escolha == 5) {
-                            System.out.println(itensManutencaoReparo[4]);
-
-                        } else if (escolha == 6) {
-                            System.out.println(itensManutencaoReparo[5]);
-
-                        } else if (escolha == 7) {
-                            System.out.println(itensManutencaoReparo[6]);
-
-                        } else if (escolha == 8) {
-                            System.out.println(itensManutencaoReparo[7]);
-
-                        } else if (escolha == 9) {
-                            System.out.println(itensManutencaoReparo[8]);
-                        } else if (escolha == 10) {
-                            System.out.println(itensManutencaoReparo[9]);
-
-                        }
-
-                    } else if (categoria == 4) {
-                        for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
+                        for(int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                             if (itensTesteDiagnostico[cont] != null) {
-                                System.out.println(itensTesteDiagnostico[cont].nomeProduto);
+                                System.out.println((cont + 1) + " - " + itensTesteDiagnostico[cont].nomeProduto);
                             }
                         }
-                        System.out.print("Geben Sie hier ein: ");
-                        escolha = input.nextInt();
 
-                        if (escolha == 1) {
-                            System.out.println(itensTesteDiagnostico[0]);
+                        System.out.print("\nWhich item would you like to search for? ");
+                        int escolhaPesquisa = input.nextInt();
 
-                        } else if (escolha == 2) {
-                            System.out.println(itensTesteDiagnostico[1]);
+                        itensTesteDiagnostico[escolhaPesquisa - 1].pesquisar(1);
 
-                        } else if (escolha == 3) {
-                            System.out.println(itensTesteDiagnostico[2]);
+                    }
 
-                        } else if (escolha == 4) {
-                            System.out.println(itensTesteDiagnostico[3]);
+                    else if (categoria == 5) {
 
-                        } else if (escolha == 5) {
-                            System.out.println(itensTesteDiagnostico[4]);
-
-                        } else if (escolha == 6) {
-                            System.out.println(itensTesteDiagnostico[5]);
-
-                        } else if (escolha == 7) {
-                            System.out.println(itensTesteDiagnostico[6]);
-
-                        } else if (escolha == 8) {
-                            System.out.println(itensTesteDiagnostico[7]);
-
-                        } else if (escolha == 9) {
-                            System.out.println(itensTesteDiagnostico[8]);
-
-                        } else if (escolha == 10) {
-                            System.out.println(itensTesteDiagnostico[9]);
-
-                        }
-                    } else if (categoria == 5) {
-                        for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
+                        for(int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                             if (itensManualCondutaSetorial[cont] != null) {
-                                System.out.println(itensManualCondutaSetorial[cont].nomeSetor);
+                                System.out.println((cont + 1) + " - " + itensManualCondutaSetorial[cont].nomeSetor);
                             }
                         }
 
-                        System.out.print("Geben Sie hier ein: ");
-                        escolha = input.nextInt();
+                        System.out.print("\nWhich item would you like to search for? ");
+                        int escolhaPesquisa = input.nextInt();
 
-                        if (escolha == 1) {
-                            System.out.println(itensManualCondutaSetorial[0]);
+                        itensManualCondutaSetorial[escolhaPesquisa - 1].pesquisar(1);
 
-                        } else if (escolha == 2) {
-                            System.out.println(itensManualCondutaSetorial[1]);
-
-                        } else if (escolha == 3) {
-                            System.out.println(itensManualCondutaSetorial[2]);
-
-                        } else if (escolha == 4) {
-                            System.out.println(itensManualCondutaSetorial[3]);
-
-                        } else if (escolha == 5) {
-                            System.out.println(itensManualCondutaSetorial[4]);
-
-                        } else if (escolha == 6) {
-                            System.out.println(itensManualCondutaSetorial[5]);
-
-                        } else if (escolha == 7) {
-                            System.out.println(itensManualCondutaSetorial[6]);
-
-                        } else if (escolha == 8) {
-                            System.out.println(itensManualCondutaSetorial[7]);
-
-                        } else if (escolha == 9) {
-                            System.out.println(itensManualCondutaSetorial[8]);
-
-                        } else if (escolha == 10) {
-                            System.out.println(itensManualCondutaSetorial[9]);
-
-                        }
                     }
 
                     break;
 
+
                 case 3:
-                    System.out.print(messages_de.getString("categoriaOrientacoes") + "\nGeben Sie hier ein: ");
+
+
+                    System.out.print(messages_de.getString("categoriaOrientacoes"));
+                    input.nextLine();
+
+                    System.out.println("\n ");
                     categoria = input.nextInt();
+
+
+
                     if (categoria == 1 ){
 
                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
@@ -1316,7 +1018,7 @@ break;
 
                         int escolhaEdicao = input.nextInt();
 
-                        itensManualDeOperacao[escolhaEdicao - 1 ].editar(3);
+                        itensManualDeOperacao[escolhaEdicao - 1 ].editar(1);
 
                     } else if (categoria == 2) {
 
@@ -1328,7 +1030,7 @@ break;
 
                         int escolhaEdicao = input.nextInt();
 
-                        itensProcedimentodeSeguranca[escolhaEdicao - 1].editar(3);
+                        itensProcedimentodeSeguranca[escolhaEdicao - 1].editar(1);
 
                     } else if (categoria == 3) {
 
@@ -1340,7 +1042,9 @@ break;
 
                         int escolhaEdicao = input.nextInt();
 
-                        itensManutencaoReparo[escolhaEdicao - 1].editar(3);
+                        input.nextLine();
+
+                        itensManutencaoReparo[escolhaEdicao - 1].editar(1);
 
                     } else if (categoria == 4) {
 
@@ -1352,7 +1056,9 @@ break;
 
                         int escolhaEdicao = input.nextInt();
 
-                        itensTesteDiagnostico[escolhaEdicao - 1].editar(3);
+
+
+                        itensTesteDiagnostico[escolhaEdicao - 1].editar(1);
 
                     } else if (categoria == 5) {
 
@@ -1364,8 +1070,11 @@ break;
 
                         int escolhaEdicao = input.nextInt();
 
-                        itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(3);
+                        itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(1);
+                    } else {
+                        System.out.println("Ungültige Option!");
                     }
+                    break;
 
 
 

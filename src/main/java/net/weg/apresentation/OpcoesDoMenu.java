@@ -34,7 +34,7 @@ public class OpcoesDoMenu {
         JPanel painelCadastrarOrientacao = new JPanel();
         painelCadastrarOrientacao.setLayout(null);
         painelCadastrarOrientacao.setBackground(new Color(0, 87, 156));
-        painelCadastrarOrientacao.setBounds(280, 200, 700, 500);
+        painelCadastrarOrientacao.setBounds(540, 200, 850, 700);
         painelFundo2.add(painelCadastrarOrientacao);
 
         JLabel labelTitulo = new JLabel("Criar Orientação:");
@@ -44,9 +44,16 @@ public class OpcoesDoMenu {
         painelFundo2.add(labelTitulo);
 
         JTextField campoCadastrar = new JTextField();
-        campoCadastrar.setBounds(400, 200, 440, 50);
+        campoCadastrar.setBounds(160, 120, 540, 50);
         campoCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
         painelCadastrarOrientacao.add(campoCadastrar);
+
+        JLabel msgmCadastrar = new JLabel("Cadastrar:");
+        msgmCadastrar.setForeground(Color.WHITE);
+        msgmCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
+        msgmCadastrar.setBounds(30, 30, 200, 30);
+        painelFundo2.add(msgmCadastrar);
+
 
         JLabel labelDescricao = new JLabel("Descrição:");
         labelDescricao.setForeground(Color.WHITE);
@@ -273,7 +280,7 @@ public class OpcoesDoMenu {
                 ArrayList<Orientacao> orientacoes2 = new ArrayList<>();
 
 
-                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
+                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
                     String sql = "SELECT titulo, descricao FROM orientacoes WHERE tipo_id = 2";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();

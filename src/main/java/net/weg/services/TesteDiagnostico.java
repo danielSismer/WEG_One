@@ -40,23 +40,45 @@ public class TesteDiagnostico {
                 + "\n=================================================================================================================================";
     }
 
-    public String cadastrarProdutoDiagnostico() {
+    public void cadastrarProdutoDiagnostico(int escolhaIdioma) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("\nDigite o nome do produto: ");
-        this.nomeProduto = scanner.nextLine();
 
-        System.out.print("Digite a descrição do produto: ");
-        this.descricaoDiagnostico = scanner.nextLine();
+        if (escolhaIdioma == 1) {
+            System.out.print("\nGeben Sie den Namen des Produkts ein: ");
+            this.nomeProduto = scanner.nextLine();
 
-        System.out.print("Digite um exemplo prático: ");
-        this.exemploPratico = scanner.nextLine();
+            System.out.print("Geben Sie an, wie das Produkt verwendet wird: ");
+            this.descricaoDiagnostico = scanner.nextLine();
 
-        System.out.println("\nOrientação cadastrada com sucesso!");
+            System.out.print("Geben Sie ein praktisches Beispiel ein: ");
+            this.exemploPratico = scanner.nextLine();
 
+            System.out.println("\nAnleitung erfolgreich registriert!");
 
-        return "Produto cadastrado: " + this.nomeProduto + " - " + this.descricaoDiagnostico + "-" + this.exemploPratico;
+        } else if (escolhaIdioma == 2) {
+            System.out.print("\nDigite o nome do produto: ");
+            this.nomeProduto = scanner.nextLine();
 
+            System.out.print("Digite como usar o produto: ");
+            this.descricaoDiagnostico = scanner.nextLine();
+
+            System.out.print("Digite um exemplo prático: ");
+            this.exemploPratico = scanner.nextLine();
+
+            System.out.println("\nOrientação cadastrada com sucesso!");
+        } else if (escolhaIdioma == 3) {
+            System.out.print("\nEnter the product name: ");
+            this.nomeProduto = scanner.nextLine();
+
+            System.out.print("Enter how to use the product: ");
+            this.descricaoDiagnostico = scanner.nextLine();
+
+            System.out.print("Enter a practical example: ");
+            this.exemploPratico = scanner.nextLine();
+
+            System.out.println("\nInstruction successfully registered!");
+        }
 
     }
 

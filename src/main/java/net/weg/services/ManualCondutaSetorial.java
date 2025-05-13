@@ -31,7 +31,7 @@ public class ManualCondutaSetorial {
 
     public String toString() {
 
-        return  "================================================================================================================================="
+        return "================================================================================================================================="
                 + "\nNome Orientação: " + this.nomeSetor
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nConduta Esperada: " + this.condutaEsperada
@@ -41,24 +41,48 @@ public class ManualCondutaSetorial {
 
     }
 
-    public String cadastrarProdutoSetor() {
+    public void cadastrarProdutoSetor(int escolhaIdioma) {
         Scanner scanner = new Scanner(System.in);
+        if (escolhaIdioma == 1) {
+            System.out.print("\nGeben Sie den Namen des Produkts ein: ");
+            this.nomeSetor = scanner.nextLine();
 
-        System.out.print("\nDigite o nome do produto: ");
-        this.nomeSetor = scanner.nextLine();
+            System.out.print("Geben Sie an, wie das Produkt verwendet wird: ");
+            this.condutaEsperada = scanner.nextLine();
 
-        System.out.print("Digite como usar o produto: ");
-        this.condutaEsperada = scanner.nextLine();
+            System.out.print("Geben Sie ein praktisches Beispiel ein: ");
+            this.observacoes = scanner.nextLine();
 
-        System.out.print("Digite um exemplo prático: ");
-        this.observacoes = scanner.nextLine();
+            System.out.println("\nAnleitung erfolgreich registriert!");
 
-        System.out.println("\nOrientação cadastrada com sucesso!");
+        } else if (escolhaIdioma == 2) {
+            System.out.print("\nDigite o nome do produto: ");
+            this.nomeSetor = scanner.nextLine();
 
-        return "Produto cadastrado: " + this.nomeSetor + " - " + this.condutaEsperada + "-" + this.observacoes;
+            System.out.print("Digite como usar o produto: ");
+            this.condutaEsperada = scanner.nextLine();
 
+            System.out.print("Digite um exemplo prático: ");
+            this.observacoes = scanner.nextLine();
+
+            System.out.println("\nOrientação cadastrada com sucesso!");
+        } else if (escolhaIdioma == 3) {
+            System.out.print("\nEnter the product name: ");
+            this.nomeSetor = scanner.nextLine();
+
+            System.out.print("Enter how to use the product: ");
+            this.condutaEsperada = scanner.nextLine();
+
+            System.out.print("Enter a practical example: ");
+            this.observacoes = scanner.nextLine();
+
+            System.out.println("\nInstruction successfully registered!");
+        }
 
     }
+
+
+
 
     public void editar(int escolhaIdiona) {
         Scanner scanner = new Scanner(System.in);

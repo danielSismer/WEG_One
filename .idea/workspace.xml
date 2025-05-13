@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualCondutaSetorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualCondutaSetorial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManutencaoReparo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManutencaoReparo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" afterDir="false" />
     </list>
     <list id="2d90bb40-6c16-4ce8-89c1-74a91fd8763b" name="Changes by kael_araujo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +98,7 @@
       <workItem from="1746728315677" duration="4304000" />
       <workItem from="1747085513124" duration="7652000" />
       <workItem from="1747094074890" duration="1646000" />
+      <workItem from="1747171345366" duration="465000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: organiza o projeto e a estrutura de pastas">
       <option name="closed" value="true" />

@@ -144,7 +144,7 @@ public class ProjectJava {
                                     case 1:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                             if (itensManualDeOperacao[i] != null) {
-                                                manualCadastro.cadastrarProdutoOperacao();
+                                                manualCadastro.cadastrarProdutoOperacao(3);
                                                 break;
                                             }
                                         }
@@ -152,7 +152,7 @@ public class ProjectJava {
                                     case 2:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                             if (itensManualDeOperacao[i] != null) {
-                                                procedimentoCadastro.cadastrarProdutoSegurança();
+                                                procedimentoCadastro.cadastrarProdutoSegurança(3);
                                                 break;
                                             }
                                         }
@@ -160,7 +160,7 @@ public class ProjectJava {
                                     case 3:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                             if (itensManualDeOperacao[i] != null) {
-                                                manutencaoReparoCadastro.cadastrarProdutoReparo();
+                                                manutencaoReparoCadastro.cadastrarProdutoReparo(3);
                                                 break;
                                             }
                                         }
@@ -168,7 +168,7 @@ public class ProjectJava {
                                     case 4:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                             if (itensManualDeOperacao[i] != null) {
-                                                testeDiagnosticoCadastro.cadastrarProdutoDiagnostico();
+                                                testeDiagnosticoCadastro.cadastrarProdutoDiagnostico(3);
                                                 break;
                                             }
                                         }
@@ -176,7 +176,7 @@ public class ProjectJava {
                                     case 5:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                             if (itensManualDeOperacao[i] != null) {
-                                                manualCondutaSetorialCadastro.cadastrarProdutoSetor();
+                                                manualCondutaSetorialCadastro.cadastrarProdutoSetor(3);
                                                 break;
                                             }
                                         }
@@ -507,7 +507,7 @@ break;
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                             if (itensManualDeOperacao[i] == null) {
                                                 ManualDeOperacao novoCadastro = new ManualDeOperacao();
-                                                novoCadastro.cadastrarProdutoOperacao();
+                                                novoCadastro.cadastrarProdutoOperacao(2);
                                                 itensManualDeOperacao[i] = novoCadastro;
                                                 break;
                                             }
@@ -517,7 +517,7 @@ break;
                                         for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                             if (itensProcedimentodeSeguranca[i] == null) {
                                                 ProcedimentodeSeguranca novoCadastro = new ProcedimentodeSeguranca();
-                                                novoCadastro.cadastrarProdutoSegurança();
+                                                novoCadastro.cadastrarProdutoSegurança(2);
                                                 itensProcedimentodeSeguranca[i] = novoCadastro;
                                                 break;
                                             }
@@ -527,7 +527,7 @@ break;
                                         for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                             if (itensManutencaoReparo[i] == null) {
                                                 ManutencaoReparo novoCadastro = new ManutencaoReparo();
-                                                novoCadastro.cadastrarProdutoReparo();
+                                                novoCadastro.cadastrarProdutoReparo(2);
                                                 itensManutencaoReparo[i] = novoCadastro;
                                                 break;
                                             }
@@ -537,7 +537,7 @@ break;
                                         for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                             if (itensTesteDiagnostico[i] == null) {
                                                 TesteDiagnostico novoCadastro = new TesteDiagnostico();
-                                                novoCadastro.cadastrarProdutoDiagnostico();
+                                                novoCadastro.cadastrarProdutoDiagnostico(2);
                                                 itensTesteDiagnostico[i] = novoCadastro;
                                                 break;
                                             }
@@ -547,7 +547,7 @@ break;
                                         for (int i = 0; i < itensManualCondutaSetorial.length; i++) {
                                             if (itensManualCondutaSetorial[i] == null) {
                                                 ManualCondutaSetorial novoCadastro = new ManualCondutaSetorial();
-                                                novoCadastro.cadastrarProdutoSetor();
+                                                novoCadastro.cadastrarProdutoSetor(2);
                                                 itensManualCondutaSetorial[i] = novoCadastro;
                                                 break;
                                             }
@@ -864,7 +864,7 @@ break;
                             case 1:
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
-                                        manualCadastro.cadastrarProdutoOperacao();
+                                        manualCadastro.cadastrarProdutoOperacao(1);
                                         break;
                                     }
                                 }
@@ -872,7 +872,7 @@ break;
                             case 2:
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
-                                        procedimentoCadastro.cadastrarProdutoSegurança();
+                                        procedimentoCadastro.cadastrarProdutoSegurança(1);
                                         break;
                                     }
                                 }
@@ -880,7 +880,7 @@ break;
                             case 3:
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
-                                        manutencaoReparoCadastro.cadastrarProdutoReparo();
+                                        manutencaoReparoCadastro.cadastrarProdutoReparo(1);
                                         break;
                                     }
                                 }
@@ -888,7 +888,7 @@ break;
                             case 4:
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
-                                        testeDiagnosticoCadastro.cadastrarProdutoDiagnostico();
+                                        testeDiagnosticoCadastro.cadastrarProdutoDiagnostico(1);
                                         break;
                                     }
                                 }
@@ -896,7 +896,7 @@ break;
                             case 5:
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
-                                        manualCondutaSetorialCadastro.cadastrarProdutoSetor();
+                                        manualCondutaSetorialCadastro.cadastrarProdutoSetor(1);
                                         break;
                                     }
                                 }

@@ -211,11 +211,8 @@ public class TelaLogada {
 
 
 
-
-
-
         try {
-            ImageIcon icon = new ImageIcon("C:\\Users\\jose_a_torres\\IdeaProjects\\ProjetoWEG_ON\\src\\main\\java\\net\\weg\\apresentation\\WegOne.jpg");
+            ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne.jpg");
             Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);

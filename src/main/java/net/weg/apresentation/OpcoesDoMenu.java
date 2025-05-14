@@ -12,9 +12,6 @@ import java.util.ArrayList;
 public class OpcoesDoMenu {
 
 
-    private JFrame TelaMenu;
-
-
     public void ClickCadastrar() {
 
 
@@ -115,7 +112,7 @@ public class OpcoesDoMenu {
 
         JPanel painelCentral = new JPanel();
         painelCentral.setBackground(new Color(255, 255, 255));
-        painelCentral.setLayout(new BorderLayout());
+        painelCentral.setLayout(new BoxLayout(painelCentral, BoxLayout.Y_AXIS));
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
         painelCentral.setVisible(true);
 
@@ -155,7 +152,7 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
-                    String sql = "SELECT titulo, descricao FROM orientacoes WHERE tipo_id = 1";
+                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
@@ -163,7 +160,8 @@ public class OpcoesDoMenu {
                     while (rs.next()) {
                         String titulo1 = rs.getString("titulo");
                         String descricao1 = rs.getString("descricao");
-                        orientacoes1.add(new Orientacao(titulo1, descricao1));
+                        String exemplo1 = rs.getString("exemplo");
+                        orientacoes1.add(new Orientacao(titulo1, descricao1, exemplo1));
                     }
 
 
@@ -174,13 +172,31 @@ public class OpcoesDoMenu {
                 }
 
 
+                JLabel tituloPasta1 = new JLabel("");
+                tituloPasta1.setHorizontalAlignment(SwingConstants.CENTER);
+                tituloPasta1.setVerticalAlignment(SwingConstants.TOP);
+                tituloPasta1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
                 JLabel mensagem1 = new JLabel("");
-                painelCentral.add(Box.createVerticalStrut(20));
                 mensagem1.setHorizontalAlignment(SwingConstants.CENTER);
                 mensagem1.setVerticalAlignment(SwingConstants.TOP);
-                painelCentral.add(mensagem1, BorderLayout.NORTH);
+                mensagem1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                JLabel exemplo1 = new JLabel("");
+                exemplo1.setHorizontalAlignment(SwingConstants.CENTER);
+                exemplo1.setVerticalAlignment(SwingConstants.TOP);
+                exemplo1.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                painelCentral.removeAll();
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(tituloPasta1);
+                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(mensagem1);
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(exemplo1);
                 painelCentral.revalidate();
                 painelCentral.repaint();
+
 
                 for (Orientacao orientacao : orientacoes1) {
                     JButton botao = new JButton(orientacao.getTitulo());
@@ -199,21 +215,34 @@ public class OpcoesDoMenu {
                         @Override
                         public void actionPerformed(ActionEvent e) {
 
+                            tituloPasta1.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
+                            tituloPasta1.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta1.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            tituloPasta1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            tituloPasta1.setBackground(Color.WHITE);
+                            tituloPasta1.setVisible(true);
 
                             mensagem1.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
                             mensagem1.setFont(new Font("Arial", Font.BOLD, 22));
                             mensagem1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem1.setBackground(Color.WHITE);
-
                             mensagem1.setVisible(true);
+
+                            exemplo1.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
+                            exemplo1.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo1.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            exemplo1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            exemplo1.setBackground(Color.WHITE);
+                            exemplo1.setVisible(true);
+
 
                         }
                     });
                 }
 
 
-                menuLateral1.add(Box.createVerticalStrut(535));
+                menuLateral1.add(Box.createVerticalStrut(750));
                 JButton botaoRetornar = new JButton("Retornar");
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
@@ -234,6 +263,7 @@ public class OpcoesDoMenu {
                         menuLateral1.setVisible(false);
                         menuLateral.setVisible(true);
                         mensagem1.setVisible(false);
+                        painelCentral.removeAll();
 
                     }
 
@@ -266,8 +296,6 @@ public class OpcoesDoMenu {
                 menuLateral2.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
 
-
-                TelaPesquisar.getContentPane().remove(menuLateral);
                 TelaPesquisar.getContentPane().add(menuLateral2, BorderLayout.WEST);
                 TelaPesquisar.revalidate();
                 TelaPesquisar.repaint();
@@ -281,7 +309,7 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
-                    String sql = "SELECT titulo, descricao FROM orientacoes WHERE tipo_id = 2";
+                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
@@ -289,7 +317,8 @@ public class OpcoesDoMenu {
                     while (rs.next()) {
                         String titulo2 = rs.getString("titulo");
                         String descricao2 = rs.getString("descricao");
-                        orientacoes2.add(new Orientacao(titulo2, descricao2));
+                        String exemplo2 = rs.getString("exemplo");
+                        orientacoes2.add(new Orientacao(titulo2, descricao2, exemplo2));
                     }
 
 
@@ -300,11 +329,28 @@ public class OpcoesDoMenu {
                 }
 
 
+                JLabel tituloPasta2 = new JLabel("");
+                tituloPasta2.setHorizontalAlignment(SwingConstants.CENTER);
+                tituloPasta2.setVerticalAlignment(SwingConstants.TOP);
+                tituloPasta2.setAlignmentX(Component.CENTER_ALIGNMENT);
+
                 JLabel mensagem2 = new JLabel("");
-                painelCentral.add(Box.createVerticalStrut(20));
                 mensagem2.setHorizontalAlignment(SwingConstants.CENTER);
                 mensagem2.setVerticalAlignment(SwingConstants.TOP);
-                painelCentral.add(mensagem2, BorderLayout.NORTH);
+                mensagem2.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                JLabel exemplo2 = new JLabel("");
+                exemplo2.setHorizontalAlignment(SwingConstants.CENTER);
+                exemplo2.setVerticalAlignment(SwingConstants.TOP);
+                exemplo2.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                painelCentral.removeAll();
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(tituloPasta2);
+                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(mensagem2);
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(exemplo2);
                 painelCentral.revalidate();
                 painelCentral.repaint();
 
@@ -324,41 +370,58 @@ public class OpcoesDoMenu {
                         @Override
                         public void actionPerformed(ActionEvent e) {
 
+                            tituloPasta2.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
+                            tituloPasta2.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta2.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            tituloPasta2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            tituloPasta2.setBackground(Color.WHITE);
+                            tituloPasta2.setVisible(true);
 
                             mensagem2.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
                             mensagem2.setFont(new Font("Arial", Font.BOLD, 22));
                             mensagem2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem2.setBackground(Color.WHITE);
-
                             mensagem2.setVisible(true);
+
+                            exemplo2.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
+                            exemplo2.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo2.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            exemplo2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            exemplo2.setBackground(Color.WHITE);
+                            exemplo2.setVisible(true);
 
                         }
                     });
                 }
 
 
-                menuLateral2.add(Box.createVerticalStrut(535));
-                JButton botaoRetornar = new JButton("Retornar");
-                botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
-                botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                menuLateral2.add(botaoRetornar);
+                menuLateral2.add(Box.createVerticalStrut(750));
+                JButton botaoRetornar2 = new JButton("Retornar");
+                botaoRetornar2.setAlignmentX(Component.CENTER_ALIGNMENT);
+                botaoRetornar2.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar2.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar2.setFocusPainted(false);
+                botaoRetornar2.setBackground(new Color(52, 152, 219));
+                botaoRetornar2.setForeground(Color.WHITE);
+                botaoRetornar2.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                menuLateral2.add(botaoRetornar2);
 
 
-                botaoRetornar.addActionListener(new ActionListener() {
+
+
+                botaoRetornar2.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
                         menuLateral2.setVisible(false);
                         menuLateral.setVisible(true);
                         mensagem2.setVisible(false);
+                        painelCentral.removeAll();
 
                     }
+
+
                 });
 
 
@@ -384,30 +447,30 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral3 = new JPanel();
-                menuLateral3.setBackground(new Color(45, 62, 80));
                 menuLateral3.setBackground(new Color(0, 87, 156));
                 menuLateral3.setLayout(new BoxLayout(menuLateral3, BoxLayout.Y_AXIS));
                 menuLateral3.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-
-                TelaPesquisar.add(menuLateral3, BorderLayout.WEST);
+                TelaPesquisar.getContentPane().add(menuLateral3, BorderLayout.WEST);
+                TelaPesquisar.revalidate();
+                TelaPesquisar.repaint();
                 menuLateral.setVisible(false);
 
 
                 menuLateral3.add(Box.createVerticalStrut(69));
+                ArrayList<Orientacao> orientacoes2 = new ArrayList<>();
 
-
-                ArrayList<String> opcoesPasta3 = new ArrayList<>();
-
-
-                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
-                    String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 3";
+                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
+                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 3";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
 
                     while (rs.next()) {
-                        opcoesPasta3.add(rs.getString("titulo"));
+                        String titulo3 = rs.getString("titulo");
+                        String descricao3 = rs.getString("descricao");
+                        String exemplo3 = rs.getString("exemplo");
+                        orientacoes2.add(new Orientacao(titulo3, descricao3, exemplo3));
                     }
 
 
@@ -417,9 +480,33 @@ public class OpcoesDoMenu {
                     f.printStackTrace();
                 }
 
+                JLabel tituloPasta3 = new JLabel("");
+                tituloPasta3.setHorizontalAlignment(SwingConstants.CENTER);
+                tituloPasta3.setVerticalAlignment(SwingConstants.TOP);
+                tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-                for (String opcao : opcoesPasta3) {
-                    JButton botao = new JButton(opcao);
+                JLabel mensagem3 = new JLabel("");
+                mensagem3.setHorizontalAlignment(SwingConstants.CENTER);
+                mensagem3.setVerticalAlignment(SwingConstants.TOP);
+                mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                JLabel exemplo3 = new JLabel("");
+                exemplo3.setHorizontalAlignment(SwingConstants.CENTER);
+                exemplo3.setVerticalAlignment(SwingConstants.TOP);
+                exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                painelCentral.removeAll();
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(tituloPasta3);
+                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(mensagem3);
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(exemplo3);
+                painelCentral.revalidate();
+                painelCentral.repaint();
+
+                for (Orientacao orientacao : orientacoes2) {
+                    JButton botao = new JButton(orientacao.getTitulo());
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setMaximumSize(new Dimension(245, 50));
                     botao.setFont(new Font("Arial", Font.BOLD, 14));
@@ -429,10 +516,41 @@ public class OpcoesDoMenu {
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral3.add(botao);
                     menuLateral3.add(Box.createVerticalStrut(15));
+
+
+                        botao.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+
+                                tituloPasta3.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
+                                tituloPasta3.setFont(new Font("Arial", Font.BOLD, 22));
+                                tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                tituloPasta3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                                tituloPasta3.setBackground(Color.WHITE);
+                                tituloPasta3.setVisible(true);
+
+                                mensagem3.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
+                                mensagem3.setFont(new Font("Arial", Font.BOLD, 22));
+                                mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                                mensagem3.setBackground(Color.WHITE);
+                                mensagem3.setVisible(true);
+
+                                exemplo3.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
+                                exemplo3.setFont(new Font("Arial", Font.BOLD, 22));
+                                exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                                exemplo3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                                exemplo3.setBackground(Color.WHITE);
+                                exemplo3.setVisible(true);
+
+                            }
+                        });
+
+
                 }
 
 
-                menuLateral3.add(Box.createVerticalStrut(535));
+                menuLateral3.add(Box.createVerticalStrut(750));
                 JButton botaoRetornar = new JButton("Retornar");
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
@@ -451,7 +569,8 @@ public class OpcoesDoMenu {
 
                         menuLateral.setVisible(true);
                         menuLateral3.setVisible(false);
-
+                        mensagem3.setVisible(false);
+                        painelCentral.removeAll();
 
                     }
                 });
@@ -460,13 +579,6 @@ public class OpcoesDoMenu {
             }
         });
 
-
-        String[] opcoesPasta4 = {
-                "Botao 1",
-                "Botao 2"
-
-
-        };
 
 
         JButton pasta4 = new JButton("Testes e Diagnóstico");
@@ -485,34 +597,30 @@ public class OpcoesDoMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
                 JPanel menuLateral4 = new JPanel();
-                menuLateral4.setBackground(new Color(45, 62, 80));
                 menuLateral4.setBackground(new Color(0, 87, 156));
                 menuLateral4.setLayout(new BoxLayout(menuLateral4, BoxLayout.Y_AXIS));
                 menuLateral4.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-
-                TelaPesquisar.add(menuLateral4, BorderLayout.WEST);
+                TelaPesquisar.getContentPane().add(menuLateral4, BorderLayout.WEST);
+                TelaPesquisar.revalidate();
+                TelaPesquisar.repaint();
                 menuLateral.setVisible(false);
 
-
                 menuLateral4.add(Box.createVerticalStrut(69));
+                ArrayList<Orientacao> orientacoes4 = new ArrayList<>();
 
-
-                ArrayList<String> opcoesPasta4 = new ArrayList<>();
-
-
-                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
-                    String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 4";
+                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
+                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 4";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
-
                     while (rs.next()) {
-                        opcoesPasta4.add(rs.getString("titulo"));
+                        String titulo4 = rs.getString("titulo");
+                        String descricao4 = rs.getString("descricao");
+                        String exemplo4 = rs.getString("exemplo");
+                        orientacoes4.add(new Orientacao(titulo4, descricao4, exemplo4));
                     }
-
 
                     rs.close();
                     stmt.close();
@@ -520,9 +628,33 @@ public class OpcoesDoMenu {
                     f.printStackTrace();
                 }
 
+                JLabel tituloPasta4 = new JLabel("");
+                tituloPasta4.setHorizontalAlignment(SwingConstants.CENTER);
+                tituloPasta4.setVerticalAlignment(SwingConstants.TOP);
+                tituloPasta4.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-                for (String opcao : opcoesPasta4) {
-                    JButton botao = new JButton(opcao);
+                JLabel mensagem4 = new JLabel("");
+                mensagem4.setHorizontalAlignment(SwingConstants.CENTER);
+                mensagem4.setVerticalAlignment(SwingConstants.TOP);
+                mensagem4.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                JLabel exemplo4 = new JLabel("");
+                exemplo4.setHorizontalAlignment(SwingConstants.CENTER);
+                exemplo4.setVerticalAlignment(SwingConstants.TOP);
+                exemplo4.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                painelCentral.removeAll();
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(tituloPasta4);
+                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(mensagem4);
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(exemplo4);
+                painelCentral.revalidate();
+                painelCentral.repaint();
+
+                for (Orientacao orientacao : orientacoes4) {
+                    JButton botao = new JButton(orientacao.getTitulo());
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setMaximumSize(new Dimension(245, 50));
                     botao.setFont(new Font("Arial", Font.BOLD, 14));
@@ -532,10 +664,36 @@ public class OpcoesDoMenu {
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral4.add(botao);
                     menuLateral4.add(Box.createVerticalStrut(15));
+
+                    botao.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+
+                            tituloPasta4.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
+                            tituloPasta4.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta4.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            tituloPasta4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            tituloPasta4.setBackground(Color.WHITE);
+                            tituloPasta4.setVisible(true);
+
+                            mensagem4.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
+                            mensagem4.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem4.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            mensagem4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            mensagem4.setBackground(Color.WHITE);
+                            mensagem4.setVisible(true);
+
+                            exemplo4.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
+                            exemplo4.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo4.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            exemplo4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            exemplo4.setBackground(Color.WHITE);
+                            exemplo4.setVisible(true);
+                        }
+                    });
                 }
 
-
-                menuLateral4.add(Box.createVerticalStrut(535));
+                menuLateral4.add(Box.createVerticalStrut(750));
                 JButton botaoRetornar = new JButton("Retornar");
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
@@ -546,22 +704,19 @@ public class OpcoesDoMenu {
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral4.add(botaoRetornar);
 
-
                 botaoRetornar.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-
                         menuLateral.setVisible(true);
                         menuLateral4.setVisible(false);
-
-
+                        mensagem4.setVisible(false);
+                        painelCentral.removeAll();
                     }
                 });
-
-
             }
         });
+
 
 
         JButton pasta5 = new JButton("Manual de Conduta");
@@ -580,110 +735,128 @@ public class OpcoesDoMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                JPanel menuLateral5 = new JPanel();
+                menuLateral5.setBackground(new Color(0, 87, 156));
+                menuLateral5.setLayout(new BoxLayout(menuLateral5, BoxLayout.Y_AXIS));
+                menuLateral5.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-                pasta5.addActionListener(new ActionListener() {
+                TelaPesquisar.getContentPane().add(menuLateral5, BorderLayout.WEST);
+                TelaPesquisar.revalidate();
+                TelaPesquisar.repaint();
+                menuLateral.setVisible(false);
+
+                menuLateral5.add(Box.createVerticalStrut(69));
+                ArrayList<Orientacao> orientacoes5 = new ArrayList<>();
+
+                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
+                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 5";
+                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                    ResultSet rs = stmt.executeQuery();
+
+                    while (rs.next()) {
+                        String titulo5 = rs.getString("titulo");
+                        String descricao5 = rs.getString("descricao");
+                        String exemplo5 = rs.getString("exemplo");
+                        orientacoes5.add(new Orientacao(titulo5, descricao5, exemplo5));
+                    }
+
+                    rs.close();
+                    stmt.close();
+                } catch (SQLException f) {
+                    f.printStackTrace();
+                }
+
+                JLabel tituloPasta5 = new JLabel("");
+                tituloPasta5.setHorizontalAlignment(SwingConstants.CENTER);
+                tituloPasta5.setVerticalAlignment(SwingConstants.TOP);
+                tituloPasta5.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                JLabel mensagem5 = new JLabel("");
+                mensagem5.setHorizontalAlignment(SwingConstants.CENTER);
+                mensagem5.setVerticalAlignment(SwingConstants.TOP);
+                mensagem5.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                JLabel exemplo5 = new JLabel("");
+                exemplo5.setHorizontalAlignment(SwingConstants.CENTER);
+                exemplo5.setVerticalAlignment(SwingConstants.TOP);
+                exemplo5.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                painelCentral.removeAll();
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(tituloPasta5);
+                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(mensagem5);
+                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(exemplo5);
+                painelCentral.revalidate();
+                painelCentral.repaint();
+
+                for (Orientacao orientacao : orientacoes5) {
+                    JButton botao = new JButton(orientacao.getTitulo());
+                    botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    botao.setMaximumSize(new Dimension(245, 50));
+                    botao.setFont(new Font("Arial", Font.BOLD, 14));
+                    botao.setFocusPainted(false);
+                    botao.setBackground(new Color(52, 152, 219));
+                    botao.setForeground(Color.WHITE);
+                    botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                    menuLateral5.add(botao);
+                    menuLateral5.add(Box.createVerticalStrut(15));
+
+                    botao.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+
+                            tituloPasta5.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
+                            tituloPasta5.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta5.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            tituloPasta5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            tituloPasta5.setBackground(Color.WHITE);
+                            tituloPasta5.setVisible(true);
+
+                            mensagem5.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
+                            mensagem5.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem5.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            mensagem5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            mensagem5.setBackground(Color.WHITE);
+                            mensagem5.setVisible(true);
+
+                            exemplo5.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
+                            exemplo5.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo5.setAlignmentX(Component.CENTER_ALIGNMENT);
+                            exemplo5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                            exemplo5.setBackground(Color.WHITE);
+                            exemplo5.setVisible(true);
+
+
+                        }
+                    });
+                }
+
+                menuLateral5.add(Box.createVerticalStrut(750));
+                JButton botaoRetornar = new JButton("Retornar");
+                botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
+                botaoRetornar.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar.setFocusPainted(false);
+                botaoRetornar.setBackground(new Color(52, 152, 219));
+                botaoRetornar.setForeground(Color.WHITE);
+                botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                menuLateral5.add(botaoRetornar);
+
+                botaoRetornar.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
-
-                        JPanel menuLateral5 = new JPanel();
-                        menuLateral5.setBackground(new Color(45, 62, 80));
-                        menuLateral5.setBackground(new Color(0, 87, 156));
-                        menuLateral5.setLayout(new BoxLayout(menuLateral5, BoxLayout.Y_AXIS));
-                        menuLateral5.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
-
-
-                        TelaPesquisar.add(menuLateral5, BorderLayout.WEST);
-                        menuLateral.setVisible(false);
-
-
-                        menuLateral5.add(Box.createVerticalStrut(69));
-
-
-                        ArrayList<String> opcoesPasta5 = new ArrayList<>();
-
-
-                        try (Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/weg_one", "DanielAdmin", "246801@Weg")) {
-                            String sql = "SELECT titulo FROM orientacoes WHERE tipo_id = 5";
-                            PreparedStatement stmt = conexao.prepareStatement(sql);
-                            ResultSet rs = stmt.executeQuery();
-
-
-                            while (rs.next()) {
-                                opcoesPasta5.add(rs.getString("titulo"));
-                            }
-
-
-                            rs.close();
-                            stmt.close();
-                        } catch (SQLException f) {
-                            f.printStackTrace();
-                        }
-
-
-                        for (String opcao : opcoesPasta5) {
-                            JButton botao = new JButton(opcao);
-                            botao.setAlignmentX(Component.CENTER_ALIGNMENT);
-                            botao.setMaximumSize(new Dimension(245, 50));
-                            botao.setFont(new Font("Arial", Font.BOLD, 14));
-                            botao.setFocusPainted(false);
-                            botao.setBackground(new Color(52, 152, 219));
-                            botao.setForeground(Color.WHITE);
-                            botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                            menuLateral5.add(botao);
-                            menuLateral5.add(Box.createVerticalStrut(15));
-
-
-                            botao.addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-
-
-                                    JLabel mensagem = new JLabel("Orientação");
-                                    mensagem.setFont(new Font("Arial", Font.BOLD, 22));
-                                    mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
-                                    mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
-                                    mensagem.setBackground(Color.WHITE);
-
-                                    painelCentral.add(mensagem);
-                                    mensagem.setVisible(true);
-                                    painelCentral.add(Box.createVerticalGlue());
-                                }
-                            });
-                        }
-
-
-                        menuLateral5.add(Box.createVerticalStrut(535));
-                        JButton botaoRetornar = new JButton("Retornar");
-                        botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                        botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-                        botaoRetornar.setFocusPainted(false);
-                        botaoRetornar.setBackground(new Color(52, 152, 219));
-                        botaoRetornar.setForeground(Color.WHITE);
-                        botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                        menuLateral5.add(botaoRetornar);
-
-
-                        botaoRetornar.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-
-
-                                menuLateral.setVisible(true);
-                                menuLateral5.setVisible(false);
-                                menuLateral.setVisible(true);
-                                menuLateral5.setVisible(true);
-
-
-                            }
-
-
-                        });
+                        menuLateral.setVisible(true);
+                        menuLateral5.setVisible(false);
+                        mensagem5.setVisible(false);
+                        painelCentral.removeAll();
                     }
                 });
             }
         });
+
 
 
         JPanel painelConteudo = new JPanel(new BorderLayout());
@@ -763,10 +936,11 @@ public class OpcoesDoMenu {
         JButton botaoRetornar = new JButton("Retornar");
         botaoRetornar.setFocusPainted(false);
         botaoRetornar.setBackground(new Color(52, 152, 219));
+        botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
         botaoRetornar.setForeground(Color.WHITE);
         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoRetornar.setLayout(null);
-        botaoRetornar.setBounds(14, 734, 240, 50);
+        botaoRetornar.setBounds(14, 950, 240, 50);
         menuLateral.add(botaoRetornar);
 
 
@@ -922,10 +1096,12 @@ public class OpcoesDoMenu {
     public class Orientacao {
         private String titulo;
         private String descricao;
+        private String exemplo;
 
-        public Orientacao(String titulo, String descricao) {
+        public Orientacao(String titulo, String descricao , String exemplo) {
             this.titulo = titulo;
             this.descricao = descricao;
+            this.exemplo = exemplo;
         }
 
         public String getTitulo() {
@@ -934,6 +1110,10 @@ public class OpcoesDoMenu {
 
         public String getDescricao() {
             return descricao;
+        }
+
+        public String getExemplo() {
+            return exemplo;
         }
     }
 

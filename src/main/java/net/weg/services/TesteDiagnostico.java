@@ -45,19 +45,19 @@ public class TesteDiagnostico {
 
 
         if (escolhaIdioma == 1) {
-            System.out.print("\nGeben Sie den Namen des Produkts ein: ");
+            System.out.println("\nGeben Sie den Namen des Produkts ein: ");
             this.nomeProduto = scanner.nextLine();
 
-            System.out.print("Geben Sie an, wie das Produkt verwendet wird: ");
+            System.out.println("Geben Sie an, wie das Produkt verwendet wird: ");
             this.descricaoDiagnostico = scanner.nextLine();
 
-            System.out.print("Geben Sie ein praktisches Beispiel ein: ");
+            System.out.println("Geben Sie ein praktisches Beispiel ein: ");
             this.exemploPratico = scanner.nextLine();
 
-            System.out.println("\nAnleitung erfolgreich registriert!");
+            System.out.println("Anleitung erfolgreich registriert!");
 
         } else if (escolhaIdioma == 2) {
-            System.out.print("\nDigite o nome do produto: ");
+            System.out.println("Digite o nome do produto: ");
             this.nomeProduto = scanner.nextLine();
 
             System.out.print("Digite como usar o produto: ");
@@ -66,9 +66,9 @@ public class TesteDiagnostico {
             System.out.print("Digite um exemplo prático: ");
             this.exemploPratico = scanner.nextLine();
 
-            System.out.println("\nOrientação cadastrada com sucesso!");
+            System.out.println("Orientação cadastrada com sucesso!");
         } else if (escolhaIdioma == 3) {
-            System.out.print("\nEnter the product name: ");
+            System.out.print("Enter the product name: ");
             this.nomeProduto = scanner.nextLine();
 
             System.out.print("Enter how to use the product: ");
@@ -77,7 +77,7 @@ public class TesteDiagnostico {
             System.out.print("Enter a practical example: ");
             this.exemploPratico = scanner.nextLine();
 
-            System.out.println("\nInstruction successfully registered!");
+            System.out.println("Instruction successfully registered!");
         }
 
     }
@@ -92,7 +92,7 @@ public class TesteDiagnostico {
 
             if (escolhaEdit == 1) {
 
-                System.out.print("\nGeben Sie den Namen des Produkts ein: ");
+                System.out.print("Geben Sie den Namen des Produkts ein: ");
                 this.nomeProduto = scanner.nextLine();
 
             } else if (escolhaEdit == 2) {
@@ -107,7 +107,7 @@ public class TesteDiagnostico {
 
             }
 
-            System.out.println("\nAnleitung erfolgreich bearbeitet!");
+            System.out.println("Anleitung erfolgreich bearbeitet!");
 
         } else if (escolhaIdiona == 2) {
 
@@ -116,7 +116,7 @@ public class TesteDiagnostico {
 
             if (escolhaEdit == 1) {
 
-                System.out.print("\nDigite o nome do produto: ");
+                System.out.print("Digite o nome do produto: ");
                 this.nomeProduto = scanner.nextLine();
 
             } else if (escolhaEdit == 2) {
@@ -131,7 +131,7 @@ public class TesteDiagnostico {
 
             }
 
-            System.out.println("\nOrientação editada com sucesso!");
+            System.out.println("Orientação editada com sucesso!");
 
         } else if (escolhaIdiona == 3) {
 
@@ -140,7 +140,7 @@ public class TesteDiagnostico {
 
             if (escolhaEdit == 1) {
 
-                System.out.print("\nEnter the product name: ");
+                System.out.print("Enter the product name: ");
                 this.nomeProduto = scanner.nextLine();
 
             } else if (escolhaEdit == 2) {
@@ -155,7 +155,7 @@ public class TesteDiagnostico {
 
             }
 
-            System.out.println("\nInstruction successfully edited!");
+            System.out.println("Instruction successfully edited!");
         }
 
     }

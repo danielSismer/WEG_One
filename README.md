@@ -5,22 +5,25 @@
 
 <h3 align="center">Sistema de Cadastro e Consulta de Orientações WEG</h3>
 <br>
-<h3><b>O que é?</b></h3>
+<h3><b>❓ O que é?</b></h3>
     <p>Este é um projeto em Java criado para as disciplinas de:</p>
 <ol>
     <li>Lógica de programação</li>
         <ol>↳ Prof. Bruno da Silva Andrade</ol>
+<br>
     <li>Banco de Dados</li>
         <ol>↳ Prof. João Pedro Silva Valentim</ol>
+<br>
     <li>Metodologias Ágeis e Versionamento</li>
         <ol>↳ Prof. Matheus Quost</ol>
+<br>
     <li>Inglês Técnico</li>
         <ol>↳ Prof. Willer Rezende Motti</ol>
 </ol>
 
 <br><hr>
 
-<h3><b>Objetivos do projeto</b></h3>
+<h3><b>🎯 Objetivos do projeto</b></h3>
 <p>
 O projeto tem como principal objetivo desenvolver um sistema para o cadastro e consulta de regras de condutas WEG. 
 <br><br>
@@ -32,7 +35,112 @@ da Weg de forma simples e eficiente.
 
 <hr>
 
-<h3><b>Colaboradores do Projeto</b></h3>
+<h3><b>✨ Funcionalidades Principais</b></h3>
+
+<p>
+    - 🔄 Escolha de idioma da interface (PT/EN/DE).
+    <br>
+    - ➕ Cadastro de orientações por tipo (manual, segurança, manutenção, etc.).
+    <br>
+    - 🔍 Pesquisa por código da orientação.
+    <br>
+    - ✏️ Edição de orientações existentes (PLUS).
+    <br>
+    - 🗑️ Exclusão de orientações.
+    <br>
+    - 📑 Exibição do conteúdo em três idiomas.
+    <br>
+    - 📋 Menu de opções adaptável ao idioma selecionado.
+    </p>
+
+<hr>
+
+<h3><b>🚀 Tecnologias Utilizadas</b></h3>
+
+<a href="https://www.java.com" target="_blank">
+  <img src="https://img.shields.io/badge/☕ Java-ED8B00?style=for-the-badge&logoColor=white" alt="Java Badge"/>
+</a>
+
+<div>
+    <a href="https://maven.apache.org/" target="_blank">
+      <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven Badge"/>
+    </a>
+</div>
+<div>
+    <a href="https://git-scm.com/" target="_blank">
+      <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Badge"/>
+    </a>
+</div>
+<div>
+    <a href="https://www.jetbrains.com/idea/" target="_blank">
+      <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA Badge"/>
+    </a>
+</div>
+<div>
+<a href="https://www.mysql.com/" target="_blank">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Badge"/>
+</a>
+</div>
+
+<hr>
+
+<h3><b>⚠️ Requisitos para execução</b></h3>
+
+<ol>
+    <li>
+        Java SDK 23
+    </li>
+    <br>
+    <li>
+        Maven 3.9.5
+    </li>
+    <br>
+    <li>
+        MySQL 8.0.25
+    </li>
+</ol>
+
+<br>
+
+<p>Para executar, digite no terminal:</p>
+
+```shell
+    javac ProjectJava.java
+    
+    java ProjectJava
+```
+
+<hr>
+
+<h3><b>❗ Extra!</b></h3>
+
+<p>
+    Foi feita uma aplicação em Java Swing para facilitar o uso do sistema.
+    <br><br>
+    Essa aplicação foi utilizada para a criação de uma interface visual simples porém intuitiva, com direito à todas as funcionalidades anteriormente citadas.
+</p>
+
+<img src="https://i.postimg.cc/BnRh3DQm/print-Weg-One.png" alt="WEGONE">
+
+<hr>
+
+<h3><b>📖 Orientações</b></h3>
+
+<p>
+    - Manual de Operação
+    <br>
+    - Procedimento de Segurança
+    <br>
+    - Manutenção e Reparos
+    <br>
+    - Testes e Diagnóstico
+    <br>
+    - Manual de Conduta e Operações Setoriais
+</p>
+
+<hr>
+
+<h3><b>🤓 Colaboradores do Projeto</b></h3>
 
 <br>
 

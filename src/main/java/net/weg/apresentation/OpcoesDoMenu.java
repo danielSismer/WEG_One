@@ -34,7 +34,7 @@ public class OpcoesDoMenu {
         JPanel painelCadastrarOrientacao = new JPanel();
         painelCadastrarOrientacao.setLayout(null);
         painelCadastrarOrientacao.setBackground(new Color(0, 87, 156));
-        painelCadastrarOrientacao.setBounds(540, 200, 850, 700);
+        painelCadastrarOrientacao.setBounds(235, 200, 1450, 700);
         painelFundo2.add(painelCadastrarOrientacao);
 
         JLabel labelTitulo = new JLabel("Criar Orientação:");
@@ -42,24 +42,41 @@ public class OpcoesDoMenu {
         labelTitulo.setFont(new Font("Arial", Font.BOLD, 25));
         labelTitulo.setBounds(30, 30, 200, 30);
         painelFundo2.add(labelTitulo);
+        labelTitulo.setVisible(false);
 
-        JTextField campoCadastrar = new JTextField();
-        campoCadastrar.setBounds(160, 120, 540, 50);
-        campoCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
-        painelCadastrarOrientacao.add(campoCadastrar);
 
-        JLabel msgmCadastrar = new JLabel("Cadastrar:");
+
+        JLabel msgmCadastrar = new JLabel("Titulo da Orientação:");
         msgmCadastrar.setForeground(Color.WHITE);
         msgmCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
-        msgmCadastrar.setBounds(30, 30, 200, 30);
-        painelFundo2.add(msgmCadastrar);
+        msgmCadastrar.setBounds(103, 80, 400, 30);
+        painelCadastrarOrientacao.add(msgmCadastrar);
+
+        JTextField campoCadastrar = new JTextField();
+        campoCadastrar.setBounds(100, 120, 1249, 50);
+        campoCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
+        painelCadastrarOrientacao.add(campoCadastrar);
 
 
         JLabel labelDescricao = new JLabel("Descrição:");
         labelDescricao.setForeground(Color.WHITE);
         labelDescricao.setFont(new Font("Arial", Font.BOLD, 25));
-        labelDescricao.setBounds(30, 140, 500, 30);
-        painelFundo2.add(labelDescricao);
+        labelDescricao.setBounds(103, 220, 400, 30);
+        painelCadastrarOrientacao.add(labelDescricao);
+
+        JTextArea campoCadastrarDescricao = new JTextArea();
+        campoCadastrarDescricao.setBounds(100, 260, 640, 220);
+        campoCadastrarDescricao.setFont(new Font("Arial", Font.BOLD, 17));
+        campoCadastrarDescricao.setLineWrap(true);
+        campoCadastrarDescricao.setWrapStyleWord(true);
+        campoCadastrarDescricao.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        painelCadastrarOrientacao.add(campoCadastrarDescricao);
+
+        JButton botaoCadastrarOrientacao = new JButton("Cadastrar Orientação");
+        botaoCadastrarOrientacao.setFont(new Font("Arial", Font.BOLD, 20));
+        botaoCadastrarOrientacao.setBounds(258, 550, 340, 65);
+        painelCadastrarOrientacao.add(botaoCadastrarOrientacao);
+
 
         JPanel headerPanel = new JPanel();
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
@@ -78,9 +95,22 @@ public class OpcoesDoMenu {
         botaoVoltar.setBackground(new Color(0, 87, 156));
         botaoVoltar.setForeground(Color.WHITE);
 
+
+        botaoVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                TelaCadastrar.setVisible(false);
+
+
+            }
+        });
+
+
         headerPanel.add(botaoVoltar);
         headerPanel.add(Box.createHorizontalGlue());
         headerPanel.add(botaoIdioma);
+
 
 
     }

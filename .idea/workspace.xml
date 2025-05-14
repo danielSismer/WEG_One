@@ -186,22 +186,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="">
+    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" afterDir="false" />
-    </list>
-    <list id="2fdbec20-2295-4d6a-aafe-f4e2bb11e6e5" name="Changes by Aluno" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" afterDir="false" />
-    </list>
-    <list id="300a0af8-f66d-4b43-824f-730a8bb0e431" name="Changes by gabriel_e_fagundes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaDeslogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaDeslogada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages_pt.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_pt.properties" afterDir="false" />
     </list>
-    <list id="2d90bb40-6c16-4ce8-89c1-74a91fd8763b" name="Changes by kael_araujo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,7 +204,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ProjectJavaSwingTraducao" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -390,6 +384,26 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ProjectJava.executor": "Run",
+    "Application.TelaDeslogada.executor": "Run",
+    "Application.TelaLogada.executor": "Run",
+    "Application.TesteConexaoBanco.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "NovasTelas",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
     "Application.ConexaoBanco.executor": "Run",
     "Application.ProjectJava.executor": "Run",
     "Application.TelaDeslogada.executor": "Run",
@@ -397,8 +411,15 @@
     "Application.TesteConexaoBanco.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "ProjectJavaSwingTraducao",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "last_opened_file_path": "C:/Users/daniel_sismer/IdeaProjects/ProjetoWEG_ONE_REAL",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -408,6 +429,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
     "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
     "vue.rearranger.settings.migration": "true"
   }
@@ -423,6 +446,17 @@
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\bin" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -445,6 +479,8 @@
       <workItem from="1747085513124" duration="7652000" />
       <workItem from="1747094074890" duration="1646000" />
       <workItem from="1747171345366" duration="465000" />
+      <workItem from="1746593647060" duration="314000" />
+      <workItem from="1747171097039" duration="8672000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: organiza o projeto e a estrutura de pastas">
       <option name="closed" value="true" />
@@ -464,6 +500,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />

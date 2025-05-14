@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/LoginAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/LoginAdm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="ProjectJavaSwingTraducao" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +37,7 @@
     "Application.TesteConexaoBanco.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "ProjectJavaSwingTraducao",
+    "git-widget-placeholder": "NovasTelas",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746568071683</updated>
       <workItem from="1746593647060" duration="314000" />
-      <workItem from="1747171097039" duration="650000" />
+      <workItem from="1747171097039" duration="8672000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: organiza o projeto e a estrutura de pastas">
       <option name="closed" value="true" />

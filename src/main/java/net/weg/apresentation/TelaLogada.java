@@ -172,23 +172,6 @@ public class TelaLogada {
         botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botaoIdioma.setForeground(Color.WHITE);
 
-        JButton botaoUsuario = new JButton("\uD83D\uDC64");
-        botaoUsuario.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoUsuario.setFocusPainted(false);
-        botaoUsuario.setBackground(new Color(0, 87, 156));
-        botaoUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoUsuario.setForeground(Color.WHITE);
-        botaoUsuario.setLayout(null);
-        botao3Linhas.setBounds(30, 40, 50, 30);
-
-        botaoUsuario.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                GestaoDeUsuarios.clickLoginAdm();
-
-            }
-        });
 
         JButton botaoLogout = new JButton("Sair da Conta");
         botaoLogout.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -199,7 +182,7 @@ public class TelaLogada {
         botaoLogout.setForeground(Color.WHITE);
         botaoLogout.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoLogout.setLayout(null);
-        botaoLogout.setBounds(9, 734, 210, 50);
+        botaoLogout.setBounds(9, 944, 210, 50);
         menuLateral.add(botaoLogout);
 
         botaoLogout.addActionListener(new ActionListener() {
@@ -214,7 +197,6 @@ public class TelaLogada {
 
         headerPanel.add(botao3Linhas, BorderLayout.WEST);
         headerPanel.add(Box.createHorizontalGlue());
-        headerPanel.add(botaoUsuario, BorderLayout.EAST);
         headerPanel.add(botaoIdioma, BorderLayout.LINE_END);
 
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
@@ -229,11 +211,8 @@ public class TelaLogada {
 
 
 
-
-
-
         try {
-            ImageIcon icon = new ImageIcon("WegOne.jpg");
+            ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne.jpg");
             Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -263,9 +242,6 @@ public class TelaLogada {
             TelaMenus.revalidate();
         });
 
-        botaoIdioma.addActionListener(e -> {
-            JOptionPane.showMessageDialog(TelaMenus, "Funcionalidade de pesquisa aqui.");
-        });
 
         TelaMenus.add(menuLateral, BorderLayout.WEST);
         TelaMenus.add(painelConteudo, BorderLayout.CENTER);

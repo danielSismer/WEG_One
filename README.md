@@ -95,9 +95,6 @@ da Weg de forma simples e eficiente.
         Maven 3.9.5
     </li>
     <br>
-    <li>
-        MySQL 8.0.25
-    </li>
 </ol>
 
 <br>

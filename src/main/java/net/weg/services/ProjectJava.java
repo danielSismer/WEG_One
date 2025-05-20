@@ -22,7 +22,6 @@ public class ProjectJava {
         itensManualDeOperacao[0] = manualMotor;
         itensManualDeOperacao[1] = manualGerador;
 
-
         ProcedimentodeSeguranca procedimentoEletrico = new ProcedimentodeSeguranca();
         ProcedimentodeSeguranca procedimentoChoque = new ProcedimentodeSeguranca();
         itensProcedimentodeSeguranca[0] = procedimentoChoque;
@@ -50,15 +49,22 @@ public class ProjectJava {
         int escolha = 0, categoria, retorno, verificarVazio = 0;
         boolean continuarCadastro = true;
 
+        do {
+            System.out.println("\nChoose the language you want:\nEscolha o idioma que você deseja:\nWählen Sie die gewünschte Sprache:\n");
+            System.out.println("-------------------------------\nEN-US\t\tPT-BR\t\tDE-DE\n-------------------------------");
+            System.out.println("  1\t\t      2\t\t      3");
+            System.out.println("\nEnter:\nInsira:\nEingeben:");
 
-        System.out.println("\nChoose the language you want:\nEscolha o idioma que você deseja:\nWählen Sie die gewünschte Sprache:\n");
-        System.out.println("-------------------------------\nEN-US\t\tPT-BR\t\tDE-DE\n-------------------------------");
-        System.out.println("  1\t\t      2\t\t      3");
-        System.out.println("\nEnter:\nInsira:\nEingeben:");
 
+            escolhaIdioma = input.nextInt();
 
-
-        escolhaIdioma = input.nextInt();
+            if(escolhaIdioma <= 0 || escolhaIdioma >= 4){
+                System.out.println("\n===============================");
+                System.out.println("\nPlease, choose a existing language\nPorfavor, escolha uma linguagem existente\nBitte wählen Sie eine vorhandene Sprache.");
+                System.out.println("\n===============================");
+                continue;
+            }
+        }while (escolhaIdioma <= 0 || escolhaIdioma >= 4);
 
         switch (escolhaIdioma) {
 
@@ -126,7 +132,7 @@ public class ProjectJava {
                                 switch (resposta) {
                                     case 1:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
-                                            if (  itensManualDeOperacao[i] == null) {
+                                            if (itensManualDeOperacao[i] == null) {
                                                 ManualDeOperacao novocadastro = new ManualDeOperacao();
                                                 novocadastro.cadastrarProdutoOperacao(3);
                                                 itensManualDeOperacao[i] = novocadastro;
@@ -199,14 +205,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                         if (itensManualDeOperacao[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
-                                        }else if(itensManualDeOperacao[1] == itensManualDeOperacao[cont]){
+                                        } else if (itensManualDeOperacao[1] == itensManualDeOperacao[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNo items found in this category!");
                                             System.out.println("Type 0 to return to the menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nReturning to the menu...");
                                                 break;
                                             }
@@ -214,10 +220,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nWhich item would you like to search for? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -229,14 +235,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
                                         if (itensProcedimentodeSeguranca[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensProcedimentodeSeguranca[cont].nomeProduto);
-                                        }else if(itensProcedimentodeSeguranca[1] == itensProcedimentodeSeguranca[cont]){
+                                        } else if (itensProcedimentodeSeguranca[1] == itensProcedimentodeSeguranca[cont]) {
                                             verificarVazio = 1;
-                                            
+
                                             System.out.println("\nNo items found in this category!");
                                             System.out.println("Type 0 to return to the menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nReturning to the menu...");
                                                 break;
                                             }
@@ -244,10 +250,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
-                                        
-                                    }else {
+
+                                    } else {
                                         System.out.print("\nWhich item would you like to search for? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -259,14 +265,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                         if (itensManutencaoReparo[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManutencaoReparo[cont].nomeProduto);
-                                        }else if(itensManutencaoReparo[1] == itensManutencaoReparo[cont]){
+                                        } else if (itensManutencaoReparo[1] == itensManutencaoReparo[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNo items found in this category!");
                                             System.out.println("Type 0 to return to the menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nReturning to the menu...");
                                                 break;
                                             }
@@ -274,10 +280,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nWhich item would you like to search for? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -289,14 +295,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                         if (itensTesteDiagnostico[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensTesteDiagnostico[cont].nomeProduto);
-                                        }else if(itensTesteDiagnostico[1] == itensTesteDiagnostico[cont]){
+                                        } else if (itensTesteDiagnostico[1] == itensTesteDiagnostico[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNo items found in this category!");
                                             System.out.println("Type 0 to return to the menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nReturning to the menu...");
                                                 break;
                                             }
@@ -304,10 +310,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nWhich item would you like to search for? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -319,14 +325,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                         if (itensManualCondutaSetorial[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManualCondutaSetorial[cont].nomeSetor);
-                                        }else if(itensManualCondutaSetorial[1] == itensManualCondutaSetorial[cont]){
+                                        } else if (itensManualCondutaSetorial[1] == itensManualCondutaSetorial[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNo items found in this category!");
                                             System.out.println("Type 0 to return to the menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nReturning to the menu...");
                                                 break;
                                             }
@@ -334,10 +340,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nWhich item would you like to search for? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -350,20 +356,20 @@ public class ProjectJava {
                                 int continuar = input.nextInt();
                                 if (continuar == 1) {
                                     continuarCadastro = true;
-                                }else{
+                                } else {
                                     continuarCadastro = false;
                                     break;
                                 }
-                            } while(continuarCadastro);
+                            } while (continuarCadastro);
 
                             break;
 
                         case 3:
-                            System.out.print( messages_en.getString("categoryOrientations"));
+                            System.out.print(messages_en.getString("categoryOrientations"));
                             System.out.println("\nYour selection: ");
                             categoria = input.nextInt();
 
-                            if (categoria == 1 ){
+                            if (categoria == 1) {
 
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
@@ -373,13 +379,13 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualDeOperacao[escolhaEdicao - 1 ].editar(3);
+                                itensManualDeOperacao[escolhaEdicao - 1].editar(3);
 
                             } else if (categoria == 2) {
 
                                 for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                     if (itensProcedimentodeSeguranca[i] != null) {
-                                        System.out.println((i+1) + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
                                     }
                                 }
 
@@ -391,7 +397,7 @@ public class ProjectJava {
 
                                 for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                     if (itensManutencaoReparo[i] != null) {
-                                        System.out.println((i+1) + ": " + itensManutencaoReparo[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensManutencaoReparo[i].nomeProduto);
                                     }
                                 }
 
@@ -403,7 +409,7 @@ public class ProjectJava {
 
                                 for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                     if (itensTesteDiagnostico[i] != null) {
-                                        System.out.println((i+1) + ": " + itensTesteDiagnostico[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensTesteDiagnostico[i].nomeProduto);
                                     }
                                 }
 
@@ -421,7 +427,7 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(3);
+                                itensManualCondutaSetorial[escolhaEdicao - 1].editar(3);
                             }
 
                             continue;
@@ -572,7 +578,7 @@ public class ProjectJava {
                                 switch (resposta) {
                                     case 1:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
-                                            if (    itensManualDeOperacao[i] == null) {
+                                            if (itensManualDeOperacao[i] == null) {
                                                 ManualDeOperacao novocadastro = new ManualDeOperacao();
                                                 novocadastro.cadastrarProdutoOperacao(2);
                                                 itensManualDeOperacao[i] = novocadastro;
@@ -644,14 +650,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                         if (itensManualDeOperacao[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
-                                        }else if(itensManualDeOperacao[1] == itensManualDeOperacao[cont]){
+                                        } else if (itensManualDeOperacao[1] == itensManualDeOperacao[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNenhum item encontrado nesta categoria!");
                                             System.out.println("Digite 0 para retornar ao menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRetornando ao menu...");
                                                 break;
                                             }
@@ -659,10 +665,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1) {
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nQual item você gostaria de buscar? ");
 
                                         int escolhaPesquisa = input.nextInt();
@@ -675,14 +681,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
                                         if (itensProcedimentodeSeguranca[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensProcedimentodeSeguranca[cont].nomeProduto);
-                                        }else if(itensProcedimentodeSeguranca[1] == itensProcedimentodeSeguranca[cont]){
+                                        } else if (itensProcedimentodeSeguranca[1] == itensProcedimentodeSeguranca[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNenhum item encontrado nesta categoria!");
                                             System.out.println("Digite 0 para retornar ao menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRetornando ao menu...");
                                                 break;
                                             }
@@ -690,10 +696,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1) {
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nQual item você gostaria de buscar? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -705,14 +711,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                         if (itensManutencaoReparo[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManutencaoReparo[cont].nomeProduto);
-                                        }else if(itensManutencaoReparo[1] == itensManutencaoReparo[cont]){
+                                        } else if (itensManutencaoReparo[1] == itensManutencaoReparo[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNenhum item encontrado nesta categoria!");
                                             System.out.println("Digite 0 para retornar ao menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRetornando ao menu...");
                                                 break;
                                             }
@@ -720,10 +726,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nQual item você gostaria de buscar? ");
 
                                         int escolhaPesquisa = input.nextInt();
@@ -736,14 +742,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                         if (itensTesteDiagnostico[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensTesteDiagnostico[cont].nomeProduto);
-                                        }else if(itensTesteDiagnostico[1] == itensTesteDiagnostico[cont]){
+                                        } else if (itensTesteDiagnostico[1] == itensTesteDiagnostico[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNenhum item encontrado nesta categoria!");
                                             System.out.println("Digite 0 para retornar ao menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRetornando ao menu...");
                                                 break;
                                             }
@@ -751,10 +757,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1) {
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nQual item você gostaria de buscar? ");
 
                                         int escolhaPesquisa = input.nextInt();
@@ -767,14 +773,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                         if (itensManualCondutaSetorial[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManualCondutaSetorial[cont].nomeSetor);
-                                        }else if(itensManualCondutaSetorial[1] == itensManualCondutaSetorial[cont]){
+                                        } else if (itensManualCondutaSetorial[1] == itensManualCondutaSetorial[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nNenhum item encontrado nesta categoria!");
                                             System.out.println("Digite 0 para retornar ao menu");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRetornando ao menu...");
                                                 break;
                                             }
@@ -782,10 +788,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1) {
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nQual item você gostaria de buscar? ");
 
                                         int escolhaPesquisa = input.nextInt();
@@ -800,20 +806,20 @@ public class ProjectJava {
                                 int continuar = input.nextInt();
                                 if (continuar == 1) {
                                     continuarCadastro = true;
-                                }else{
+                                } else {
                                     continuarCadastro = false;
                                     break;
                                 }
-                            }while(continuarCadastro);
+                            } while (continuarCadastro);
 
                             break;
 
                         case 3:
-                            System.out.print( messages_pt.getString("categoriaOrientacoes"));
+                            System.out.print(messages_pt.getString("categoriaOrientacoes"));
                             System.out.println("\nDigite a sua escolha");
                             categoria = input.nextInt();
 
-                            if (categoria == 1 ){
+                            if (categoria == 1) {
 
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
@@ -823,13 +829,13 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualDeOperacao[escolhaEdicao - 1 ].editar(2);
+                                itensManualDeOperacao[escolhaEdicao - 1].editar(2);
 
                             } else if (categoria == 2) {
 
                                 for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                     if (itensProcedimentodeSeguranca[i] != null) {
-                                        System.out.println((i+1) + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
                                     }
                                 }
 
@@ -841,7 +847,7 @@ public class ProjectJava {
 
                                 for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                     if (itensManutencaoReparo[i] != null) {
-                                        System.out.println((i+1) + ": " + itensManutencaoReparo[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensManutencaoReparo[i].nomeProduto);
                                     }
                                 }
 
@@ -853,7 +859,7 @@ public class ProjectJava {
 
                                 for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                     if (itensTesteDiagnostico[i] != null) {
-                                        System.out.println((i+1) + ": " + itensTesteDiagnostico[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensTesteDiagnostico[i].nomeProduto);
                                     }
                                 }
 
@@ -871,7 +877,7 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(2);
+                                itensManualCondutaSetorial[escolhaEdicao - 1].editar(2);
                             }
 
                             continue;
@@ -960,48 +966,48 @@ public class ProjectJava {
 
 
             case 3:
-        Locale localeDE = new Locale("de", "DE");
-        ResourceBundle messages_de = ResourceBundle.getBundle("messages", localeDE);
+                Locale localeDE = new Locale("de", "DE");
+                ResourceBundle messages_de = ResourceBundle.getBundle("messages", localeDE);
 
-        manualMotor.setNomeProduto(messages_de.getString("manualMotorTitulo"));
-        manualMotor.setComoUsar(messages_de.getString("manualMotorDesc"));
-        manualMotor.setExemploPratico(messages_de.getString("manualMotorEx"));
+                manualMotor.setNomeProduto(messages_de.getString("manualMotorTitulo"));
+                manualMotor.setComoUsar(messages_de.getString("manualMotorDesc"));
+                manualMotor.setExemploPratico(messages_de.getString("manualMotorEx"));
 
-        manualGerador.setNomeProduto(messages_de.getString("manualGeradorTitulo"));
-        manualGerador.setComoUsar(messages_de.getString("manualGeradorDesc"));
-        manualGerador.setExemploPratico(messages_de.getString("manualGeradorEx"));
+                manualGerador.setNomeProduto(messages_de.getString("manualGeradorTitulo"));
+                manualGerador.setComoUsar(messages_de.getString("manualGeradorDesc"));
+                manualGerador.setExemploPratico(messages_de.getString("manualGeradorEx"));
 
-        procedimentoEletrico.setNomeProduto(messages_de.getString("procedEletricoTitulo"));
-        procedimentoEletrico.setComoUsar(messages_de.getString("procedEletricoDesc"));
-        procedimentoEletrico.setExemploPratico(messages_de.getString("procedEletricoEx"));
+                procedimentoEletrico.setNomeProduto(messages_de.getString("procedEletricoTitulo"));
+                procedimentoEletrico.setComoUsar(messages_de.getString("procedEletricoDesc"));
+                procedimentoEletrico.setExemploPratico(messages_de.getString("procedEletricoEx"));
 
-        procedimentoChoque.setNomeProduto(messages_de.getString("procedChoqueTitulo"));
-        procedimentoEletrico.setComoUsar(messages_de.getString("procedChoqueDesc"));
-        procedimentoChoque.setExemploPratico(messages_de.getString("procedChoqueEx"));
+                procedimentoChoque.setNomeProduto(messages_de.getString("procedChoqueTitulo"));
+                procedimentoEletrico.setComoUsar(messages_de.getString("procedChoqueDesc"));
+                procedimentoChoque.setExemploPratico(messages_de.getString("procedChoqueEx"));
 
-        manutencaoReparoMotorEletrico.setNomeProduto(messages_de.getString("reparoMotorTitulo"));
-        manutencaoReparoMotorEletrico.setDescricaoManutencao(messages_de.getString("reparoMotorDesc"));
-        manutencaoReparoMotorEletrico.setExemploPratico(messages_de.getString("reparoMotorEx"));
+                manutencaoReparoMotorEletrico.setNomeProduto(messages_de.getString("reparoMotorTitulo"));
+                manutencaoReparoMotorEletrico.setDescricaoManutencao(messages_de.getString("reparoMotorDesc"));
+                manutencaoReparoMotorEletrico.setExemploPratico(messages_de.getString("reparoMotorEx"));
 
-        manutencaoReparoTransformadores.setNomeProduto(messages_de.getString("reparoTransfTitulo"));
-        manutencaoReparoTransformadores.setDescricaoManutencao(messages_de.getString("reparoTransfDesc"));
-        manutencaoReparoTransformadores.setExemploPratico(messages_de.getString("reparoTransfEx"));
+                manutencaoReparoTransformadores.setNomeProduto(messages_de.getString("reparoTransfTitulo"));
+                manutencaoReparoTransformadores.setDescricaoManutencao(messages_de.getString("reparoTransfDesc"));
+                manutencaoReparoTransformadores.setExemploPratico(messages_de.getString("reparoTransfEx"));
 
-        testeDiagnosticoMotores.setNomeProduto(messages_de.getString("testeMotorTitulo"));
-        testeDiagnosticoMotores.setDescricaoDiagnostico(messages_de.getString("testeMotorDesc"));
-        testeDiagnosticoMotores.setexemploPratico(messages_de.getString("testeMotorEx"));
+                testeDiagnosticoMotores.setNomeProduto(messages_de.getString("testeMotorTitulo"));
+                testeDiagnosticoMotores.setDescricaoDiagnostico(messages_de.getString("testeMotorDesc"));
+                testeDiagnosticoMotores.setexemploPratico(messages_de.getString("testeMotorEx"));
 
-        testeDiagnosticoFalhas.setNomeProduto(messages_de.getString("testeFalhasTitulo"));
-        testeDiagnosticoFalhas.setDescricaoDiagnostico(messages_de.getString("testeFalhasDesc"));
-        testeDiagnosticoFalhas.setexemploPratico(messages_de.getString("testeFalhasEx"));
+                testeDiagnosticoFalhas.setNomeProduto(messages_de.getString("testeFalhasTitulo"));
+                testeDiagnosticoFalhas.setDescricaoDiagnostico(messages_de.getString("testeFalhasDesc"));
+                testeDiagnosticoFalhas.setexemploPratico(messages_de.getString("testeFalhasEx"));
 
-        manualCondutaSetorialMontagem.setNomeSetor(messages_de.getString("manualMontagemTitulo"));
-        manualCondutaSetorialMontagem.setCondutaEsperada(messages_de.getString("manualMontagemDesc"));
-        manualCondutaSetorialMontagem.setObservacoes(messages_de.getString("manualMontagemEx"));
+                manualCondutaSetorialMontagem.setNomeSetor(messages_de.getString("manualMontagemTitulo"));
+                manualCondutaSetorialMontagem.setCondutaEsperada(messages_de.getString("manualMontagemDesc"));
+                manualCondutaSetorialMontagem.setObservacoes(messages_de.getString("manualMontagemEx"));
 
-        manualCondutaSetorialManutencao.setNomeSetor(messages_de.getString("manualManutencaoTitulo"));
-        manualCondutaSetorialManutencao.setCondutaEsperada(messages_de.getString("manualManutencaoDesc"));
-        manualCondutaSetorialManutencao.setObservacoes(messages_de.getString("manualManutencaoEx"));
+                manualCondutaSetorialManutencao.setNomeSetor(messages_de.getString("manualManutencaoTitulo"));
+                manualCondutaSetorialManutencao.setCondutaEsperada(messages_de.getString("manualManutencaoDesc"));
+                manualCondutaSetorialManutencao.setObservacoes(messages_de.getString("manualManutencaoEx"));
 
 
                 do {
@@ -1010,7 +1016,6 @@ public class ProjectJava {
                     System.out.println("\nIhre Auswahl: ");
 
                     menuEscolha = input.nextInt();
-
 
 
                     switch (menuEscolha) {
@@ -1024,11 +1029,10 @@ public class ProjectJava {
                             while (continuarCadastro) {
 
 
-
                                 switch (resposta) {
                                     case 1:
                                         for (int i = 0; i < itensManualDeOperacao.length; i++) {
-                                            if (    itensManualDeOperacao[i] == null) {
+                                            if (itensManualDeOperacao[i] == null) {
                                                 ManualDeOperacao novocadastro = new ManualDeOperacao();
                                                 novocadastro.cadastrarProdutoOperacao(1);
                                                 itensManualDeOperacao[i] = novocadastro;
@@ -1100,14 +1104,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManualDeOperacao.length; cont++) {
                                         if (itensManualDeOperacao[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManualDeOperacao[cont].nomeProduto);
-                                        }else if(itensManualDeOperacao[1] == itensManualDeOperacao[cont]){
+                                        } else if (itensManualDeOperacao[1] == itensManualDeOperacao[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nKeine Artikel in dieser Kategorie gefunden!");
                                             System.out.println("Geben Sie 0 ein, um zum Menü zurückzukehren");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRückkehr zum Menü...");
                                                 break;
                                             }
@@ -1115,10 +1119,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nNach welchem Artikel möchten Sie suchen? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -1130,14 +1134,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensProcedimentodeSeguranca.length; cont++) {
                                         if (itensProcedimentodeSeguranca[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensProcedimentodeSeguranca[cont].nomeProduto);
-                                        }else if(itensProcedimentodeSeguranca[1] == itensProcedimentodeSeguranca[cont]){
+                                        } else if (itensProcedimentodeSeguranca[1] == itensProcedimentodeSeguranca[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nKeine Artikel in dieser Kategorie gefunden!");
                                             System.out.println("Geben Sie 0 ein, um zum Menü zurückzukehren");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRückkehr zum Menü...");
                                                 break;
                                             }
@@ -1145,10 +1149,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nNach welchem Artikel möchten Sie suchen? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -1160,14 +1164,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManutencaoReparo.length; cont++) {
                                         if (itensManutencaoReparo[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManutencaoReparo[cont].nomeProduto);
-                                        }else if(itensManutencaoReparo[1] == itensManutencaoReparo[cont]){
+                                        } else if (itensManutencaoReparo[1] == itensManutencaoReparo[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nKeine Artikel in dieser Kategorie gefunden!");
                                             System.out.println("Geben Sie 0 ein, um zum Menü zurückzukehren");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRückkehr zum Menü...");
                                                 break;
                                             }
@@ -1175,10 +1179,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nNach welchem Artikel möchten Sie suchen? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -1190,14 +1194,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensTesteDiagnostico.length; cont++) {
                                         if (itensTesteDiagnostico[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensTesteDiagnostico[cont].nomeProduto);
-                                        }else if(itensTesteDiagnostico[1] == itensTesteDiagnostico[cont]){
+                                        } else if (itensTesteDiagnostico[1] == itensTesteDiagnostico[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nKeine Artikel in dieser Kategorie gefunden!");
                                             System.out.println("Geben Sie 0 ein, um zum Menü zurückzukehren");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRückkehr zum Menü...");
                                                 break;
                                             }
@@ -1205,10 +1209,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nNach welchem Artikel möchten Sie suchen? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -1220,14 +1224,14 @@ public class ProjectJava {
                                     for (int cont = 0; cont < itensManualCondutaSetorial.length; cont++) {
                                         if (itensManualCondutaSetorial[cont] != null) {
                                             System.out.println((cont + 1) + " - " + itensManualCondutaSetorial[cont].nomeSetor);
-                                        }else if(itensManualCondutaSetorial[1] == itensManualCondutaSetorial[cont]){
+                                        } else if (itensManualCondutaSetorial[1] == itensManualCondutaSetorial[cont]) {
                                             verificarVazio = 1;
 
                                             System.out.println("\nKeine Artikel in dieser Kategorie gefunden!");
                                             System.out.println("Geben Sie 0 ein, um zum Menü zurückzukehren");
                                             retorno = input.nextInt();
 
-                                            if(retorno == 0){
+                                            if (retorno == 0) {
                                                 System.out.println("\nRückkehr zum Menü...");
                                                 break;
                                             }
@@ -1235,10 +1239,10 @@ public class ProjectJava {
                                         }
                                     }
 
-                                    if(verificarVazio == 1){
+                                    if (verificarVazio == 1) {
                                         break;
 
-                                    }else {
+                                    } else {
                                         System.out.print("\nNach welchem Artikel möchten Sie suchen? ");
                                         int escolhaPesquisa = input.nextInt();
 
@@ -1256,17 +1260,17 @@ public class ProjectJava {
                                     continuarCadastro = false;
                                     break;
                                 }
-                            }while(continuarCadastro);
+                            } while (continuarCadastro);
 
                             break;
 
                         case 3:
-                            System.out.print( messages_de.getString("categoriaOrientacoes"));
+                            System.out.print(messages_de.getString("categoriaOrientacoes"));
                             System.out.println("\nIhre Auswahl: ");
 
                             categoria = input.nextInt();
 
-                            if (categoria == 1 ){
+                            if (categoria == 1) {
 
                                 for (int i = 0; i < itensManualDeOperacao.length; i++) {
                                     if (itensManualDeOperacao[i] != null) {
@@ -1276,13 +1280,13 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualDeOperacao[escolhaEdicao - 1 ].editar(1);
+                                itensManualDeOperacao[escolhaEdicao - 1].editar(1);
 
                             } else if (categoria == 2) {
 
                                 for (int i = 0; i < itensProcedimentodeSeguranca.length; i++) {
                                     if (itensProcedimentodeSeguranca[i] != null) {
-                                        System.out.println((i+1) + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensProcedimentodeSeguranca[i].nomeProduto);
                                     }
                                 }
 
@@ -1294,7 +1298,7 @@ public class ProjectJava {
 
                                 for (int i = 0; i < itensManutencaoReparo.length; i++) {
                                     if (itensManutencaoReparo[i] != null) {
-                                        System.out.println((i+1) + ": " + itensManutencaoReparo[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensManutencaoReparo[i].nomeProduto);
                                     }
                                 }
 
@@ -1306,7 +1310,7 @@ public class ProjectJava {
 
                                 for (int i = 0; i < itensTesteDiagnostico.length; i++) {
                                     if (itensTesteDiagnostico[i] != null) {
-                                        System.out.println((i+1) + ": " + itensTesteDiagnostico[i].nomeProduto);
+                                        System.out.println((i + 1) + ": " + itensTesteDiagnostico[i].nomeProduto);
                                     }
                                 }
 
@@ -1324,7 +1328,7 @@ public class ProjectJava {
 
                                 int escolhaEdicao = input.nextInt();
 
-                                itensManualCondutaSetorial[escolhaEdicao - 1 ].editar(1);
+                                itensManualCondutaSetorial[escolhaEdicao - 1].editar(1);
                             }
 
                             continue;
@@ -1409,13 +1413,10 @@ public class ProjectJava {
 
 
                             }
+                            break;
                     }
-
                 } while (menuEscolha != 5);
-
                 break;
-
         }
-
+    }
 }
-        }

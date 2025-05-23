@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_05_2025_13_48__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +21,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BooLeandro1911"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/danielSismer/ProjetoWEG_ONE",
+    "accountId": "ee1df928-cb1b-45e0-9446-3b930ea06249"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -88,6 +101,7 @@
       <workItem from="1746593647060" duration="314000" />
       <workItem from="1747171097039" duration="9206000" />
       <workItem from="1747421388217" duration="246000" />
+      <workItem from="1748019738809" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: organiza o projeto e a estrutura de pastas">
       <option name="closed" value="true" />

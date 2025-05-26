@@ -7,7 +7,7 @@
 <br>
 
 <div align="center">
-    <img src="https://i.postimg.cc/BnZJhtm3/GIF-para-README-certp.gif">
+    <img src="https://i.postimg.cc/zfR6prY5/GIF-para-README-certp-1.gif">
 </div>
 
 <br>

@@ -1,6 +1,7 @@
 package net.weg;
 import net.weg.services.ProjectJava;
 import net.weg.apresentation.TelaDeslogada;
+import net.weg.apresentation.TelaLogada;
 
 import javax.swing.JOptionPane;
 
@@ -12,7 +13,7 @@ public class Apresentacao {
 
         if (escolha == JOptionPane.YES_OPTION) {
 
-            TelaDeslogada.main(null);
+            TelaLogada.main(null);
 
         }else if(escolha == JOptionPane.NO_OPTION){
 

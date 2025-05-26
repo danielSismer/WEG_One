@@ -5,6 +5,12 @@
 
 <h3 align="center">Sistema de Cadastro e Consulta de Orientações WEG</h3>
 <br>
+
+<div align="center">
+    <img src="https://i.postimg.cc/BnZJhtm3/GIF-para-README-certp.gif">
+</div>
+
+<br>
 <h3><b>❓ O que é?</b></h3>
     <p>Este é um projeto em Java criado para as disciplinas de:</p>
 <ol>

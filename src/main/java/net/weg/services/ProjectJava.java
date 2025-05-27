@@ -49,6 +49,9 @@ public class ProjectJava {
         int escolha = 0, categoria, retorno, verificarVazio = 0;
         boolean continuarCadastro = true, idioma = true;
 
+        LogoWegOne logo = new LogoWegOne();
+        logo.getLogoWegOne();
+
         while(idioma) {
             do {
                 System.out.println("\nChoose the language you want:\nEscolha o idioma que você deseja:\nWählen Sie die gewünschte Sprache:\n");

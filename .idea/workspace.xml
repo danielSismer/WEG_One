@@ -4,35 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_05_2025_13_48__Changes_.xml" beforeDir="false" />
+    <list default="true" id="d80c4430-6762-460e-90b3-7deb85e4abfe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/ArredondamentoDeBotao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" afterDir="false" />
     </list>
+    <list id="57ebe3f1-34c9-4346-88f3-a6665dbe46ac" name="Changes by daniel_sismer" comment="" />
+    <list id="f9396e54-d01d-4a10-84b6-610c9a2800a7" name="Changes by jose_a_torres" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ProjectJavaSwingTraducao" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BooLeandro1911"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;danielSismer&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/danielSismer/ProjetoWEG_ONE",
-    "accountId": "ee1df928-cb1b-45e0-9446-3b930ea06249"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/danielSismer/ProjetoWEG_ONE&quot;,
+    &quot;accountId&quot;: &quot;2996cd49-2126-4825-a20a-c49bfb0298b8&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -41,34 +53,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ProjectJava.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TelaDeslogada.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TelaLogada.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TesteConexaoBanco.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;NovasTelas&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TelaDeslogada.executor": "Run",
+    "Application.TelaLogada.executor": "Run",
+    "git-widget-placeholder": "EdicaoJavaSwing",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jose_a_torres\IdeaProjects\ProjetoWEG_ON\src\main\java\net\weg\apresentation" />
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL" />
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\src\main\java\net\weg\apresentation" />
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\src\main\java\net\weg\repository" />
+      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\bin" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE" />
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE\src\main\resources" />
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE\src\main\java\org\example" />
     </key>
   </component>
   <component name="RunManager">
@@ -98,10 +107,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746568071683</updated>
+      <workItem from="1746635662582" duration="4973000" />
+      <workItem from="1746728315677" duration="4304000" />
+      <workItem from="1747085513124" duration="7652000" />
+      <workItem from="1747094074890" duration="1646000" />
+      <workItem from="1747171345366" duration="465000" />
       <workItem from="1746593647060" duration="314000" />
-      <workItem from="1747171097039" duration="9206000" />
-      <workItem from="1747421388217" duration="246000" />
-      <workItem from="1748019738809" duration="69000" />
+      <workItem from="1747171097039" duration="8672000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: organiza o projeto e a estrutura de pastas">
       <option name="closed" value="true" />
@@ -127,6 +139,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor: organiza o projeto e a estrutura de pastas" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: organiza o projeto e a estrutura de pastas" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

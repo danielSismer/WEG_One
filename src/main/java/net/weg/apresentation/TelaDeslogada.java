@@ -252,26 +252,15 @@ public class TelaDeslogada {
 
 
         try {
-            ImageIcon icon = new ImageIcon("WegOne.jpg");
+            ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne1.jpg");
             Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
 
-
-            JLabel mensagem = new JLabel("Bem-vindo ao WegOne");
-            mensagem.setFont(new Font("Arial", Font.BOLD, 22));
-            mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
-            mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
-            mensagem.setBackground(Color.WHITE);
-
-
-
-
             painelCentral.add(Box.createVerticalGlue());
             painelCentral.add(labelImagem);
-            painelCentral.add(mensagem);
             painelCentral.add(Box.createVerticalGlue());
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -131,37 +131,6 @@ public class TelaLogada {
 
 
 
-
-        ArredondamentoDeBotao botaoExcluir = new ArredondamentoDeBotao("Excluir Orientações",6);
-        botaoExcluir.setAlignmentX(Component.CENTER_ALIGNMENT);
-        botaoExcluir.setMaximumSize(new Dimension(180, 50));
-        botaoExcluir.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoExcluir.setFocusPainted(false);
-        botaoExcluir.setBackground(new Color(52, 152, 219));
-        botaoExcluir.setForeground(Color.WHITE);
-        botaoExcluir.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        botaoExcluir.setBounds(9, 270, 210, 50);
-        menuLateral.add(botaoExcluir);
-
-
-
-
-        botaoExcluir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-
-
-                ClickMenu.ClickExcluir();
-
-
-
-            }
-        });
-
-
-
         ArredondamentoDeBotao botaoSair = new ArredondamentoDeBotao("Sair",6);
         botaoSair.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoSair.setMaximumSize(new Dimension(180, 50));
@@ -170,7 +139,7 @@ public class TelaLogada {
         botaoSair.setBackground(new Color(52, 152, 219));
         botaoSair.setForeground(Color.WHITE);
         botaoSair.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        botaoSair.setBounds(9, 335, 210, 50);
+        botaoSair.setBounds(9, 270, 210, 50);
         menuLateral.add(botaoSair);
 
 

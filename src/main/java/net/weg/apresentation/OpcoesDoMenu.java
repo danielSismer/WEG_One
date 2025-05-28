@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 public class OpcoesDoMenu {
 
+
+    private Orientacao orientacaoSelecionada = null;
+
     private String tituloComp;
     private String descricaoComp;
     private String exemploComp;
@@ -38,7 +41,7 @@ public class OpcoesDoMenu {
         painelCadastrarOrientacao.setBounds(235, 200, 1450, 700);
         painelFundo2.add(painelCadastrarOrientacao);
 
-        JButton btnMenu = new JButton("Bah");
+        JButton btnMenu = new JButton("Info");
         btnMenu.setBounds(1005, 100, 120, 30);
         painelCadastrarOrientacao.add(btnMenu);
 
@@ -250,7 +253,7 @@ public class OpcoesDoMenu {
         campoTipoDePasta.setFont(new Font("Arial", Font.BOLD, 25));
         painelCadastrarOrientacao.add(campoTipoDePasta);
 
-        JLabel LabelTipoPasta = new JLabel("Digite o id do tipo de Orientação:");
+        JLabel LabelTipoPasta = new JLabel("Tipo de Orientação");
         LabelTipoPasta.setForeground(Color.WHITE);
         LabelTipoPasta.setFont(new Font("Arial", Font.BOLD, 25));
         LabelTipoPasta.setBounds(750, 60, 400, 30);
@@ -399,7 +402,7 @@ public class OpcoesDoMenu {
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-        ArredondamentoDeBotao fecharMenu = new ArredondamentoDeBotao("☰",6);
+        JButton fecharMenu = new JButton("☰");
         fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
         fecharMenu.setFocusPainted(false);
         fecharMenu.setBackground(new Color(0, 87, 156));
@@ -445,15 +448,16 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
                     while (rs.next()) {
+                        int id1 = rs.getInt("id");
                         String titulo1 = rs.getString("titulo");
                         String descricao1 = rs.getString("descricao");
                         String exemplo1 = rs.getString("exemplo");
-                        orientacoes1.add(new Orientacao(titulo1, descricao1, exemplo1));
+                        orientacoes1.add(new Orientacao(titulo1, descricao1, exemplo1, id1));
                     }
 
                     rs.close();
@@ -490,6 +494,7 @@ public class OpcoesDoMenu {
                 for (Orientacao orientacao : orientacoes1) {
                     ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(),6);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    botao.setPreferredSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
                     botao.setFont(new Font("Arial", Font.BOLD, 14));
                     botao.setFocusPainted(false);
@@ -530,16 +535,20 @@ public class OpcoesDoMenu {
                     });
                 }
 
-                menuLateral1.add(Box.createVerticalStrut(750));
+                menuLateral1.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar.setMinimumSize(new Dimension(245, 50));
                 botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
                 botaoRetornar.setBackground(new Color(52, 152, 219));
                 botaoRetornar.setForeground(Color.WHITE);
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral1.add(botaoRetornar);
+
+                menuLateral1.add(Box.createVerticalStrut(9));
 
                 botaoRetornar.addActionListener(new ActionListener() {
                     @Override
@@ -585,16 +594,17 @@ public class OpcoesDoMenu {
                 ArrayList<Orientacao> orientacoes2 = new ArrayList<>();
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
 
                     while (rs.next()) {
+                        int id2 = rs.getInt("id");
                         String titulo2 = rs.getString("titulo");
                         String descricao2 = rs.getString("descricao");
                         String exemplo2 = rs.getString("exemplo");
-                        orientacoes2.add(new Orientacao(titulo2, descricao2, exemplo2));
+                        orientacoes2.add(new Orientacao(titulo2, descricao2, exemplo2, id2));
                     }
 
                     rs.close();
@@ -681,10 +691,12 @@ public class OpcoesDoMenu {
 
 
 
-                menuLateral2.add(Box.createVerticalStrut(750));
+                menuLateral.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar2 = new ArredondamentoDeBotao("Retornar",6);
                 botaoRetornar2.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar2.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar2.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar2.setMinimumSize(new Dimension(245, 50));
                 botaoRetornar2.setFont(new Font("Arial", Font.BOLD, 14));
                 botaoRetornar2.setFocusPainted(false);
                 botaoRetornar2.setBackground(new Color(52, 152, 219));
@@ -693,6 +705,7 @@ public class OpcoesDoMenu {
                 menuLateral2.add(botaoRetornar2);
 
 
+                menuLateral2.add(Box.createVerticalStrut(9));
 
 
                 botaoRetornar2.addActionListener(new ActionListener() {
@@ -718,56 +731,46 @@ public class OpcoesDoMenu {
 
 
         ArredondamentoDeBotao pasta3 = new ArredondamentoDeBotao("Manutenção e Reparos",6);
-        pasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
         pasta3.setMaximumSize(new Dimension(180, 50));
         pasta3.setFont(new Font("Arial", Font.BOLD, 14));
         pasta3.setFocusPainted(false);
         pasta3.setBackground(new Color(52, 152, 219));
         pasta3.setForeground(Color.WHITE);
         pasta3.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-        pasta3.setBounds(14, 199, 240, 50);
+        pasta3.setBounds(14, 134, 240, 50);
         menuLateral.add(pasta3);
-
-
 
         pasta3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-
-
 
                 JPanel menuLateral3 = new JPanel();
                 menuLateral3.setBackground(new Color(0, 87, 156));
                 menuLateral3.setLayout(new BoxLayout(menuLateral3, BoxLayout.Y_AXIS));
                 menuLateral3.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
-
                 TelaPesquisar.getContentPane().add(menuLateral3, BorderLayout.WEST);
                 TelaPesquisar.revalidate();
                 TelaPesquisar.repaint();
                 menuLateral.setVisible(false);
 
-
-
-
                 menuLateral3.add(Box.createVerticalStrut(69));
-                ArrayList<Orientacao> orientacoes2 = new ArrayList<>();
 
+                ArrayList<Orientacao> orientacoes3 = new ArrayList<>();
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 3";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 3";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
 
                     while (rs.next()) {
+                        int id3 = rs.getInt("id");
                         String titulo3 = rs.getString("titulo");
                         String descricao3 = rs.getString("descricao");
                         String exemplo3 = rs.getString("exemplo");
-                        orientacoes2.add(new Orientacao(titulo3, descricao3, exemplo3));
+                        orientacoes3.add(new Orientacao(titulo3, descricao3, exemplo3, id3));
                     }
-
 
                     rs.close();
                     stmt.close();
@@ -775,24 +778,20 @@ public class OpcoesDoMenu {
                     f.printStackTrace();
                 }
 
-
                 JLabel tituloPasta3 = new JLabel("");
                 tituloPasta3.setHorizontalAlignment(SwingConstants.CENTER);
                 tituloPasta3.setVerticalAlignment(SwingConstants.TOP);
                 tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
-
 
                 JLabel mensagem3 = new JLabel("");
                 mensagem3.setHorizontalAlignment(SwingConstants.CENTER);
                 mensagem3.setVerticalAlignment(SwingConstants.TOP);
                 mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
                 JLabel exemplo3 = new JLabel("");
                 exemplo3.setHorizontalAlignment(SwingConstants.CENTER);
                 exemplo3.setVerticalAlignment(SwingConstants.TOP);
                 exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
-
 
                 painelCentral.removeAll();
                 painelCentral.add(Box.createVerticalStrut(20));
@@ -804,8 +803,7 @@ public class OpcoesDoMenu {
                 painelCentral.revalidate();
                 painelCentral.repaint();
 
-
-                for (Orientacao orientacao : orientacoes2) {
+                for (Orientacao orientacao : orientacoes3) {
                     ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(),6);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setMaximumSize(new Dimension(245, 50));
@@ -818,9 +816,11 @@ public class OpcoesDoMenu {
                     menuLateral3.add(Box.createVerticalStrut(15));
 
 
+
                     botao.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
+
 
 
                             tituloPasta3.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
@@ -830,12 +830,14 @@ public class OpcoesDoMenu {
                             tituloPasta3.setBackground(Color.WHITE);
                             tituloPasta3.setVisible(true);
 
+
                             mensagem3.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
                             mensagem3.setFont(new Font("Arial", Font.BOLD, 22));
                             mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem3.setBackground(Color.WHITE);
                             mensagem3.setVisible(true);
+
 
 
                             exemplo3.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
@@ -849,36 +851,43 @@ public class OpcoesDoMenu {
 
                         }
                     });
-
-
                 }
 
 
-                menuLateral3.add(Box.createVerticalStrut(750));
-                ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
-                botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
-                botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                menuLateral3.add(botaoRetornar);
 
 
+                menuLateral3.add(Box.createVerticalGlue());
+                ArredondamentoDeBotao botaoRetornar3 = new ArredondamentoDeBotao("Retornar",6);
+                botaoRetornar3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                botaoRetornar3.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar3.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar3.setMinimumSize(new Dimension(245, 50));
+                botaoRetornar3.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar3.setFocusPainted(false);
+                botaoRetornar3.setBackground(new Color(52, 152, 219));
+                botaoRetornar3.setForeground(Color.WHITE);
+                botaoRetornar3.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                menuLateral3.add(botaoRetornar3);
 
-                botaoRetornar.addActionListener(new ActionListener() {
+
+                menuLateral3.add(Box.createVerticalStrut(9));
+
+
+                botaoRetornar3.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
 
-                        menuLateral.setVisible(true);
+
                         menuLateral3.setVisible(false);
+                        menuLateral.setVisible(true);
                         mensagem3.setVisible(false);
                         painelCentral.removeAll();
 
 
                     }
+
+
                 });
 
 
@@ -921,17 +930,18 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 4";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 4";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
 
 
                     while (rs.next()) {
+                        int id4 = rs.getInt("tipo_id");
                         String titulo4 = rs.getString("titulo");
                         String descricao4 = rs.getString("descricao");
                         String exemplo4 = rs.getString("exemplo");
-                        orientacoes4.add(new Orientacao(titulo4, descricao4, exemplo4));
+                        orientacoes4.add(new Orientacao(titulo4, descricao4, exemplo4 , id4));
                     }
 
 
@@ -1018,16 +1028,20 @@ public class OpcoesDoMenu {
 
 
 
-                menuLateral4.add(Box.createVerticalStrut(750));
+                menuLateral4.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar.setMinimumSize(new Dimension(245, 50));
                 botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
                 botaoRetornar.setBackground(new Color(52, 152, 219));
                 botaoRetornar.setForeground(Color.WHITE);
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral4.add(botaoRetornar);
+
+                menuLateral4.add(Box.createVerticalStrut(9));
 
 
                 botaoRetornar.addActionListener(new ActionListener() {
@@ -1081,17 +1095,18 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 5";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 5";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
 
 
                     while (rs.next()) {
+                        int id5 = rs.getInt("tipo_id");
                         String titulo5 = rs.getString("titulo");
                         String descricao5 = rs.getString("descricao");
                         String exemplo5 = rs.getString("exemplo");
-                        orientacoes5.add(new Orientacao(titulo5, descricao5, exemplo5));
+                        orientacoes5.add(new Orientacao(titulo5, descricao5, exemplo5, id5));
                     }
 
 
@@ -1180,10 +1195,12 @@ public class OpcoesDoMenu {
 
 
 
-                menuLateral5.add(Box.createVerticalStrut(750));
+                menuLateral5.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
+                botaoRetornar.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar.setMinimumSize(new Dimension(245, 50));
                 botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
                 botaoRetornar.setBackground(new Color(52, 152, 219));
@@ -1191,6 +1208,7 @@ public class OpcoesDoMenu {
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral5.add(botaoRetornar);
 
+                menuLateral5.add(Box.createVerticalStrut(9));
 
 
                 botaoRetornar.addActionListener(new ActionListener() {
@@ -1397,7 +1415,6 @@ public class OpcoesDoMenu {
             pasta1.setBounds(14, 69, 240, 50);
             menuLateral.add(pasta1);
 
-        final String[] tituloOriginall = {""};
 
             pasta1.addActionListener(new ActionListener() {
                 @Override
@@ -1418,16 +1435,16 @@ public class OpcoesDoMenu {
                     ArrayList<Orientacao> orientacoes1 = new ArrayList<>();
 
                     try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                        String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
+                        String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
                         PreparedStatement stmt = conexao.prepareStatement(sql);
                         ResultSet rs = stmt.executeQuery();
 
                         while (rs.next()) {
-
+                            int id1 = rs.getInt("id");
                             String titulo1 = rs.getString("titulo");
                             String descricao1 = rs.getString("descricao");
                             String exemplo1 = rs.getString("exemplo");
-                            orientacoes1.add(new Orientacao(titulo1, descricao1, exemplo1));
+                            orientacoes1.add(new Orientacao(titulo1, descricao1, exemplo1, id1));
 
                         }
 
@@ -1504,38 +1521,40 @@ public class OpcoesDoMenu {
                     excluirOrientacao.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
+                            if (orientacaoSelecionada != null) {
+                                int idExcluir = orientacaoSelecionada.getId();
 
-                            String tituloOriginal = tituloPasta1.getText();
-
-
-
-                            try (Connection conexao = DriverManager.getConnection(
-                                    "jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-
-                                String deleteSql = "DELETE FROM orientacoes WHERE titulo = tituloOriginal";
-
-                                try (PreparedStatement deleteStmt = conexao.prepareStatement(deleteSql)) {
-                                    deleteStmt.setString(1, tituloOriginal); // título da orientação a ser deletada
-
-                                    int linhasAfetadas = deleteStmt.executeUpdate();
-
-                                    if (linhasAfetadas > 0) {
-                                        JOptionPane.showMessageDialog(null, "Orientação deletada com sucesso!");
-                                    } else {
-                                        JOptionPane.showMessageDialog(null, "Nenhuma orientação foi encontrada com esse título.");
-                                    }
+                                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
+                                    String sql = "DELETE FROM orientacoes WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setInt(1, idExcluir);
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                } catch (SQLException ex) {
+                                    ex.printStackTrace();
+                                    JOptionPane.showMessageDialog(null, "Erro ao excluir orientação.");
+                                    return;
                                 }
 
-                            } catch (SQLException ex) {
-                                ex.printStackTrace();
-                                JOptionPane.showMessageDialog(null, "Erro ao deletar: " + ex.getMessage());
+                                JOptionPane.showMessageDialog(null, "Orientação excluída com sucesso!");
+
+                                TelaEditar.remove(menuLateral1);
+                                TelaEditar.revalidate();
+                                TelaEditar.repaint();
+
+                                pasta1.doClick();
+
+                                tituloPasta1.setText("");
+                                mensagem1.setText("");
+                                exemplo1.setText("");
+
+                                orientacaoSelecionada = null;
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
                             }
-
-
-
                         }
-
                     });
+
 
                     ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar",6);
                     botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -1548,9 +1567,164 @@ public class OpcoesDoMenu {
                     botaoConfirmar.setBounds(690, 20, 210, 50);
                     panelExcluir.add(botaoConfirmar);
 
-                    String tituloOriginal = tituloPasta1.getText();
-                    String descricaoOrinal = mensagem1.getText();
-                    String exemploOriginal = exemplo1.getText();
+                    botaoConfirmar.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            if (orientacaoSelecionada == null) {
+                                JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
+                                return;
+                            }
+
+                            // Pega textos atuais dos JTextArea
+                            String novoTitulo = tituloPasta1.getText().trim();
+                            String novaDescricao = mensagem1.getText().trim();
+                            String novoExemplo = exemplo1.getText().trim();
+
+                            // Pega os textos originais
+                            String tituloOriginal = orientacaoSelecionada.getTitulo();
+                            String descricaoOriginal = orientacaoSelecionada.getDescricao();
+                            String exemploOriginal = orientacaoSelecionada.getExemplo();
+
+                            // Verifica se houve mudança
+                            boolean mudouTitulo = !novoTitulo.equals(tituloOriginal);
+                            boolean mudouDescricao = !novaDescricao.equals(descricaoOriginal);
+                            boolean mudouExemplo = !novoExemplo.equals(exemploOriginal);
+
+                            if (!mudouTitulo && !mudouDescricao && !mudouExemplo) {
+                                JOptionPane.showMessageDialog(null, "Nenhuma alteração detectada.");
+                                return;
+                            }
+
+                            // Agora, prepara o UPDATE por partes
+                            try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
+
+                                // Atualiza título, se mudou
+                                if (mudouTitulo) {
+                                    String sql = "UPDATE orientacoes SET titulo = ? WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setString(1, novoTitulo);
+                                    stmt.setInt(2, orientacaoSelecionada.getId());
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                }
+
+                                // Atualiza descrição, se mudou
+                                if (mudouDescricao) {
+                                    String sql = "UPDATE orientacoes SET descricao = ? WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setString(1, novaDescricao);
+                                    stmt.setInt(2, orientacaoSelecionada.getId());
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                }
+
+                                // Atualiza exemplo, se mudou
+                                if (mudouExemplo) {
+                                    String sql = "UPDATE orientacoes SET exemplo = ? WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setString(1, novoExemplo);
+                                    stmt.setInt(2, orientacaoSelecionada.getId());
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                }
+
+                            } catch (SQLException ex) {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Erro ao atualizar orientação.");
+                                return;
+                            }
+
+                            JOptionPane.showMessageDialog(null, "Orientação atualizada com sucesso!");
+
+                            // Atualiza o objeto orientacaoSelecionada com os novos valores
+                            orientacaoSelecionada = new Orientacao(novoTitulo, novaDescricao, novoExemplo, orientacaoSelecionada.getId());
+
+                            // Opcional: recarrega os botões da lateral para atualizar títulos (se mudou título)
+                            TelaEditar.remove(menuLateral1);
+                            TelaEditar.revalidate();
+                            TelaEditar.repaint();
+                            pasta1.doClick();
+                        }
+                    });
+                    botaoConfirmar.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            if (orientacaoSelecionada == null) {
+                                JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
+                                return;
+                            }
+
+
+                            String novoTitulo = tituloPasta1.getText().trim();
+                            String novaDescricao = mensagem1.getText().trim();
+                            String novoExemplo = exemplo1.getText().trim();
+
+
+                            String tituloOriginal = orientacaoSelecionada.getTitulo();
+                            String descricaoOriginal = orientacaoSelecionada.getDescricao();
+                            String exemploOriginal = orientacaoSelecionada.getExemplo();
+
+
+                            boolean mudouTitulo = !novoTitulo.equals(tituloOriginal);
+                            boolean mudouDescricao = !novaDescricao.equals(descricaoOriginal);
+                            boolean mudouExemplo = !novoExemplo.equals(exemploOriginal);
+
+                            if (!mudouTitulo && !mudouDescricao && !mudouExemplo) {
+                                JOptionPane.showMessageDialog(null, "Nenhuma alteração detectada.");
+                                return;
+                            }
+
+
+                            try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
+
+
+                                if (mudouTitulo) {
+                                    String sql = "UPDATE orientacoes SET titulo = ? WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setString(1, novoTitulo);
+                                    stmt.setInt(2, orientacaoSelecionada.getId());
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                }
+
+
+                                if (mudouDescricao) {
+                                    String sql = "UPDATE orientacoes SET descricao = ? WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setString(1, novaDescricao);
+                                    stmt.setInt(2, orientacaoSelecionada.getId());
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                }
+
+
+                                if (mudouExemplo) {
+                                    String sql = "UPDATE orientacoes SET exemplo = ? WHERE id = ?";
+                                    PreparedStatement stmt = conexao.prepareStatement(sql);
+                                    stmt.setString(1, novoExemplo);
+                                    stmt.setInt(2, orientacaoSelecionada.getId());
+                                    stmt.executeUpdate();
+                                    stmt.close();
+                                }
+
+                            } catch (SQLException ex) {
+                                ex.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Erro ao atualizar orientação.");
+                                return;
+                            }
+
+                            JOptionPane.showMessageDialog(null, "Orientação atualizada com sucesso!");
+
+
+                            orientacaoSelecionada = new Orientacao(novoTitulo, novaDescricao, novoExemplo, orientacaoSelecionada.getId());
+
+
+                            TelaEditar.remove(menuLateral1);
+                            TelaEditar.revalidate();
+                            TelaEditar.repaint();
+                            pasta1.doClick();
+                        }
+                    });
 
 
                     painelCentral.removeAll();
@@ -1567,7 +1741,6 @@ public class OpcoesDoMenu {
 
                     for (Orientacao orientacao : orientacoes1) {
 
-                         int cont = 0;
                         ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(),6);
                         botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                         botao.setMaximumSize(new Dimension(245, 50));
@@ -1605,37 +1778,12 @@ public class OpcoesDoMenu {
                                 exemplo1.setBackground(Color.WHITE);
                                 exemplo1.setVisible(true);
 
+                                orientacaoSelecionada = orientacao;
                             }
 
                         });
 
-                        botaoConfirmar.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                String novoTitulo = tituloPasta1.getText();
-                                String novaDescricao = mensagem1.getText();
-                                String novoExemplo = exemplo1.getText();
 
-                                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                                    String updateSql = "UPDATE orientacoes SET titulo = ?, descricao = ?, exemplo = ? WHERE titulo = ?";
-                                    try (PreparedStatement updateStmt = conexao.prepareStatement(updateSql)) {
-                                        updateStmt.setString(1, novoTitulo);
-                                        updateStmt.setString(2, novaDescricao);
-                                        updateStmt.setString(3, novoExemplo);
-                                        updateStmt.setString(4, tituloOriginall[0]);
-                                        int linhasAfetadas = updateStmt.executeUpdate();
-                                        if (linhasAfetadas > 0) {
-                                            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
-                                            tituloOriginall[0] = novoTitulo;
-                                        } else {
-                                            JOptionPane.showMessageDialog(null, "Nenhuma linha foi atualizada.");
-                                        }
-                                    }
-                                } catch (SQLException ex) {
-                                    ex.printStackTrace();
-                                }
-                            }
-                        });
 
                     }
 
@@ -1700,16 +1848,17 @@ public class OpcoesDoMenu {
 
 
                     try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
-                        String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
+                        String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
                         PreparedStatement stmt = conexao.prepareStatement(sql);
                         ResultSet rs = stmt.executeQuery();
 
 
                         while (rs.next()) {
+                            int id2 = rs.getInt("id");
                             String titulo2 = rs.getString("titulo");
                             String descricao2 = rs.getString("descricao");
                             String exemplo2 = rs.getString("exemplo");
-                            orientacoes2.add(new Orientacao(titulo2, descricao2, exemplo2));
+                            orientacoes2.add(new Orientacao(titulo2, descricao2, exemplo2 , id2));
                         }
 
 
@@ -1859,16 +2008,17 @@ public class OpcoesDoMenu {
 
 
                     try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
-                        String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 3";
+                        String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 3";
                         PreparedStatement stmt = conexao.prepareStatement(sql);
                         ResultSet rs = stmt.executeQuery();
 
 
                         while (rs.next()) {
+                            int id3 = rs.getInt("id");
                             String titulo3 = rs.getString("titulo");
                             String descricao3 = rs.getString("descricao");
                             String exemplo3 = rs.getString("exemplo");
-                            orientacoes2.add(new Orientacao(titulo3, descricao3, exemplo3));
+                            orientacoes2.add(new Orientacao(titulo3, descricao3, exemplo3, id3));
                         }
                         rs.close();
                         stmt.close();
@@ -2013,16 +2163,17 @@ public class OpcoesDoMenu {
 
 
                     try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
-                        String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 4";
+                        String sql = "SELECT id ,titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 4";
                         PreparedStatement stmt = conexao.prepareStatement(sql);
                         ResultSet rs = stmt.executeQuery();
 
 
                         while (rs.next()) {
+                            int id4 = rs.getInt("id");
                             String titulo4 = rs.getString("titulo");
                             String descricao4 = rs.getString("descricao");
                             String exemplo4 = rs.getString("exemplo");
-                            orientacoes4.add(new Orientacao(titulo4, descricao4, exemplo4));
+                            orientacoes4.add(new Orientacao(titulo4, descricao4, exemplo4, id4));
                         }
 
                         rs.close();
@@ -2166,16 +2317,17 @@ public class OpcoesDoMenu {
 
 
                     try (Connection conexao = DriverManager.getConnection("jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway", "root", "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb")) {
-                        String sql = "SELECT titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 5";
+                        String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 5";
                         PreparedStatement stmt = conexao.prepareStatement(sql);
                         ResultSet rs = stmt.executeQuery();
 
 
                         while (rs.next()) {
+                            int id5 = rs.getInt("id");
                             String titulo5 = rs.getString("titulo");
                             String descricao5 = rs.getString("descricao");
                             String exemplo5 = rs.getString("exemplo");
-                            orientacoes5.add(new Orientacao(titulo5, descricao5, exemplo5));
+                            orientacoes5.add(new Orientacao(titulo5, descricao5, exemplo5, id5));
                         }
 
 
@@ -2588,16 +2740,20 @@ public class OpcoesDoMenu {
 
 
     public class Orientacao {
+        private int id;
         private String titulo;
         private String descricao;
         private String exemplo;
 
 
-        public Orientacao(String titulo, String descricao , String exemplo) {
+        public Orientacao(String titulo, String descricao , String exemplo, int id) {
+            this.id = id;
             this.titulo = titulo;
             this.descricao = descricao;
             this.exemplo = exemplo;
         }
+
+        public int getId() { return id; }
 
         public String getTitulo() {
             return titulo;

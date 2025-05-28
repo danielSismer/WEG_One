@@ -1,6 +1,8 @@
 package net.weg.apresentation;
 
 
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -8,14 +10,23 @@ import javax.swing.SwingWorker;
 
 
 
+
+
+
 public class TelaLogada {
 
+
     public static void main(String[] args) {
+
+
 
 
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
         LoginAdm GestaoDeUsuarios = new LoginAdm();
         ArredondamentoDeBotao BotaoRedondos = new ArredondamentoDeBotao("meuBotãozinho", 30);
+
+
+
 
 
 
@@ -26,11 +37,15 @@ public class TelaLogada {
         TelaMenus.setLayout(new BorderLayout());
 
 
+
+
         JPanel menuLateral = new JPanel();
         menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
+
+
 
 
         JButton fecharMenu = new JButton("☰");
@@ -42,6 +57,8 @@ public class TelaLogada {
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(false);
         menuLateral.add(fecharMenu);
+
+
 
 
         ArredondamentoDeBotao botaoCadastrar = new ArredondamentoDeBotao("Cadastrar Orientações",6);
@@ -56,9 +73,14 @@ public class TelaLogada {
         menuLateral.add(botaoCadastrar);
 
 
+
+
         botaoCadastrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
+
 
 
 
@@ -66,8 +88,15 @@ public class TelaLogada {
 
 
 
+
+
+
             }
         });
+
+
+
+
 
 
 
@@ -80,11 +109,17 @@ public class TelaLogada {
 
 
 
+
+
+
         botaoPesquisar.setBackground(new Color(52, 152, 219));
         botaoPesquisar.setForeground(Color.WHITE);
         botaoPesquisar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoPesquisar.setBounds(9, 74, 210, 50);
         menuLateral.add(botaoPesquisar);
+
+
+
 
 
 
@@ -94,11 +129,19 @@ public class TelaLogada {
 
 
 
+
+
+
                 ClickMenu.ClickPesquisar();
+
+
 
 
             }
         });
+
+
+
 
 
 
@@ -115,9 +158,15 @@ public class TelaLogada {
 
 
 
+
+
+
         botaoEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
+
 
 
 
@@ -126,8 +175,15 @@ public class TelaLogada {
 
 
 
+
+
+
+
             }
         });
+
+
+
 
 
 
@@ -144,9 +200,16 @@ public class TelaLogada {
 
 
 
+
+
+
         botaoSair.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
+
+
 
 
 
@@ -155,8 +218,14 @@ public class TelaLogada {
 
 
 
+
+
+
             }
         });
+
+
+
 
 
 
@@ -164,10 +233,15 @@ public class TelaLogada {
         painelConteudo.setBackground(new Color(255, 255, 255));
 
 
+
+
         JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
+
+
+
 
 
 
@@ -181,6 +255,9 @@ public class TelaLogada {
 
 
 
+
+
+
         botao3Linhas.addActionListener(e -> {
             menuLateral.setVisible(true);
             botao3Linhas.setVisible(false);
@@ -188,6 +265,8 @@ public class TelaLogada {
             headerPanel.revalidate();
             headerPanel.repaint();
         });
+
+
 
 
         fecharMenu.addActionListener(e -> {
@@ -199,12 +278,16 @@ public class TelaLogada {
         });
 
 
+
+
         JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
         botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));
         botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botaoIdioma.setForeground(Color.WHITE);
+
+
 
 
         ArredondamentoDeBotao botaoLogout = new ArredondamentoDeBotao("Sair da Conta",6);
@@ -220,16 +303,24 @@ public class TelaLogada {
         menuLateral.add(botaoLogout);
 
 
+
+
         botaoLogout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
 
+
+
                 TelaDeslogada.main(new String [] {});
+
+
 
 
             }
         });
+
+
 
 
         headerPanel.add(botao3Linhas, BorderLayout.WEST);
@@ -237,7 +328,11 @@ public class TelaLogada {
         headerPanel.add(botaoIdioma, BorderLayout.LINE_END);
 
 
+
+
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
+
+
 
 
         JPanel painelCentral = new JPanel();
@@ -246,11 +341,15 @@ public class TelaLogada {
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
-            try {
+
+
+        try {
             ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne.jpg");
             Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
             JLabel labelImagem = new JLabel(new ImageIcon(imagem));
             labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
 
 
             JLabel mensagem = new JLabel("");
@@ -258,6 +357,7 @@ public class TelaLogada {
             mensagem.setAlignmentX(Component.CENTER_ALIGNMENT);
             mensagem.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
             mensagem.setBackground(Color.WHITE);
+
 
             painelCentral.add(Box.createVerticalGlue());
             painelCentral.add(labelImagem);
@@ -270,7 +370,12 @@ public class TelaLogada {
 
 
 
+
+
+
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
+
+
 
 
         boolean[] menuVisivel = {false};
@@ -282,11 +387,17 @@ public class TelaLogada {
 
 
 
+
+
+
         TelaMenus.add(menuLateral, BorderLayout.WEST);
         TelaMenus.add(painelConteudo, BorderLayout.CENTER);
+
+
 
 
         TelaMenus.setLocationRelativeTo(null);
         TelaMenus.setVisible(true);
     }
 }
+

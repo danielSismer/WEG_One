@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 
 
+
+
 public class ArredondamentoDeBotao extends JButton {
 
 
@@ -27,9 +29,9 @@ public class ArredondamentoDeBotao extends JButton {
     public ArredondamentoDeBotao(String label, int radius) {
         super(label);
         cornerRadius = 30;
-        setContentAreaFilled(false); // Para desativar o preenchimento padrão do botão
-        setFocusPainted(false);      // Remove o foco padrão do botão (opcional)
-        setBorderPainted(false);     // Remove a borda padrão
+        setContentAreaFilled(false);
+        setFocusPainted(false);
+        setBorderPainted(false);
         setOpaque(false);
     }
 
@@ -43,13 +45,11 @@ public class ArredondamentoDeBotao extends JButton {
 
 
 
-        // Suavização (antialiasing)
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 
 
 
-        // Define a cor do botão (você pode mudar ou tornar dinâmica)
         if (getModel().isPressed()) {
             g2.setColor(getBackground().darker());
         } else if (getModel().isRollover()) {
@@ -61,13 +61,11 @@ public class ArredondamentoDeBotao extends JButton {
 
 
 
-        // Desenha o botão com cantos arredondados
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), cornerRadius, cornerRadius);
 
 
 
 
-        // Desenha o texto (centralizado)
         FontMetrics fm = g2.getFontMetrics();
         Rectangle stringBounds = fm.getStringBounds(getText(), g2).getBounds();
         int textX = (getWidth() - stringBounds.width) / 2;
@@ -77,12 +75,16 @@ public class ArredondamentoDeBotao extends JButton {
 
 
         g2.setColor(getForeground());
-        g2.drawString(getText(), textX, textY);
+
+
 
 
 
 
         g2.dispose();
+
+
+        super.paintComponent(g);
     }
 
 
@@ -98,12 +100,8 @@ public class ArredondamentoDeBotao extends JButton {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 
-
-
         g2.setColor(getForeground());
         g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, cornerRadius, cornerRadius);
-
-
 
 
         g2.dispose();
@@ -115,10 +113,14 @@ public class ArredondamentoDeBotao extends JButton {
     @Override
     public Dimension getPreferredSize() {
         Dimension size = super.getPreferredSize();
-        size.width = Math.max(size.width, size.height); // Quadrado ou mais largo
+        size.width = Math.max(size.width, size.height);
         return size;
     }
 }
+
+
+
+
 
 
 

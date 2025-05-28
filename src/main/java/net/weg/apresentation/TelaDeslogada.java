@@ -56,7 +56,7 @@ public class TelaDeslogada {
         };
 
 
-        JButton botaoPesquisar = new JButton("Pesquisar Orientações");
+        ArredondamentoDeBotao botaoPesquisar = new ArredondamentoDeBotao("Pesquisar Orientações",6);
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoPesquisar.setMaximumSize(new Dimension(180, 50));
         botaoPesquisar.setFont(new Font("Arial", Font.BOLD, 14));
@@ -80,7 +80,7 @@ public class TelaDeslogada {
         });
 
 
-        JButton loginADM = new JButton("Login do ADM");
+        ArredondamentoDeBotao loginADM = new ArredondamentoDeBotao("Login do ADM",6);
         loginADM.setAlignmentX(Component.CENTER_ALIGNMENT);
         loginADM.setMaximumSize(new Dimension(180, 50));
         loginADM.setFont(new Font("Arial", Font.BOLD, 14));
@@ -96,7 +96,7 @@ public class TelaDeslogada {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
+ 
                 LoginADM.clickLoginAdm();
 
 
@@ -108,7 +108,7 @@ public class TelaDeslogada {
 
 
 
-        JButton botaoSair = new JButton("Sair");
+        ArredondamentoDeBotao botaoSair = new ArredondamentoDeBotao("Sair",6);
         botaoSair.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoSair.setMaximumSize(new Dimension(180, 50));
         botaoSair.setFont(new Font("Arial", Font.BOLD, 14));

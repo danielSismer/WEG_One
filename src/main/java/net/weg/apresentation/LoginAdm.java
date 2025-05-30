@@ -1,6 +1,8 @@
 package net.weg.apresentation;
 
 
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +10,13 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 
+
+
+
+
 public class LoginAdm {
+
+
 
 
     public void clickLoginAdm() {
@@ -16,6 +24,8 @@ public class LoginAdm {
         LoginADM.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         LoginADM.setExtendedState(JFrame.MAXIMIZED_BOTH);
         LoginADM.setLayout(null);
+
+
 
 
         JPanel painelFundo = new JPanel();
@@ -59,11 +69,9 @@ public class LoginAdm {
 
 
         JButton botaoOlho = new JButton("👁️");
+        botaoOlho.setFont(new Font("SansSerif", Font.PLAIN, 38));
         botaoOlho.setFocusable(false);
         botaoOlho.setBounds(820, 220, 80, 70);
-
-
-
 
 
         botaoOlho.addActionListener(new ActionListener() {
@@ -89,6 +97,8 @@ public class LoginAdm {
         JButton botaoLogar = new JButton("Logar");
         botaoLogar.setFont(new Font("Arial", Font.BOLD, 20));
         botaoLogar.setBounds(340, 380, 300, 80);
+        botaoLogar.setBorderPainted(false);
+        botaoLogar.setFocusPainted(false);
         painelLogin.add(botaoLogar);
 
 
@@ -99,7 +109,7 @@ public class LoginAdm {
                 String senha = new String(campoSenha.getPassword());
 
 
-                if (authenticateUser(email, senha)) {
+                if (authenticateUserAndRegisterLogin(email, senha)) {
                     TelaLogada.main(new String[]{});
                     LoginADM.dispose();
                 } else {
@@ -121,12 +131,17 @@ public class LoginAdm {
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));
         botaoIdioma.setForeground(Color.WHITE);
+        botaoIdioma.setBorderPainted(false);
 
 
         JButton botaoVoltar = new JButton("◀️");
         botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 25));
         botaoVoltar.setBackground(new Color(0, 87, 156));
         botaoVoltar.setForeground(Color.WHITE);
+        botaoVoltar.setFocusPainted(false);
+        botaoVoltar.setBorderPainted(false);
+
+
 
 
         headerPanel.add(botaoVoltar);
@@ -146,20 +161,26 @@ public class LoginAdm {
     }
 
 
-    private boolean authenticateUser(String email, String senha) {
+    private boolean authenticateUserAndRegisterLogin(String email, String senha) {
         boolean authenticated = false;
 
-
         try (Connection conn = getConnection()) {
-            String sql = "SELECT 1 FROM usuarios WHERE email = ? AND senha = ?";
+            String sql = "SELECT id FROM usuarios WHERE email = ? AND senha = ?";
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, email);
                 ps.setString(2, senha);
 
-
                 try (ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
                         authenticated = true;
+                        int usuarioId = rs.getInt("id");
+
+                        // 2. Inserir registro de login na tabela logins
+                        String insertSql = "INSERT INTO logins (usuario_id) VALUES (?)";
+                        try (PreparedStatement psInsert = conn.prepareStatement(insertSql)) {
+                            psInsert.setInt(1, usuarioId);
+                            psInsert.executeUpdate();
+                        }
                     }
                 }
             }
@@ -171,11 +192,9 @@ public class LoginAdm {
 
 
     private Connection getConnection() throws SQLException {
-
-
-        String url = "jdbc:mysql://yamanote.proxy.rlwy.net:40662/railway";
+        String url = "jdbc:mysql://maglev.proxy.rlwy.net:21239/railway";
         String user = "root";
-        String password = "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb";
+        String password = "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ";
 
 
         return DriverManager.getConnection(url, user, password);

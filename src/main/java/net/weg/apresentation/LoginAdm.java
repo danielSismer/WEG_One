@@ -1,10 +1,18 @@
 package net.weg.apresentation;
 
+
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+
+
+
+
+
 
 public class LoginAdm {
 
@@ -41,9 +49,11 @@ public class LoginAdm {
 
         JPanel painelLogin = new JPanel();
         painelLogin.setLayout(null);
-        painelLogin.setBackground(new Color(0, 87, 156));
-        painelLogin.setBounds(520, 200, 500, 400);
+        painelLogin.setBounds(480, 200, 975, 600);
         painelFundo.add(painelLogin);
+
+
+
 
         JLabel labelUsuario = new JLabel("Usuário:");
         labelUsuario.setForeground(Color.WHITE);
@@ -51,16 +61,25 @@ public class LoginAdm {
         labelUsuario.setBounds(80, 30, 200, 30);
         painelLogin.add(labelUsuario);
 
+
+
+
         JTextField campoUsuario = new JTextField();
         campoUsuario.setBounds(80, 70, 820, 70);
         campoUsuario.setFont(new Font("Arial", Font.BOLD, 34));
         painelLogin.add(campoUsuario);
+
+
+
 
         JLabel labelSenha = new JLabel("Senha:");
         labelSenha.setForeground(Color.WHITE);
         labelSenha.setFont(new Font("Arial", Font.BOLD, 25));
         labelSenha.setBounds(80, 180, 200, 30);
         painelLogin.add(labelSenha);
+
+
+
 
         JPasswordField campoSenha = new JPasswordField();
         campoSenha.setBounds(80, 220, 720, 70);
@@ -141,9 +160,11 @@ public class LoginAdm {
 
         JPanel headerPanel = new JPanel();
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
-        headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBounds(0, 0, 1920, 80);
         painelFundo.add(headerPanel);
+
+
+
 
         JButton botaoIdioma = new JButton("\uD83C\uDF10");
         botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
@@ -190,6 +211,13 @@ public class LoginAdm {
                 LoginADM.dispose();
             }
         });
+
+
+
+
+
+
+
 
         LoginADM.setVisible(true);
     }
@@ -254,9 +282,19 @@ public class LoginAdm {
 
 
 
-        String url = "jdbc:mysql://localhost:3306/weg_one";
-        String user = "DanielAdmin";
-        String password = "246801@Weg";
+
+
+
+
         return DriverManager.getConnection(url, user, password);
     }
 }
+
+
+
+
+
+
+
+
+

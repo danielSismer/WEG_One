@@ -19,11 +19,21 @@ public class LoginAdm {
 
 
 
-    public void clickLoginAdm() {
+
+
+    public void clickLoginAdm(boolean temaClaroAtivo) {
+
+
+
+
+
+
         JFrame LoginADM = new JFrame("Login do Adm");
         LoginADM.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         LoginADM.setExtendedState(JFrame.MAXIMIZED_BOTH);
         LoginADM.setLayout(null);
+
+
 
 
 
@@ -35,11 +45,14 @@ public class LoginAdm {
         LoginADM.add(painelFundo);
 
 
+
+
         JPanel painelLogin = new JPanel();
         painelLogin.setLayout(null);
-        painelLogin.setBackground(new Color(0, 87, 156));
         painelLogin.setBounds(480, 200, 975, 600);
         painelFundo.add(painelLogin);
+
+
 
 
         JLabel labelUsuario = new JLabel("Usuário:");
@@ -49,10 +62,14 @@ public class LoginAdm {
         painelLogin.add(labelUsuario);
 
 
+
+
         JTextField campoUsuario = new JTextField();
         campoUsuario.setBounds(80, 70, 820, 70);
         campoUsuario.setFont(new Font("Arial", Font.BOLD, 34));
         painelLogin.add(campoUsuario);
+
+
 
 
         JLabel labelSenha = new JLabel("Senha:");
@@ -62,20 +79,28 @@ public class LoginAdm {
         painelLogin.add(labelSenha);
 
 
+
+
         JPasswordField campoSenha = new JPasswordField();
         campoSenha.setBounds(80, 220, 720, 70);
         campoSenha.setFont(new Font("Arial", Font.BOLD, 34));
         painelLogin.add(campoSenha);
 
 
-        JButton botaoOlho = new JButton("👁️");
+
+
+        ArredondamentoDeBotao botaoOlho = new ArredondamentoDeBotao("👁️",6);
         botaoOlho.setFont(new Font("SansSerif", Font.PLAIN, 38));
         botaoOlho.setFocusable(false);
         botaoOlho.setBounds(820, 220, 80, 70);
 
 
+
+
         botaoOlho.addActionListener(new ActionListener() {
             private boolean mostrando = false;
+
+
 
 
             @Override
@@ -91,10 +116,16 @@ public class LoginAdm {
         });
 
 
+
+
         painelLogin.add(botaoOlho);
 
 
-        JButton botaoLogar = new JButton("Logar");
+
+
+
+
+        ArredondamentoDeBotao botaoLogar = new ArredondamentoDeBotao("Logar",6);
         botaoLogar.setFont(new Font("Arial", Font.BOLD, 20));
         botaoLogar.setBounds(340, 380, 300, 80);
         botaoLogar.setBorderPainted(false);
@@ -109,6 +140,12 @@ public class LoginAdm {
                 String senha = new String(campoSenha.getPassword());
 
 
+
+
+
+
+
+
                 if (authenticateUserAndRegisterLogin(email, senha)) {
                     TelaLogada.main(new String[]{});
                     LoginADM.dispose();
@@ -119,11 +156,14 @@ public class LoginAdm {
         });
 
 
+
+
         JPanel headerPanel = new JPanel();
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
-        headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBounds(0, 0, 1920, 80);
         painelFundo.add(headerPanel);
+
+
 
 
         JButton botaoIdioma = new JButton("\uD83C\uDF10");
@@ -132,6 +172,12 @@ public class LoginAdm {
         botaoIdioma.setBackground(new Color(0, 87, 156));
         botaoIdioma.setForeground(Color.WHITE);
         botaoIdioma.setBorderPainted(false);
+        botaoIdioma.setFocusPainted(false);
+        botaoIdioma.setContentAreaFilled(false);
+        botaoIdioma.setOpaque(false);
+        botaoIdioma.setBorderPainted(false);
+
+
 
 
         JButton botaoVoltar = new JButton("◀️");
@@ -139,7 +185,11 @@ public class LoginAdm {
         botaoVoltar.setBackground(new Color(0, 87, 156));
         botaoVoltar.setForeground(Color.WHITE);
         botaoVoltar.setFocusPainted(false);
+        botaoVoltar.setContentAreaFilled(false);
+        botaoVoltar.setOpaque(false);
         botaoVoltar.setBorderPainted(false);
+
+
 
 
 
@@ -147,6 +197,12 @@ public class LoginAdm {
         headerPanel.add(botaoVoltar);
         headerPanel.add(Box.createHorizontalGlue());
         headerPanel.add(botaoIdioma);
+
+
+
+
+
+
 
 
         botaoVoltar.addActionListener(new ActionListener() {
@@ -157,12 +213,27 @@ public class LoginAdm {
         });
 
 
+
+
+
+
+
+
         LoginADM.setVisible(true);
     }
 
 
+
+
+
+
+
+
     private boolean authenticateUserAndRegisterLogin(String email, String senha) {
         boolean authenticated = false;
+
+
+
 
         try (Connection conn = getConnection()) {
             String sql = "SELECT id FROM usuarios WHERE email = ? AND senha = ?";
@@ -170,10 +241,16 @@ public class LoginAdm {
                 ps.setString(1, email);
                 ps.setString(2, senha);
 
+
+
+
                 try (ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
                         authenticated = true;
                         int usuarioId = rs.getInt("id");
+
+
+
 
                         // 2. Inserir registro de login na tabela logins
                         String insertSql = "INSERT INTO logins (usuario_id) VALUES (?)";
@@ -191,13 +268,33 @@ public class LoginAdm {
     }
 
 
+
+
+
+
+
+
     private Connection getConnection() throws SQLException {
         String url = "jdbc:mysql://maglev.proxy.rlwy.net:21239/railway";
         String user = "root";
         String password = "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ";
 
 
+
+
+
+
+
+
         return DriverManager.getConnection(url, user, password);
     }
 }
+
+
+
+
+
+
+
+
 

@@ -1,6 +1,12 @@
 package net.weg.apresentation;
 
 
+
+
+
+
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -8,100 +14,173 @@ import java.awt.event.*;
 
 
 
-public class TelaDeslogada {
+
+
+
+
+
+
+
+
+
+
+
+
+public class TelaDeslogada extends JFrame {
+
+
+
+
     public static void main(String[] args) {
+
+
+
+
+
+
 
 
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
         LoginAdm LoginADM = new LoginAdm();
+        TemaEscuro TemaEscuro = new TemaEscuro();
+        TemaClaro TemaClaro = new TemaClaro();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
+        TemaClaro.mudarTema(TelaMenus);
         TelaMenus.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaMenus.setSize(900, 600);
         TelaMenus.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaMenus.setLayout(new BorderLayout());
 
 
+
+
+
+
+
+
         JPanel menuLateral = new JPanel();
-        menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
+        menuLateral.setBackground(new Color(0, 87, 156));
 
 
-        JButton fecharMenu = new JButton("☰");
+
+
+
+
+
+
+        JButton fecharMenu = new JButton("\u2630");
         fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
         fecharMenu.setFocusPainted(false);
-        fecharMenu.setBackground(new Color(0, 87, 156));
-        fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        fecharMenu.setContentAreaFilled(false);
+        fecharMenu.setOpaque(false);
         fecharMenu.setForeground(Color.WHITE);
+        fecharMenu.setBorderPainted(false);
+        fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(false);
         menuLateral.add(fecharMenu);
 
 
-        String[] opcoesCadastro = {
-                "Manual de Operação",
-                "Manutenção de Transformadores",
-                "Procedimento de Segurança para Instalação de Equipamentos Elétricos",
-                "Procedimento de Segurança para Operações com Risco de Choque Elétrico",
-                "Procedimento de Segurança para Testes de Funcionamento de Motores",
-                "Procedimento de Segurança para Diagnóstico de Falhas em Motores",
-                " Procedimento de Segurança para Diagnóstico e Manutenção de Sistemas de Automação",
-                " Procedimento Operacional no Setor de Manutenção",
-                ""
 
 
-        };
+        JPanel painelCentral = new JPanel();
+
+
 
 
         ArredondamentoDeBotao botaoPesquisar = new ArredondamentoDeBotao("Pesquisar Orientações",6);
         botaoPesquisar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoPesquisar.setMaximumSize(new Dimension(180, 50));
         botaoPesquisar.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoPesquisar.setFocusPainted(false);
-        botaoPesquisar.setBackground(new Color(52, 152, 219));
-        botaoPesquisar.setForeground(Color.WHITE);
         botaoPesquisar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        botaoPesquisar.setBackground(new Color(51, 181, 229));
         botaoPesquisar.setBounds(9, 69, 210, 50);
+        botaoPesquisar.setForeground(Color.WHITE);
+
+
+
+
         menuLateral.add(botaoPesquisar);
 
 
-        botaoPesquisar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
 
-                ClickMenu.ClickPesquisar();
+        JPanel painelConteudo = new JPanel(new BorderLayout());
+        painelConteudo.setBackground(new Color(255, 255, 255));
 
 
-            }
-        });
+
+
+        JLabel labelImagem = new JLabel();
+        try {
+            ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne.jpg");
+            Image imagem = icon.getImage().getScaledInstance(1000, 550, Image.SCALE_SMOOTH);
+            labelImagem.setIcon(new ImageIcon(imagem));
+            labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            labelImagem.setText("Erro ao carregar imagem.");
+        }
+
+
+
+
+        painelCentral.add(Box.createVerticalGlue());
+        painelCentral.add(labelImagem);
+        painelCentral.add(Box.createVerticalGlue());
+
+
+
+
+        botaoPesquisar.addActionListener(e -> ClickMenu.ClickPesquisar());
+
+
+
+
+
+
 
 
         ArredondamentoDeBotao loginADM = new ArredondamentoDeBotao("Login do ADM",6);
         loginADM.setAlignmentX(Component.CENTER_ALIGNMENT);
         loginADM.setMaximumSize(new Dimension(180, 50));
         loginADM.setFont(new Font("Arial", Font.BOLD, 14));
-        loginADM.setFocusPainted(false);
-        loginADM.setBackground(new Color(52, 152, 219));
-        loginADM.setForeground(Color.WHITE);
         loginADM.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         loginADM.setBounds(9, 134, 210, 50);
+        loginADM.setBackground(new Color(51, 181, 229));
+        loginADM.setForeground(Color.WHITE);
         menuLateral.add(loginADM);
 
 
-        loginADM.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
- 
-                LoginADM.clickLoginAdm();
 
 
-            }
-        });
+        boolean[] temaClaroAtivo = {true};
+
+
+
+
+        loginADM.addActionListener(e -> LoginADM.clickLoginAdm(temaClaroAtivo[0]));
+
+
 
 
 
@@ -112,26 +191,28 @@ public class TelaDeslogada {
         botaoSair.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoSair.setMaximumSize(new Dimension(180, 50));
         botaoSair.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoSair.setFocusPainted(false);
-        botaoSair.setBackground(new Color(52, 152, 219));
-        botaoSair.setForeground(Color.WHITE);
         botaoSair.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoSair.setBounds(9, 199, 210, 50);
+        botaoSair.setBackground(new Color(51, 181, 229));
+        botaoSair.setForeground(Color.WHITE);
+
+
+
+
+
+
+
+
         menuLateral.add(botaoSair);
 
 
 
 
-        botaoSair.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
 
-                ClickMenu.ClickSair();
 
 
-            }
-        });
+        botaoSair.addActionListener(e -> ClickMenu.ClickSair());
 
 
 
@@ -144,8 +225,10 @@ public class TelaDeslogada {
 
 
 
-        JPanel painelConteudo = new JPanel(new BorderLayout());
-        painelConteudo.setBackground(new Color(255, 255, 255));
+
+
+
+
 
 
 
@@ -162,15 +245,23 @@ public class TelaDeslogada {
 
 
 
-
-
-        JButton botao3Linhas = new JButton("☰");
+        JButton botao3Linhas = new JButton("\u2630");
         botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
         botao3Linhas.setFocusPainted(false);
-        botao3Linhas.setBackground(new Color(0, 87, 156));
+        botao3Linhas.setContentAreaFilled(false);
+        botao3Linhas.setOpaque(false);
+        botao3Linhas.setBorderPainted(false);
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botao3Linhas.setForeground(Color.WHITE);
         botao3Linhas.setBounds(-3, 0, 50, 30);
+
+
+
+
+
+
+
+
 
 
 
@@ -181,7 +272,19 @@ public class TelaDeslogada {
             fecharMenu.setVisible(true);
             headerPanel.revalidate();
             headerPanel.repaint();
+
+
+
+
+
+
+
+
         });
+
+
+
+
 
 
 
@@ -197,12 +300,20 @@ public class TelaDeslogada {
 
 
 
-        JButton botaoIdioma = new JButton("\uD83C\uDF10");
-        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoIdioma.setFocusPainted(false);
-        botaoIdioma.setBackground(new Color(0, 87, 156));
-        botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoIdioma.setForeground(Color.WHITE);
+
+
+
+
+        JButton botaoTemaClaro = new JButton("\uD83D\uDD06");
+        botaoTemaClaro.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoTemaClaro.setFocusPainted(false);
+        botaoTemaClaro.setContentAreaFilled(false);
+        botaoTemaClaro.setOpaque(false);
+        botaoTemaClaro.setBorderPainted(false);
+        botaoTemaClaro.setBackground(new Color(0, 87, 156));
+        botaoTemaClaro.setForeground(Color.WHITE);
+        botaoTemaClaro.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botaoTemaClaro.setVisible(true);
 
 
 
@@ -213,6 +324,113 @@ public class TelaDeslogada {
 
 
 
+
+
+
+
+
+
+
+
+
+
+        JButton botaoTema = new JButton("\uD83C\uDF19");
+        botaoTema.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoTema.setFocusPainted(false);
+        botaoTema.setContentAreaFilled(false);
+        botaoTema.setOpaque(false);
+        botaoTema.setBorderPainted(false);
+        botaoTema.setBackground(new Color(0, 87, 156));
+        botaoTema.setForeground(Color.WHITE);
+        botaoTema.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botaoTema.setVisible(false);
+
+
+
+
+
+
+
+
+
+
+
+
+        botaoTemaClaro.addActionListener(e -> {
+            TemaEscuro.mudarTema(TelaMenus);
+            headerPanel.setBackground(new Color(30, 30, 30));
+            menuLateral.setBackground(new Color(30, 30, 30));
+            botaoTema.setBackground(new Color(255, 255, 255));
+            botaoPesquisar.setBackground(new Color(0, 0, 0));
+            loginADM.setBackground(new Color(0, 0, 0));
+            botaoSair.setBackground(new Color(0, 0, 0));
+            botaoTemaClaro.setVisible(false);
+            botaoTema.setVisible(true);
+            SwingUtilities.updateComponentTreeUI(TelaMenus);
+            TelaMenus.repaint();
+
+
+
+
+            try {
+                ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/DarkThemeWegOne.jpg");
+                Image imagem = icon.getImage().getScaledInstance(1980, 950, Image.SCALE_SMOOTH);
+                labelImagem.setIcon(new ImageIcon(imagem));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                labelImagem.setText("Erro ao carregar imagem.");
+            }
+
+
+
+
+        });
+
+
+
+
+        botaoTema.addActionListener(e -> {
+            TemaClaro.mudarTema(TelaMenus);
+            headerPanel.setBackground(new Color(0, 87, 156));
+            menuLateral.setBackground(new Color(0, 87, 156));
+            botaoPesquisar.setBackground(new Color(51, 181, 229));
+            loginADM.setBackground(new Color(51, 181, 229));
+            botaoSair.setBackground(new Color(51, 181, 229));
+            botaoTema.setBackground(new Color(0, 87, 156));
+            botaoTemaClaro.setVisible(true);
+            botaoTema.setVisible(false);
+            SwingUtilities.updateComponentTreeUI(TelaMenus);
+            TelaMenus.repaint();
+
+
+
+
+            try {
+                ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne.jpg");
+                Image imagem = icon.getImage().getScaledInstance(1000, 550, Image.SCALE_SMOOTH);
+                labelImagem.setIcon(new ImageIcon(imagem));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                labelImagem.setText("Erro ao carregar imagem.");
+            }
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+        botaoTemaClaro.setVisible(true);
+        botaoTema.setVisible(false);
+        SwingUtilities.updateComponentTreeUI(TelaMenus);
+        TelaMenus.repaint();
+        temaClaroAtivo[0] = true;
 
 
 
@@ -223,7 +441,10 @@ public class TelaDeslogada {
 
         headerPanel.add(botao3Linhas);
         headerPanel.add(Box.createHorizontalGlue());
-        headerPanel.add(botaoIdioma);
+        headerPanel.add(botaoTemaClaro);
+        headerPanel.add(botaoTema);
+
+
 
 
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
@@ -231,11 +452,6 @@ public class TelaDeslogada {
 
 
 
-
-
-
-
-        JPanel painelCentral = new JPanel();
         painelCentral.setBackground(new Color(255, 255, 255));
         painelCentral.setLayout(new BoxLayout(painelCentral, BoxLayout.Y_AXIS));
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -243,51 +459,7 @@ public class TelaDeslogada {
 
 
 
-
-
-
-
-
-
-
-
-        try {
-            ImageIcon icon = new ImageIcon("src/main/java/net/weg/apresentation/WegOne1.jpg");
-            Image imagem = icon.getImage().getScaledInstance(750, 450, Image.SCALE_SMOOTH);
-            JLabel labelImagem = new JLabel(new ImageIcon(imagem));
-            labelImagem.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-
-
-            painelCentral.add(Box.createVerticalGlue());
-            painelCentral.add(labelImagem);
-            painelCentral.add(Box.createVerticalGlue());
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            painelCentral.add(new JLabel("Erro ao carregar imagem."));
-        }
-
-
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
-
-        boolean[] menuVisivel = {false};
-        botao3Linhas.addActionListener(e -> {
-            menuVisivel[0] = !menuVisivel[0];
-            menuLateral.setVisible(menuVisivel[0]);
-            TelaMenus.revalidate();
-        });
-
-
-
-
-
-
-
-
-        botaoIdioma.addActionListener(e -> {
-            JOptionPane.showMessageDialog(TelaMenus, "Funcionalidade de pesquisa aqui.");
-        });
 
 
 
@@ -302,4 +474,3 @@ public class TelaDeslogada {
         TelaMenus.setVisible(true);
     }
 }
-

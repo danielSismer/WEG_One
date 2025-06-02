@@ -3,6 +3,8 @@ package net.weg.apresentation;
 
 
 
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
@@ -10,8 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.ArrayList;
-
-
 
 
 
@@ -50,13 +50,17 @@ public class ArredondamentoDeBotao extends JButton {
 
 
 
+
+
         if (getModel().isPressed()) {
             g2.setColor(getBackground().darker());
         } else if (getModel().isRollover()) {
-            g2.setColor(getBackground().brighter());
+            g2.setColor(getBackground().darker());
         } else {
             g2.setColor(getBackground());
         }
+
+
 
 
 
@@ -79,9 +83,9 @@ public class ArredondamentoDeBotao extends JButton {
 
 
 
-
-
         g2.dispose();
+
+
 
 
         super.paintComponent(g);
@@ -97,11 +101,17 @@ public class ArredondamentoDeBotao extends JButton {
 
 
 
+
+
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+
 
 
         g2.setColor(getForeground());
         g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, cornerRadius, cornerRadius);
+
+
 
 
         g2.dispose();
@@ -117,10 +127,3 @@ public class ArredondamentoDeBotao extends JButton {
         return size;
     }
 }
-
-
-
-
-
-
-

@@ -5,24 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/DarkThemeWegOne.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TemaClaro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TemaEscuro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/ArredondamentoDeBotao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/ArredondamentoDeBotao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/LoginAdm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/LoginAdm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/OpcoesDoMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaDeslogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaDeslogada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/weg/apresentation/TelaLogada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_pt.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_pt.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ProjectJavaSwingTraducao" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,159 +48,6 @@
     &quot;accountId&quot;: &quot;2996cd49-2126-4825-a20a-c49bfb0298b8&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java">
-      <ranges>
-        <range start1="21" end1="22" start2="21" end2="21" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="24" end1="25" start2="23" end2="24" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="28" end1="29" start2="27" end2="27" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="31" end1="32" start2="29" end2="29" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="35" end1="36" start2="32" end2="32" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="39" end1="40" start2="35" end2="35" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="43" end1="44" start2="38" end2="38" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="47" end1="49" start2="41" end2="41" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="52" end1="53" start2="44" end2="44" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="56" end1="57" start2="47" end2="47" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="128" end1="130" start2="118" end2="121" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="136" end1="141" start2="127" end2="127" changelist="2fdbec20-2295-4d6a-aafe-f4e2bb11e6e5" />
-        <range start1="145" end1="147" start2="131" end2="135" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="152" end1="155" start2="140" end2="145" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="160" end1="163" start2="150" end2="155" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="168" end1="171" start2="160" end2="165" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="176" end1="179" start2="170" end2="174" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="184" end1="185" start2="179" end2="181" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="188" end1="188" start2="184" end2="185" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="275" end1="277" start2="272" end2="278" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="279" end1="285" start2="280" end2="281" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="287" end1="289" start2="283" end2="283" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="290" end1="291" start2="284" end2="285" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="323" end1="325" start2="317" end2="317" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="337" end1="339" start2="329" end2="329" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="352" end1="354" start2="342" end2="342" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="355" end1="356" start2="343" end2="343" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="357" end1="357" start2="344" end2="345" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="486" end1="487" start2="474" end2="475" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="488" end1="489" start2="476" end2="477" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="490" end1="491" start2="478" end2="478" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="494" end1="501" start2="481" end2="484" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="503" end1="504" start2="486" end2="492" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="507" end1="511" start2="495" end2="499" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="518" end1="521" start2="506" end2="509" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="528" end1="531" start2="516" end2="519" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="538" end1="541" start2="526" end2="529" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="548" end1="551" start2="536" end2="538" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="556" end1="558" start2="543" end2="544" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="560" end1="561" start2="546" end2="548" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="562" end1="568" start2="549" end2="555" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="570" end1="584" start2="557" end2="560" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="585" end1="589" start2="561" end2="562" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="590" end1="632" start2="563" end2="647" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="633" end1="640" start2="648" end2="648" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="641" end1="643" start2="649" end2="652" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="705" end1="707" start2="714" end2="715" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="709" end1="710" start2="717" end2="718" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="725" end1="726" start2="733" end2="734" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="739" end1="740" start2="747" end2="748" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="753" end1="754" start2="761" end2="762" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="767" end1="768" start2="775" end2="776" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="781" end1="782" start2="789" end2="790" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="784" end1="785" start2="792" end2="792" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="787" end1="787" start2="794" end2="795" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="789" end1="792" start2="797" end2="797" changelist="300a0af8-f66d-4b43-824f-730a8bb0e431" />
-        <range start1="794" end1="795" start2="799" end2="800" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="839" end1="843" start2="844" end2="850" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="844" end1="850" start2="851" end2="858" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="851" end1="852" start2="859" end2="860" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="853" end1="854" start2="861" end2="862" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="855" end1="857" start2="863" end2="863" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="858" end1="861" start2="864" end2="864" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="862" end1="906" start2="865" end2="918" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="907" end1="913" start2="919" end2="926" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="914" end1="915" start2="927" end2="928" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="916" end1="919" start2="929" end2="933" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="920" end1="922" start2="934" end2="935" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="923" end1="928" start2="936" end2="941" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="929" end1="931" start2="942" end2="944" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="932" end1="933" start2="945" end2="946" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="934" end1="935" start2="947" end2="948" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="936" end1="937" start2="949" end2="950" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="938" end1="943" start2="951" end2="956" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="944" end1="946" start2="957" end2="959" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="947" end1="948" start2="960" end2="961" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="949" end1="950" start2="962" end2="963" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="951" end1="952" start2="964" end2="965" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="953" end1="958" start2="966" end2="971" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="959" end1="961" start2="972" end2="974" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="962" end1="963" start2="975" end2="976" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="964" end1="965" start2="977" end2="978" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="966" end1="967" start2="979" end2="980" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="968" end1="973" start2="981" end2="986" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="974" end1="976" start2="987" end2="989" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="977" end1="978" start2="990" end2="991" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="979" end1="980" start2="992" end2="993" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="981" end1="982" start2="994" end2="995" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="983" end1="988" start2="996" end2="1001" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="989" end1="991" start2="1002" end2="1004" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="992" end1="993" start2="1005" end2="1006" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="994" end1="995" start2="1007" end2="1008" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="996" end1="998" start2="1009" end2="1016" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="999" end1="1004" start2="1017" end2="1020" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1005" end1="1007" start2="1021" end2="1022" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1008" end1="1011" start2="1023" end2="1024" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1012" end1="1017" start2="1025" end2="1030" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1018" end1="1019" start2="1031" end2="1032" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1020" end1="1021" start2="1033" end2="1034" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1022" end1="1023" start2="1035" end2="1036" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1024" end1="1029" start2="1037" end2="1042" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1030" end1="1031" start2="1043" end2="1044" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1032" end1="1033" start2="1045" end2="1046" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1034" end1="1035" start2="1047" end2="1048" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1036" end1="1041" start2="1049" end2="1054" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1042" end1="1043" start2="1055" end2="1056" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1044" end1="1047" start2="1057" end2="1058" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1048" end1="1049" start2="1059" end2="1060" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1050" end1="1055" start2="1061" end2="1066" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1056" end1="1057" start2="1067" end2="1068" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1058" end1="1061" start2="1069" end2="1070" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1062" end1="1063" start2="1071" end2="1072" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1064" end1="1069" start2="1073" end2="1078" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1070" end1="1071" start2="1079" end2="1080" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1072" end1="1077" start2="1081" end2="1083" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1078" end1="1079" start2="1084" end2="1085" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1080" end1="1084" start2="1086" end2="1090" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1085" end1="1086" start2="1091" end2="1092" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1087" end1="1092" start2="1093" end2="1098" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1093" end1="1094" start2="1099" end2="1100" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1095" end1="1096" start2="1101" end2="1102" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1097" end1="1098" start2="1103" end2="1104" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1099" end1="1100" start2="1105" end2="1107" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1101" end1="1106" start2="1108" end2="1113" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1107" end1="1108" start2="1114" end2="1115" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1109" end1="1110" start2="1116" end2="1117" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1111" end1="1112" start2="1118" end2="1119" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1113" end1="1114" start2="1120" end2="1121" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1115" end1="1120" start2="1122" end2="1127" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1121" end1="1122" start2="1128" end2="1129" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1123" end1="1124" start2="1130" end2="1131" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1125" end1="1126" start2="1132" end2="1134" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1127" end1="1128" start2="1135" end2="1136" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1129" end1="1134" start2="1137" end2="1142" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1135" end1="1136" start2="1143" end2="1144" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1137" end1="1138" start2="1145" end2="1146" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1139" end1="1140" start2="1147" end2="1149" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1141" end1="1142" start2="1150" end2="1151" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1143" end1="1148" start2="1152" end2="1157" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1149" end1="1150" start2="1158" end2="1159" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1151" end1="1152" start2="1160" end2="1161" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1153" end1="1154" start2="1162" end2="1163" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1155" end1="1156" start2="1164" end2="1164" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1157" end1="1158" start2="1165" end2="1167" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1159" end1="1160" start2="1168" end2="1169" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1161" end1="1162" start2="1170" end2="1171" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-        <range start1="1163" end1="1167" start2="1172" end2="1173" changelist="b660aba2-5a81-4d2e-9367-9d835ea85824" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -200,69 +56,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ProjectJava.executor": "Run",
-    "Application.TelaDeslogada.executor": "Run",
-    "Application.TelaLogada.executor": "Run",
-    "Application.TesteConexaoBanco.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "NovasTelas",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConexaoBanco.executor": "Run",
-    "Application.ProjectJava.executor": "Run",
-    "Application.TelaDeslogada.executor": "Run",
-    "Application.TelaLogada.executor": "Run",
-    "Application.TesteConexaoBanco.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "ProjectJavaSwingTraducao",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "last_opened_file_path": "C:/Users/daniel_sismer/IdeaProjects/ProjetoWEG_ONE_REAL",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ProjectJava.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TelaDeslogada.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TelaLogada.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TesteConexaoBanco.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;NovasTelas&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  &lt;component name=&quot;PropertiesComponent&quot;&gt;&lt;![CDATA[{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConexaoBanco.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProjectJava.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TelaDeslogada.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TelaLogada.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TesteConexaoBanco.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ProjectJavaSwingTraducao&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/daniel_sismer/IdeaProjects/ProjetoWEG_ONE_REAL&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\ProjetoWEG_ONE2\src\main\java\net\weg\apresentation" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\src\main\java\net\weg\apresentation" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\src\main\java\net\weg\repository" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\bin" />
-      <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE" />
     </key>
   </component>
   <component name="RunManager">
@@ -318,9 +174,6 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />

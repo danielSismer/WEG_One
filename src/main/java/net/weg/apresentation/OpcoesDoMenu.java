@@ -16,17 +16,7 @@ import javax.swing.event.DocumentListener;
 
 
 
-
-
-
-
-
-
-
-
 public class OpcoesDoMenu {
-
-
 
 
 
@@ -51,10 +41,6 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
     public String cortarTextoComReticencias(String texto, int maxLength) {
         if (texto.length() <= maxLength) {
             return texto;
@@ -66,7 +52,18 @@ public class OpcoesDoMenu {
 
 
 
-    public void ClickCadastrar() {
+    public void ClickCadastrar(JFrame frame, boolean temaEscuroAtivo) {
+
+
+
+
+        /*TemaEscuro.mudarTema();*/
+
+
+
+
+
+
 
 
         JDialog loadingDialog = new JDialog();
@@ -76,8 +73,12 @@ public class OpcoesDoMenu {
         loadingDialog.setLocationRelativeTo(null);
 
 
+
+
         JPanel loadingPanel = new JPanel(new BorderLayout(10, 10));
         loadingPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+
 
 
         JLabel loadingLabel = new JLabel("Carregando, aguarde...");
@@ -85,12 +86,18 @@ public class OpcoesDoMenu {
         loadingPanel.add(loadingLabel, BorderLayout.NORTH);
 
 
+
+
         JProgressBar progressBar = new JProgressBar();
         progressBar.setIndeterminate(true);
         loadingPanel.add(progressBar, BorderLayout.CENTER);
 
 
+
+
         loadingDialog.add(loadingPanel);
+
+
 
 
         SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
@@ -101,9 +108,13 @@ public class OpcoesDoMenu {
             }
 
 
+
+
             @Override
             protected void done() {
                 loadingDialog.dispose();
+
+
 
 
                 JFrame TelaCadastrar = new JFrame("Sistema com Menu Lateral");
@@ -113,25 +124,44 @@ public class OpcoesDoMenu {
                 TelaCadastrar.setLayout(null);
 
 
+
+
                 JPanel painelFundo2 = new JPanel();
+
+
+
+
                 painelFundo2.setLayout(null);
-                painelFundo2.setBackground(Color.WHITE);
+                if (temaEscuroAtivo) {
+                    painelFundo2.setBackground(new Color(30, 30 ,30));
+                } else {
+                    painelFundo2.setBackground(Color.WHITE);
+                }
+
+
+
+
+                painelFundo2.setLayout(null);
                 painelFundo2.setBounds(0, 0, 1920, 1080);
                 TelaCadastrar.add(painelFundo2);
 
 
+
+
                 JPanel painelCadastrarOrientacao = new JPanel();
                 painelCadastrarOrientacao.setLayout(null);
-                painelCadastrarOrientacao.setBackground(new Color(0, 87, 156));
                 painelCadastrarOrientacao.setBounds(235, 200, 1450, 700);
                 painelFundo2.add(painelCadastrarOrientacao);
 
 
+
+
                 ArredondamentoDeBotao botaoMenu = new ArredondamentoDeBotao("Mais",6);
-                botaoMenu.setFont(new Font("SansSerif", Font.BOLD, 18));
+                botaoMenu.setFont(new Font("Sans-serif", Font.BOLD, 18));
                 botaoMenu.setBounds(1005, 100, 90, 50);
-                botaoMenu.setBorderPainted(false);
                 painelCadastrarOrientacao.add(botaoMenu);
+
+
 
 
                 JPopupMenu menuFlutuante = new JPopupMenu();
@@ -142,7 +172,11 @@ public class OpcoesDoMenu {
                 JMenuItem item5 = new JMenuItem("Manual de Conduta");
 
 
+
+
                 JTextField campoTipoDePasta = new JTextField();
+
+
 
 
                 item1.addActionListener(e -> campoTipoDePasta.setText(" 1"));
@@ -152,6 +186,8 @@ public class OpcoesDoMenu {
                 item5.addActionListener(e -> campoTipoDePasta.setText(" 5"));
 
 
+
+
                 menuFlutuante.add(item1);
                 menuFlutuante.add(item2);
                 menuFlutuante.add(item3);
@@ -159,58 +195,76 @@ public class OpcoesDoMenu {
                 menuFlutuante.add(item5);
 
 
+
+
                 botaoMenu.addActionListener(e -> menuFlutuante.show(botaoMenu, 0, botaoMenu.getHeight()));
+
+
 
 
                 JLabel labelTitulo = new JLabel("Criar Orientação:");
                 labelTitulo.setForeground(Color.WHITE);
-                labelTitulo.setFont(new Font("Arial", Font.BOLD, 25));
+                labelTitulo.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 labelTitulo.setBounds(30, 30, 200, 30);
                 painelFundo2.add(labelTitulo);
                 labelTitulo.setVisible(false);
 
 
+
+
                 JLabel msgmCadastrar = new JLabel("Titulo da Orientação:");
                 msgmCadastrar.setForeground(Color.WHITE);
-                msgmCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
+                msgmCadastrar.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 msgmCadastrar.setBounds(60, 60, 400, 30);
                 painelCadastrarOrientacao.add(msgmCadastrar);
 
 
+
+
                 JTextField campoCadastrar = new JTextField();
                 campoCadastrar.setBounds(60, 100, 640, 50);
-                campoCadastrar.setFont(new Font("Arial", Font.BOLD, 25));
+                campoCadastrar.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 painelCadastrarOrientacao.add(campoCadastrar);
 
 
+
+
                 campoTipoDePasta.setBounds(750, 100, 240, 50);
-                campoTipoDePasta.setFont(new Font("Arial", Font.BOLD, 25));
+                campoTipoDePasta.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 painelCadastrarOrientacao.add(campoTipoDePasta);
+
+
 
 
                 JLabel LabelTipoPasta = new JLabel("Tipo de Orientação");
                 LabelTipoPasta.setForeground(Color.WHITE);
-                LabelTipoPasta.setFont(new Font("Arial", Font.BOLD, 25));
+                LabelTipoPasta.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 LabelTipoPasta.setBounds(750, 60, 400, 30);
                 painelCadastrarOrientacao.add(LabelTipoPasta);
 
 
+
+
                 JLabel labelDescricao = new JLabel("Descrição:");
                 labelDescricao.setForeground(Color.WHITE);
-                labelDescricao.setFont(new Font("Arial", Font.BOLD, 25));
+                labelDescricao.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 labelDescricao.setBounds(60, 200, 400, 30);
                 painelCadastrarOrientacao.add(labelDescricao);
 
 
+
+
                 JLabel labelExemploPratico = new JLabel("Exemplo Prático:");
                 labelExemploPratico.setForeground(Color.WHITE);
-                labelExemploPratico.setFont(new Font("Arial", Font.BOLD, 25));
+                labelExemploPratico.setFont(new Font("Sans-serif", Font.BOLD, 25));
                 labelExemploPratico.setBounds(750, 200, 400, 30);
                 painelCadastrarOrientacao.add(labelExemploPratico);
 
 
+
+
                 JTextArea campoCadastrarDescricao = new JTextArea();
-                campoCadastrarDescricao.setFont(new Font("Arial", Font.BOLD, 17));
+                campoCadastrarDescricao.setFont(new Font("Sans-serif", Font.BOLD, 17));
                 campoCadastrarDescricao.setLineWrap(true);
                 campoCadastrarDescricao.setWrapStyleWord(true);
                 campoCadastrarDescricao.setBorder(BorderFactory.createLineBorder(Color.GRAY));
@@ -219,8 +273,10 @@ public class OpcoesDoMenu {
                 painelCadastrarOrientacao.add(rolagem);
 
 
+
+
                 JTextArea campoCadastrarExemploPratico = new JTextArea();
-                campoCadastrarExemploPratico.setFont(new Font("Arial", Font.BOLD, 17));
+                campoCadastrarExemploPratico.setFont(new Font("Sans-serif", Font.BOLD, 17));
                 campoCadastrarExemploPratico.setLineWrap(true);
                 campoCadastrarExemploPratico.setWrapStyleWord(true);
                 campoCadastrarExemploPratico.setBorder(BorderFactory.createLineBorder(Color.GRAY));
@@ -229,10 +285,14 @@ public class OpcoesDoMenu {
                 painelCadastrarOrientacao.add(rolagem2);
 
 
+
+
                 ArredondamentoDeBotao botaoCadastrarOrientacao = new ArredondamentoDeBotao("Cadastrar Orientação",6);
-                botaoCadastrarOrientacao.setFont(new Font("Arial", Font.BOLD, 20));
+                botaoCadastrarOrientacao.setFont(new Font("Sans-serif", Font.BOLD, 20));
                 botaoCadastrarOrientacao.setBounds(570, 550, 340, 65);
                 painelCadastrarOrientacao.add(botaoCadastrarOrientacao);
+
+
 
 
                 botaoCadastrarOrientacao.addActionListener(new ActionListener() {
@@ -244,10 +304,14 @@ public class OpcoesDoMenu {
                         String tipoPastaSQL = campoTipoDePasta.getText();
 
 
+
+
                         if (tituloSQL.isEmpty() || descricaoSQL.isEmpty() || tipoPastaSQL.isEmpty()) {
                             JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios.");
                             return;
                         }
+
+
 
 
                         new SwingWorker<Boolean, Void>() {
@@ -259,6 +323,8 @@ public class OpcoesDoMenu {
                                         "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
 
 
+
+
                                     String sql = "INSERT INTO orientacoes (titulo, descricao, exemplo, tipo_id) VALUES (?, ?, ?, ?)";
                                     PreparedStatement stmt = conexao.prepareStatement(sql);
                                     stmt.setString(1, tituloSQL);
@@ -267,9 +333,13 @@ public class OpcoesDoMenu {
                                     stmt.setString(4, tipoPastaSQL);
 
 
+
+
                                     int linhasAfetadas = stmt.executeUpdate();
                                     stmt.close();
                                     return linhasAfetadas > 0;
+
+
 
 
                                 } catch (SQLException ex) {
@@ -277,6 +347,8 @@ public class OpcoesDoMenu {
                                     return false;
                                 }
                             }
+
+
 
 
                             @Override
@@ -298,28 +370,34 @@ public class OpcoesDoMenu {
                 });
 
 
+
+
                 JPanel headerPanel = new JPanel();
                 headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
-                headerPanel.setBackground(new Color(0, 87, 156));
                 headerPanel.setBounds(0, 0, 1920, 80);
                 painelFundo2.add(headerPanel);
 
 
-                JButton botaoIdioma = new JButton("\uD83C\uDF10");
-                botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
-                botaoIdioma.setFocusPainted(false);
-                botaoIdioma.setBackground(new Color(0, 87, 156));
-                botaoIdioma.setForeground(Color.WHITE);
-                botaoIdioma.setBorderPainted(false);
-                botaoIdioma.setFocusPainted(false);
+
+
+
+
+
+
+
+
 
 
                 JButton botaoVoltar = new JButton("◀️");
-                botaoVoltar.setFont(new Font("SansSerif", Font.PLAIN, 32));
-                botaoVoltar.setBackground(new Color(0, 87, 156));
-                botaoVoltar.setForeground(Color.WHITE);
+                botaoVoltar.setFont(new Font("Sans-serif", Font.PLAIN, 32));
                 botaoVoltar.setBorderPainted(false);
                 botaoVoltar.setFocusPainted(false);
+                botaoVoltar.setContentAreaFilled(false);
+                botaoVoltar.setOpaque(false);
+                botaoVoltar.setBorderPainted(false);
+                botaoVoltar.setFocusPainted(false);
+
+
 
 
                 botaoVoltar.addActionListener(new ActionListener() {
@@ -330,14 +408,23 @@ public class OpcoesDoMenu {
                 });
 
 
+
+
                 headerPanel.add(botaoVoltar);
                 headerPanel.add(Box.createHorizontalGlue());
-                headerPanel.add(botaoIdioma);
+
+
+
+
+
+
 
 
                 TelaCadastrar.setVisible(true);
             }
         };
+
+
 
 
         worker.execute();
@@ -347,11 +434,12 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
     public void ClickPesquisar() {
+
+
+
+
+        /*TemaEscuro.mudarTema();*/
 
 
 
@@ -366,7 +454,6 @@ public class OpcoesDoMenu {
 
 
         JPanel menuLateral = new JPanel();
-        menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
@@ -374,11 +461,14 @@ public class OpcoesDoMenu {
 
 
         JButton fecharMenu = new JButton("☰");
-        fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
+        fecharMenu.setFont(new Font("Sans-serif", Font.BOLD, 30));
         fecharMenu.setFocusPainted(false);
-        fecharMenu.setBackground(new Color(0, 87, 156));
+        fecharMenu.setBorderPainted(false);
+        fecharMenu.setFocusPainted(false);
+        fecharMenu.setContentAreaFilled(false);
+        fecharMenu.setOpaque(false);
+        fecharMenu.setBorderPainted(false);
         fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        fecharMenu.setForeground(Color.WHITE);
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(true);
         menuLateral.add(fecharMenu);
@@ -395,17 +485,9 @@ public class OpcoesDoMenu {
 
 
 
-        painelCentral.add(Box.createVerticalGlue());
-
-
-
-
         ArredondamentoDeBotao pasta1 = new ArredondamentoDeBotao("Manual de Operação",6);
         pasta1.setMaximumSize(new Dimension(180, 50));
-        pasta1.setFont(new Font("Arial", Font.BOLD, 14));
-        pasta1.setFocusPainted(false);
-        pasta1.setBackground(new Color(52, 152, 219));
-        pasta1.setForeground(Color.WHITE);
+        pasta1.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta1.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta1.setBounds(14, 69, 240, 50);
         menuLateral.add(pasta1);
@@ -414,14 +496,73 @@ public class OpcoesDoMenu {
 
 
         JPanel headerPanel = new JPanel();
-        headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
 
 
 
 
+
+
+
+
+        JPanel painelConteudo = new JPanel(new BorderLayout());
+        painelConteudo.setBackground(new Color(255, 255, 255));
+
+
+
+
+
+
+
+
+        JButton botao3Linhas = new JButton("☰");
+        botao3Linhas.setFont(new Font("Sans-serif", Font.BOLD, 30));
+        botao3Linhas.setFocusPainted(false);
+        botao3Linhas.setFocusPainted(false);
+        botao3Linhas.setContentAreaFilled(false);
+        botao3Linhas.setOpaque(false);
+        botao3Linhas.setBorderPainted(false);
+        botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        botao3Linhas.setBounds(-3, 0, 50, 30);
+        botao3Linhas.setVisible(false);
+
+
+
+
+        botao3Linhas.addActionListener(f -> {
+            menuLateral.setVisible(true);
+            botao3Linhas.setVisible(false);
+            fecharMenu.setVisible(true);
+            headerPanel.revalidate();
+            headerPanel.repaint();
+
+
+
+
+        });
+
+
+
+
+        fecharMenu.addActionListener(f -> {
+            menuLateral.setVisible(false);
+            botao3Linhas.setVisible(true);
+            fecharMenu.setVisible(false);
+            headerPanel.revalidate();
+            headerPanel.repaint();
+        });
+
+
+
+
+        headerPanel.add(botao3Linhas, BorderLayout.WEST);;
         headerPanel.add(Box.createHorizontalGlue());
+
+
+
+
+        painelConteudo.add(headerPanel, BorderLayout.NORTH);
 
 
 
@@ -429,7 +570,7 @@ public class OpcoesDoMenu {
         JTextField campoBusca = new JTextField();
         campoBusca.setPreferredSize(new Dimension(400, 30));
         campoBusca.setMaximumSize(new Dimension(600, 30));
-        campoBusca.setFont(new Font("Arial", Font.PLAIN, 14));
+        campoBusca.setFont(new Font("Sans-serif", Font.PLAIN, 14));
         headerPanel.add(campoBusca);
 
 
@@ -440,8 +581,10 @@ public class OpcoesDoMenu {
 
 
 
-        JButton botaoBusca = new JButton("Buscar");
-        botaoBusca.setFont(new Font("Arial", Font.BOLD, 14));
+        ArredondamentoDeBotao botaoBusca = new ArredondamentoDeBotao("\uD83D\uDD0D", 6);
+        botaoBusca.setFont(new Font("Sans-serif", Font.BOLD, 15));
+        botaoBusca.setPreferredSize(new Dimension(50, 49));
+        botaoBusca.setMaximumSize(new Dimension(50, 49));
         headerPanel.add(botaoBusca);
 
 
@@ -452,12 +595,21 @@ public class OpcoesDoMenu {
 
 
 
+
+
+
+
+        headerPanel.add(Box.createHorizontalGlue());
+
+
+
+
         JLabel tituloPastaG = new JLabel("", SwingConstants.CENTER);
-        tituloPastaG.setFont(new Font("Arial", Font.BOLD, 22));
+        tituloPastaG.setFont(new Font("Sans-serif", Font.BOLD, 22));
         JLabel mensagemG = new JLabel("", SwingConstants.CENTER);
-        mensagemG.setFont(new Font("Arial", Font.BOLD, 22));
+        mensagemG.setFont(new Font("Sans-serif", Font.BOLD, 22));
         JLabel exemploG = new JLabel("", SwingConstants.CENTER);
-        exemploG.setFont(new Font("Arial", Font.BOLD, 22));
+        exemploG.setFont(new Font("Sans-serif", Font.BOLD, 22));
 
 
 
@@ -470,8 +622,12 @@ public class OpcoesDoMenu {
             }
 
 
+
+
             try (Connection conexao = DriverManager.getConnection(
                     "jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
+
+
 
 
                 PreparedStatement stmt = conexao.prepareStatement(
@@ -479,13 +635,19 @@ public class OpcoesDoMenu {
                 stmt.setString(1, "%" + termo + "%");
 
 
+
+
                 ResultSet rs = stmt.executeQuery();
                 menuFlutuante.removeAll();
+
+
 
 
                 boolean encontrou = false;
                 while (rs.next()) {
                     encontrou = true;
+
+
 
 
                     int id = rs.getInt("id");
@@ -494,14 +656,20 @@ public class OpcoesDoMenu {
                     String exemplo = rs.getString("exemplo");
 
 
+
+
                     JMenuItem item = new JMenuItem(titulo);
-                    item.setFont(new Font("Arial", Font.PLAIN, 17));
+                    item.setFont(new Font("Sans-serif", Font.PLAIN, 17));
+
+
 
 
                     item.addActionListener(ev -> {
                         tituloPastaG.setText("<html><body style='width: 800px'>" + titulo + "</body></html>");
                         mensagemG.setText("<html><body style='width: 800px'>" + descricao + "</body></html>");
                         exemploG.setText("<html><body style='width: 800px'>" + exemplo + "</body></html>");
+
+
 
 
                         painelCentral.removeAll();
@@ -515,12 +683,18 @@ public class OpcoesDoMenu {
                         painelCentral.repaint();
 
 
+
+
                         menuFlutuante.setVisible(false);
                     });
 
 
+
+
                     menuFlutuante.add(item);
                 }
+
+
 
 
                 if (encontrou) {
@@ -530,10 +704,14 @@ public class OpcoesDoMenu {
                 }
 
 
+
+
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         });
+
+
 
 
         pasta1.addActionListener(new ActionListener() {
@@ -541,26 +719,37 @@ public class OpcoesDoMenu {
             public void actionPerformed(ActionEvent e) {
 
 
+
+
                 JPanel menuLateral1 = new JPanel();
-                menuLateral1.setBackground(new Color(0, 87, 156));
                 menuLateral1.setLayout(new BoxLayout(menuLateral1, BoxLayout.Y_AXIS));
                 menuLateral1.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
+
+
 
 
                 TelaPesquisar.add(menuLateral1, BorderLayout.WEST);
                 menuLateral.setVisible(false);
 
 
+
+
                 menuLateral1.add(Box.createVerticalStrut(69));
 
 
+
+
                 ArrayList<Orientacao> orientacoes1 = new ArrayList<>();
+
+
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
                     String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
+
+
 
 
                     while (rs.next()) {
@@ -579,10 +768,6 @@ public class OpcoesDoMenu {
                 } catch (SQLException f) {
                     f.printStackTrace();
                 }
-
-
-
-
 
 
 
@@ -629,21 +814,10 @@ public class OpcoesDoMenu {
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setPreferredSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
-                    botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral1.add(botao);
                     menuLateral1.add(Box.createVerticalStrut(15));
-
-
-
-
-
-
-
-
 
 
 
@@ -656,7 +830,7 @@ public class OpcoesDoMenu {
 
 
                             tituloPasta1.setText("<html><body style='width: 800px'>" + orientacao.getTitulo() + "</body></html>");
-                            tituloPasta1.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta1.setBackground(Color.WHITE);
@@ -666,7 +840,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem1.setText("<html><body style='width: 800px'>" + orientacao.getDescricao() + "</body></html>");
-                            mensagem1.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem1.setBackground(Color.WHITE);
@@ -676,7 +850,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo1.setText("<html><body style='width: 800px'>" + orientacao.getExemplo() + "</body></html>");
-                            exemplo1.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo1.setBackground(Color.WHITE);
@@ -698,10 +872,7 @@ public class OpcoesDoMenu {
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
                 botaoRetornar.setPreferredSize(new Dimension(245, 50));
                 botaoRetornar.setMinimumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
+                botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral1.add(botaoRetornar);
 
@@ -742,10 +913,7 @@ public class OpcoesDoMenu {
 
         ArredondamentoDeBotao pasta2 = new ArredondamentoDeBotao("Procedimento de Segurança",6);
         pasta2.setMaximumSize(new Dimension(180, 50));
-        pasta2.setFont(new Font("Arial", Font.BOLD, 14));
-        pasta2.setFocusPainted(false);
-        pasta2.setBackground(new Color(52, 152, 219));
-        pasta2.setForeground(Color.WHITE);
+        pasta2.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta2.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta2.setBounds(14, 134, 240, 50);
         menuLateral.add(pasta2);
@@ -761,7 +929,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral2 = new JPanel();
-                menuLateral2.setBackground(new Color(0, 87, 156));
                 menuLateral2.setLayout(new BoxLayout(menuLateral2, BoxLayout.Y_AXIS));
                 menuLateral2.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
@@ -790,10 +957,6 @@ public class OpcoesDoMenu {
                     String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
-
-
-
-
 
 
 
@@ -870,21 +1033,10 @@ public class OpcoesDoMenu {
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setMaximumSize(new Dimension(245, 60));
                     botao.setPreferredSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
-                    botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral2.add(botao);
                     menuLateral2.add(Box.createVerticalStrut(15));
-
-
-
-
-
-
-
-
 
 
 
@@ -896,16 +1048,8 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
                             tituloPasta2.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
-                            tituloPasta2.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta2.setBackground(Color.WHITE);
@@ -914,12 +1058,8 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
                             mensagem2.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
-                            mensagem2.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem2.setBackground(Color.WHITE);
@@ -928,28 +1068,12 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
                             exemplo2.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
-                            exemplo2.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo2.setBackground(Color.WHITE);
                             exemplo2.setVisible(true);
-
-
-
-
-
-
-
-
 
 
 
@@ -961,34 +1085,15 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
                 menuLateral2.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar2 = new ArredondamentoDeBotao("Retornar",6);
                 botaoRetornar2.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar2.setMaximumSize(new Dimension(245, 50));
                 botaoRetornar2.setPreferredSize(new Dimension(245, 50));
                 botaoRetornar2.setMinimumSize(new Dimension(245, 50));
-                botaoRetornar2.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar2.setFocusPainted(false);
-                botaoRetornar2.setBackground(new Color(52, 152, 219));
-                botaoRetornar2.setForeground(Color.WHITE);
+                botaoRetornar2.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar2.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral2.add(botaoRetornar2);
-
-
-
-
 
 
 
@@ -998,21 +1103,9 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
                 botaoRetornar2.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-
-
-
-
-
-
-
-
 
 
 
@@ -1025,20 +1118,33 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
                     }
 
 
 
 
-
-
-
-
                 });
+
+
+
+
+                menuLateral2.invalidate();
+                menuLateral2.validate();
+                menuLateral2.repaint();
+
+
+
+
+                botaoRetornar2.invalidate();
+                botaoRetornar2.validate();
+                botaoRetornar2.repaint();
+
+
+
+
+                headerPanel.invalidate();
+                headerPanel.validate();
+                headerPanel.repaint();
 
 
 
@@ -1053,33 +1159,14 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         ArredondamentoDeBotao pasta3 = new ArredondamentoDeBotao("Manutenção e reparos",6);
         pasta3.setMaximumSize(new Dimension(180, 50));
-        pasta3.setFont(new Font("Arial", Font.BOLD, 14));
-        pasta3.setFocusPainted(false);
-        pasta3.setBackground(new Color(52, 152, 219));
-        pasta3.setForeground(Color.WHITE);
+        pasta3.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta3.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta3.setBounds(14, 199, 240, 50);
         menuLateral.add(pasta3);
         menuLateral.revalidate();
         menuLateral.repaint();
-
-
-
-
 
 
 
@@ -1092,7 +1179,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral3 = new JPanel();
-                menuLateral3.setBackground(new Color(0, 87, 156));
                 menuLateral3.setLayout(new BoxLayout(menuLateral3, BoxLayout.Y_AXIS));
                 menuLateral3.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
@@ -1187,10 +1273,7 @@ public class OpcoesDoMenu {
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setPreferredSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
-                    botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral3.add(botao);
                     menuLateral3.add(Box.createVerticalStrut(15));
@@ -1206,7 +1289,7 @@ public class OpcoesDoMenu {
 
 
                             tituloPasta3.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
-                            tituloPasta3.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta3.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta3.setBackground(Color.WHITE);
@@ -1216,7 +1299,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem3.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
-                            mensagem3.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem3.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem3.setBackground(Color.WHITE);
@@ -1226,7 +1309,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo3.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
-                            exemplo3.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo3.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo3.setBackground(Color.WHITE);
@@ -1234,10 +1317,6 @@ public class OpcoesDoMenu {
                         }
                     });
                 }
-
-
-
-
 
 
 
@@ -1252,10 +1331,7 @@ public class OpcoesDoMenu {
                 botaoRetornar3.setMaximumSize(new Dimension(245, 50));
                 botaoRetornar3.setPreferredSize(new Dimension(245, 50));
                 botaoRetornar3.setMinimumSize(new Dimension(245, 50));
-                botaoRetornar3.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar3.setFocusPainted(false);
-                botaoRetornar3.setBackground(new Color(52, 152, 219));
-                botaoRetornar3.setForeground(Color.WHITE);
+                botaoRetornar3.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar3.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral3.add(botaoRetornar3);
 
@@ -1282,16 +1358,9 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         ArredondamentoDeBotao pasta4 = new ArredondamentoDeBotao("Testes e Diagnóstico", 6);
         pasta4.setMaximumSize(new Dimension(180, 50));
-        pasta4.setFont(new Font("Arial", Font.BOLD, 14));
-        pasta4.setFocusPainted(false);
-        pasta4.setBackground(new Color(52, 152, 219));
-        pasta4.setForeground(Color.WHITE);
+        pasta4.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta4.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta4.setBounds(14, 264, 240, 50);
         menuLateral.add(pasta4);
@@ -1309,7 +1378,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral4 = new JPanel();
-                menuLateral4.setBackground(new Color(0, 87, 156));
                 menuLateral4.setLayout(new BoxLayout(menuLateral4, BoxLayout.Y_AXIS));
                 menuLateral4.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
@@ -1349,6 +1417,10 @@ public class OpcoesDoMenu {
                         String exemplo4 = rs.getString("exemplo");
                         orientacoes4.add(new Orientacao(titulo4, descricao4, exemplo4, id4));
                     }
+
+
+
+
 
 
 
@@ -1404,10 +1476,7 @@ public class OpcoesDoMenu {
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setPreferredSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
-                    botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral4.add(botao);
                     menuLateral4.add(Box.createVerticalStrut(15));
@@ -1419,7 +1488,7 @@ public class OpcoesDoMenu {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             tituloPasta4.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
-                            tituloPasta4.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta4.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta4.setBackground(Color.WHITE);
@@ -1429,7 +1498,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem4.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
-                            mensagem4.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem4.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem4.setBackground(Color.WHITE);
@@ -1439,7 +1508,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo4.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
-                            exemplo4.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo4.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo4.setBackground(Color.WHITE);
@@ -1457,10 +1526,7 @@ public class OpcoesDoMenu {
                 botaoRetornar4.setMaximumSize(new Dimension(245, 50));
                 botaoRetornar4.setPreferredSize(new Dimension(245, 50));
                 botaoRetornar4.setMinimumSize(new Dimension(245, 50));
-                botaoRetornar4.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar4.setFocusPainted(false);
-                botaoRetornar4.setBackground(new Color(52, 152, 219));
-                botaoRetornar4.setForeground(Color.WHITE);
+                botaoRetornar4.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar4.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral4.add(botaoRetornar4);
                 menuLateral4.add(Box.createVerticalStrut(9));
@@ -1483,16 +1549,9 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         ArredondamentoDeBotao pasta5 = new ArredondamentoDeBotao("Procedimento de Segurança", 6);
         pasta5.setMaximumSize(new Dimension(180, 50));
-        pasta5.setFont(new Font("Arial", Font.BOLD, 14));
-        pasta5.setFocusPainted(false);
-        pasta5.setBackground(new Color(52, 152, 219));
-        pasta5.setForeground(Color.WHITE);
+        pasta5.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta5.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta5.setBounds(14, 329, 240, 50);
         menuLateral.add(pasta5);
@@ -1510,7 +1569,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral5 = new JPanel();
-                menuLateral5.setBackground(new Color(0, 87, 156));
                 menuLateral5.setLayout(new BoxLayout(menuLateral5, BoxLayout.Y_AXIS));
                 menuLateral5.setPreferredSize(new Dimension(270, TelaPesquisar.getHeight()));
 
@@ -1605,10 +1663,7 @@ public class OpcoesDoMenu {
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setPreferredSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
-                    botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral5.add(botao);
                     menuLateral5.add(Box.createVerticalStrut(15));
@@ -1620,7 +1675,7 @@ public class OpcoesDoMenu {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             tituloPasta5.setText("<html><body style='width: 700px'>" + orientacao.getTitulo() + "</body></html>");
-                            tituloPasta5.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta5.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta5.setBackground(Color.WHITE);
@@ -1630,7 +1685,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem5.setText("<html><body style='width: 700px'>" + orientacao.getDescricao() + "</body></html>");
-                            mensagem5.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem5.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem5.setBackground(Color.WHITE);
@@ -1640,7 +1695,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo5.setText("<html><body style='width: 700px'>" + orientacao.getExemplo() + "</body></html>");
-                            exemplo5.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo5.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo5.setBackground(Color.WHITE);
@@ -1658,10 +1713,7 @@ public class OpcoesDoMenu {
                 botaoRetornar5.setMaximumSize(new Dimension(245, 50));
                 botaoRetornar5.setPreferredSize(new Dimension(245, 50));
                 botaoRetornar5.setMinimumSize(new Dimension(245, 50));
-                botaoRetornar5.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar5.setFocusPainted(false);
-                botaoRetornar5.setBackground(new Color(52, 152, 219));
-                botaoRetornar5.setForeground(Color.WHITE);
+                botaoRetornar5.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar5.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral5.add(botaoRetornar5);
                 menuLateral5.add(Box.createVerticalStrut(9));
@@ -1688,169 +1740,16 @@ public class OpcoesDoMenu {
 
 
 
-        JPanel painelConteudo = new JPanel(new BorderLayout());
-        painelConteudo.setBackground(new Color(255, 255, 255));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        JButton botao3Linhas = new JButton("☰");
-        botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
-        botao3Linhas.setFocusPainted(false);
-        botao3Linhas.setBackground(new Color(0, 87, 156));
-        botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botao3Linhas.setForeground(Color.WHITE);
-        botao3Linhas.setBounds(-3, 0, 50, 30);
-        botao3Linhas.setVisible(false);
-
-
-
-
-
-
-
-
-
-
-
-
-        botao3Linhas.addActionListener(f -> {
-            menuLateral.setVisible(true);
-            botao3Linhas.setVisible(false);
-            fecharMenu.setVisible(true);
-            headerPanel.revalidate();
-            headerPanel.repaint();
-        });
-
-
-
-
-
-
-
-
-        fecharMenu.addActionListener(f -> {
-            menuLateral.setVisible(false);
-            botao3Linhas.setVisible(true);
-            fecharMenu.setVisible(false);
-            headerPanel.revalidate();
-            headerPanel.repaint();
-        });
-
-
-
-
-
-
-
-
-        JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
-        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoIdioma.setFocusPainted(false);
-        botaoIdioma.setBackground(new Color(0, 87, 156));
-        botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoIdioma.setForeground(Color.WHITE);
-
-
-
-
-
-
-
-
-        JButton botaoUsuario = new JButton("\uD83D\uDC64");
-        botaoUsuario.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoUsuario.setFocusPainted(false);
-        botaoUsuario.setBackground(new Color(0, 87, 156));
-        botaoUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoUsuario.setForeground(Color.WHITE);
-        botaoUsuario.setLayout(null);
-        botao3Linhas.setBounds(30, 40, 50, 30);
-
-
-
-
-
-
-
-
-        botaoUsuario.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-        });
-
-
-
-
-
-
-
-
-        headerPanel.add(botao3Linhas, BorderLayout.WEST);
-        headerPanel.add(Box.createHorizontalGlue());
-        headerPanel.add(botaoUsuario, BorderLayout.EAST);
-        headerPanel.add(botaoIdioma, BorderLayout.LINE_END);
-
-
-
-
-
-
-
-
-        painelConteudo.add(headerPanel, BorderLayout.NORTH);
-
-
-
-
 
 
 
 
         ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
-        botaoRetornar.setFocusPainted(false);
-        botaoRetornar.setBackground(new Color(52, 152, 219));
-        botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoRetornar.setForeground(Color.WHITE);
+        botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoRetornar.setLayout(null);
         botaoRetornar.setBounds(14, 950, 240, 50);
         menuLateral.add(botaoRetornar);
-
-
-
-
 
 
 
@@ -1862,15 +1761,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
                 TelaPesquisar.setVisible(false);
-
-
-
-
 
 
 
@@ -1884,16 +1775,13 @@ public class OpcoesDoMenu {
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
 
 
+
+
         boolean[] menuVisivel = {false};
         botao3Linhas.addActionListener(g -> {
             menuVisivel[0] = !menuVisivel[0];
             menuLateral.setVisible(menuVisivel[0]);
             TelaPesquisar.revalidate();
-        });
-
-
-        botaoIdioma.addActionListener(h -> {
-            JOptionPane.showMessageDialog(TelaPesquisar, "Funcionalidade de pesquisa aqui.");
         });
 
 
@@ -1903,8 +1791,12 @@ public class OpcoesDoMenu {
         TelaPesquisar.add(painelConteudo, BorderLayout.CENTER);
 
 
+
+
         TelaPesquisar.setLocationRelativeTo(null);
         TelaPesquisar.setVisible(true);
+
+
 
 
     }
@@ -1912,7 +1804,7 @@ public class OpcoesDoMenu {
 
 
 
-    public void ClickEditar() {
+    public void ClickEditar(JFrame frame, boolean temaEscuroAtivo) {
 
 
 
@@ -1927,7 +1819,6 @@ public class OpcoesDoMenu {
 
 
         JPanel menuLateral = new JPanel();
-        menuLateral.setBackground(new Color(0, 87, 156));
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
 
@@ -1935,11 +1826,14 @@ public class OpcoesDoMenu {
 
 
         JButton fecharMenu = new JButton("☰");
-        fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
+        fecharMenu.setFont(new Font("Sans-serif", Font.BOLD, 30));
         fecharMenu.setFocusPainted(false);
-        fecharMenu.setBackground(new Color(0, 87, 156));
+        fecharMenu.setBorderPainted(false);
+        fecharMenu.setFocusPainted(false);
+        fecharMenu.setContentAreaFilled(false);
+        fecharMenu.setOpaque(false);
+        fecharMenu.setBorderPainted(false);
         fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        fecharMenu.setForeground(Color.WHITE);
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(true);
         menuLateral.add(fecharMenu);
@@ -1948,7 +1842,20 @@ public class OpcoesDoMenu {
 
 
         JPanel painelCentral = new JPanel();
-        painelCentral.setBackground(new Color(255, 255, 255));
+
+
+
+
+        painelCentral.setLayout(null);
+        if (temaEscuroAtivo) {
+            painelCentral.setBackground(new Color(30, 30 ,30));
+        } else {
+            painelCentral.setBackground(Color.WHITE);
+        }
+
+
+
+
         painelCentral.setLayout(new BoxLayout(painelCentral, BoxLayout.Y_AXIS));
         painelCentral.setAlignmentX(Component.CENTER_ALIGNMENT);
         painelCentral.setVisible(true);
@@ -1963,10 +1870,8 @@ public class OpcoesDoMenu {
 
         ArredondamentoDeBotao pasta1 = new ArredondamentoDeBotao("Manual de Operação", 6);
         pasta1.setMaximumSize(new Dimension(180, 50));
-        pasta1.setFont(new Font("Arial", Font.BOLD, 14));
+        pasta1.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta1.setFocusPainted(false);
-        pasta1.setBackground(new Color(52, 152, 219));
-        pasta1.setForeground(Color.WHITE);
         pasta1.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta1.setBounds(14, 69, 240, 50);
         menuLateral.add(pasta1);
@@ -1982,7 +1887,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral1 = new JPanel();
-                menuLateral1.setBackground(new Color(0, 87, 156));
                 menuLateral1.setLayout(new BoxLayout(menuLateral1, BoxLayout.Y_AXIS));
                 menuLateral1.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
 
@@ -2041,7 +1945,7 @@ public class OpcoesDoMenu {
                 tituloPasta1.setLineWrap(true);
                 tituloPasta1.setWrapStyleWord(true);
                 tituloPasta1.setEditable(true);
-                tituloPasta1.setFont(new Font("Arial", Font.BOLD, 22));
+                tituloPasta1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 tituloPasta1.setBackground(Color.WHITE);
                 tituloPasta1.setAlignmentX(Component.CENTER_ALIGNMENT);
                 tituloPasta1.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
@@ -2062,7 +1966,7 @@ public class OpcoesDoMenu {
                 mensagem1.setLineWrap(true);
                 mensagem1.setWrapStyleWord(true);
                 mensagem1.setEditable(true);
-                mensagem1.setFont(new Font("Arial", Font.BOLD, 22));
+                mensagem1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 mensagem1.setBackground(Color.WHITE);
                 mensagem1.setAlignmentX(Component.CENTER_ALIGNMENT);
                 mensagem1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -2083,7 +1987,7 @@ public class OpcoesDoMenu {
                 exemplo1.setLineWrap(true);
                 exemplo1.setWrapStyleWord(true);
                 exemplo1.setEditable(true);
-                exemplo1.setFont(new Font("Arial", Font.BOLD, 22));
+                exemplo1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 exemplo1.setBackground(Color.WHITE);
                 exemplo1.setAlignmentX(Component.CENTER_ALIGNMENT);
                 exemplo1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -2101,8 +2005,7 @@ public class OpcoesDoMenu {
 
 
                 JPanel panelExcluir = new JPanel();
-                panelExcluir.setFont(new Font("Arial", Font.BOLD, 40));
-                panelExcluir.setBackground(new Color(255, 255, 255));
+                panelExcluir.setFont(new Font("Sans-serif", Font.BOLD, 40));
                 panelExcluir.setLayout(null);
                 panelExcluir.setPreferredSize(new Dimension(900, 90));
                 panelExcluir.setMaximumSize(new Dimension(900, 90));
@@ -2114,10 +2017,8 @@ public class OpcoesDoMenu {
 
                 ArredondamentoDeBotao excluirOrientacao = new ArredondamentoDeBotao("Excluir Orientação", 6);
                 excluirOrientacao.setMaximumSize(new Dimension(180, 50));
-                excluirOrientacao.setFont(new Font("Arial", Font.BOLD, 14));
+                excluirOrientacao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 excluirOrientacao.setFocusPainted(false);
-                excluirOrientacao.setBackground(new Color(52, 152, 219));
-                excluirOrientacao.setForeground(Color.WHITE);
                 excluirOrientacao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 excluirOrientacao.setBounds(14, 20, 240, 50);
                 panelExcluir.add(excluirOrientacao);
@@ -2186,12 +2087,10 @@ public class OpcoesDoMenu {
                 ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar", 6);
                 botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoConfirmar.setMaximumSize(new Dimension(180, 50));
-                botaoConfirmar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoConfirmar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoConfirmar.setFocusPainted(false);
-                botaoConfirmar.setBackground(new Color(52, 152, 219));
-                botaoConfirmar.setForeground(Color.WHITE);
                 botaoConfirmar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                botaoConfirmar.setBounds(690, 20, 210, 50);
+                botaoConfirmar.setBounds(676, 20, 210, 50);
                 panelExcluir.add(botaoConfirmar);
 
 
@@ -2307,11 +2206,10 @@ public class OpcoesDoMenu {
 
 
 
-
                 painelCentral.removeAll();
-                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(Box.createVerticalStrut(175));
                 painelCentral.add(ScrollTitulo);
-                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollDescricao);
                 painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollExemplo);
@@ -2331,10 +2229,8 @@ public class OpcoesDoMenu {
                     ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(), 6);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral1.add(botao);
                     menuLateral1.add(Box.createVerticalStrut(15));
@@ -2350,7 +2246,7 @@ public class OpcoesDoMenu {
 
 
                             tituloPasta1.setText(orientacao.getTitulo());
-                            tituloPasta1.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta1.setBackground(Color.WHITE);
@@ -2360,7 +2256,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem1.setText(orientacao.getDescricao());
-                            mensagem1.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem1.setBackground(Color.WHITE);
@@ -2370,7 +2266,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo1.setText(orientacao.getExemplo());
-                            exemplo1.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo1.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo1.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo1.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo1.setBackground(Color.WHITE);
@@ -2399,10 +2295,8 @@ public class OpcoesDoMenu {
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar", 6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral1.add(botaoRetornar);
 
@@ -2434,10 +2328,8 @@ public class OpcoesDoMenu {
 
         ArredondamentoDeBotao pasta2 = new ArredondamentoDeBotao("Procedimento de Segurança", 6);
         pasta2.setMaximumSize(new Dimension(180, 50));
-        pasta2.setFont(new Font("Arial", Font.BOLD, 14));
+        pasta2.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta2.setFocusPainted(false);
-        pasta2.setBackground(new Color(52, 152, 219));
-        pasta2.setForeground(Color.WHITE);
         pasta2.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta2.setBounds(14, 134, 240, 50);
         menuLateral.add(pasta2);
@@ -2453,7 +2345,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral2 = new JPanel();
-                menuLateral2.setBackground(new Color(0, 87, 156));
                 menuLateral2.setLayout(new BoxLayout(menuLateral2, BoxLayout.Y_AXIS));
                 menuLateral2.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
 
@@ -2477,7 +2368,7 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 2";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
@@ -2512,7 +2403,7 @@ public class OpcoesDoMenu {
                 tituloPasta2.setLineWrap(true);
                 tituloPasta2.setWrapStyleWord(true);
                 tituloPasta2.setEditable(true);
-                tituloPasta2.setFont(new Font("Arial", Font.BOLD, 22));
+                tituloPasta2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 tituloPasta2.setBackground(Color.WHITE);
                 tituloPasta2.setAlignmentX(Component.CENTER_ALIGNMENT);
                 tituloPasta2.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
@@ -2533,7 +2424,7 @@ public class OpcoesDoMenu {
                 mensagem2.setLineWrap(true);
                 mensagem2.setWrapStyleWord(true);
                 mensagem2.setEditable(true);
-                mensagem2.setFont(new Font("Arial", Font.BOLD, 22));
+                mensagem2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 mensagem2.setBackground(Color.WHITE);
                 mensagem2.setAlignmentX(Component.CENTER_ALIGNMENT);
                 mensagem2.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -2554,7 +2445,7 @@ public class OpcoesDoMenu {
                 exemplo2.setLineWrap(true);
                 exemplo2.setWrapStyleWord(true);
                 exemplo2.setEditable(true);
-                exemplo2.setFont(new Font("Arial", Font.BOLD, 22));
+                exemplo2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 exemplo2.setBackground(Color.WHITE);
                 exemplo2.setAlignmentX(Component.CENTER_ALIGNMENT);
                 exemplo2.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -2572,8 +2463,7 @@ public class OpcoesDoMenu {
 
 
                 JPanel panelExcluir = new JPanel();
-                panelExcluir.setFont(new Font("Arial", Font.BOLD, 40));
-                panelExcluir.setBackground(new Color(255, 255, 255));
+                panelExcluir.setFont(new Font("Sans-serif", Font.BOLD, 40));
                 panelExcluir.setLayout(null);
                 panelExcluir.setPreferredSize(new Dimension(900, 90));
                 panelExcluir.setMaximumSize(new Dimension(900, 90));
@@ -2585,10 +2475,8 @@ public class OpcoesDoMenu {
 
                 ArredondamentoDeBotao excluirOrientacao = new ArredondamentoDeBotao("Excluir Orientação", 6);
                 excluirOrientacao.setMaximumSize(new Dimension(180, 50));
-                excluirOrientacao.setFont(new Font("Arial", Font.BOLD, 14));
+                excluirOrientacao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 excluirOrientacao.setFocusPainted(false);
-                excluirOrientacao.setBackground(new Color(52, 152, 219));
-                excluirOrientacao.setForeground(Color.WHITE);
                 excluirOrientacao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 excluirOrientacao.setBounds(14, 20, 240, 50);
                 panelExcluir.add(excluirOrientacao);
@@ -2645,8 +2533,20 @@ public class OpcoesDoMenu {
 
 
                             orientacaoSelecionada = null;
+
+
+
+
                         } else {
+
+
+
+
                             JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
+
+
+
+
                         }
                     }
                 });
@@ -2657,12 +2557,10 @@ public class OpcoesDoMenu {
                 ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar", 6);
                 botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoConfirmar.setMaximumSize(new Dimension(180, 50));
-                botaoConfirmar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoConfirmar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoConfirmar.setFocusPainted(false);
-                botaoConfirmar.setBackground(new Color(52, 152, 219));
-                botaoConfirmar.setForeground(Color.WHITE);
                 botaoConfirmar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                botaoConfirmar.setBounds(690, 20, 210, 50);
+                botaoConfirmar.setBounds(676, 20, 210, 50);
                 panelExcluir.add(botaoConfirmar);
 
 
@@ -2701,7 +2599,15 @@ public class OpcoesDoMenu {
 
 
                         if (!mudouTitulo && !mudouDescricao && !mudouExemplo) {
+
+
+
+
                             JOptionPane.showMessageDialog(null, "Nenhuma alteração detectada.");
+
+
+
+
                             return;
                         }
 
@@ -2772,17 +2678,20 @@ public class OpcoesDoMenu {
                         TelaEditar.revalidate();
                         TelaEditar.repaint();
                         pasta2.doClick();
+
+
+
+
                     }
                 });
 
 
 
 
-
                 painelCentral.removeAll();
-                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(Box.createVerticalStrut(175));
                 painelCentral.add(ScrollTitulo);
-                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollDescricao);
                 painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollExemplo);
@@ -2801,11 +2710,11 @@ public class OpcoesDoMenu {
 
                     ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(), 6);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    botao.setMinimumSize(new Dimension(245,50));
+                    botao.setPreferredSize(new Dimension(245,50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral2.add(botao);
                     menuLateral2.add(Box.createVerticalStrut(15));
@@ -2821,7 +2730,7 @@ public class OpcoesDoMenu {
 
 
                             tituloPasta2.setText(orientacao.getTitulo());
-                            tituloPasta2.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta2.setBackground(Color.WHITE);
@@ -2831,7 +2740,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem2.setText(orientacao.getDescricao());
-                            mensagem2.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem2.setBackground(Color.WHITE);
@@ -2841,7 +2750,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo2.setText(orientacao.getExemplo());
-                            exemplo2.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo2.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo2.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo2.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo2.setBackground(Color.WHITE);
@@ -2870,10 +2779,8 @@ public class OpcoesDoMenu {
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar", 6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral2.add(botaoRetornar);
 
@@ -2903,13 +2810,10 @@ public class OpcoesDoMenu {
 
 
 
-
         ArredondamentoDeBotao pasta3 = new ArredondamentoDeBotao("Manutenção e Reparos", 6);
         pasta3.setMaximumSize(new Dimension(180, 50));
-        pasta3.setFont(new Font("Arial", Font.BOLD, 14));
+        pasta3.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta3.setFocusPainted(false);
-        pasta3.setBackground(new Color(52, 152, 219));
-        pasta3.setForeground(Color.WHITE);
         pasta3.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta3.setBounds(14, 199, 240, 50);
         menuLateral.add(pasta3);
@@ -2917,325 +2821,178 @@ public class OpcoesDoMenu {
 
 
 
-        pasta3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        pasta3.addActionListener(new ActionListener() {@Override
+        public void actionPerformed(ActionEvent e) {
 
 
 
 
-                JPanel menuLateral3 = new JPanel();
-                menuLateral3.setBackground(new Color(0, 87, 156));
-                menuLateral3.setLayout(new BoxLayout(menuLateral3, BoxLayout.Y_AXIS));
-                menuLateral3.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
+            JPanel menuLateral3 = new JPanel();
+            menuLateral3.setLayout(new BoxLayout(menuLateral3, BoxLayout.Y_AXIS));
+            menuLateral3.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
 
 
 
 
-                TelaEditar.add(menuLateral3, BorderLayout.WEST);
-                menuLateral.setVisible(false);
+            TelaEditar.add(menuLateral3, BorderLayout.WEST);
+            menuLateral.setVisible(false);
 
 
 
 
-                menuLateral3.add(Box.createVerticalStrut(69));
+            menuLateral3.add(Box.createVerticalStrut(69));
 
 
 
 
-                ArrayList<Orientacao> orientacoes3 = new ArrayList<>();
+            ArrayList<Orientacao> orientacoes3 = new ArrayList<>();
 
 
 
 
-                try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
-                    PreparedStatement stmt = conexao.prepareStatement(sql);
-                    ResultSet rs = stmt.executeQuery();
+            try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
+                String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 3";
+                PreparedStatement stmt = conexao.prepareStatement(sql);
+                ResultSet rs = stmt.executeQuery();
 
 
 
 
-                    while (rs.next()) {
-                        int id3 = rs.getInt("id");
-                        String titulo3 = rs.getString("titulo");
-                        String descricao3 = rs.getString("descricao");
-                        String exemplo3 = rs.getString("exemplo");
-                        orientacoes3.add(new Orientacao(titulo3, descricao3, exemplo3, id3));
+                while (rs.next()) {
+                    int id3 = rs.getInt("id");
+                    String titulo3 = rs.getString("titulo");
+                    String descricao3 = rs.getString("descricao");
+                    String exemplo3 = rs.getString("exemplo");
+                    orientacoes3.add(new Orientacao(titulo3, descricao3, exemplo3, id3));
 
 
 
 
-                    }
-
-
-
-
-                    rs.close();
-                    stmt.close();
-                } catch (SQLException f) {
-                    f.printStackTrace();
                 }
 
 
 
 
-                JTextArea tituloPasta3 = new JTextArea();
-                tituloPasta3.setLineWrap(true);
-                tituloPasta3.setWrapStyleWord(true);
-                tituloPasta3.setEditable(true);
-                tituloPasta3.setFont(new Font("Arial", Font.BOLD, 22));
-                tituloPasta3.setBackground(Color.WHITE);
-                tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                tituloPasta3.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+                rs.close();
+                stmt.close();
+            } catch (SQLException f) {
+                f.printStackTrace();
+            }
 
 
 
 
-                JScrollPane ScrollTitulo = new JScrollPane(tituloPasta3);
-                ScrollTitulo.setPreferredSize(new Dimension(900, 100));
-                ScrollTitulo.setMaximumSize(new Dimension(900, 100));
-                ScrollTitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
-                ScrollTitulo.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+            JTextArea tituloPasta3 = new JTextArea();
+            tituloPasta3.setLineWrap(true);
+            tituloPasta3.setWrapStyleWord(true);
+            tituloPasta3.setEditable(true);
+            tituloPasta3.setFont(new Font("Sans-serif", Font.BOLD, 22));
+            tituloPasta3.setBackground(Color.WHITE);
+            tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
+            tituloPasta3.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
 
 
 
 
-                JTextArea mensagem3 = new JTextArea();
-                mensagem3.setLineWrap(true);
-                mensagem3.setWrapStyleWord(true);
-                mensagem3.setEditable(true);
-                mensagem3.setFont(new Font("Arial", Font.BOLD, 22));
-                mensagem3.setBackground(Color.WHITE);
-                mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+            JScrollPane ScrollTitulo = new JScrollPane(tituloPasta3);
+            ScrollTitulo.setPreferredSize(new Dimension(900, 100));
+            ScrollTitulo.setMaximumSize(new Dimension(900, 100));
+            ScrollTitulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+            ScrollTitulo.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 
 
 
 
-                JScrollPane ScrollDescricao = new JScrollPane(mensagem3);
-                ScrollDescricao.setPreferredSize(new Dimension(900, 180));
-                ScrollDescricao.setMaximumSize(new Dimension(900, 180));
-                ScrollDescricao.setAlignmentX(Component.CENTER_ALIGNMENT);
-                ScrollDescricao.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+            JTextArea mensagem3 = new JTextArea();
+            mensagem3.setLineWrap(true);
+            mensagem3.setWrapStyleWord(true);
+            mensagem3.setEditable(true);
+            mensagem3.setFont(new Font("Sans-serif", Font.BOLD, 22));
+            mensagem3.setBackground(Color.WHITE);
+            mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
+            mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
 
 
 
-                JTextArea exemplo3 = new JTextArea();
-                exemplo3.setLineWrap(true);
-                exemplo3.setWrapStyleWord(true);
-                exemplo3.setEditable(true);
-                exemplo3.setFont(new Font("Arial", Font.BOLD, 22));
-                exemplo3.setBackground(Color.WHITE);
-                exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                exemplo3.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+            JScrollPane ScrollDescricao = new JScrollPane(mensagem3);
+            ScrollDescricao.setPreferredSize(new Dimension(900, 180));
+            ScrollDescricao.setMaximumSize(new Dimension(900, 180));
+            ScrollDescricao.setAlignmentX(Component.CENTER_ALIGNMENT);
+            ScrollDescricao.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 
 
 
 
-                JScrollPane ScrollExemplo = new JScrollPane(exemplo3);
-                ScrollExemplo.setPreferredSize(new Dimension(900, 180));
-                ScrollExemplo.setMaximumSize(new Dimension(900, 180));
-                ScrollExemplo.setAlignmentX(Component.CENTER_ALIGNMENT);
-                ScrollExemplo.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+            JTextArea exemplo3 = new JTextArea();
+            exemplo3.setLineWrap(true);
+            exemplo3.setWrapStyleWord(true);
+            exemplo3.setEditable(true);
+            exemplo3.setFont(new Font("Sans-serif", Font.BOLD, 22));
+            exemplo3.setBackground(Color.WHITE);
+            exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
+            exemplo3.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
 
 
 
-                JPanel panelExcluir = new JPanel();
-                panelExcluir.setFont(new Font("Arial", Font.BOLD, 40));
-                panelExcluir.setBackground(new Color(255, 255, 255));
-                panelExcluir.setLayout(null);
-                panelExcluir.setPreferredSize(new Dimension(900, 90));
-                panelExcluir.setMaximumSize(new Dimension(900, 90));
-                panelExcluir.setLayout(null);
-                panelExcluir.setVisible(true);
+            JScrollPane ScrollExemplo = new JScrollPane(exemplo3);
+            ScrollExemplo.setPreferredSize(new Dimension(900, 180));
+            ScrollExemplo.setMaximumSize(new Dimension(900, 180));
+            ScrollExemplo.setAlignmentX(Component.CENTER_ALIGNMENT);
+            ScrollExemplo.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 
 
 
 
-                ArredondamentoDeBotao excluirOrientacao = new ArredondamentoDeBotao("Excluir Orientação", 6);
-                excluirOrientacao.setMaximumSize(new Dimension(180, 50));
-                excluirOrientacao.setFont(new Font("Arial", Font.BOLD, 14));
-                excluirOrientacao.setFocusPainted(false);
-                excluirOrientacao.setBackground(new Color(52, 152, 219));
-                excluirOrientacao.setForeground(Color.WHITE);
-                excluirOrientacao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                excluirOrientacao.setBounds(14, 20, 240, 50);
-                panelExcluir.add(excluirOrientacao);
+            JPanel panelExcluir = new JPanel();
+            panelExcluir.setFont(new Font("Sans-serif", Font.BOLD, 40));
 
+            panelExcluir.setLayout(null);
+            panelExcluir.setPreferredSize(new Dimension(900, 90));
+            panelExcluir.setMaximumSize(new Dimension(900, 90));
+            panelExcluir.setLayout(null);
+            panelExcluir.setVisible(true);
 
 
 
-                excluirOrientacao.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (orientacaoSelecionada != null) {
-                            int idExcluir = orientacaoSelecionada.getId();
 
+            ArredondamentoDeBotao excluirOrientacao = new ArredondamentoDeBotao("Excluir Orientação", 6);
+            excluirOrientacao.setMaximumSize(new Dimension(180, 50));
+            excluirOrientacao.setFont(new Font("Sans-serif", Font.BOLD, 14));
+            excluirOrientacao.setFocusPainted(false);
+            excluirOrientacao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+            excluirOrientacao.setBounds(14, 20, 240, 50);
+            panelExcluir.add(excluirOrientacao);
 
 
 
-                            try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                                String sql = "DELETE FROM orientacoes WHERE id = ?";
-                                PreparedStatement stmt = conexao.prepareStatement(sql);
-                                stmt.setInt(1, idExcluir);
-                                stmt.executeUpdate();
-                                stmt.close();
-                            } catch (SQLException ex) {
-                                ex.printStackTrace();
-                                JOptionPane.showMessageDialog(null, "Erro ao excluir orientação.");
-                                return;
-                            }
 
-
-
-
-                            JOptionPane.showMessageDialog(null, "Orientação excluída com sucesso!");
-
-
-
-
-                            TelaEditar.remove(menuLateral3);
-                            TelaEditar.revalidate();
-                            TelaEditar.repaint();
-
-
-
-
-                            pasta3.doClick();
-
-
-
-
-                            tituloPasta3.setText("");
-                            mensagem3.setText("");
-                            exemplo3.setText("");
-
-
-
-
-                            orientacaoSelecionada = null;
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
-                        }
-                    }
-                });
-
-
-
-
-                ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar", 6);
-                botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                botaoConfirmar.setMaximumSize(new Dimension(180, 50));
-                botaoConfirmar.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoConfirmar.setFocusPainted(false);
-                botaoConfirmar.setBackground(new Color(52, 152, 219));
-                botaoConfirmar.setForeground(Color.WHITE);
-                botaoConfirmar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                botaoConfirmar.setBounds(690, 20, 210, 50);
-                panelExcluir.add(botaoConfirmar);
-
-
-
-
-                botaoConfirmar.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        if (orientacaoSelecionada == null) {
-                            JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
-                            return;
-                        }
-
-
-
-
-                        String novoTitulo = tituloPasta3.getText().trim();
-                        String novaDescricao = mensagem3.getText().trim();
-                        String novoExemplo = exemplo3.getText().trim();
-
-
-
-
-                        String tituloOriginal = orientacaoSelecionada.getTitulo();
-                        String descricaoOriginal = orientacaoSelecionada.getDescricao();
-                        String exemploOriginal = orientacaoSelecionada.getExemplo();
-
-
-
-
-                        boolean mudouTitulo = !novoTitulo.equals(tituloOriginal);
-                        boolean mudouDescricao = !novaDescricao.equals(descricaoOriginal);
-                        boolean mudouExemplo = !novoExemplo.equals(exemploOriginal);
-
-
-
-
-                        if (!mudouTitulo && !mudouDescricao && !mudouExemplo) {
-                            JOptionPane.showMessageDialog(null, "Nenhuma alteração detectada.");
-                            return;
-                        }
+            excluirOrientacao.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (orientacaoSelecionada != null) {
+                        int idExcluir = orientacaoSelecionada.getId();
 
 
 
 
                         try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-
-
-
-
-                            if (mudouTitulo) {
-                                String sql = "UPDATE orientacoes SET titulo = ? WHERE id = ?";
-                                PreparedStatement stmt = conexao.prepareStatement(sql);
-                                stmt.setString(1, novoTitulo);
-                                stmt.setInt(2, orientacaoSelecionada.getId());
-                                stmt.executeUpdate();
-                                stmt.close();
-                            }
-
-
-
-
-                            if (mudouDescricao) {
-                                String sql = "UPDATE orientacoes SET descricao = ? WHERE id = ?";
-                                PreparedStatement stmt = conexao.prepareStatement(sql);
-                                stmt.setString(1, novaDescricao);
-                                stmt.setInt(2, orientacaoSelecionada.getId());
-                                stmt.executeUpdate();
-                                stmt.close();
-                            }
-
-
-
-
-                            if (mudouExemplo) {
-                                String sql = "UPDATE orientacoes SET exemplo = ? WHERE id = ?";
-                                PreparedStatement stmt = conexao.prepareStatement(sql);
-                                stmt.setString(1, novoExemplo);
-                                stmt.setInt(2, orientacaoSelecionada.getId());
-                                stmt.executeUpdate();
-                                stmt.close();
-                            }
-
-
-
-
+                            String sql = "DELETE FROM orientacoes WHERE id = ?";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            stmt.setInt(1, idExcluir);
+                            stmt.executeUpdate();
+                            stmt.close();
                         } catch (SQLException ex) {
                             ex.printStackTrace();
-                            JOptionPane.showMessageDialog(null, "Erro ao atualizar orientação.");
+                            JOptionPane.showMessageDialog(null, "Erro ao excluir orientação.");
                             return;
                         }
 
 
 
 
-                        JOptionPane.showMessageDialog(null, "Orientação atualizada com sucesso!");
-
-
-
-
-                        orientacaoSelecionada = new Orientacao(novoTitulo, novaDescricao, novoExemplo, orientacaoSelecionada.getId());
+                        JOptionPane.showMessageDialog(null, "Orientação excluída com sucesso!");
 
 
 
@@ -3243,150 +3000,311 @@ public class OpcoesDoMenu {
                         TelaEditar.remove(menuLateral3);
                         TelaEditar.revalidate();
                         TelaEditar.repaint();
+
+
+
+
                         pasta3.doClick();
+
+
+
+
+                        tituloPasta3.setText("");
+                        mensagem3.setText("");
+                        exemplo3.setText("");
+
+
+
+
+                        orientacaoSelecionada = null;
+
+
+
+
+                    } else {
+
+
+
+
+                        JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
+
+
+
+
                     }
-                });
+                }
+            });
 
 
 
 
-
-                painelCentral.removeAll();
-                painelCentral.add(Box.createVerticalStrut(20));
-                painelCentral.add(ScrollTitulo);
-                painelCentral.add(Box.createVerticalStrut(10));
-                painelCentral.add(ScrollDescricao);
-                painelCentral.add(Box.createVerticalStrut(20));
-                painelCentral.add(ScrollExemplo);
-                painelCentral.add(Box.createVerticalStrut(20));
-                painelCentral.add(panelExcluir);
-                painelCentral.revalidate();
-                painelCentral.repaint();
+            ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar", 6);
+            botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
+            botaoConfirmar.setMaximumSize(new Dimension(180, 50));
+            botaoConfirmar.setFont(new Font("Sans-serif", Font.BOLD, 14));
+            botaoConfirmar.setFocusPainted(false);
+            botaoConfirmar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+            botaoConfirmar.setBounds(676, 20, 210, 50);
+            panelExcluir.add(botaoConfirmar);
 
 
 
 
-                for (Orientacao orientacao : orientacoes3) {
+            botaoConfirmar.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (orientacaoSelecionada == null) {
+                        JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
+                        return;
+                    }
 
 
 
 
-                    ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(), 6);
-                    botao.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
-                    botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
-                    botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                    menuLateral3.add(botao);
-                    menuLateral3.add(Box.createVerticalStrut(15));
+                    String novoTitulo = tituloPasta3.getText().trim();
+                    String novaDescricao = mensagem3.getText().trim();
+                    String novoExemplo = exemplo3.getText().trim();
 
 
 
 
-                    botao.addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
+                    String tituloOriginal = orientacaoSelecionada.getTitulo();
+                    String descricaoOriginal = orientacaoSelecionada.getDescricao();
+                    String exemploOriginal = orientacaoSelecionada.getExemplo();
 
 
 
 
-                            tituloPasta3.setText(orientacao.getTitulo());
-                            tituloPasta3.setFont(new Font("Arial", Font.BOLD, 22));
-                            tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                            tituloPasta3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
-                            tituloPasta3.setBackground(Color.WHITE);
-                            tituloPasta3.setVisible(true);
+                    boolean mudouTitulo = !novoTitulo.equals(tituloOriginal);
+                    boolean mudouDescricao = !novaDescricao.equals(descricaoOriginal);
+                    boolean mudouExemplo = !novoExemplo.equals(exemploOriginal);
 
 
 
 
-                            mensagem3.setText(orientacao.getDescricao());
-                            mensagem3.setFont(new Font("Arial", Font.BOLD, 22));
-                            mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                            mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
-                            mensagem3.setBackground(Color.WHITE);
-                            mensagem3.setVisible(true);
+                    if (!mudouTitulo && !mudouDescricao && !mudouExemplo) {
 
 
 
 
-                            exemplo3.setText(orientacao.getExemplo());
-                            exemplo3.setFont(new Font("Arial", Font.BOLD, 22));
-                            exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
-                            exemplo3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
-                            exemplo3.setBackground(Color.WHITE);
-                            exemplo3.setVisible(true);
+                        JOptionPane.showMessageDialog(null, "Nenhuma alteração detectada.");
 
 
 
 
-                            orientacaoSelecionada = orientacao;
+                        return;
+                    }
+
+
+
+
+                    try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
+
+
+
+
+                        if (mudouTitulo) {
+                            String sql = "UPDATE orientacoes SET titulo = ? WHERE id = ?";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            stmt.setString(1, novoTitulo);
+                            stmt.setInt(2, orientacaoSelecionada.getId());
+                            stmt.executeUpdate();
+                            stmt.close();
                         }
 
 
 
 
-                    });
+                        if (mudouDescricao) {
+                            String sql = "UPDATE orientacoes SET descricao = ? WHERE id = ?";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            stmt.setString(1, novaDescricao);
+                            stmt.setInt(2, orientacaoSelecionada.getId());
+                            stmt.executeUpdate();
+                            stmt.close();
+                        }
 
 
 
 
+                        if (mudouExemplo) {
+                            String sql = "UPDATE orientacoes SET exemplo = ? WHERE id = ?";
+                            PreparedStatement stmt = conexao.prepareStatement(sql);
+                            stmt.setString(1, novoExemplo);
+                            stmt.setInt(2, orientacaoSelecionada.getId());
+                            stmt.executeUpdate();
+                            stmt.close();
+                        }
+
+
+
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Erro ao atualizar orientação.");
+                        return;
+                    }
+
+
+
+
+                    JOptionPane.showMessageDialog(null, "Orientação atualizada com sucesso!");
+
+
+
+
+                    orientacaoSelecionada = new Orientacao(novoTitulo, novaDescricao, novoExemplo, orientacaoSelecionada.getId());
+
+
+
+
+                    TelaEditar.remove(menuLateral3);
+                    TelaEditar.revalidate();
+                    TelaEditar.repaint();
+                    pasta3.doClick();
                 }
+            });
 
 
 
 
-                menuLateral3.add(Box.createVerticalStrut(750));
-                ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar", 6);
-                botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
-                botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-                botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
-                botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                menuLateral3.add(botaoRetornar);
+            painelCentral.removeAll();
+            painelCentral.add(Box.createVerticalStrut(175));
+            painelCentral.add(ScrollTitulo);
+            painelCentral.add(Box.createVerticalStrut(20));
+            painelCentral.add(ScrollDescricao);
+            painelCentral.add(Box.createVerticalStrut(20));
+            painelCentral.add(ScrollExemplo);
+            painelCentral.add(Box.createVerticalStrut(20));
+            painelCentral.add(panelExcluir);
+            painelCentral.revalidate();
+            painelCentral.repaint();
 
 
 
 
-                botaoRetornar.addActionListener(new ActionListener() {
+            for (Orientacao orientacao : orientacoes3) {
+
+
+
+
+                ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(), 6);
+                botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                botao.setMinimumSize(new Dimension(245,50));
+                botao.setPreferredSize(new Dimension(245,50));
+                botao.setMaximumSize(new Dimension(245, 50));
+                botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
+                botao.setFocusPainted(false);
+                botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+                menuLateral3.add(botao);
+                menuLateral3.add(Box.createVerticalStrut(15));
+
+
+
+
+
+
+
+
+                botao.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
 
 
 
 
-                        menuLateral3.setVisible(false);
-                        menuLateral.setVisible(true);
-                        menuLateral3.setVisible(false);
-                        painelCentral.removeAll();
+                        tituloPasta3.setText(orientacao.getTitulo());
+                        tituloPasta3.setFont(new Font("Sans-serif", Font.BOLD, 22));
+                        tituloPasta3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        tituloPasta3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                        tituloPasta3.setBackground(Color.WHITE);
+                        tituloPasta3.setVisible(true);
+
+
+
+
+                        mensagem3.setText(orientacao.getDescricao());
+                        mensagem3.setFont(new Font("Sans-serif", Font.BOLD, 22));
+                        mensagem3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        mensagem3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                        mensagem3.setBackground(Color.WHITE);
+                        mensagem3.setVisible(true);
+
+
+
+
+                        exemplo3.setText(orientacao.getExemplo());
+                        exemplo3.setFont(new Font("Sans-serif", Font.BOLD, 22));
+                        exemplo3.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        exemplo3.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
+                        exemplo3.setBackground(Color.WHITE);
+                        exemplo3.setVisible(true);
+
+
+
+
+                        orientacaoSelecionada = orientacao;
 
 
 
 
                     }
+
+
+
+
                 });
+
+
+
+
             }
+            menuLateral3.add(Box.createVerticalGlue());
+            ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar", 6);
+            botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
+            botaoRetornar.setPreferredSize(new Dimension(245, 50));
+            botaoRetornar.setMinimumSize(new Dimension(245, 50));
+            botaoRetornar.setMaximumSize(new Dimension(245, 50));
+            botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
+            botaoRetornar.setFocusPainted(false);
+            botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+            menuLateral3.add(botaoRetornar);
+
+
+
+
+            menuLateral3.add(Box.createVerticalStrut(9));
+
+
+
+
+            botaoRetornar.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+
+
+
+                    menuLateral3.setVisible(false);
+                    menuLateral.setVisible(true);
+                    menuLateral3.setVisible(false);
+                    painelCentral.removeAll();
+
+
+
+
+                }
+            });
+        }
         });
-
-
-
-
-
-
 
 
 
 
         ArredondamentoDeBotao pasta4 = new ArredondamentoDeBotao("Testes e Diagnóstico", 6);
         pasta4.setMaximumSize(new Dimension(180, 50));
-        pasta4.setFont(new Font("Arial", Font.BOLD, 14));
+        pasta4.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta4.setFocusPainted(false);
-        pasta4.setBackground(new Color(52, 152, 219));
-        pasta4.setForeground(Color.WHITE);
         pasta4.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta4.setBounds(14, 264, 240, 50);
         menuLateral.add(pasta4);
@@ -3402,7 +3320,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral4 = new JPanel();
-                menuLateral4.setBackground(new Color(0, 87, 156));
                 menuLateral4.setLayout(new BoxLayout(menuLateral4, BoxLayout.Y_AXIS));
                 menuLateral4.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
 
@@ -3426,7 +3343,7 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 4";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
@@ -3461,7 +3378,7 @@ public class OpcoesDoMenu {
                 tituloPasta4.setLineWrap(true);
                 tituloPasta4.setWrapStyleWord(true);
                 tituloPasta4.setEditable(true);
-                tituloPasta4.setFont(new Font("Arial", Font.BOLD, 22));
+                tituloPasta4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 tituloPasta4.setBackground(Color.WHITE);
                 tituloPasta4.setAlignmentX(Component.CENTER_ALIGNMENT);
                 tituloPasta4.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
@@ -3482,7 +3399,7 @@ public class OpcoesDoMenu {
                 mensagem4.setLineWrap(true);
                 mensagem4.setWrapStyleWord(true);
                 mensagem4.setEditable(true);
-                mensagem4.setFont(new Font("Arial", Font.BOLD, 22));
+                mensagem4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 mensagem4.setBackground(Color.WHITE);
                 mensagem4.setAlignmentX(Component.CENTER_ALIGNMENT);
                 mensagem4.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -3503,7 +3420,7 @@ public class OpcoesDoMenu {
                 exemplo4.setLineWrap(true);
                 exemplo4.setWrapStyleWord(true);
                 exemplo4.setEditable(true);
-                exemplo4.setFont(new Font("Arial", Font.BOLD, 22));
+                exemplo4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 exemplo4.setBackground(Color.WHITE);
                 exemplo4.setAlignmentX(Component.CENTER_ALIGNMENT);
                 exemplo4.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -3521,8 +3438,7 @@ public class OpcoesDoMenu {
 
 
                 JPanel panelExcluir = new JPanel();
-                panelExcluir.setFont(new Font("Arial", Font.BOLD, 40));
-                panelExcluir.setBackground(new Color(255, 255, 255));
+                panelExcluir.setFont(new Font("Sans-serif", Font.BOLD, 40));
                 panelExcluir.setLayout(null);
                 panelExcluir.setPreferredSize(new Dimension(900, 90));
                 panelExcluir.setMaximumSize(new Dimension(900, 90));
@@ -3534,10 +3450,8 @@ public class OpcoesDoMenu {
 
                 ArredondamentoDeBotao excluirOrientacao = new ArredondamentoDeBotao("Excluir Orientação", 6);
                 excluirOrientacao.setMaximumSize(new Dimension(180, 50));
-                excluirOrientacao.setFont(new Font("Arial", Font.BOLD, 14));
+                excluirOrientacao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 excluirOrientacao.setFocusPainted(false);
-                excluirOrientacao.setBackground(new Color(52, 152, 219));
-                excluirOrientacao.setForeground(Color.WHITE);
                 excluirOrientacao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 excluirOrientacao.setBounds(14, 20, 240, 50);
                 panelExcluir.add(excluirOrientacao);
@@ -3606,12 +3520,10 @@ public class OpcoesDoMenu {
                 ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar", 6);
                 botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoConfirmar.setMaximumSize(new Dimension(180, 50));
-                botaoConfirmar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoConfirmar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoConfirmar.setFocusPainted(false);
-                botaoConfirmar.setBackground(new Color(52, 152, 219));
-                botaoConfirmar.setForeground(Color.WHITE);
                 botaoConfirmar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                botaoConfirmar.setBounds(690, 20, 210, 50);
+                botaoConfirmar.setBounds(676, 20, 210, 50);
                 panelExcluir.add(botaoConfirmar);
 
 
@@ -3727,11 +3639,10 @@ public class OpcoesDoMenu {
 
 
 
-
                 painelCentral.removeAll();
-                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(Box.createVerticalStrut(175));
                 painelCentral.add(ScrollTitulo);
-                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollDescricao);
                 painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollExemplo);
@@ -3750,11 +3661,11 @@ public class OpcoesDoMenu {
 
                     ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(), 6);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    botao.setPreferredSize(new Dimension(245, 50));
+                    botao.setMinimumSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral4.add(botao);
                     menuLateral4.add(Box.createVerticalStrut(15));
@@ -3770,7 +3681,7 @@ public class OpcoesDoMenu {
 
 
                             tituloPasta4.setText(orientacao.getTitulo());
-                            tituloPasta4.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta4.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta4.setBackground(Color.WHITE);
@@ -3780,7 +3691,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem4.setText(orientacao.getDescricao());
-                            mensagem4.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem4.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem4.setBackground(Color.WHITE);
@@ -3790,7 +3701,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo4.setText(orientacao.getExemplo());
-                            exemplo4.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo4.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo4.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo4.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo4.setBackground(Color.WHITE);
@@ -3811,20 +3722,17 @@ public class OpcoesDoMenu {
 
 
                 }
-
-
-
-
-                menuLateral4.add(Box.createVerticalStrut(750));
+                menuLateral4.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar", 6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
+                botaoRetornar.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar.setMinimumSize(new Dimension(245, 50));
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral4.add(botaoRetornar);
+                menuLateral4.add(Box.createVerticalStrut(9));
 
 
 
@@ -3852,13 +3760,10 @@ public class OpcoesDoMenu {
 
 
 
-
         ArredondamentoDeBotao pasta5 = new ArredondamentoDeBotao("Manual de Conduta", 6);
         pasta5.setMaximumSize(new Dimension(180, 50));
-        pasta5.setFont(new Font("Arial", Font.BOLD, 14));
+        pasta5.setFont(new Font("Sans-serif", Font.BOLD, 14));
         pasta5.setFocusPainted(false);
-        pasta5.setBackground(new Color(52, 152, 219));
-        pasta5.setForeground(Color.WHITE);
         pasta5.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         pasta5.setBounds(14, 329, 240, 50);
         menuLateral.add(pasta5);
@@ -3874,7 +3779,6 @@ public class OpcoesDoMenu {
 
 
                 JPanel menuLateral5 = new JPanel();
-                menuLateral5.setBackground(new Color(0, 87, 156));
                 menuLateral5.setLayout(new BoxLayout(menuLateral5, BoxLayout.Y_AXIS));
                 menuLateral5.setPreferredSize(new Dimension(270, TelaEditar.getHeight()));
 
@@ -3898,7 +3802,7 @@ public class OpcoesDoMenu {
 
 
                 try (Connection conexao = DriverManager.getConnection("jdbc:mysql://maglev.proxy.rlwy.net:21239/railway", "root", "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ")) {
-                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 1";
+                    String sql = "SELECT id , titulo, descricao, exemplo FROM orientacoes WHERE tipo_id = 5";
                     PreparedStatement stmt = conexao.prepareStatement(sql);
                     ResultSet rs = stmt.executeQuery();
 
@@ -3933,7 +3837,7 @@ public class OpcoesDoMenu {
                 tituloPasta5.setLineWrap(true);
                 tituloPasta5.setWrapStyleWord(true);
                 tituloPasta5.setEditable(true);
-                tituloPasta5.setFont(new Font("Arial", Font.BOLD, 22));
+                tituloPasta5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 tituloPasta5.setBackground(Color.WHITE);
                 tituloPasta5.setAlignmentX(Component.CENTER_ALIGNMENT);
                 tituloPasta5.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
@@ -3954,7 +3858,7 @@ public class OpcoesDoMenu {
                 mensagem5.setLineWrap(true);
                 mensagem5.setWrapStyleWord(true);
                 mensagem5.setEditable(true);
-                mensagem5.setFont(new Font("Arial", Font.BOLD, 22));
+                mensagem5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 mensagem5.setBackground(Color.WHITE);
                 mensagem5.setAlignmentX(Component.CENTER_ALIGNMENT);
                 mensagem5.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -3975,7 +3879,7 @@ public class OpcoesDoMenu {
                 exemplo5.setLineWrap(true);
                 exemplo5.setWrapStyleWord(true);
                 exemplo5.setEditable(true);
-                exemplo5.setFont(new Font("Arial", Font.BOLD, 22));
+                exemplo5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                 exemplo5.setBackground(Color.WHITE);
                 exemplo5.setAlignmentX(Component.CENTER_ALIGNMENT);
                 exemplo5.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -3993,8 +3897,7 @@ public class OpcoesDoMenu {
 
 
                 JPanel panelExcluir = new JPanel();
-                panelExcluir.setFont(new Font("Arial", Font.BOLD, 40));
-                panelExcluir.setBackground(new Color(255, 255, 255));
+                panelExcluir.setFont(new Font("Sans-serif", Font.BOLD, 40));
                 panelExcluir.setLayout(null);
                 panelExcluir.setPreferredSize(new Dimension(900, 90));
                 panelExcluir.setMaximumSize(new Dimension(900, 90));
@@ -4006,10 +3909,8 @@ public class OpcoesDoMenu {
 
                 ArredondamentoDeBotao excluirOrientacao = new ArredondamentoDeBotao("Excluir Orientação", 6);
                 excluirOrientacao.setMaximumSize(new Dimension(180, 50));
-                excluirOrientacao.setFont(new Font("Arial", Font.BOLD, 14));
+                excluirOrientacao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 excluirOrientacao.setFocusPainted(false);
-                excluirOrientacao.setBackground(new Color(52, 152, 219));
-                excluirOrientacao.setForeground(Color.WHITE);
                 excluirOrientacao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 excluirOrientacao.setBounds(14, 20, 240, 50);
                 panelExcluir.add(excluirOrientacao);
@@ -4067,7 +3968,7 @@ public class OpcoesDoMenu {
 
                             orientacaoSelecionada = null;
                         } else {
-                            JOptionPane.showMessageDialog(null, "Nenhuma orientação selecionada.");
+                            JOptionPane.showMessageDialog(null, "Nenhuma Orientação selecionada.");
                         }
                     }
                 });
@@ -4078,12 +3979,10 @@ public class OpcoesDoMenu {
                 ArredondamentoDeBotao botaoConfirmar = new ArredondamentoDeBotao("Confirmar", 6);
                 botaoConfirmar.setAlignmentX(Component.CENTER_ALIGNMENT);
                 botaoConfirmar.setMaximumSize(new Dimension(180, 50));
-                botaoConfirmar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoConfirmar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoConfirmar.setFocusPainted(false);
-                botaoConfirmar.setBackground(new Color(52, 152, 219));
-                botaoConfirmar.setForeground(Color.WHITE);
                 botaoConfirmar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
-                botaoConfirmar.setBounds(690, 20, 210, 50);
+                botaoConfirmar.setBounds(676, 20, 210, 50);
                 panelExcluir.add(botaoConfirmar);
 
 
@@ -4199,11 +4098,10 @@ public class OpcoesDoMenu {
 
 
 
-
                 painelCentral.removeAll();
-                painelCentral.add(Box.createVerticalStrut(20));
+                painelCentral.add(Box.createVerticalStrut(175));
                 painelCentral.add(ScrollTitulo);
-                painelCentral.add(Box.createVerticalStrut(10));
+                painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollDescricao);
                 painelCentral.add(Box.createVerticalStrut(20));
                 painelCentral.add(ScrollExemplo);
@@ -4222,11 +4120,11 @@ public class OpcoesDoMenu {
 
                     ArredondamentoDeBotao botao = new ArredondamentoDeBotao(orientacao.getTitulo(), 6);
                     botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                    botao.setPreferredSize(new Dimension(245, 50));
+                    botao.setMinimumSize(new Dimension(245, 50));
                     botao.setMaximumSize(new Dimension(245, 50));
-                    botao.setFont(new Font("Arial", Font.BOLD, 14));
+                    botao.setFont(new Font("Sans-serif", Font.BOLD, 14));
                     botao.setFocusPainted(false);
-                    botao.setBackground(new Color(52, 152, 219));
-                    botao.setForeground(Color.WHITE);
                     botao.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                     menuLateral5.add(botao);
                     menuLateral5.add(Box.createVerticalStrut(15));
@@ -4242,7 +4140,7 @@ public class OpcoesDoMenu {
 
 
                             tituloPasta5.setText(orientacao.getTitulo());
-                            tituloPasta5.setFont(new Font("Arial", Font.BOLD, 22));
+                            tituloPasta5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             tituloPasta5.setAlignmentX(Component.CENTER_ALIGNMENT);
                             tituloPasta5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             tituloPasta5.setBackground(Color.WHITE);
@@ -4252,7 +4150,7 @@ public class OpcoesDoMenu {
 
 
                             mensagem5.setText(orientacao.getDescricao());
-                            mensagem5.setFont(new Font("Arial", Font.BOLD, 22));
+                            mensagem5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             mensagem5.setAlignmentX(Component.CENTER_ALIGNMENT);
                             mensagem5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             mensagem5.setBackground(Color.WHITE);
@@ -4262,7 +4160,7 @@ public class OpcoesDoMenu {
 
 
                             exemplo5.setText(orientacao.getExemplo());
-                            exemplo5.setFont(new Font("Arial", Font.BOLD, 22));
+                            exemplo5.setFont(new Font("Sans-serif", Font.BOLD, 22));
                             exemplo5.setAlignmentX(Component.CENTER_ALIGNMENT);
                             exemplo5.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 0));
                             exemplo5.setBackground(Color.WHITE);
@@ -4287,16 +4185,21 @@ public class OpcoesDoMenu {
 
 
 
-                menuLateral5.add(Box.createVerticalStrut(750));
+
+
+
+
+                menuLateral5.add(Box.createVerticalGlue());
                 ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar", 6);
                 botaoRetornar.setAlignmentX(Component.CENTER_ALIGNMENT);
+                botaoRetornar.setPreferredSize(new Dimension(245, 50));
+                botaoRetornar.setMinimumSize(new Dimension(245, 50));
                 botaoRetornar.setMaximumSize(new Dimension(245, 50));
-                botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+                botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
                 botaoRetornar.setFocusPainted(false);
-                botaoRetornar.setBackground(new Color(52, 152, 219));
-                botaoRetornar.setForeground(Color.WHITE);
                 botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
                 menuLateral5.add(botaoRetornar);
+                menuLateral5.add(Box.createVerticalStrut(9));
 
 
 
@@ -4324,43 +4227,29 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
         JPanel painelConteudo = new JPanel(new BorderLayout());
         painelConteudo.setBackground(new Color(255, 255, 255));
 
 
 
 
-
-
-
-
         JPanel headerPanel = new JPanel();
-        headerPanel.setBackground(new Color(0, 87, 156));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.X_AXIS));
 
 
 
 
-
-
-
-
         JButton botao3Linhas = new JButton("☰");
-        botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
+        botao3Linhas.setFont(new Font("Sans-serif", Font.BOLD, 30));
         botao3Linhas.setFocusPainted(false);
-        botao3Linhas.setBackground(new Color(0, 87, 156));
+        botao3Linhas.setFocusPainted(false);
+        botao3Linhas.setContentAreaFilled(false);
+        botao3Linhas.setOpaque(false);
+        botao3Linhas.setBorderPainted(false);
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botao3Linhas.setForeground(Color.WHITE);
         botao3Linhas.setBounds(-3, 0, 50, 30);
         botao3Linhas.setVisible(false);
-
-
-
-
 
 
 
@@ -4391,53 +4280,6 @@ public class OpcoesDoMenu {
 
 
 
-        JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
-        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoIdioma.setFocusPainted(false);
-        botaoIdioma.setBackground(new Color(0, 87, 156));
-        botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoIdioma.setForeground(Color.WHITE);
-
-
-
-
-
-
-
-
-        JButton botaoUsuario = new JButton("\uD83D\uDC64");
-        botaoUsuario.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        botaoUsuario.setFocusPainted(false);
-        botaoUsuario.setBackground(new Color(0, 87, 156));
-        botaoUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        botaoUsuario.setForeground(Color.WHITE);
-        botaoUsuario.setLayout(null);
-        botao3Linhas.setBounds(30, 40, 50, 30);
-
-
-
-
-
-
-
-
-
-
-
-
-        botaoUsuario.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-
-
-
-
-
-
-
-            }
-        });
 
 
 
@@ -4452,8 +4294,10 @@ public class OpcoesDoMenu {
 
         headerPanel.add(botao3Linhas, BorderLayout.WEST);
         headerPanel.add(Box.createHorizontalGlue());
-        headerPanel.add(botaoUsuario, BorderLayout.EAST);
-        headerPanel.add(botaoIdioma, BorderLayout.LINE_END);
+
+
+
+
 
 
 
@@ -4467,23 +4311,13 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
         botaoRetornar.setFocusPainted(false);
-        botaoRetornar.setBackground(new Color(52, 152, 219));
-        botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
-        botaoRetornar.setForeground(Color.WHITE);
+        botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoRetornar.setLayout(null);
         botaoRetornar.setBounds(14, 950, 240, 50);
         menuLateral.add(botaoRetornar);
-
-
-
-
 
 
 
@@ -4495,15 +4329,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
                 TelaEditar.setVisible(false);
-
-
-
-
 
 
 
@@ -4514,15 +4340,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
-
-
-
 
 
 
@@ -4541,23 +4359,8 @@ public class OpcoesDoMenu {
 
 
 
-        botaoIdioma.addActionListener(h -> {
-            JOptionPane.showMessageDialog(TelaEditar, "Funcionalidade de pesquisa aqui.");
-        });
-
-
-
-
-
-
-
-
         TelaEditar.add(menuLateral, BorderLayout.WEST);
         TelaEditar.add(painelConteudo, BorderLayout.CENTER);
-
-
-
-
 
 
 
@@ -4568,19 +4371,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -4590,23 +4381,11 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-        JFrame TelaExcluir = new JFrame("Sistema com Menu Lateral");
+        JFrame TelaExcluir = new JFrame("Sistema com Menus Laterais");
         TelaExcluir.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TelaExcluir.setSize(900, 600);
         TelaExcluir.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaExcluir.setLayout(new BorderLayout());
-
-
-
-
-
-
-
-
 
 
 
@@ -4619,16 +4398,8 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
         JButton fecharMenu = new JButton("☰");
-        fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));
+        fecharMenu.setFont(new Font("Sans-serif", Font.BOLD, 30));
         fecharMenu.setFocusPainted(false);
         fecharMenu.setBackground(new Color(0, 87, 156));
         fecharMenu.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
@@ -4636,14 +4407,6 @@ public class OpcoesDoMenu {
         fecharMenu.setBounds(9, 19, 50, 30);
         fecharMenu.setVisible(true);
         menuLateral.add(fecharMenu);
-
-
-
-
-
-
-
-
 
 
 
@@ -4662,20 +4425,8 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
         JPanel painelConteudo = new JPanel(new BorderLayout());
         painelConteudo.setBackground(new Color(255, 255, 255));
-
-
-
-
 
 
 
@@ -4688,22 +4439,14 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         JButton botao3Linhas = new JButton("☰");
-        botao3Linhas.setFont(new Font("SansSerif", Font.BOLD, 30));
+        botao3Linhas.setFont(new Font("Sans-serif", Font.BOLD, 30));
         botao3Linhas.setFocusPainted(false);
         botao3Linhas.setBackground(new Color(0, 87, 156));
         botao3Linhas.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botao3Linhas.setForeground(Color.WHITE);
         botao3Linhas.setBounds(-3, 0, 50, 30);
         botao3Linhas.setVisible(false);
-
-
-
-
 
 
 
@@ -4719,10 +4462,6 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         fecharMenu.addActionListener(f -> {
             menuLateral.setVisible(false);
             botao3Linhas.setVisible(true);
@@ -4734,12 +4473,8 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         JButton botaoIdioma = new JButton("\uD83C\uDDE7\uD83C\uDDF7");
-        botaoIdioma.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoIdioma.setFont(new Font("Sans-serif", Font.PLAIN, 30));
         botaoIdioma.setFocusPainted(false);
         botaoIdioma.setBackground(new Color(0, 87, 156));
         botaoIdioma.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
@@ -4748,22 +4483,14 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         JButton botaoUsuario = new JButton("\uD83D\uDC64");
-        botaoUsuario.setFont(new Font("SansSerif", Font.PLAIN, 30));
+        botaoUsuario.setFont(new Font("Sans-serif", Font.PLAIN, 30));
         botaoUsuario.setFocusPainted(false);
         botaoUsuario.setBackground(new Color(0, 87, 156));
         botaoUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
         botaoUsuario.setForeground(Color.WHITE);
         botaoUsuario.setLayout(null);
         botao3Linhas.setBounds(30, 40, 50, 30);
-
-
-
-
 
 
 
@@ -4775,16 +4502,8 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
             }
         });
-
-
-
-
 
 
 
@@ -4797,15 +4516,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         painelConteudo.add(headerPanel, BorderLayout.NORTH);
-
-
-
-
 
 
 
@@ -4813,16 +4524,12 @@ public class OpcoesDoMenu {
         ArredondamentoDeBotao botaoRetornar = new ArredondamentoDeBotao("Retornar",6);
         botaoRetornar.setFocusPainted(false);
         botaoRetornar.setBackground(new Color(52, 152, 219));
-        botaoRetornar.setFont(new Font("Arial", Font.BOLD, 14));
+        botaoRetornar.setFont(new Font("Sans-serif", Font.BOLD, 14));
         botaoRetornar.setForeground(Color.WHITE);
         botaoRetornar.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
         botaoRetornar.setLayout(null);
         botaoRetornar.setBounds(14, 950, 240, 50);
         menuLateral.add(botaoRetornar);
-
-
-
-
 
 
 
@@ -4834,15 +4541,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
                 TelaExcluir.setVisible(false);
-
-
-
-
 
 
 
@@ -4853,23 +4552,7 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         painelConteudo.add(painelCentral, BorderLayout.CENTER);
-
-
-
-
 
 
 
@@ -4884,17 +4567,9 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         botaoIdioma.addActionListener(h -> {
             JOptionPane.showMessageDialog(TelaExcluir, "Funcionalidade de pesquisa aqui.");
         });
-
-
-
-
 
 
 
@@ -4905,25 +4580,13 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
         TelaExcluir.setLocationRelativeTo(null);
         TelaExcluir.setVisible(true);
 
 
 
 
-
-
-
-
     }
-
-
-
-
 
 
 
@@ -4935,19 +4598,11 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
     public class Orientacao {
         private int id;
         private String titulo;
         private String descricao;
         private String exemplo;
-
-
-
-
 
 
 
@@ -4962,7 +4617,9 @@ public class OpcoesDoMenu {
 
 
 
-        public int getId() { return id; }
+        public int getId() {
+            return id;
+        }
 
 
 
@@ -4989,10 +4646,10 @@ public class OpcoesDoMenu {
 
 
 
-
-
-
-
 }
+
+
+
+
 
 

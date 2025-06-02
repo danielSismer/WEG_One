@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexaoBanco {
-    private static final String URL = "jdbc:mysql://yamanote.proxy.rlwy.net:40662/weg_one";
+    private static final String URL = "jdbc:mysql://maglev.proxy.rlwy.net:21239/railway";
     private static final String USUARIO = "root";
-    private static final String SENHA = "kGYqssqFVqrEqdAnaWfGAUrQifPUxhxb";
+    private static final String SENHA = "rapOEQXmJZLYFiltlqGiDkyUWGUVTQMJ";
 
     public static Connection getConnection() throws SQLException {
         try {

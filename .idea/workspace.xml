@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_05_2025_13_48__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/LogoWegOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualCondutaSetorial.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManualDeOperacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ManutencaoReparo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProcedimentodeSeguranca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/ProjectJava.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/weg/services/TesteDiagnostico.java" beforeDir="false" />
-    </list>
+    <list default="true" id="b660aba2-5a81-4d2e-9367-9d835ea85824" name="Changes" comment="refactor: organiza o projeto e a estrutura de pastas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

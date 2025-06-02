@@ -11,9 +11,9 @@ public class ConexaoBanco {
 
     public static Connection getConnection() throws SQLException {
         try {
-            // Carregar o driver JDBC do MySQL (pode não ser necessário dependendo do setup do seu ambiente)
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            // Estabelecer a conexão com o banco de dados
+            
             return DriverManager.getConnection(URL, USUARIO, SENHA);
         } catch (ClassNotFoundException e) {
             throw new SQLException("Driver JDBC do MySQL não encontrado.", e);

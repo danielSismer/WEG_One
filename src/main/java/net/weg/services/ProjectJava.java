@@ -3,6 +3,7 @@ package net.weg.services;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 
 public class ProjectJava {
@@ -45,29 +46,38 @@ public class ProjectJava {
         itensManualCondutaSetorial[0] = manualCondutaSetorialMontagem;
         itensManualCondutaSetorial[1] = manualCondutaSetorialManutencao;
 
-        int escolhaIdioma, menuEscolha = 0;
+        int escolhaIdioma = 0, menuEscolha = 0;
         int escolha = 0, categoria, retorno, verificarVazio = 0;
-        boolean continuarCadastro = true, idioma = true;
+        boolean continuarCadastro = true, idioma = true, entradaValida = false;
 
         LogoWegOne logo = new LogoWegOne();
         logo.getLogoWegOne();
 
         while(idioma) {
             do {
-                System.out.println("\nChoose the language you want:\nEscolha o idioma que você deseja:\nWählen Sie die gewünschte Sprache:\n");
-                System.out.println("-------------------------------\nEN-US\t\tPT-BR\t\tDE-DE\n-------------------------------");
-                System.out.println("  1\t\t      2\t\t      3");
-                System.out.println("\nEnter:\nInsira:\nEingeben:");
+                try {
+                    System.out.println("\nChoose the language you want:\nEscolha o idioma que você deseja:\nWählen Sie die gewünschte Sprache:\n");
+                    System.out.println("-------------------------------\nEN-US\t\tPT-BR\t\tDE-DE\n-------------------------------");
+                    System.out.println("  1\t\t      2\t\t      3");
+                    System.out.println("\nEnter:\nInsira:\nEingeben:");
 
+                    escolhaIdioma = input.nextInt();
+                    entradaValida = true;
 
-                escolhaIdioma = input.nextInt();
+                    if(escolhaIdioma <= 0 || escolhaIdioma >= 4) {
+                        System.err.println("\n===============================");
+                        System.err.println("\nPlease, choose an existing language!\nPorfavor, digite uma línguagem existente!\nBitte geben Sie eine existierende Sprache ein!");
+                        System.err.println("\n===============================");
+                    }
 
-                if (escolhaIdioma <= 0 || escolhaIdioma >= 4) {
-                    System.out.println("\n===============================");
-                    System.out.println("\nPlease, choose a existing language\nPorfavor, escolha uma linguagem existente\nBitte wählen Sie eine vorhandene Sprache.");
-                    System.out.println("\n===============================");
+                }catch(InputMismatchException e) {
+                    System.err.println("\n===============================");
+                    System.err.println("\nPlease, type a numeric value!\nPorfavor, digite um valor numérico!\nBitte geben Sie einen numerischen Wert ein!");
+                    System.err.println("\n===============================");
+                    input.nextLine();
                 }
-            } while (escolhaIdioma <= 0 || escolhaIdioma >= 4);
+
+            } while (!entradaValida && escolhaIdioma <= 0 || escolhaIdioma >= 4);
 
             switch (escolhaIdioma) {
 
@@ -116,13 +126,27 @@ public class ProjectJava {
                     manualCondutaSetorialManutencao.setObservacoes(messages_en.getString("maintenanceManualEx"));
 
                     do {
+                        entradaValida = false;
 
-                        System.out.println(messages_en.getString("menu"));
-                        System.out.print("\nYour choice: ");
-                        menuEscolha = input.nextInt();
+                        while(!entradaValida) {
 
+                            try {
+                                System.out.println(messages_en.getString("menu"));
+                                System.out.print("\nYour choice: ");
+
+                                menuEscolha = input.nextInt();
+                                entradaValida = true;
+
+                                if(menuEscolha < 0 || menuEscolha >= 7) {
+                                    System.err.println("\nInvalid menu option!");
+                                }
+
+                            } catch (InputMismatchException e) {
+                                System.err.println("\nInvalid input. Try again.\n");
+                                input.nextLine();
+                            }
+                        }
                         System.out.println();
-
 
                         switch (menuEscolha) {
                             case 1:
@@ -132,7 +156,6 @@ public class ProjectJava {
                                 int resposta = input.nextInt();
 
                                 System.out.println();
-
 
                                 continuarCadastro = true;
 
@@ -518,7 +541,7 @@ public class ProjectJava {
 
                         }
 
-                    } while (menuEscolha != 6);
+                    } while (menuEscolha != 6 || menuEscolha <= 0 && menuEscolha >= 7);
 
                     break;
 
@@ -566,13 +589,27 @@ public class ProjectJava {
                     manualCondutaSetorialManutencao.setCondutaEsperada(messages_pt.getString("manualManutencaoDesc"));
                     manualCondutaSetorialManutencao.setObservacoes(messages_pt.getString("manualManutencaoEx"));
 
-
-
-
                     do {
-                        System.out.println(messages_pt.getString("menu"));
-                        System.out.print("\nSua escolha: ");
-                        menuEscolha = input.nextInt();
+                        entradaValida = false;
+
+                        while(!entradaValida) {
+
+                            try {
+                                System.out.println(messages_pt.getString("menu"));
+                                System.out.print("\nSua escolha: ");
+
+                                menuEscolha = input.nextInt();
+                                entradaValida = true;
+
+                                if(menuEscolha < 0 || menuEscolha >= 7) {
+                                    System.err.println("\nOpção do menu inválida!");
+                                }
+
+                            } catch (InputMismatchException e) {
+                                System.err.println("\nEntrada inválida. Tente novamente.\n");
+                                input.nextLine();
+                            }
+                        }
                         System.out.println();
 
                         switch (menuEscolha) {
@@ -938,9 +975,26 @@ public class ProjectJava {
 
 
                     do {
-                        System.out.println(messages_de.getString("menu"));
-                        System.out.print("\nIhre Auswahl: ");
-                        menuEscolha = input.nextInt();
+                        entradaValida = false;
+
+                        while(!entradaValida) {
+
+                            try {
+                                System.out.println(messages_de.getString("menu"));
+                                System.out.print("\nIhre Wahl: ");
+
+                                menuEscolha = input.nextInt();
+                                entradaValida = true;
+
+                                if(menuEscolha < 0 || menuEscolha >= 7) {
+                                    System.err.println("\nUngültige Menüoption!");
+                                }
+
+                            } catch (InputMismatchException e) {
+                                System.err.println("\nUngültige Eingabe. Bitte versuchen Sie es erneut.\n");
+                                input.nextLine();
+                            }
+                        }
                         System.out.println();
 
                         switch (menuEscolha) {

@@ -12,25 +12,18 @@ public class ProcedimentodeSeguranca {
     String exemploPratico;
 
     public void setNomeProduto(String nomeProduto) {
-
         this.nomeProduto = nomeProduto;
-
     }
 
     public void setComoUsar(String comoUsar) {
-
         this.comoUsar = comoUsar;
-
     }
 
     public void setExemploPratico(String exemploPratico) {
-
         this.exemploPratico = exemploPratico;
-
     }
 
     public String toString() {
-
         return "================================================================================================================================="
                 + "\nNome Orientação: " + this.nomeProduto
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
@@ -42,7 +35,6 @@ public class ProcedimentodeSeguranca {
 
     public void cadastrarProdutoSegurança(int escolhaIdioma) {
         Scanner scanner = new Scanner(System.in);
-
 
         if (escolhaIdioma == 1) {
             System.out.print("\nGeben Sie den Namen des Produkts ein: ");
@@ -79,24 +71,18 @@ public class ProcedimentodeSeguranca {
 
             System.out.println("\nInstruction successfully registered!");
         }
-
-
     }
-
 
     public void editar(int escolhaIdiona) {
         Scanner scanner = new Scanner(System.in);
 
         if (escolhaIdiona == 1) {
-
             System.out.print("Welches Element möchten Sie ändern?\n1 - Name der Anleitung\n2 - Verwendung\n3 - Praktisches Beispiel\n");
             int escolhaEdit = input.nextInt();
 
             if (escolhaEdit == 1) {
-
                 System.out.print("\nGeben Sie den Namen des Produkts ein: ");
                 this.nomeProduto = scanner.nextLine();
-
             } else if (escolhaEdit == 2) {
 
                 System.out.print("Geben Sie die Beschreibung des Produkts ein: ");

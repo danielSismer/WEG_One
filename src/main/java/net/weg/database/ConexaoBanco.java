@@ -11,9 +11,7 @@ public class ConexaoBanco {
 
     public static Connection getConnection() throws SQLException {
         try {
-            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
             return DriverManager.getConnection(URL, USUARIO, SENHA);
         } catch (ClassNotFoundException e) {
             throw new SQLException("Driver JDBC do MySQL não encontrado.", e);

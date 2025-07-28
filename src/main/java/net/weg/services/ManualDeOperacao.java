@@ -11,25 +11,18 @@ public class ManualDeOperacao {
     String exemploPratico;
 
     public void setNomeProduto(String nomeProduto) {
-
         this.nomeProduto = nomeProduto;
-
     }
 
     public void setComoUsar(String comoUsar) {
-
         this.comoUsar = comoUsar;
-
     }
 
     public void setExemploPratico(String exemploPratico) {
-
         this.exemploPratico = exemploPratico;
-
     }
 
     public String toString() {
-
         return "================================================================================================================================="
                 + "\nNome Orientação: " + this.nomeProduto
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
@@ -37,76 +30,63 @@ public class ManualDeOperacao {
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nExemplo Pratico: " + this.exemploPratico
                 + "\n=================================================================================================================================";
-
-
     }
 
     public void cadastrarProdutoOperacao(int escolhaIdioma) {
+        Scanner scanner = new Scanner(System.in);
+        if (escolhaIdioma == 1) {
+            System.out.print("Geben Sie den Namen des Produkts ein: ");
+            this.nomeProduto= scanner.nextLine();
 
-            Scanner scanner = new Scanner(System.in);
-            if (escolhaIdioma == 1) {
-                System.out.print("Geben Sie den Namen des Produkts ein: ");
-                this.nomeProduto= scanner.nextLine();
+            System.out.print("Geben Sie an, wie das Produkt verwendet wird: ");
+            this.comoUsar = scanner.nextLine();
 
-                System.out.print("Geben Sie an, wie das Produkt verwendet wird: ");
-                this.comoUsar = scanner.nextLine();
+            System.out.print("Geben Sie ein praktisches Beispiel ein: ");
+            this.exemploPratico = scanner.nextLine();
 
-                System.out.print("Geben Sie ein praktisches Beispiel ein: ");
-                this.exemploPratico = scanner.nextLine();
+            System.out.println("Anleitung erfolgreich registriert!");
 
-                System.out.println("Anleitung erfolgreich registriert!");
+        } else if (escolhaIdioma == 2) {
+            System.out.print("Digite o nome do produto: ");
+            this.nomeProduto = scanner.nextLine();
 
-            } else if (escolhaIdioma == 2) {
-                System.out.print("Digite o nome do produto: ");
-                this.nomeProduto = scanner.nextLine();
+            System.out.print("Digite como usar o produto: ");
+            this.comoUsar = scanner.nextLine();
 
-                System.out.print("Digite como usar o produto: ");
-                this.comoUsar = scanner.nextLine();
+            System.out.print("Digite um exemplo prático: ");
+            this.exemploPratico = scanner.nextLine();
 
-                System.out.print("Digite um exemplo prático: ");
-                this.exemploPratico = scanner.nextLine();
+            System.out.println("Orientação cadastrada com sucesso!");
+        } else if (escolhaIdioma == 3) {
+            System.out.print("Enter the product name: ");
+            this.nomeProduto= scanner.nextLine();
 
-                System.out.println("Orientação cadastrada com sucesso!");
-            } else if (escolhaIdioma == 3) {
-                System.out.print("Enter the product name: ");
-                this.nomeProduto= scanner.nextLine();
+            System.out.print("Enter how to use the product: ");
+            this.comoUsar = scanner.nextLine();
 
-                System.out.print("Enter how to use the product: ");
-                this.comoUsar = scanner.nextLine();
+            System.out.print("Enter a practical example: ");
+            this.exemploPratico = scanner.nextLine();
 
-                System.out.print("Enter a practical example: ");
-                this.exemploPratico = scanner.nextLine();
-
-                System.out.println("Instruction successfully registered!");
-            }
-
+            System.out.println("Instruction successfully registered!");
         }
-
-
+    }
 
     public void editar(int escolhaIdiona) {
         Scanner scanner = new Scanner(System.in);
 
         if (escolhaIdiona == 1) {
-
             System.out.print("Welches Element möchten Sie ändern?\n1 - Name der Anleitung\n2 - Verwendung\n3 - Praktisches Beispiel\n");
             int escolhaEdit = input.nextInt();
 
             if (escolhaEdit == 1) {
-
                 System.out.println("Geben Sie den Namen des Produkts ein: ");
                 this.nomeProduto = scanner.nextLine();
-
             } else if (escolhaEdit == 2) {
-
                 System.out.println("Geben Sie die Beschreibung des Produkts ein: ");
                 this.comoUsar = scanner.nextLine();
-
             } else if (escolhaEdit == 3) {
-
                 System.out.println("Geben Sie ein praktisches Beispiel ein: ");
                 this.exemploPratico = scanner.nextLine();
-
             }
 
             System.out.println("Anleitung erfolgreich bearbeitet!");

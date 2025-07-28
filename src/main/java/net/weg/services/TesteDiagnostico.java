@@ -12,25 +12,18 @@ public class TesteDiagnostico {
     String descricaoDiagnostico;
 
     public void setNomeProduto(String nomeProduto) {
-
         this.nomeProduto = nomeProduto;
-
     }
 
     public void setexemploPratico(String exemploPratico) {
-
         this.exemploPratico = exemploPratico;
-
     }
 
     public void setDescricaoDiagnostico(String descricaoDiagnostico) {
-
         this.descricaoDiagnostico = descricaoDiagnostico;
-
     }
 
     public String toString() {
-
         return "\n==================================================================================================================================="
                 + "\nNome Orientação: " + this.nomeProduto
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
@@ -42,7 +35,6 @@ public class TesteDiagnostico {
 
     public void cadastrarProdutoDiagnostico(int escolhaIdioma) {
         Scanner scanner = new Scanner(System.in);
-
 
         if (escolhaIdioma == 1) {
             System.out.println("\nGeben Sie den Namen des Produkts ein: ");
@@ -79,22 +71,18 @@ public class TesteDiagnostico {
 
             System.out.println("Instruction successfully registered!");
         }
-
     }
 
     public void editar(int escolhaIdiona) {
         Scanner scanner = new Scanner(System.in);
 
         if (escolhaIdiona == 1) {
-
             System.out.print("Welches Element möchten Sie ändern?\n1 - Name der Anleitung\n2 - Verwendung\n3 - Praktisches Beispiel\n");
             int escolhaEdit = input.nextInt();
 
             if (escolhaEdit == 1) {
-
                 System.out.print("Geben Sie den Namen des Produkts ein: ");
                 this.nomeProduto = scanner.nextLine();
-
             } else if (escolhaEdit == 2) {
 
                 System.out.print("Geben Sie die Beschreibung des Produkts ein: ");

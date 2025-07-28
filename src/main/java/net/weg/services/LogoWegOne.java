@@ -2,8 +2,7 @@ package net.weg.services;
 
 public class LogoWegOne {
 
-    public void getLogoWegOne(){
-
+    public void getLogoWegOne() {
         String logoPrincipal = ("""
                 \u001B[34m
                 888       888                    .d88888b.                    \s
@@ -24,7 +23,5 @@ public class LogoWegOne {
 
         System.out.print("\n" + logoPrincipal);
         System.out.print("\n-------------------------------\n");
-
     }
-
 }

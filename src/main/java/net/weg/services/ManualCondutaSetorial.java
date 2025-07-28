@@ -12,25 +12,18 @@ public class ManualCondutaSetorial {
     Scanner input = new Scanner(System.in);
 
     public void setNomeSetor(String nomeSetor) {
-
         this.nomeSetor = nomeSetor;
-
     }
 
     public void setCondutaEsperada(String condutaEsperada) {
-
         this.condutaEsperada = condutaEsperada;
-
     }
 
     public void setObservacoes(String observacoes) {
-
         this.observacoes = observacoes;
-
     }
 
     public String toString() {
-
         return "================================================================================================================================="
                 + "\nNome Orientação: " + this.nomeSetor
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
@@ -38,7 +31,6 @@ public class ManualCondutaSetorial {
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nObservacoes: " + this.observacoes
                 + "\n=================================================================================================================================";
-
     }
 
     public void cadastrarProdutoSetor(int escolhaIdioma) {
@@ -78,11 +70,7 @@ public class ManualCondutaSetorial {
 
             System.out.println("\nInstruction successfully registered!");
         }
-
     }
-
-
-
 
     public void editar(int escolhaIdiona) {
         Scanner scanner = new Scanner(System.in);

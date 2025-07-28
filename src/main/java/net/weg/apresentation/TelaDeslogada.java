@@ -1,64 +1,16 @@
 package net.weg.apresentation;
 
-
-
-
-
-
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public class TelaDeslogada extends JFrame {
 
-
-
-
     public static void main(String[] args) {
-
-
-
-
-
-
-
-
         OpcoesDoMenu ClickMenu = new OpcoesDoMenu();
         LoginAdm LoginADM = new LoginAdm();
         TemaEscuro TemaEscuro = new TemaEscuro();
         TemaClaro TemaClaro = new TemaClaro();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         JFrame TelaMenus = new JFrame("Sistema com Menu Lateral");
         TemaClaro.mudarTema(TelaMenus);
@@ -67,25 +19,11 @@ public class TelaDeslogada extends JFrame {
         TelaMenus.setExtendedState(JFrame.MAXIMIZED_BOTH);
         TelaMenus.setLayout(new BorderLayout());
 
-
-
-
-
-
-
-
         JPanel menuLateral = new JPanel();
         menuLateral.setLayout(null);
         menuLateral.setPreferredSize(new Dimension(230, TelaMenus.getHeight()));
         menuLateral.setVisible(false);
         menuLateral.setBackground(new Color(0, 87, 156));
-
-
-
-
-
-
-
 
         JButton fecharMenu = new JButton("\u2630");
         fecharMenu.setFont(new Font("SansSerif", Font.BOLD, 30));

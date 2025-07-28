@@ -10,24 +10,18 @@ public class ManutencaoReparo {
     String exemploPratico;
 
     public void setNomeProduto(String nomeProduto) {
-
         this.nomeProduto = nomeProduto;
-
     }
 
     public void setDescricaoManutencao(String descricaoManutencao) {
-
         this.descricaoManutencao = descricaoManutencao;
-
     }
 
     public void setExemploPratico(String exemploPratico) {
-
         this.exemploPratico = exemploPratico;
     }
 
     public String toString() {
-
         return  "================================================================================================================================="
                 + "\nNome Orientação: " + this.nomeProduto
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
@@ -35,7 +29,6 @@ public class ManutencaoReparo {
                 + "\n----------------------------------------------------------------------------------------------------------------------------------"
                 + "\nExemplo Pratico: " + this.exemploPratico
                 + "\n=================================================================================================================================";
-
     }
 
     public void cadastrarProdutoReparo(int escolhaIdioma) {
@@ -75,25 +68,18 @@ public class ManutencaoReparo {
 
             System.out.println("\nInstruction successfully registered!");
         }
-
     }
 
-
     public void editar(int escolhaIdiona) {
-
-
-            Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         if (escolhaIdiona == 1) {
-
             System.out.print("Welches Element möchten Sie ändern?\n1 - Name der Anleitung\n2 - Verwendung\n3 - Praktisches Beispiel\n");
             int escolhaEdit = input.nextInt();
 
             if (escolhaEdit == 1) {
-
                 System.out.print("\nGeben Sie den Namen des Produkts ein: ");
                 this.nomeProduto = input.nextLine();
-
             } else if (escolhaEdit == 2) {
 
                 System.out.print("Geben Sie die Beschreibung des Produkts ein: ");

@@ -1,14 +1,10 @@
-package net.weg.apresentation;
+package apresentation;
 
 
 
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-
-
-
 
 public class TelaLogada {
 

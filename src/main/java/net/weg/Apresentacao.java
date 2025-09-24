@@ -1,6 +1,6 @@
 package net.weg;
 import net.weg.services.ProjectJava;
-import net.weg.apresentation.TelaDeslogada;
+import apresentation.TelaDeslogada;
 
 import javax.swing.JOptionPane;
 

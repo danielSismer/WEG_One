@@ -1,4 +1,4 @@
-package net.weg.apresentation;
+package apresentation;
 
 
 

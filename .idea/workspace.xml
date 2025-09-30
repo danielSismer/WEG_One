@@ -25,18 +25,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-        &quot;lastFilter&quot;: {
-        &quot;state&quot;: &quot;OPEN&quot;,
-        &quot;assignee&quot;: &quot;danielSismer&quot;
-        }
-        }</component>
-  <component name="GithubPullRequestsUISettings">{
-        &quot;selectedUrlAndAccountId&quot;: {
-        &quot;url&quot;: &quot;https://github.com/danielSismer/ProjetoWEG_ONE&quot;,
-        &quot;accountId&quot;: &quot;2996cd49-2126-4825-a20a-c49bfb0298b8&quot;
-        }
-        }</component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "danielSismer"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/danielSismer/WEG_One",
+    "accountId": "56c99aa2-7867-4ebc-ac1c-b961f6f23a90"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
         &quot;associatedIndex&quot;: 7
         }</component>
@@ -109,14 +109,9 @@
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWEG_ONE_REAL\bin" />
       <recent name="C:\Users\daniel_sismer\IdeaProjects\ProjetoWegONE" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.26775.15" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.26775.15" />
-      </set>
-    </attachedChunks>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
